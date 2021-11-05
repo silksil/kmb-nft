@@ -1,13 +1,6 @@
 // material
 import { alpha, useTheme, styled } from '@mui/material/styles';
-import {
-  Box,
-  Grid,
-  Card,
-  Container,
-  Typography,
-  useMediaQuery,
-} from '@mui/material';
+import { Box, Grid, Card, Container, Typography, useMediaQuery } from '@mui/material';
 //
 import { varFadeInUp, MotionInView, varFadeInDown } from '../../animate';
 
@@ -17,20 +10,17 @@ const CARDS = [
   {
     icon: '/static/icons/ic_design.svg',
     title: 'UI & UX Design',
-    description:
-      'The set is built on the principles of the atomic design system. It helps you to create projects fastest and easily customized packages for your projects.',
+    description: 'The set is built on the principles of the atomic design system. It helps you to create projects fastest and easily customized packages for your projects.',
   },
   {
     icon: '/static/icons/ic_code.svg',
     title: 'Development',
-    description:
-      'Easy to customize and extend each component, saving you time and money.',
+    description: 'Easy to customize and extend each component, saving you time and money.',
   },
   {
     icon: '/static/brand/logo_single.svg',
     title: 'Branding',
-    description:
-      'Consistent design in colors, fonts ... makes brand recognition easy.',
+    description: 'Consistent design in colors, fonts ... makes brand recognition easy.',
   },
 ];
 
@@ -44,10 +34,7 @@ const RootStyle = styled('div')(({ theme }) => ({
 }));
 
 const CardStyle = styled(Card)(({ theme }) => {
-  const shadowCard = (opacity) =>
-    theme.palette.mode === 'light'
-      ? alpha(theme.palette.grey[500], opacity)
-      : alpha(theme.palette.common.black, opacity);
+  const shadowCard = (opacity) => (theme.palette.mode === 'light' ? alpha(theme.palette.grey[500], opacity) : alpha(theme.palette.common.black, opacity));
 
   return {
     maxWidth: 380,
@@ -58,8 +45,7 @@ const CardStyle = styled(Card)(({ theme }) => {
     boxShadow: `-40px 40px 80px 0 ${shadowCard(0.48)}`,
     [theme.breakpoints.up('md')]: {
       boxShadow: 'none',
-      backgroundColor:
-        theme.palette.grey[theme.palette.mode === 'light' ? 200 : 800],
+      backgroundColor: theme.palette.grey[theme.palette.mode === 'light' ? 200 : 800],
     },
     '&.cardLeft': {
       [theme.breakpoints.up('md')]: { marginTop: -40 },
@@ -106,20 +92,16 @@ export default function LandingMinimalHelps() {
 
   return (
     <RootStyle>
-      <Container maxWidth='lg'>
+      <Container maxWidth="lg">
         <Box sx={{ mb: { xs: 10, md: 25 } }}>
           <MotionInView variants={varFadeInUp}>
-            <Typography
-              component='p'
-              variant='overline'
-              sx={{ mb: 2, color: 'text.secondary', textAlign: 'center' }}
-            >
-              Minimal
+            <Typography component="p" variant="overline" sx={{ mb: 2, color: 'text.secondary', textAlign: 'center' }}>
+              Putzies
             </Typography>
           </MotionInView>
           <MotionInView variants={varFadeInDown}>
-            <Typography variant='h2' sx={{ textAlign: 'center' }}>
-              What minimal helps you?
+            <Typography variant="h2" sx={{ textAlign: 'center' }}>
+              Which Putzie fits you?
             </Typography>
           </MotionInView>
         </Box>
@@ -128,11 +110,7 @@ export default function LandingMinimalHelps() {
           {CARDS.map((card, index) => (
             <Grid key={card.title} item xs={12} md={4}>
               <MotionInView variants={varFadeInUp}>
-                <CardStyle
-                  className={
-                    (index === 0 && 'cardLeft') || (index === 1 && 'cardCenter')
-                  }
-                >
+                <CardStyle className={(index === 0 && 'cardLeft') || (index === 1 && 'cardCenter')}>
                   <CardIconStyle
                     src={card.icon}
                     alt={card.title}
@@ -145,14 +123,10 @@ export default function LandingMinimalHelps() {
                       }),
                     }}
                   />
-                  <Typography variant='h5' paragraph>
+                  <Typography variant="h5" paragraph>
                     {card.title}
                   </Typography>
-                  <Typography
-                    sx={{ color: isLight ? 'text.secondary' : 'common.white' }}
-                  >
-                    {card.description}
-                  </Typography>
+                  <Typography sx={{ color: isLight ? 'text.secondary' : 'common.white' }}>{card.description}</Typography>
                 </CardStyle>
               </MotionInView>
             </Grid>
