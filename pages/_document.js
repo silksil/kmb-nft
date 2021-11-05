@@ -7,6 +7,7 @@ import createEmotionServer from '@emotion/server/create-instance';
 import createEmotionCache from 'src/utils/createEmotionCache';
 
 import palette from 'src/theme/palette';
+import config from '../meta-config.json';
 
 export default class MyDocument extends Document {
   render() {
@@ -25,9 +26,9 @@ export default class MyDocument extends Document {
           <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet" />
           <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;500;600;&display=swap" rel="stylesheet" />
 
-          <meta name="description" content="The starting point for your next project with Minimal UI Kit, built on the newest version of Material-UI ©, ready to be customized to your style" />
-          <meta name="keywords" content="react,material,kit,application,dashboard,admin,template" />
-          <meta name="author" content="Minimal UI Kit" />
+          <meta name="description" content={config.description} />
+          <meta name="keywords" content={config.keywords} />
+          <meta name="author" content={config.author} />
         </Head>
         <body>
           <Main />
