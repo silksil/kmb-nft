@@ -1,14 +1,12 @@
 import * as React from 'react';
-// next
-import Document, { Html, Head, Main, NextScript } from 'next/document';
-// emotion
-import createEmotionServer from '@emotion/server/create-instance';
-// utils
-import createEmotionCache from 'src/utils/createEmotionCache';
-// theme
-import palette from 'src/theme/palette';
 
-// ----------------------------------------------------------------------
+import Document, { Html, Head, Main, NextScript } from 'next/document';
+
+import createEmotionServer from '@emotion/server/create-instance';
+
+import createEmotionCache from 'src/utils/createEmotionCache';
+
+import palette from 'src/theme/palette';
 
 export default class MyDocument extends Document {
   render() {
@@ -25,7 +23,7 @@ export default class MyDocument extends Document {
 
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet" />
-          <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet" />
+          <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;500;600;&display=swap" rel="stylesheet" />
 
           <meta name="description" content="The starting point for your next project with Minimal UI Kit, built on the newest version of Material-UI ©, ready to be customized to your style" />
           <meta name="keywords" content="react,material,kit,application,dashboard,admin,template" />

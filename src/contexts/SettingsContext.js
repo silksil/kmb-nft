@@ -1,11 +1,7 @@
 import PropTypes from 'prop-types';
 import { createContext } from 'react';
-// hooks
 import useLocalStorage from '../hooks/useLocalStorage';
-// theme
 import palette from '../theme/palette';
-
-// ----------------------------------------------------------------------
 
 const PRIMARY_COLOR = [
   // DEFAULT
@@ -66,14 +62,7 @@ const PRIMARY_COLOR = [
 ];
 
 SetColor.propTypes = {
-  themeColor: PropTypes.oneOf([
-    'default',
-    'purple',
-    'cyan',
-    'blue',
-    'orange',
-    'red',
-  ]),
+  themeColor: PropTypes.oneOf(['default', 'purple', 'cyan', 'blue', 'orange', 'red']),
 };
 
 function SetColor(themeColor) {
@@ -109,13 +98,9 @@ function SetColor(themeColor) {
 
 const initialState = {
   themeMode: 'light',
-  themeDirection: 'ltr',
-  themeColor: 'default',
-  themeStretch: false,
+  themeColor: 'bluet',
   onChangeMode: () => {},
-  onChangeDirection: () => {},
   onChangeColor: () => {},
-  onToggleStretch: () => {},
   setColor: PRIMARY_COLOR[0],
   colorOption: [],
 };
@@ -129,7 +114,6 @@ SettingsProvider.propTypes = {
 function SettingsProvider({ children }) {
   const [settings, setSettings] = useLocalStorage('settings', {
     themeMode: initialState.themeMode,
-    themeDirection: initialState.themeDirection,
     themeColor: initialState.themeColor,
     themeStretch: initialState.themeStretch,
   });
@@ -141,13 +125,6 @@ function SettingsProvider({ children }) {
     });
   };
 
-  const onChangeDirection = (event) => {
-    setSettings({
-      ...settings,
-      themeDirection: event.target.value,
-    });
-  };
-
   const onChangeColor = (event) => {
     setSettings({
       ...settings,
@@ -155,30 +132,17 @@ function SettingsProvider({ children }) {
     });
   };
 
-  const onToggleStretch = () => {
-    setSettings({
-      ...settings,
-      themeStretch: !settings.themeStretch,
-    });
-  };
-
   return (
     <SettingsContext.Provider
       value={{
         ...settings,
-        // Mode
         onChangeMode,
-        // Direction
-        onChangeDirection,
-        // Color
         onChangeColor,
         setColor: SetColor(settings.themeColor),
         colorOption: PRIMARY_COLOR.map((color) => ({
           name: color.name,
           value: color.main,
         })),
-        // Stretch
-        onToggleStretch,
       }}
     >
       {children}

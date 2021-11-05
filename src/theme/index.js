@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { useMemo } from 'react';
 // material
 import { CssBaseline } from '@mui/material';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { createTheme, ThemeProvider, alpha } from '@mui/material/styles';
 // hooks
 import useSettings from '../hooks/useSettings';
 //
@@ -20,22 +20,19 @@ ThemeConfig.propTypes = {
 };
 
 export default function ThemeConfig({ children }) {
-  const { themeMode, themeDirection } = useSettings();
+  const { themeMode, setColor } = useSettings();
   const isLight = themeMode === 'light';
 
   const themeOptions = useMemo(
     () => ({
-      palette: isLight
-        ? { ...palette.light, mode: 'light' }
-        : { ...palette.dark, mode: 'dark' },
+      palette: isLight ? { ...palette.light, mode: 'light', primary: setColor } : { ...palette.dark, mode: 'dark', primary: setColor },
       shape,
       typography,
       breakpoints,
-      direction: themeDirection,
       shadows: isLight ? shadows.light : shadows.dark,
-      customShadows: isLight ? customShadows.light : customShadows.dark,
+      customShadows: isLight ? { ...customShadows.light, primary: `0 8px 16px 0 ${alpha(setColor.main, 0.24)}` } : { ...customShadows.dark, primary: `0 8px 16px 0 ${alpha(setColor.main, 0.24)}` },
     }),
-    [isLight, themeDirection]
+    [isLight, setColor]
   );
 
   const theme = createTheme(themeOptions);
