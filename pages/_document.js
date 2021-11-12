@@ -7,7 +7,7 @@ import createEmotionServer from '@emotion/server/create-instance';
 import createEmotionCache from 'src/utils/createEmotionCache';
 
 import palette from 'src/theme/palette';
-import config from '../meta-config.json';
+import metaInfo from '../meta-info.json';
 
 export default class MyDocument extends Document {
   render() {
@@ -26,9 +26,9 @@ export default class MyDocument extends Document {
           <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet" />
           <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;500;600;&display=swap" rel="stylesheet" />
 
-          <meta name="description" content={config.description} />
-          <meta name="keywords" content={config.keywords} />
-          <meta name="author" content={config.author} />
+          <meta name="description" content={metaInfo.description} />
+          <meta name="keywords" content={metaInfo.keywords} />
+          <meta name="author" content={metaInfo.author} />
         </Head>
         <body>
           <Main />

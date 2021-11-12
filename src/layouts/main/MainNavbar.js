@@ -63,43 +63,31 @@ export default function MainNavbar() {
         }}
       >
         <Container
-          maxWidth='lg'
+          maxWidth="lg"
           sx={{
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
           }}
         >
-          <NextLink href='/'>
+          <NextLink href="/">
             <Logo />
           </NextLink>
-          <Label color='info' sx={{ ml: 1 }}>
+          <Label color="info" sx={{ ml: 1 }}>
             Next Js v2.6.0
           </Label>
           <Box sx={{ flexGrow: 1 }} />
 
-          <MHidden width='mdDown'>
-            <MenuDesktop
-              isOffset={isOffset}
-              isHome={isHome}
-              navConfig={navConfig}
-            />
+          <MHidden width="mdDown">
+            <MenuDesktop isOffset={isOffset} isHome={isHome} navConfig={navConfig} />
           </MHidden>
 
-          <Button
-            variant='contained'
-            target='_blank'
-            href='https://material-ui.com/store/items/minimal-dashboard/'
-          >
+          <Button variant="contained" target="_blank" href="https://material-ui.com/store/items/minimal-dashboard/">
             Purchase Now
           </Button>
 
-          <MHidden width='mdUp'>
-            <MenuMobile
-              isOffset={isOffset}
-              isHome={isHome}
-              navConfig={navConfig}
-            />
+          <MHidden width="mdUp">
+            <MenuMobile isOffset={isOffset} isHome={isHome} navConfig={navConfig} />
           </MHidden>
         </Container>
       </ToolbarStyle>

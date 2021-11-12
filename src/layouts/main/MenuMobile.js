@@ -4,27 +4,14 @@ import { useState, useEffect } from 'react';
 import menu2Fill from '@iconify/icons-eva/menu-2-fill';
 import arrowIosForwardFill from '@iconify/icons-eva/arrow-ios-forward-fill';
 import arrowIosDownwardFill from '@iconify/icons-eva/arrow-ios-downward-fill';
-// next
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
-// material
 import { alpha, styled } from '@mui/material/styles';
-import {
-  Box,
-  List,
-  Drawer,
-  Collapse,
-  ListItemText,
-  ListItemIcon,
-  ListItemButton,
-} from '@mui/material';
-// components
+import { Box, List, Drawer, Collapse, ListItemText, ListItemIcon, ListItemButton } from '@mui/material';
 import Logo from '../../components/Logo';
 import NavSection from '../../components/NavSection';
 import Scrollbar from '../../components/Scrollbar';
 import { MIconButton } from '../../components/@material-extend';
-
-// ----------------------------------------------------------------------
 
 const ICON_SIZE = 22;
 const ITEM_SIZE = 48;
@@ -57,14 +44,10 @@ function MenuMobileItem({ item, isOpen, isActive, onOpen }) {
         <ListItemStyle onClick={onOpen}>
           <ListItemIcon>{icon}</ListItemIcon>
           <ListItemText disableTypography primary={title} />
-          <Box
-            component={Icon}
-            icon={isOpen ? arrowIosDownwardFill : arrowIosForwardFill}
-            sx={{ width: 16, height: 16, ml: 1 }}
-          />
+          <Box component={Icon} icon={isOpen ? arrowIosDownwardFill : arrowIosForwardFill} sx={{ width: 16, height: 16, ml: 1 }} />
         </ListItemStyle>
 
-        <Collapse in={isOpen} timeout='auto' unmountOnExit>
+        <Collapse in={isOpen} timeout="auto" unmountOnExit>
           <Box sx={{ display: 'flex', flexDirection: 'column-reverse' }}>
             <NavSection
               navConfig={children}
@@ -75,8 +58,7 @@ function MenuMobileItem({ item, isOpen, isActive, onOpen }) {
                   backgroundPosition: 'center',
                   bgcolor: 'background.neutral',
                   backgroundRepeat: 'no-repeat',
-                  backgroundImage:
-                    'url(/static/illustrations/illustration_dashboard.png)',
+                  backgroundImage: 'url(/static/illustrations/illustration_dashboard.png)',
                   '& > *:not(.MuiTouchRipple-root)': { display: 'none' },
                 },
                 '& .MuiListSubheader-root': {
@@ -124,11 +106,7 @@ function MenuMobileItem({ item, isOpen, isActive, onOpen }) {
           ...(isActive && {
             color: 'primary.main',
             fontWeight: 'fontWeightMedium',
-            bgcolor: (theme) =>
-              alpha(
-                theme.palette.primary.main,
-                theme.palette.action.selectedOpacity
-              ),
+            bgcolor: (theme) => alpha(theme.palette.primary.main, theme.palette.action.selectedOpacity),
           }),
         }}
       >
@@ -182,28 +160,17 @@ export default function MenuMobile({ isOffset, isHome, navConfig }) {
         <Icon icon={menu2Fill} />
       </MIconButton>
 
-      <Drawer
-        open={drawerOpen}
-        onClose={handleDrawerClose}
-        ModalProps={{ keepMounted: true }}
-        PaperProps={{ sx: { pb: 5, width: 260 } }}
-      >
+      <Drawer open={drawerOpen} onClose={handleDrawerClose} ModalProps={{ keepMounted: true }} PaperProps={{ sx: { pb: 5, width: 260 } }}>
         <Scrollbar>
           <Box sx={{ display: 'inline-flex' }}>
-            <NextLink href='/'>
+            <NextLink href="/">
               <Logo sx={{ mx: PADDING, my: 3 }} />
             </NextLink>
           </Box>
 
           <List disablePadding>
             {navConfig.map((link) => (
-              <MenuMobileItem
-                key={link.title}
-                item={link}
-                isOpen={open}
-                onOpen={handleOpen}
-                isActive={pathname === link.path}
-              />
+              <MenuMobileItem key={link.title} item={link} isOpen={open} onOpen={handleOpen} isActive={pathname === link.path} />
             ))}
           </List>
         </Scrollbar>

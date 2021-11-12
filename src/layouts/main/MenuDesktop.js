@@ -4,24 +4,10 @@ import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import arrowIosUpwardFill from '@iconify/icons-eva/arrow-ios-upward-fill';
 import arrowIosDownwardFill from '@iconify/icons-eva/arrow-ios-downward-fill';
-// next
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
-// material
 import { styled } from '@mui/material/styles';
-import {
-  Box,
-  Link,
-  Grid,
-  List,
-  Stack,
-  Popover,
-  ListItem,
-  ListSubheader,
-  CardActionArea,
-} from '@mui/material';
-
-// ----------------------------------------------------------------------
+import { Box, Link, Grid, List, Stack, Popover, ListItem, ListSubheader, CardActionArea } from '@mui/material';
 
 const LinkStyle = styled(Link)(({ theme }) => ({
   ...theme.typography.subtitle2,
@@ -57,7 +43,7 @@ function IconBullet({ type = 'item' }) {
   return (
     <Box sx={{ width: 24, height: 16, display: 'flex', alignItems: 'center' }}>
       <Box
-        component='span'
+        component="span"
         sx={{
           ml: '2px',
           width: 4,
@@ -86,15 +72,7 @@ MenuDesktopItem.propTypes = {
   onClose: PropTypes.func,
 };
 
-function MenuDesktopItem({
-  item,
-  pathname,
-  isHome,
-  isOpen,
-  isOffset,
-  onOpen,
-  onClose,
-}) {
+function MenuDesktopItem({ item, pathname, isHome, isOpen, isOffset, onOpen, onClose }) {
   const { title, path, children } = item;
   const isActive = pathname === path;
 
@@ -113,16 +91,12 @@ function MenuDesktopItem({
           }}
         >
           {title}
-          <Box
-            component={Icon}
-            icon={isOpen ? arrowIosUpwardFill : arrowIosDownwardFill}
-            sx={{ ml: 0.5, width: 16, height: 16 }}
-          />
+          <Box component={Icon} icon={isOpen ? arrowIosUpwardFill : arrowIosDownwardFill} sx={{ ml: 0.5, width: 16, height: 16 }} />
         </LinkStyle>
 
         <Popover
           open={isOpen}
-          anchorReference='anchorPosition'
+          anchorReference="anchorPosition"
           anchorPosition={{ top: 80, left: 0 }}
           anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
           transformOrigin={{ vertical: 'top', horizontal: 'center' }}
@@ -145,12 +119,7 @@ function MenuDesktopItem({
               const { subheader, items } = list;
 
               return (
-                <Grid
-                  key={subheader}
-                  item
-                  xs={12}
-                  md={subheader === 'Dashboard' ? 6 : 2}
-                >
+                <Grid key={subheader} item xs={12} md={subheader === 'Dashboard' ? 6 : 2}>
                   <List disablePadding>
                     <ListSubheader
                       disableSticky
@@ -163,7 +132,7 @@ function MenuDesktopItem({
                         typography: 'overline',
                       }}
                     >
-                      <IconBullet type='subheader' /> {subheader}
+                      <IconBullet type="subheader" /> {subheader}
                     </ListSubheader>
 
                     {items.map((item) => (
@@ -188,13 +157,13 @@ function MenuDesktopItem({
                             >
                               <Box
                                 component={motion.img}
-                                whileTap='tap'
-                                whileHover='hover'
+                                whileTap="tap"
+                                whileHover="hover"
                                 variants={{
                                   hover: { scale: 1.02 },
                                   tap: { scale: 0.98 },
                                 }}
-                                src='/static/illustrations/illustration_dashboard.png'
+                                src="/static/illustrations/illustration_dashboard.png"
                               />
                             </CardActionArea>
                           ) : (
@@ -257,18 +226,9 @@ export default function MenuDesktop({ isOffset, isHome, navConfig }) {
   };
 
   return (
-    <Stack direction='row'>
+    <Stack direction="row">
       {navConfig.map((link) => (
-        <MenuDesktopItem
-          key={link.title}
-          item={link}
-          pathname={pathname}
-          isOpen={open}
-          onOpen={handleOpen}
-          onClose={handleClose}
-          isOffset={isOffset}
-          isHome={isHome}
-        />
+        <MenuDesktopItem key={link.title} item={link} pathname={pathname} isOpen={open} onOpen={handleOpen} onClose={handleClose} isOffset={isOffset} isHome={isHome} />
       ))}
     </Stack>
   );

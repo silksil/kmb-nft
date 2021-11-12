@@ -1,12 +1,7 @@
 import PropTypes from 'prop-types';
-// next
 import NextLink from 'next/link';
-// material
 import { styled } from '@mui/material/styles';
-// components
 import Logo from '../components/Logo';
-
-// ----------------------------------------------------------------------
 
 const HeaderStyle = styled('header')(({ theme }) => ({
   top: 0,
@@ -20,17 +15,15 @@ const HeaderStyle = styled('header')(({ theme }) => ({
   },
 }));
 
-// ----------------------------------------------------------------------
-
-LogoOnlyLayout.propTypes = {
+LogoOnlyTopCornerLayout.propTypes = {
   children: PropTypes.node,
 };
 
-export default function LogoOnlyLayout({ children }) {
+export function LogoOnlyTopCornerLayout({ children }) {
   return (
     <>
       <HeaderStyle>
-        <NextLink href='/'>
+        <NextLink href="/">
           <Logo />
         </NextLink>
       </HeaderStyle>

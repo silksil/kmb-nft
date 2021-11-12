@@ -1,6 +1,6 @@
 import MainLayout from 'src/layouts/main';
 import { styled } from '@mui/material/styles';
-import Page from 'src/components/Page';
+import { Page } from 'src/components/Page';
 import { LandingHero, LandingOptions, LandingDarkMode, LandingThemeColor, LandingCleanInterfaces, LandingHugePackElements } from 'src/components/_external-pages/landing';
 
 const ContentStyle = styled('div')(({ theme }) => ({

@@ -4,12 +4,10 @@ import useLocalStorage from '../hooks/useLocalStorage';
 import palette from '../theme/palette';
 
 const PRIMARY_COLOR = [
-  // DEFAULT
   {
     name: 'default',
     ...palette.light.primary,
   },
-  // PURPLE
   {
     name: 'purple',
     lighter: '#EBD6FD',
@@ -19,7 +17,6 @@ const PRIMARY_COLOR = [
     darker: '#200A69',
     contrastText: '#fff',
   },
-  // CYAN
   {
     name: 'cyan',
     lighter: '#D1FFFC',
@@ -29,7 +26,6 @@ const PRIMARY_COLOR = [
     darker: '#053D7A',
     contrastText: palette.light.grey[800],
   },
-  // BLUE
   {
     name: 'blue',
     lighter: '#CCDFFF',
@@ -39,7 +35,6 @@ const PRIMARY_COLOR = [
     darker: '#00137A',
     contrastText: '#fff',
   },
-  // ORANGE
   {
     name: 'orange',
     lighter: '#FEF4D4',
@@ -49,7 +44,6 @@ const PRIMARY_COLOR = [
     darker: '#793908',
     contrastText: palette.light.grey[800],
   },
-  // RED
   {
     name: 'red',
     lighter: '#FFE3D5',
@@ -100,9 +94,7 @@ const initialState = {
   themeMode: 'light',
   themeColor: 'bluet',
   onChangeMode: () => {},
-  onChangeColor: () => {},
   setColor: PRIMARY_COLOR[0],
-  colorOption: [],
 };
 
 const SettingsContext = createContext(initialState);
@@ -114,21 +106,14 @@ SettingsProvider.propTypes = {
 function SettingsProvider({ children }) {
   const [settings, setSettings] = useLocalStorage('settings', {
     themeMode: initialState.themeMode,
-    themeColor: initialState.themeColor,
     themeStretch: initialState.themeStretch,
   });
 
+  const primaryColor = 'blue';
   const onChangeMode = (event) => {
     setSettings({
       ...settings,
       themeMode: event.target.value,
-    });
-  };
-
-  const onChangeColor = (event) => {
-    setSettings({
-      ...settings,
-      themeColor: event.target.value,
     });
   };
 
@@ -137,12 +122,7 @@ function SettingsProvider({ children }) {
       value={{
         ...settings,
         onChangeMode,
-        onChangeColor,
-        setColor: SetColor(settings.themeColor),
-        colorOption: PRIMARY_COLOR.map((color) => ({
-          name: color.name,
-          value: color.main,
-        })),
+        primaryColor: SetColor(primaryColor),
       }}
     >
       {children}
