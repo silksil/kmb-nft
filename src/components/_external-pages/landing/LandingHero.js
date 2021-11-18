@@ -1,10 +1,13 @@
 import { Icon } from '@iconify/react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import flashFill from '@iconify/icons-eva/flash-fill';
-import NextLink from 'next/link';
 import { styled } from '@mui/material/styles';
 import { Box, Stack, Button, Container, Typography } from '@mui/material';
+
 import { varFadeIn, varFadeInUp, varWrapEnter, varFadeInRight } from '../../animate';
+import { useWallet } from 'src/hooks/useWallet';
+import { MintingModal } from 'src/components/MintingModal';
 
 const RootStyle = styled(motion.div)(({ theme }) => ({
   position: 'relative',
@@ -57,12 +60,19 @@ const HeroImgStyle = styled(motion.img)(({ theme }) => ({
   },
 }));
 
-// ----------------------------------------------------------------------
-
 export default function LandingHero() {
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const { walletIsConnected, connectWallet } = useWallet();
+
+  const handleMint = async () => {
+    setModalIsOpen(true);
+    askContractToMintNft();
+  };
+
   return (
     <>
       <RootStyle initial="initial" animate="animate" variants={varWrapEnter}>
+        <MintingModal modalIsOpen={modalIsOpen} setModalIsOpen={setModalIsOpen} />
         <HeroOverlayStyle alt="overlay" src="/static/overlay.svg" variants={varFadeIn} />
         <HeroImgStyle alt="hero" src="/static/home/hero.png" variants={varFadeInUp} />
         <Container maxWidth="lg">
@@ -81,11 +91,9 @@ export default function LandingHero() {
             </motion.div>
 
             <motion.div variants={varFadeInRight}>
-              <NextLink href={'./'}>
-                <Button size="large" variant="contained" startIcon={<Icon icon={flashFill} width={20} height={20} />}>
-                  Connect Wallet
-                </Button>
-              </NextLink>
+              <Button size="large" variant="contained" startIcon={<Icon icon={flashFill} width={20} height={20} />} onClick={walletIsConnected ? handleMint : connectWallet}>
+                {walletIsConnected ? 'Mint NFT' : 'Connect wallet'}
+              </Button>
             </motion.div>
 
             <Stack direction="row" spacing={1.5} justifyContent={{ xs: 'center', md: 'flex-start' }}>

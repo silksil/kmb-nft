@@ -106,7 +106,6 @@ SettingsProvider.propTypes = {
 function SettingsProvider({ children }) {
   const [settings, setSettings] = useLocalStorage('settings', {
     themeMode: initialState.themeMode,
-    themeStretch: initialState.themeStretch,
   });
 
   const primaryColor = 'blue';

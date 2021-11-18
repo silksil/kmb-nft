@@ -8,12 +8,7 @@ import { varFadeInUp, MotionInView } from '../../animate';
 
 const RootStyle = styled('div')(({ theme }) => ({
   padding: theme.spacing(24, 0),
-  backgroundImage:
-    theme.palette.mode === 'light'
-      ? `linear-gradient(180deg, ${alpha(theme.palette.grey[300], 0)} 0%, ${
-          theme.palette.grey[300]
-        } 100%)`
-      : 'none',
+  backgroundImage: theme.palette.mode === 'light' ? `linear-gradient(180deg, ${alpha(theme.palette.grey[300], 0)} 0%, ${theme.palette.grey[300]} 100%)` : 'none',
 }));
 
 const ContentStyle = styled('div')(({ theme }) => ({
@@ -31,8 +26,7 @@ const ScreenStyle = styled(MotionInView)(({ theme }) => ({
   paddingBottom: 1,
   maxWidth: 160,
   borderRadius: 8,
-  backgroundColor:
-    theme.palette.grey[theme.palette.mode === 'light' ? 300 : 800],
+  backgroundColor: theme.palette.grey[theme.palette.mode === 'light' ? 300 : 800],
   [theme.breakpoints.up('sm')]: {
     maxWidth: 320,
     paddingRight: 4,
@@ -82,29 +76,19 @@ export default function LandingHugePackElements() {
 
   return (
     <RootStyle>
-      <Container maxWidth='lg'>
-        <Grid container spacing={5} justifyContent='center'>
-          <Grid
-            item
-            xs={12}
-            md={4}
-            sx={{ display: 'flex', alignItems: 'center' }}
-          >
+      <Container maxWidth="lg">
+        <Grid container spacing={5} justifyContent="center">
+          <Grid item xs={12} md={4} sx={{ display: 'flex', alignItems: 'center' }}>
             <ContentStyle>
               <MotionInView variants={varFadeInUp}>
-                <Typography
-                  component='p'
-                  variant='overline'
-                  sx={{ mb: 2, color: 'text.secondary' }}
-                >
+                <Typography component="p" variant="overline" sx={{ mb: 2, color: 'text.secondary' }}>
                   Interface Starter Kit
                 </Typography>
               </MotionInView>
 
               <MotionInView variants={varFadeInUp}>
-                <Typography variant='h2' sx={{ mb: 3 }}>
-                  Huge pack <br />
-                  of elements
+                <Typography variant="h2" sx={{ mb: 3 }}>
+                  Every putzie has
                 </Typography>
               </MotionInView>
 
@@ -115,20 +99,19 @@ export default function LandingHugePackElements() {
                     color: isLight ? 'text.secondary' : 'common.white',
                   }}
                 >
-                  We collected most popular elements. Menu, sliders, buttons,
-                  inputs etc. are all here. Just dive in!
+                  We collected most popular elements. Menu, sliders, buttons, inputs etc. are all here. Just dive in!
                 </Typography>
               </MotionInView>
 
               <MotionInView variants={varFadeInUp}>
-                <Button size='large' color='inherit' variant='outlined'>
+                <Button size="large" color="inherit" variant="outlined">
                   View All Components
                 </Button>
               </MotionInView>
             </ContentStyle>
           </Grid>
 
-          <Grid item xs={12} md={8} dir='ltr'>
+          <Grid item xs={12} md={8} dir="ltr">
             <Box
               sx={{
                 display: 'flex',
@@ -148,12 +131,7 @@ export default function LandingHugePackElements() {
                   }}
                   transition={{ duration: 0.72, ease: 'easeOut' }}
                   sx={{
-                    boxShadow: `${isRTL ? -80 : 80}px -40px 80px ${alpha(
-                      isLight
-                        ? theme.palette.grey[600]
-                        : theme.palette.common.black,
-                      0.48
-                    )}`,
+                    boxShadow: `${isRTL ? -80 : 80}px -40px 80px ${alpha(isLight ? theme.palette.grey[600] : theme.palette.common.black, 0.48)}`,
                     ...(index === 0 && {
                       zIndex: 3,
                       position: 'absolute',
@@ -166,12 +144,7 @@ export default function LandingHugePackElements() {
                     }),
                   }}
                 >
-                  <img
-                    alt={`screen ${index + 1}`}
-                    src={`/static/home/screen_${isLight ? 'light' : 'dark'}_${
-                      index + 1
-                    }.png`}
-                  />
+                  <img alt={`screen ${index + 1}`} src={`/static/home/screen_${isLight ? 'light' : 'dark'}_${index + 1}.png`} />
                 </ScreenStyle>
               ))}
             </Box>

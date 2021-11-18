@@ -9,9 +9,8 @@ const ContentStyle = styled('div')(({ theme }) => ({
   backgroundColor: theme.palette.background.default,
 }));
 
-// ----------------------------------------------------------------------
-
 export default function LandingPage() {
+
   return (
     <MainLayout>
       <Page title="The starting point for your next project | Minimal-UI" id="move_top" sx={{ height: '100%' }}>

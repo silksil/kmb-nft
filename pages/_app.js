@@ -8,6 +8,8 @@ import GlobalStyles from 'src/theme/globalStyles';
 
 import createEmotionCache from 'src/utils/createEmotionCache';
 import { CollapseDrawerProvider } from 'src/contexts/CollapseDrawerContext';
+import { WalletProvider } from 'src/contexts/WalletContext';
+import { ContractProvider } from 'src/contexts/ContractContext';
 
 const clientSideEmotionCache = createEmotionCache();
 
@@ -15,20 +17,26 @@ export default function MyApp(props) {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
 
   return (
-    <SettingsProvider>
-      <CollapseDrawerProvider>
+    // Place here the web3 providers
+    <WalletProvider>
+      <ContractProvider>
+        {/* Theming and styling providers */}
         <CacheProvider value={emotionCache}>
-          <Head>
-            <meta name="viewport" content="initial-scale=1, width=device-width" />
-          </Head>
-
-          <ThemeConfig>
-            <GlobalStyles />
-
-            <Component {...pageProps} />
-          </ThemeConfig>
+          <SettingsProvider>
+            <ThemeConfig>
+              {/* Components provider */}
+              <CollapseDrawerProvider>
+                {/* The rest of the logic*/}
+                <Head>
+                  <meta name="viewport" content="initial-scale=1, width=device-width" />
+                </Head>
+                <GlobalStyles />
+                <Component {...pageProps} />
+              </CollapseDrawerProvider>
+            </ThemeConfig>
+          </SettingsProvider>
         </CacheProvider>
-      </CollapseDrawerProvider>
-    </SettingsProvider>
+      </ContractProvider>
+    </WalletProvider>
   );
 }

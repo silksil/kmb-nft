@@ -1,8 +1,6 @@
-import { capitalCase } from 'change-case';
 import { motion } from 'framer-motion';
-// material
 import { styled, alpha } from '@mui/material/styles';
-import { Box, Stack, Radio, Tooltip, Container, Typography, RadioGroup, CardActionArea, FormControlLabel } from '@mui/material';
+import { Box, Container, Typography, RadioGroup, CardActionArea, FormControlLabel } from '@mui/material';
 import useSettings from '../../../hooks/useSettings';
 import { MotionInView, varFadeInUp, varFadeInDown } from '../../animate';
 
