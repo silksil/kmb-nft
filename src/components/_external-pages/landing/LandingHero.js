@@ -63,8 +63,8 @@ const HeroImgStyle = styled(motion.img)(({ theme }) => ({
 }));
 
 export default function LandingHero() {
-  const { isConnected, connect } = useWallet();
-  const { askContractToMintNft } = useContract();
+  const { askContractToMintNft, setupEventListener } = useContract();
+  const { isConnected, connect } = useWallet(setupEventListener);
   const { setMintingModalIsOpen } = useUI();
 
   const handleClick = async () => {

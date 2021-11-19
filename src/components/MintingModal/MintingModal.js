@@ -44,7 +44,7 @@ const StatusCircleStyle = styled(Box)(({ theme }) => ({
 
 const getStatusText = (status, STATUS, error) => {
   if (status === STATUS.POP_WALLET) return 'Poppin your wallet.';
-  if (status === STATUS.MINTING) return 'Minting';
+  if (status === STATUS.MINING) return 'Mining';
   if (status === STATUS.SUCCESS) return 'Succesfully minted';
   if (status === STATUS.ERROR) return error;
 
@@ -53,7 +53,7 @@ const getStatusText = (status, STATUS, error) => {
 
 const getStatusIcon = (status, STATUS) => {
   if (status === STATUS.POP_WALLET) return <Icon icon={flashFill} size="s" />;
-  if (status === STATUS.MINTING) return <CircularProgress size="20px" />;
+  if (status === STATUS.MINING) return <CircularProgress size="20px" />;
   if (status === STATUS.SUCCESS) return <Icon icon={checkmarkFill} color="success" size="s" />;
   if (status === STATUS.ERROR) return <Icon icon={alertTriangleFill} color="error" size="s" />;
 
@@ -68,7 +68,7 @@ export function MintingModal() {
     <Modal open={mintingModalIsOpen}>
       <ContainerStyle>
         <IconButtonStyle
-          disabled={status === STATUS.MINTING}
+          disabled={status === STATUS.MINING}
           onClick={() => {
             setMintingModalIsOpen(false);
           }}
