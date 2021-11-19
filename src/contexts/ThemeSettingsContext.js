@@ -91,19 +91,19 @@ function SetColor(themeColor) {
 }
 
 const initialState = {
-  themeMode: 'light',
+  themeMode: 'dark',
   themeColor: 'bluet',
   onChangeMode: () => {},
   setColor: PRIMARY_COLOR[0],
 };
 
-const SettingsContext = createContext(initialState);
+const ThemeSettingsContext = createContext(initialState);
 
-SettingsProvider.propTypes = {
+ThemeSettingsProvider.propTypes = {
   children: PropTypes.node,
 };
 
-function SettingsProvider({ children }) {
+function ThemeSettingsProvider({ children }) {
   const [settings, setSettings] = useLocalStorage('settings', {
     themeMode: initialState.themeMode,
   });
@@ -112,21 +112,23 @@ function SettingsProvider({ children }) {
   const onChangeMode = (event) => {
     setSettings({
       ...settings,
-      themeMode: event.target.value,
+      themeMode: ' event.target.value',
     });
   };
 
+  const themeMode = 'dark';
   return (
-    <SettingsContext.Provider
+    <ThemeSettingsContext.Provider
       value={{
         ...settings,
+        themeMode,
         onChangeMode,
         primaryColor: SetColor(primaryColor),
       }}
     >
       {children}
-    </SettingsContext.Provider>
+    </ThemeSettingsContext.Provider>
   );
 }
 
-export { SettingsProvider, SettingsContext };
+export { ThemeSettingsProvider, ThemeSettingsContext };

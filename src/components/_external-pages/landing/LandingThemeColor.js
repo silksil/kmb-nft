@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { styled, alpha } from '@mui/material/styles';
 import { Box, Container, Typography, RadioGroup, CardActionArea, FormControlLabel } from '@mui/material';
-import useSettings from '../../../hooks/useSettings';
+import useThemeSettings from '../../../hooks/useThemeSettings';
 import { MotionInView, varFadeInUp, varFadeInDown } from '../../animate';
 
 const RootStyle = styled('div')(({ theme }) => ({
@@ -10,7 +10,7 @@ const RootStyle = styled('div')(({ theme }) => ({
 }));
 
 export default function LandingThemeColor() {
-  const { themeColor } = useSettings();
+  const { themeColor } = useThemeSettings();
 
   return (
     <RootStyle>

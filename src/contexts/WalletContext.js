@@ -4,9 +4,9 @@ import { ethers } from 'ethers';
 import myEpicNft from './MyEpicNFT.json';
 
 const initialState = {
-  walletIsAvailable: false,
-  walletIsConnected: false,
-  connectWallet: () => {},
+  isConnected: false,
+  error: null,
+  connect: () => {},
 };
 
 const WalletContext = createContext(initialState);
@@ -46,63 +46,58 @@ const setupEventListener = async () => {
 };
 
 function WalletProvider({ children }) {
-  const [walletIsConnected, setWalletIsConnected] = useState(false);
+  const [connectionStatus, setConnectionStatus] = useState({ isConnected: false, error: null });
 
-  const checkIfWalletIsConnected = async () => {
+  const checkConnection = async () => {
     const { ethereum } = window;
-    if (!ethereum) return;
+    if (!ethereum) {
+      return setConnectionStatus({ isConnected: false, error: null });
+    }
 
     const accounts = await ethereum.request({ method: 'eth_accounts' });
     const accountIsAvailable = accounts.length !== 0;
 
-    if (accountIsAvailable) {
-      setWalletIsConnected(true);
-
-      // Setup listener! This is for the case where a user comes to our site
-      // and ALREADY had their wallet connected + authorized.
-      setupEventListener();
+    if (!accountIsAvailable) {
+      setConnectionStatus({ isConnected: false, error: null });
     }
+
+    setConnectionStatus({ isConnected: true, error: null });
+    setupEventListener();
   };
 
   /*
-   * Implement your connectWallet method here
+   * Connect the wallet.
    */
-  const connectWallet = async () => {
+  const connect = async () => {
     try {
       const { ethereum } = window;
 
       if (!ethereum) {
-        alert('Get MetaMask!');
-        return;
+        setConnectionStatus({ isConnected: false, error: "Looks like you don't have MetaMask. Download the extension to proceed" });
       }
 
       /*
-       * Fancy method to request access to account.
+       * Request access to the account.
        */
       const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+      const accountsAvailable = accounts.length === 0;
 
-      /*
-       * Boom! This should print out public address once we authorize Metamask.
-       */
-      if (accounts[0]) {
-        setWalletIsConnected(true);
-        return accounts[0];
+      if (!accountsAvailable) {
+        setConnectionStatus({ isConnected: false, error: 'No authorized account found' });
       }
 
-      //   // Setup listener! This is for the case where a user comes to our site
-      //   // and connected their wallet for the first time.
-      //   setupEventListener();
-      return { error: 'No accounts' };
+      setConnectionStatus({ isConnected: true, error: null });
+      setupEventListener();
     } catch (error) {
-      return { error: 'Something went wrong' };
+      setConnectionStatus({ isConnected: false, error: 'No authorized account found' });
     }
   };
 
   useEffect(() => {
-    checkIfWalletIsConnected();
+    checkConnection();
   }, []);
 
-  return <WalletContext.Provider value={{ walletIsConnected, connectWallet }}>{children}</WalletContext.Provider>;
+  return <WalletContext.Provider value={{ isConnected: connectionStatus.isConnected, error: connectionStatus.error, connect }}>{children}</WalletContext.Provider>;
 }
 
 export { WalletProvider, WalletContext };

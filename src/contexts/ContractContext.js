@@ -3,18 +3,20 @@ import { createContext, useState } from 'react';
 import { ethers } from 'ethers';
 import myEpicNft from './MyEpicNFT.json';
 
-const MINTING_STATUS = {
-  SUCCESS: 'success',
-  LOADING: 'loading',
+const STATUS = {
   IDLE: 'idle',
+  MINTING: 'minting',
+  POP_WALLET: 'popWallet',
+  SUCCESS: 'success',
+  ERROR: 'error',
 };
 
 const initialState = {
   amountOfMintedNfts: null,
   mintNft: () => {},
-  mintingStatus: MINTING_STATUS.IDLE,
-  isConnectedToCorrectNetwork: true,
-  tokenIdMintedNft: null,
+  status: { name: STATUS.IDLE, error: null },
+  error: null,
+  transactionHash: null,
 };
 
 const ContractContext = createContext(initialState);
@@ -24,26 +26,24 @@ ContractProvider.propTypes = {
 };
 
 function ContractProvider({ children }) {
-  const [mintingStatus, setMintingStatus] = useState(MINTING_STATUS.IDLE);
+  const [status, setStatus] = useState({ name: STATUS.IDLE, error: null });
+  const [transactionHash, setTransactionHash] = useState();
 
   const askContractToMintNft = async () => {
     const contractAddress = process.env.NEXT_PUBLIC_CONTRACT_ADDRESS;
-    setMintingStatus(MINTING_STATUS.LOADING);
 
     try {
       const { ethereum } = window;
 
       if (!ethereum) {
-        setMintingStatus(MINTING_STATUS.IDLE);
-        return { error: "Ethereum object doesn't exist! Please install MetaMask" };
+        setStatus({ name: STATUS.ERROR, error: "Seems you don't have the correct wallet extension. Please install MetaMask" });
       }
 
       const connectedChainId = await ethereum.request({ method: 'eth_chainId' });
       const shouldBeConnectedToChainId = process.env.NEXT_PUBLIC_CHAIN_ID;
 
       if (connectedChainId !== shouldBeConnectedToChainId) {
-        setMintingStatus(MINTING_STATUS.IDLE);
-        return { error: 'You are not connected to the correct network' };
+        setStatus({ name: STATUS.ERROR, error: 'You are not connected to the correct network' });
       }
 
       /**
@@ -66,24 +66,26 @@ function ContractProvider({ children }) {
       /**
        * Pop the wallet.
        */
+      setStatus({ name: STATUS.POP_WALLET, error: null });
+
       let nftTxn = await connectedContract.makeAnEpicNFT();
 
       /**
        * Minting.
        */
+      setStatus({ name: STATUS.MINTING, error: null });
+
       await nftTxn.wait();
+      setTransactionHash(nftTxn.hash);
 
-      setMintingStatus(MINTING_STATUS.SUCCESS);
-      const transactionHash = nftTxn.hash;
-
-      console.log(`Mined, see transaction: https://rinkeby.etherscan.io/tx/${transactionHash}`);
+      setStatus({ name: STATUS.SUCCESS, error: null });
     } catch (error) {
-      console.log(error);
-      return { error };
+      console.warn(error);
+      setStatus({ name: STATUS.ERROR, error: 'Something went wrong. Please try again' });
     }
   };
 
-  return <ContractContext.Provider value={{ askContractToMintNft, mintingStatus }}>{children}</ContractContext.Provider>;
+  return <ContractContext.Provider value={{ askContractToMintNft, status: status.name, error: status.error, STATUS, transactionHash }}>{children}</ContractContext.Provider>;
 }
 
 export { ContractProvider, ContractContext };
