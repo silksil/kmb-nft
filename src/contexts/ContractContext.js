@@ -1,12 +1,13 @@
 import PropTypes from 'prop-types';
-import { createContext, useState } from 'react';
+import { createContext, useState, useCallback, useEffect } from 'react';
 import { ethers } from 'ethers';
 import myEpicNft from './MyEpicNFT.json';
+import { ConstructionOutlined } from '@mui/icons-material';
 
 const STATUS = {
   IDLE: 'idle',
-  MINING: 'mining',
-  MINED: 'mined',
+  MINTING: 'minting',
+  SOLD_OUT: 'soldOut',
   POP_WALLET: 'popWallet',
   MINTED: 'minted',
   ERROR: 'error',
@@ -27,16 +28,27 @@ ContractProvider.propTypes = {
 };
 
 function ContractProvider({ children }) {
+  const contractAddress = process.env.NEXT_PUBLIC_CONTRACT_ADDRESS;
   const [status, setStatus] = useState({ name: STATUS.IDLE, error: null });
   const [transactionHash, setTransactionHash] = useState();
+  const [tokenId, setTokenId] = useState();
+  const [totalSupply, setTotalSupply] = useState();
+  const [totalMinted, setTotalMinted] = useState();
+
+  useEffect(() => {
+    if (!totalSupply || !totalMinted) return;
+    if (totalSupply === totalMinted) {
+      console.log('hi,', totalSupply, totalMinted);
+      setStatus({ name: STATUS.SOLD_OUT, error: null });
+    }
+  }, [totalMinted, totalSupply, setStatus]);
 
   /**
-   * "Capture" our event when our contract throws it.
+   * "Capture" event when our contract throws it.
    */
-  const setupEventListener = async () => {
+  const setupEventListener = useCallback(async () => {
     try {
       const { ethereum } = window;
-      const contractAddress = process.env.NEXT_PUBLIC_CONTRACT_ADDRESS;
 
       if (!ethereum) return;
 
@@ -44,17 +56,30 @@ function ContractProvider({ children }) {
       const signer = provider.getSigner();
       const connectedContract = new ethers.Contract(contractAddress, myEpicNft.abi, signer);
 
-      connectedContract.on('NewEpicNFTMinted', (from, tokenId) => {
-        console.log(from, tokenId.toNumber());
-        alert(`Hey there! We've minted your NFT and sent it to your wallet. It may be blank right now. It can take a max of 10 min to show up on OpenSea. Here's the link: https://testnets.opensea.io/assets/${CONTRACT_ADDRESS}/${tokenId.toNumber()}`);
+      const supply = await connectedContract.totalSupply();
+      const minted = await connectedContract.totalMinted();
+
+      setTotalSupply(supply.toNumber());
+      setTotalMinted(minted.toNumber());
+
+      connectedContract.on('NewEpicNFTMinted', (from, tokenId, totalMinted) => {
+        console.log('1', from, tokenId, totalMinted);
+        setStatus({ name: STATUS.MINTED, error: null });
+        setTokenId(tokenId.toNumber());
+        setTotalMinted(totalMinted.toNumber());
       });
     } catch (error) {
       console.warn(error);
     }
-  };
+  }, [contractAddress]);
 
-  const askContractToMintNft = async () => {
-    const contractAddress = process.env.NEXT_PUBLIC_CONTRACT_ADDRESS;
+  const mintNft = useCallback(async () => {
+    /**
+     * In case a user mints multiple times,
+     * set the tokenId en transactionHash to null
+     */
+    setTokenId(null);
+    setTransactionHash(null);
 
     try {
       const { ethereum } = window;
@@ -63,11 +88,13 @@ function ContractProvider({ children }) {
         setStatus({ name: STATUS.ERROR, error: "Seems you don't have the correct wallet extension. Please install MetaMask" });
       }
 
+      if (status.name === STATUS.SOLD_OUT) return;
+
       const connectedChainId = await ethereum.request({ method: 'eth_chainId' });
       const shouldBeConnectedToChainId = process.env.NEXT_PUBLIC_CHAIN_ID;
 
       if (connectedChainId !== shouldBeConnectedToChainId) {
-        setStatus({ name: STATUS.ERROR, error: 'You are not connected to the correct network' });
+        return setStatus({ name: STATUS.ERROR, error: `You are not connected to the correct network. Please connect with the ${process.env.NEXT_PUBLIC_NETWORK_NAME} network.` });
       }
 
       /**
@@ -97,19 +124,21 @@ function ContractProvider({ children }) {
       /**
        * Mining
        */
-      setStatus({ name: STATUS.MINING, error: null });
 
+      setStatus({ name: STATUS.MINTING, error: null });
       await nftTxn.wait();
-      setTransactionHash(nftTxn.hash);
 
-      setStatus({ name: STATUS.MINED, error: null });
+      /**
+       * Mined (setupEvenListener gives feedback if it minted)
+       */
+
+      setTransactionHash(nftTxn.hash);
     } catch (error) {
-      console.warn(error);
       setStatus({ name: STATUS.ERROR, error: 'Something went wrong. Please try again' });
     }
-  };
+  }, [contractAddress, status]);
 
-  return <ContractContext.Provider value={{ askContractToMintNft, status: status.name, error: status.error, STATUS, transactionHash, setupEventListener }}>{children}</ContractContext.Provider>;
+  return <ContractContext.Provider value={{ mintNft, status: status.name, error: status.error, STATUS, transactionHash, setupEventListener, tokenId, totalSupply, totalMinted }}>{children}</ContractContext.Provider>;
 }
 
 const ContractConsumer = ({ children }) => {

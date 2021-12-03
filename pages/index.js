@@ -3,6 +3,7 @@ import { styled } from '@mui/material/styles';
 import { Page } from 'src/components/Page';
 import { LandingHero, LandingOptions, LandingDarkMode, LandingThemeColor, LandingCleanInterfaces, LandingHugePackElements } from 'src/components/_external-pages/landing';
 import { MintingModal } from 'src/components/MintingModal/MintingModal';
+import { MintingCount } from 'src/components/MintingCount';
 
 const ContentStyle = styled('div')(({ theme }) => ({
   overflow: 'hidden',
@@ -15,6 +16,7 @@ export default function LandingPage() {
     <MainLayout>
       <Page title="The starting point for your next project | Minimal-UI" id="move_top" sx={{ height: '100%' }}>
         <MintingModal />
+
         <LandingHero />
         <ContentStyle>
           <LandingOptions />
@@ -23,6 +25,7 @@ export default function LandingPage() {
           <LandingThemeColor />
           <LandingCleanInterfaces />
         </ContentStyle>
+        <MintingCount />
       </Page>
     </MainLayout>
   );

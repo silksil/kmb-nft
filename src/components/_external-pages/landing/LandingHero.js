@@ -63,7 +63,7 @@ const HeroImgStyle = styled(motion.img)(({ theme }) => ({
 }));
 
 export default function LandingHero() {
-  const { askContractToMintNft, setupEventListener } = useContract();
+  const { mintNft, setupEventListener } = useContract();
   const { isConnected, connect } = useWallet(setupEventListener);
   const { setMintingModalIsOpen } = useUI();
 
@@ -71,7 +71,7 @@ export default function LandingHero() {
     if (!isConnected) return connect();
 
     setMintingModalIsOpen(true);
-    askContractToMintNft();
+    mintNft();
   };
 
   return (

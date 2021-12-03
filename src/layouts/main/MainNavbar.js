@@ -13,8 +13,8 @@ import { useWallet } from 'src/hooks/useWallet';
 import { useContract } from 'src/hooks/useContract';
 import { useUI } from 'src/hooks/useUI';
 
-import polygonIcon from '../../../public/static/networks/polygon-logo.svg';
 import { Icon } from 'src/components/Icon';
+import { showPartialAccountAddress } from 'src/utils/showPartialAccountAddress';
 
 const APP_BAR_MOBILE = 64;
 const APP_BAR_DESKTOP = 88;
@@ -46,8 +46,8 @@ const ToolbarShadowStyle = styled('div')(({ theme }) => ({
 // ----------------------------------------------------------------------
 
 export default function MainNavbar() {
-  const { isConnected, connect } = useWallet();
-  const { askContractToMintNft } = useContract();
+  const { isConnected, connect, account } = useWallet();
+  const { mintNft } = useContract();
   const { setMintingModalIsOpen } = useUI();
 
   const isOffset = useOffSetTop(100);
@@ -58,7 +58,7 @@ export default function MainNavbar() {
     if (!isConnected) return connect();
 
     setMintingModalIsOpen(true);
-    askContractToMintNft();
+    mintNft();
   };
 
   return (
@@ -83,11 +83,11 @@ export default function MainNavbar() {
           <NextLink href="/">
             <Logo />
           </NextLink>
-          {isConnected && (
+          {account && (
             <Label color="info" sx={{ ml: 1 }}>
               <Icon />
               <Box component="img" src="/static/networks/polygon-logo.svg" sx={{ height: 12, marginRight: 1 }} />
-              Wallet Connected
+              {showPartialAccountAddress(account)}
             </Label>
           )}
           <Box sx={{ flexGrow: 1 }} />

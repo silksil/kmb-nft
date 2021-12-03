@@ -15,6 +15,7 @@ WalletProvider.propTypes = {
 
 function WalletProvider({ children, setupEventListener }) {
   const [connectionStatus, setConnectionStatus] = useState({ isConnected: false, error: null });
+  const [account, setAccount] = useState();
 
   const checkConnection = async () => {
     try {
@@ -28,9 +29,13 @@ function WalletProvider({ children, setupEventListener }) {
 
       if (!accountIsAvailable) {
         setConnectionStatus({ isConnected: false, error: null });
+        setupEventListener();
+        return;
       }
 
+      setAccount(accounts[0]);
       setConnectionStatus({ isConnected: true, error: null });
+
       setupEventListener();
     } catch (e) {
       console.warn(e);
@@ -55,6 +60,7 @@ function WalletProvider({ children, setupEventListener }) {
         setConnectionStatus({ isConnected: false, error: 'No authorized account found' });
       }
 
+      setAccount(accounts[0]);
       setConnectionStatus({ isConnected: true, error: null });
       setupEventListener();
     } catch (error) {
@@ -67,7 +73,7 @@ function WalletProvider({ children, setupEventListener }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [setupEventListener, setConnectionStatus]);
 
-  return <WalletContext.Provider value={{ isConnected: connectionStatus.isConnected, error: connectionStatus.error, connect }}>{children}</WalletContext.Provider>;
+  return <WalletContext.Provider value={{ account, isConnected: connectionStatus.isConnected, error: connectionStatus.error, connect }}>{children}</WalletContext.Provider>;
 }
 
 export { WalletProvider, WalletContext };
