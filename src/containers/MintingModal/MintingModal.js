@@ -7,46 +7,21 @@ import { styled } from '@mui/material/styles';
 import checkmarkFill from '@iconify/icons-eva/checkmark-fill';
 import alertTriangleFill from '@iconify/icons-eva/alert-triangle-outline';
 import flashFill from '@iconify/icons-eva/flash-fill';
+import { Icon } from '../../components/Icon';
 import { MintingFeedback } from './MintingFeedback';
 
 import closeFill from '@iconify/icons-eva/close-fill';
-import { Icon } from 'src/components/Icon';
 
 const ContainerStyle = styled(Container)(({ theme }) => ({
   position: 'absolute',
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  // width: 400,
+  width: 400,
   backgroundColor: theme.palette.background.paper,
   padding: theme.spacing(4),
   backgroundColor: theme.palette.background.paper,
-  // borderRadius: '5px',
-
-  position: 'relative',
-  border: '4px solid transparent',
-  borderRadius: '16px',
-  background: 'linear-gradient(orange, violet)',
-  backgroundClip: 'padding-box',
-  padding: '10px',
-  /* just to show box-shadow still works fine */
-  boxShadow: '0 3px 9px black, inset 0 0 9px white',
-
-  '&:after': {
-    position: 'absolute',
-    top: '-4px; bottom: -4px',
-    left: '-4px; right: -4px',
-    background: 'linear-gradient(red, blue)',
-    content: '',
-    zIndex: -1,
-    borderRadius: '16px',
-  },
-
-  // border: 'double 1px transparent',
-  // borderRadius: '10px',
-  // backgroundImage: 'linear-gradient(white, white), radial-gradient(circle at top left, #f00,#3020ff)',
-  // backgroundOrigin: 'border-box',
-  // backgroundClip: 'content-box, border-box',
+  borderRadius: '5px',
 }));
 
 const IconButtonStyle = styled(IconButton)(({ theme }) => ({
