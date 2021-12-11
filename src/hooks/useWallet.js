@@ -1,4 +1,8 @@
 import { useContext } from 'react';
-import { WalletContext } from '../contexts/WalletContext';
+import { ContractContext } from '../contexts/ContractContext';
 
-export const useWallet = () => useContext(WalletContext);
+export const useWallet = () => {
+  const { account, isConnected, connectionError, connect } = useContext(ContractContext);
+
+  return { account, isConnected, error: connectionError, connect };
+};

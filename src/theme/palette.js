@@ -1,44 +1,45 @@
 import { alpha } from '@mui/material/styles';
 
-function createGradient(color1, color2) {
-  return `linear-gradient(to bottom, ${color1}, ${color2})`;
+function createGradient(to, color1, color2) {
+  if (to === 'vertical') return `linear-gradient(to bottom, ${color1}, ${color2})`;
+  if (to === 'horizontal') return `linear-gradient(to right, ${color1}, ${color2})`;
 }
 
 const GREY = {
   0: '#FFFFFF',
   100: '#F9FAFB',
-  200: '#F4F6F8',
-  300: '#DFE3E8',
-  400: '#C4CDD5',
-  500: '#919EAB',
-  600: '#637381',
-  700: '#454F5B',
-  800: '#212B36',
-  900: '#161C24',
-  500_8: alpha('#919EAB', 0.08),
-  500_12: alpha('#919EAB', 0.12),
-  500_16: alpha('#919EAB', 0.16),
-  500_24: alpha('#919EAB', 0.24),
-  500_32: alpha('#919EAB', 0.32),
-  500_48: alpha('#919EAB', 0.48),
-  500_56: alpha('#919EAB', 0.56),
-  500_80: alpha('#919EAB', 0.8),
+  200: '#D4DDE4',
+  300: '#A9B1C9',
+  400: '#807FAD',
+  500: '#223D5E',
+  600: '#2E3348',
+  700: '#202231',
+  800: '#161522',
+  900: '#0d0415',
+  500_8: alpha('#223D5E', 0.08),
+  500_12: alpha('#223D5E', 0.12),
+  500_16: alpha('#223D5E', 0.16),
+  500_24: alpha('#223D5E', 0.24),
+  500_32: alpha('#223D5E', 0.32),
+  500_48: alpha('#223D5E', 0.48),
+  500_56: alpha('#223D5E', 0.56),
+  500_80: alpha('#223D5E', 0.8),
 };
 
 const PRIMARY = {
-  lighter: '#C8FACD',
-  light: '#5BE584',
-  main: '#00AB55',
-  dark: '#007B55',
-  darker: '#005249',
+  lighter: '#FED7E5',
+  light: '#FB87C7',
+  main: '#F338C3',
+  dark: '#AE1CA5',
+  darker: '#660A74',
   contrastText: '#fff',
 };
 const SECONDARY = {
-  lighter: '#D6E4FF',
-  light: '#84A9FF',
-  main: '#3366FF',
-  dark: '#1939B7',
-  darker: '#091A7A',
+  lighter: '#CDF6FE',
+  light: '#69D1F9',
+  main: '#0993EC',
+  dark: '#0455A9',
+  darker: '#012B71',
   contrastText: '#fff',
 };
 const INFO = {
@@ -74,12 +75,26 @@ const ERROR = {
   contrastText: '#fff',
 };
 
+const primaryAndSecondaryGradient = {
+  horizontal: {
+    light: createGradient('horizontal', PRIMARY.light, SECONDARY.light),
+    main: createGradient('horizontal', PRIMARY.main, SECONDARY.main),
+    dark: createGradient('horizontal', PRIMARY.dark, SECONDARY.dark),
+  },
+  vertical: {
+    light: createGradient('vertical', PRIMARY.light, SECONDARY.light),
+    main: createGradient('vertical', PRIMARY.main, SECONDARY.main),
+    dark: createGradient('vertical', PRIMARY.dark, SECONDARY.dark),
+  },
+};
+
 const GRADIENTS = {
-  primary: createGradient(PRIMARY.light, PRIMARY.main),
-  info: createGradient(INFO.light, INFO.main),
-  success: createGradient(SUCCESS.light, SUCCESS.main),
-  warning: createGradient(WARNING.light, WARNING.main),
-  error: createGradient(ERROR.light, ERROR.main),
+  primary: createGradient('vertical', PRIMARY.light, PRIMARY.main),
+  primaryAndSecondary: primaryAndSecondaryGradient,
+  info: createGradient('vertical', INFO.light, INFO.main),
+  success: createGradient('vertical', SUCCESS.light, SUCCESS.main),
+  warning: createGradient('vertical', WARNING.light, WARNING.main),
+  error: createGradient('vertical', ERROR.light, ERROR.main),
 };
 
 const CHART_COLORS = {
@@ -91,7 +106,6 @@ const CHART_COLORS = {
 };
 
 const COMMON = {
-  common: { black: '#000', white: '#fff' },
   primary: { ...PRIMARY },
   secondary: { ...SECONDARY },
   info: { ...INFO },

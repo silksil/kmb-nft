@@ -123,7 +123,7 @@ function ThemeSettingsProvider({ children }) {
         ...settings,
         themeMode,
         onChangeMode,
-        primaryColor: SetColor(primaryColor),
+        primaryColor: SetColor('default'),
       }}
     >
       {children}

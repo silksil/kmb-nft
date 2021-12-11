@@ -27,7 +27,7 @@ export default function ThemeConfig({ children }) {
       typography,
       breakpoints,
       shadows: isLight ? shadows.light : shadows.dark,
-      customShadows: isLight ? { ...customShadows.light, primary: `0 8px 16px 0 ${alpha(primaryColor.main, 0.24)}` } : { ...customShadows.dark, primary: `0 8px 16px 0 ${alpha(primaryColor.main, 0.24)}` },
+      customShadows: isLight ? { ...customShadows.light } : { ...customShadows.dark },
     }),
     [isLight, primaryColor]
   );

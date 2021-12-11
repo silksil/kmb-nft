@@ -1,21 +1,11 @@
-const MARKETPLACES = {
-  RARIBLE: 'rarible',
-  OPENSEA: 'opensea',
-};
-
-const getMarketplaceCollectionUrl = ({ marketplace, contractAddress }) => {
-  if (!marketplace || contractAddress) {
+export const getMarketplaceCollectionUrl = (marketplace) => {
+  if (!marketplace) {
     console.warn('Pass the marketplace and contractAdress');
     return;
   }
-  switch (marketplace) {
-    case marketplaceS.OPENSEA:
-      return `process.env.OPENSEA_PREFIX${contractAddress}`
-    default:
-    console.warn("Pass the the correcnt marketplace enum")
+  if (marketplace === 'OPENSEA') return `${process.env.NEXT_PUBLIC_OPENSEA_PREFIX}/collection/${process.env.NEXT_PUBLIC}`;
 
+  if (marketplace === 'RARIBLE') return `${process.env.NEXT_PUBLIC_OPENSEA_PREFIX}/collection/${process.env.NEXT_PUBLIC}`;
+
+  return;
 };
-
-// const getMarketplaceCollectionUrl = ({marketPlace, contractAddress, tokenIdMintedNft}) => {
-
-// }

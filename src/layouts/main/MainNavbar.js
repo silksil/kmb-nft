@@ -14,7 +14,7 @@ import { useContract } from 'src/hooks/useContract';
 import { useUI } from 'src/hooks/useUI';
 
 import { Icon } from 'src/components/Icon';
-import { showPartialAccountAddress } from 'src/utils/showPartialAccountAddress';
+import { showPartialAccountAddress } from 'src/utils/account';
 
 const APP_BAR_MOBILE = 64;
 const APP_BAR_DESKTOP = 88;
@@ -83,18 +83,20 @@ export default function MainNavbar() {
           <NextLink href="/">
             <Logo />
           </NextLink>
-          {account && (
-            <Label color="info" sx={{ ml: 1 }}>
-              <Icon />
-              <Box component="img" src="/static/networks/polygon-logo.svg" sx={{ height: 12, marginRight: 1 }} />
-              {showPartialAccountAddress(account)}
-            </Label>
-          )}
+
           <Box sx={{ flexGrow: 1 }} />
 
           <MHidden width="mdDown">
             <MenuDesktop isOffset={isOffset} isHome={isHome} navConfig={navConfig} />
           </MHidden>
+
+          {account && (
+            <Label color="info" sx={{ mr: 2 }}>
+              <Icon />
+              <Box component="img" src="/static/networks/polygon-logo.svg" sx={{ height: 12, marginRight: 1 }} />
+              {showPartialAccountAddress(account)}
+            </Label>
+          )}
 
           <Button variant="contained" onClick={handleClick}>
             {isConnected ? 'Mint NFT' : 'Connect wallet'}
