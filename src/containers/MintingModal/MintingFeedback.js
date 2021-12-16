@@ -6,6 +6,8 @@ function MintingFeedback() {
   const { transactionHash, tokenId } = useContract();
   const feedbackText = tokenId ? 'Check your minted NFT on OpenSea, Rarible or Eitherscan.' : 'Check the minting progress on Etherscan';
 
+  
+
   return (
     <Box mt={2}>
       <Typography variant="caption" color="text.secondary">

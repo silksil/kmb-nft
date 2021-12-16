@@ -71,8 +71,6 @@ export function LandingHero() {
     <>
       <RootStyle initial="initial" animate="animate" variants={varWrapEnter} position="relative">
         <HeroImgStyle alt="hero" src="/static/avatars/putin-1.png" variants={varFadeInUp} />
-        <BackgroundBlur color="secondary" left="0" height="400px" inHalf blurRadius="300px" />
-        <BackgroundBlur color="primary" right="0" height="400px" inHalf blurRadius="300px" />
 
         <Container maxWidth="lg">
           <ContentStyle>
