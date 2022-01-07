@@ -21,14 +21,8 @@ export function LandingIntroduction() {
     <RootStyle>
       <Container maxWidth="lg" sx={{ position: 'relative', textAlign: 'center' }}>
         <MotionInView variants={varFadeInUp}>
-          <Typography component="p" variant="overline" sx={{ mb: 2, color: 'text.disabled', display: 'block' }}>
-            WIDE PUTIN
-          </Typography>
-        </MotionInView>
-
-        <MotionInView variants={varFadeInUp}>
-          <Typography variant="h2" sx={{ mb: 3 }}>
-            Putin enters the metaverse
+          <Typography variant="h2" sx={{ mb: 1 }}>
+            Meet the Squat
           </Typography>
         </MotionInView>
 

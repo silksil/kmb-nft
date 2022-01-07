@@ -1,20 +1,19 @@
 import NextLink from 'next/link';
-import { useRouter } from 'next/router';
 import { styled } from '@mui/material/styles';
 import { Box, Button, AppBar, Toolbar, Container } from '@mui/material';
 import useOffSetTop from '../../hooks/useOffSetTop';
 import Logo from '../../components/Logo';
 import Label from '../../components/Label';
-import { MHidden } from '../../components/@material-extend';
-import MenuDesktop from './MenuDesktop';
-import MenuMobile from './MenuMobile';
-import navConfig from './MenuConfig';
+
 import { useWallet } from 'src/hooks/useWallet';
 import { useContract } from 'src/hooks/useContract';
 import { useUI } from 'src/hooks/useUI';
 
 import { Icon } from 'src/components/Icon';
 import { showPartialAccountAddress } from 'src/utils/account';
+import { alpha } from '@mui/material/styles';
+import { useTheme } from '@mui/material';
+import { useWindowDimensions } from 'src/hooks/useWindowDimensions';
 
 const APP_BAR_MOBILE = 64;
 const APP_BAR_DESKTOP = 88;
@@ -30,29 +29,18 @@ const ToolbarStyle = styled(Toolbar)(({ theme }) => ({
   },
 }));
 
-const ToolbarShadowStyle = styled('div')(({ theme }) => ({
-  left: 0,
-  right: 0,
-  bottom: 0,
-  height: 24,
-  zIndex: -1,
-  margin: 'auto',
-  borderRadius: '50%',
-  position: 'absolute',
-  width: `calc(100% - 48px)`,
-  boxShadow: theme.customShadows.z8,
-}));
-
-// ----------------------------------------------------------------------
-
 export default function MainNavbar() {
   const { isConnected, connect, account } = useWallet();
   const { mintNft } = useContract();
-  const { setMintingModalIsOpen } = useUI();
 
-  const isOffset = useOffSetTop(100);
-  const { pathname } = useRouter();
-  const isHome = pathname === '/';
+  /**
+   * Styling variables.
+   */
+  const { setMintingModalIsOpen } = useUI();
+  const { height } = useWindowDimensions();
+  const theme = useTheme();
+  const isOffset = useOffSetTop(height);
+  const bgColor = alpha(theme.palette.background.default, 0.9);
 
   const handleClick = async () => {
     if (!isConnected) return connect();
@@ -62,12 +50,11 @@ export default function MainNavbar() {
   };
 
   return (
-    <AppBar sx={{ boxShadow: 0, bgcolor: 'transparent' }}>
+    <AppBar sx={{ boxShadow: 0, bgcolor: 'transparent', position: 'static' }}>
       <ToolbarStyle
-        disableGutters
         sx={{
           ...(isOffset && {
-            bgcolor: 'background.default',
+            bgcolor: bgColor,
             height: { md: APP_BAR_DESKTOP - 16 },
           }),
         }}
@@ -84,12 +71,6 @@ export default function MainNavbar() {
             <Logo />
           </NextLink>
 
-          <Box sx={{ flexGrow: 1 }} />
-
-          <MHidden width="mdDown">
-            <MenuDesktop isOffset={isOffset} isHome={isHome} navConfig={navConfig} />
-          </MHidden>
-
           {account && (
             <Label color="info" sx={{ mr: 2 }}>
               <Icon />
@@ -101,14 +82,8 @@ export default function MainNavbar() {
           <Button variant="contained" onClick={handleClick}>
             {isConnected ? 'Mint NFT' : 'Connect wallet'}
           </Button>
-
-          <MHidden width="mdUp">
-            <MenuMobile isOffset={isOffset} isHome={isHome} navConfig={navConfig} />
-          </MHidden>
         </Container>
       </ToolbarStyle>
-
-      {isOffset && <ToolbarShadowStyle />}
     </AppBar>
   );
 }

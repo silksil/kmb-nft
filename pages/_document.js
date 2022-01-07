@@ -24,7 +24,7 @@ export default class MyDocument extends Document {
 
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet" />
-          <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;500;600;&display=swap" rel="stylesheet" />
+          <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;&display=swap" rel="stylesheet" />
 
           <meta name="description" content={metaInfo.description} />
           <meta name="keywords" content={metaInfo.keywords} />

@@ -1,4 +1,5 @@
 import { Box, styled } from '@mui/system';
+import { alpha } from '@mui/material/styles';
 
 const getPosition = (position, inHalf, width) => {
   const intWidth = parseInt(width, 10);
@@ -8,12 +9,12 @@ const getPosition = (position, inHalf, width) => {
   }
   return position;
 };
-export const BackgroundBlur = styled(Box)(({ theme, color, blurRadius = '160px', width = '280px', height = '280px', inHalf, left, right }) => ({
-  backgroundColor: theme.palette[color].main,
+export const BackgroundBlur = styled(Box)(({ theme, color = 'primary', width = '400px', height = '400px', inHalf, left, right, opacityStrength = 0.5, zIndex }) => ({
+  zIndex,
+  background: `radial-gradient(50% 50% at 50% 50%, ${alpha(theme.palette[color].main, opacityStrength)} 0%, ${theme.palette.background.default} 100%)`,
   position: 'absolute',
   width,
   height,
-  filter: `blur(${blurRadius})`,
   right: getPosition(right, inHalf, width),
   left: !right && getPosition(left, inHalf, width),
 }));

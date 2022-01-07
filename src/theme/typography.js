@@ -16,7 +16,7 @@ function responsiveFontSizes({ sm, md, lg }) {
   };
 }
 
-const FONT_PRIMARY = 'Karla, sans-serif'; // Google Font
+const FONT_PRIMARY = 'IBM Plex Sans, sans-serif'; // Google Font
 const FONT_SECONDARY = 'Rubik, sans-serif'; // Local Font
 
 const typography = {
@@ -26,10 +26,10 @@ const typography = {
   fontWeightBold: 700,
   h1: {
     fontFamily: FONT_SECONDARY,
-    fontWeight: 600,
+    fontWeight: 500,
     lineHeight: 80 / 64,
-    fontSize: pxToRem(40),
-    ...responsiveFontSizes({ sm: 52, md: 58, lg: 64 }),
+    fontSize: pxToRem(48),
+    ...responsiveFontSizes({ sm: 52, md: 58, lg: 72 }),
   },
   h2: {
     fontFamily: FONT_SECONDARY,
@@ -66,24 +66,24 @@ const typography = {
     ...responsiveFontSizes({ sm: 18, md: 18, lg: 18 }),
   },
   subtitle1: {
-    fontFamily: FONT_SECONDARY,
+    fontFamily: FONT_PRIMARY,
     fontWeight: 600,
     lineHeight: 1.5,
-    fontSize: pxToRem(16),
+    fontSize: pxToRem(20),
   },
   subtitle2: {
-    fontFamily: FONT_SECONDARY,
+    fontFamily: FONT_PRIMARY,
     fontWeight: 600,
     lineHeight: 22 / 14,
-    fontSize: pxToRem(14),
+    fontSize: pxToRem(16),
   },
   body1: {
     lineHeight: 1.5,
-    fontSize: pxToRem(16),
+    fontSize: pxToRem(18),
   },
   body2: {
     lineHeight: 22 / 14,
-    fontSize: pxToRem(14),
+    fontSize: pxToRem(16),
   },
   caption: {
     lineHeight: 1.5,

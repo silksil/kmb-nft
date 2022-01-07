@@ -16,12 +16,12 @@ ThemeConfig.propTypes = {
 };
 
 export default function ThemeConfig({ children }) {
-  const { themeMode, primaryColor } = useThemeSettings();
+  const { themeMode } = useThemeSettings();
   const isLight = themeMode === 'light';
 
   const themeOptions = useMemo(
     () => ({
-      palette: isLight ? { ...palette.light, mode: 'light', primary: primaryColor } : { ...palette.dark, mode: 'dark', primary: primaryColor },
+      palette: isLight ? { ...palette.light, mode: 'light' } : { ...palette.dark, mode: 'dark' },
       shape,
       icons: { ...icons },
       typography,
@@ -29,7 +29,7 @@ export default function ThemeConfig({ children }) {
       shadows: isLight ? shadows.light : shadows.dark,
       customShadows: isLight ? { ...customShadows.light } : { ...customShadows.dark },
     }),
-    [isLight, primaryColor]
+    [isLight]
   );
 
   const theme = createTheme(themeOptions);

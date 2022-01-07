@@ -94,11 +94,6 @@ export function LandingTeam() {
     <RootStyle>
       <Container maxWidth="lg">
         <Box sx={{ mb: { xs: 10, md: 25 } }}>
-          <MotionInView variants={varFadeInUp}>
-            <Typography component="p" variant="overline" sx={{ mb: 2, color: 'text.secondary', textAlign: 'center' }}>
-              The Team
-            </Typography>
-          </MotionInView>
           <MotionInView variants={varFadeInDown}>
             <Typography variant="h2" sx={{ textAlign: 'center' }}>
               The Team

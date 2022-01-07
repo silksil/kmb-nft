@@ -5,8 +5,6 @@ import closeSquareOutline from '@iconify/icons-eva/close-square-outline';
 
 import { Box } from '@mui/material';
 
-// ----------------------------------------------------------------------
-
 const ICON_SIZE = { width: 20, height: 20 };
 
 export default function TreeView(theme) {
@@ -15,16 +13,14 @@ export default function TreeView(theme) {
       defaultProps: {
         defaultCollapseIcon: <Icon icon={minusSquareOutline} {...ICON_SIZE} />,
         defaultExpandIcon: <Icon icon={plusSquareOutline} {...ICON_SIZE} />,
-        defaultEndIcon: (
-          <Box component={Icon} icon={closeSquareOutline} {...ICON_SIZE} sx={{ color: 'text.secondary' }} />
-        )
-      }
+        defaultEndIcon: <Box component={Icon} icon={closeSquareOutline} {...ICON_SIZE} sx={{ color: 'text.secondary' }} />,
+      },
     },
     MuiTreeItem: {
       styleOverrides: {
         label: { ...theme.typography.body2 },
-        iconContainer: { width: 'auto' }
-      }
-    }
+        iconContainer: { width: 'auto' },
+      },
+    },
   };
 }
