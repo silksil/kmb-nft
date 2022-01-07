@@ -13,7 +13,7 @@ import { Icon } from 'src/components/Icon';
 import { showPartialAccountAddress } from 'src/utils/account';
 import { alpha } from '@mui/material/styles';
 import { useTheme } from '@mui/material';
-import { useWindowDimensions } from 'src/hooks/useWindowDimensions';
+import { useWindowSize } from 'src/hooks/useWindowSize';
 
 const APP_BAR_MOBILE = 64;
 const APP_BAR_DESKTOP = 88;
@@ -37,7 +37,8 @@ export default function MainNavbar() {
    * Styling variables.
    */
   const { setMintingModalIsOpen } = useUI();
-  const { height } = useWindowDimensions();
+  const { height } = useWindowSize();
+
   const theme = useTheme();
   const isOffset = useOffSetTop(height);
   const bgColor = alpha(theme.palette.background.default, 0.9);
@@ -50,7 +51,7 @@ export default function MainNavbar() {
   };
 
   return (
-    <AppBar sx={{ boxShadow: 0, bgcolor: 'transparent', position: 'static' }}>
+    <AppBar sx={{ boxShadow: 0, bgcolor: 'transparent' }}>
       <ToolbarStyle
         sx={{
           ...(isOffset && {

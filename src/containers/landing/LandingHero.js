@@ -18,7 +18,7 @@ const RootStyle = styled(motion.div)(({ theme }) => ({
   width: '100%',
   overflow: 'hidden',
   [theme.breakpoints.up('lg')]: {
-    height: '80vh',
+    height: '90vh',
     position: 'fixed',
   },
 }));

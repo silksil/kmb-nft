@@ -11,75 +11,41 @@ const RootStyle = styled('div')(({ theme }) => ({
 }));
 
 const ContentStyle = styled('div')(({ theme }) => ({
+  margin: 'auto',
   textAlign: 'center',
-  position: 'relative',
-  marginBottom: theme.spacing(10),
-  [theme.breakpoints.up('md')]: {
-    height: '100%',
-    marginBottom: 0,
-    textAlign: 'left',
-    display: 'inline-flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'flex-start',
-  },
+  backgroundColor: theme.palette.background.paper,
+  paddingTop: theme.spacing(10),
+  paddingBottom: theme.spacing(10),
+  borderRadius: theme.shape.borderRadiusMd,
+  zIndex: 10,
 }));
 
-// ----------------------------------------------------------------------
+const ContainerStyle = styled((props) => <Container {...props} />)(({ theme }) => ({
+  position: 'relative',
+}));
 
 export function LandingSocial() {
   return (
     <RootStyle>
-      <BackgroundBlur color="primary" right="0" inHalf />
-
-      <Container maxWidth="lg" sx={{ position: 'relative' }}>
-        <Box
-          component="img"
-          alt="image shape"
-          src="/static/home/shape.svg"
-          sx={{
-            top: 0,
-            right: 0,
-            bottom: 0,
-            my: 'auto',
-            position: 'absolute',
-            filter: 'grayscale(1) opacity(48%)',
-            display: { xs: 'none', md: 'block' },
-            zIndex: 2,
-          }}
-        />
-
-        <Grid container spacing={5} direction="row-reverse" justifyContent="space-between">
-          <Grid item xs={12} md={4}>
-            <ContentStyle>
-              <MotionInView variants={varFadeInUp}>
-                <Typography component="p" variant="overline" sx={{ mb: 2, color: 'text.disabled', display: 'block' }}>
-                  Community driven
-                </Typography>
-              </MotionInView>
-
-              <MotionInView variants={varFadeInUp}>
-                <Typography variant="h2" sx={{ mb: 3, color: 'common.white' }}>
-                  Join the community
-                </Typography>
-              </MotionInView>
-
-              <MotionInView variants={varFadeInUp}>
-                <Typography sx={{ color: 'common.white', mb: 5 }}>A dark theme that feels easier on the eyes.</Typography>
-              </MotionInView>
-            </ContentStyle>
-          </Grid>
-
-          <Grid item xs={12} md={7} sx={{ position: 'relative' }}>
-            <MotionInView threshold={0.5} variants={varFadeInUp}>
-              <img alt="light mode" src="/static/home/lightmode.png" />
+      <ContainerStyle maxWidth="md">
+        <BackgroundBlur color="primary" bottom="0" right="-40px" height="400px" width="100%" />
+        <BackgroundBlur color="secondary" top="0" left="-80px" width="100%" opacityStrength={0.3} />
+        <Box position="relative">
+          <ContentStyle>
+            <MotionInView variants={varFadeInUp}>
+              <Typography variant="overline" sx={{ mb: 2, color: 'text.disabled' }}>
+                Community driven
+              </Typography>
             </MotionInView>
-            <MotionInView threshold={0.5} variants={varFadeInDown} sx={{ top: 0, left: 0, position: 'absolute' }}>
-              <img alt="dark mode" src="/static/home/darkmode.png" />
+
+            <MotionInView variants={varFadeInUp}>
+              <Typography variant="h2" sx={{ mb: 3 }}>
+                Join the community
+              </Typography>
             </MotionInView>
-          </Grid>
-        </Grid>
-      </Container>
+          </ContentStyle>
+        </Box>
+      </ContainerStyle>
     </RootStyle>
   );
 }

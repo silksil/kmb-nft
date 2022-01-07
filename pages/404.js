@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import NextLink from 'next/link';
 import { styled } from '@mui/material/styles';
-import { Box, Button, Typography, Container } from '@mui/material';
+import { Button, Typography, Container } from '@mui/material';
 import { LogoOnlyTopCornerLayout } from 'src/layouts/LogoOnlyTopCornerLayout';
 import { MotionContainer, varBounceIn } from 'src/components/animate';
 import { Page } from 'src/components/Page';
@@ -18,21 +18,18 @@ export default function PageNotFound() {
     <LogoOnlyTopCornerLayout>
       <RootStyle title="404 Page Not Found">
         <Container>
-          <MotionContainer initial="initial" open>
-            <Box sx={{ maxWidth: 480, margin: 'auto', textAlign: 'center' }}>
-              <motion.div variants={varBounceIn}>
-                <Typography variant="h3" paragraph>
-                  Sorry, page not found!
-                </Typography>
-              </motion.div>
-              <Typography sx={{ color: 'text.secondary' }}>Sorry, we couldn’t find the page you’re looking for. Perhaps you’ve mistyped the URL? Be sure to check your spelling.</Typography>
+          <MotionContainer initial="initial" open sx={{ maxWidth: 480, margin: 'auto', textAlign: 'center' }}>
+            <motion.div variants={varBounceIn}>
+              <Typography variant="h3" paragraph>
+                Go back to the homepage to checkout the Putzies.
+              </Typography>
+            </motion.div>
 
-              <NextLink href="/">
-                <Button size="large" variant="contained" sx={{ my: { xs: 2, sm: 4 } }}>
-                  Go to Home
-                </Button>
-              </NextLink>
-            </Box>
+            <NextLink href="/">
+              <Button size="large" variant="contained" sx={{ my: { xs: 2, sm: 4 } }}>
+                Go to Home
+              </Button>
+            </NextLink>
           </MotionContainer>
         </Container>
       </RootStyle>

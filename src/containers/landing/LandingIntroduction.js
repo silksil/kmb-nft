@@ -1,22 +1,17 @@
-import { motion } from 'framer-motion';
-import { styled, alpha } from '@mui/material/styles';
-import { Box, Container, Typography, RadioGroup, CardActionArea, FormControlLabel, Stack } from '@mui/material';
+import { styled } from '@mui/material/styles';
+import { Box, Container, Typography, Stack } from '@mui/material';
 
-import { MotionInView, varFadeInUp, varFadeInDown } from '../../components/animate';
-import useThemeSettings from 'src/hooks/useThemeSettings';
+import { MotionInView, varFadeInUp } from '../../components/animate';
 
 const RootStyle = styled('div')(({ theme }) => ({
   padding: theme.spacing(15, 0),
-  backgroundImage: theme.palette.mode === 'light' ? `linear-gradient(180deg, ${theme.palette.grey[300]} 0%, ${alpha(theme.palette.grey[300], 0)} 100%)` : 'none',
 }));
 
-const ImageList = styled((props) => <Stack spacing={5} {...props} />)(({ theme }) => ({
+const ImageList = styled((props) => <Stack spacing={5} {...props} />)(() => ({
   justifyContent: 'center',
 }));
 
 export function LandingIntroduction() {
-  const { themeColor } = useThemeSettings();
-
   return (
     <RootStyle>
       <Container maxWidth="lg" sx={{ position: 'relative', textAlign: 'center' }}>
@@ -25,15 +20,8 @@ export function LandingIntroduction() {
             Meet the Squat
           </Typography>
         </MotionInView>
-
         <MotionInView variants={varFadeInUp}>
-          <Typography
-            sx={{
-              color: (theme) => (theme.palette.mode === 'light' ? 'text.secondary' : 'text.primary'),
-            }}
-          >
-            Express your own style with just one click.
-          </Typography>
+          <Typography>Express your own style with just one click.</Typography>
         </MotionInView>
 
         <Box sx={{ position: 'relative' }}>

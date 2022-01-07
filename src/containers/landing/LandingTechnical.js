@@ -1,4 +1,4 @@
-import { alpha, useTheme, styled } from '@mui/material/styles';
+import { styled } from '@mui/material/styles';
 import { Box, Grid, Container, Typography } from '@mui/material';
 import { varFadeInUp, MotionInView } from '../../components/animate';
 import { BackgroundBlur } from '../BackgroundBlur';

@@ -12,6 +12,9 @@ MotionInView.propTypes = {
   threshold: PropTypes.oneOfType([PropTypes.number, PropTypes.array]),
 };
 
+/**
+ * Animation is applied once the component is in the view.
+ */
 export default function MotionInView({ children, variants, transition, threshold, ...other }) {
   const controls = useAnimation();
   const [ref, inView] = useInView({

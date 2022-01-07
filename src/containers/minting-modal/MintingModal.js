@@ -1,16 +1,14 @@
 import React from 'react';
-import { Container, Modal, Typography, CircularProgress, Box, IconButton, Alert } from '@mui/material';
+import { Container, Modal, Typography, Box, IconButton } from '@mui/material';
 import { useContract } from 'src/hooks/useContract';
 import { useUI } from 'src/hooks/useUI';
 import { styled } from '@mui/material/styles';
 
-import checkmarkFill from '@iconify/icons-eva/checkmark-fill';
-import alertTriangleFill from '@iconify/icons-eva/alert-triangle-outline';
-import flashFill from '@iconify/icons-eva/flash-fill';
 import { Icon } from '../../components/Icon';
 import { MintingFeedback } from './MintingFeedback';
 
 import closeFill from '@iconify/icons-eva/close-fill';
+import { getStatusIcon, getStatusText } from './helpers';
 
 const ContainerStyle = styled(Container)(({ theme }) => ({
   position: 'absolute',
@@ -41,26 +39,6 @@ const StatusCircleStyle = styled(Box)(({ theme }) => ({
   justifyContent: 'center',
   marginRight: theme.spacing(2),
 }));
-
-const getStatusText = (status, STATUS, error) => {
-  if (status === STATUS.POP_WALLET) return 'Poppin your wallet.';
-  if (status === STATUS.MINTING) return 'Minting';
-  if (status === STATUS.SOLD_OUT) return 'Sold out';
-  if (status === STATUS.MINTED) return 'Succesfully minted';
-  if (status === STATUS.ERROR) return error;
-
-  return null;
-};
-
-const getStatusIcon = (status, STATUS) => {
-  if (status === STATUS.POP_WALLET) return <Icon icon={flashFill} size="s" />;
-  if (status === STATUS.MINTING) return <CircularProgress size="20px" />;
-  if (status === STATUS.MINTED) return <Icon icon={checkmarkFill} color="success" size="s" />;
-  if (status === STATUS.SOLD_OUT) return <Icon icon={checkmarkFill} color="success" size="s" />;
-  if (status === STATUS.ERROR) return <Icon icon={alertTriangleFill} color="error" size="s" />;
-
-  return null;
-};
 
 export function MintingModal() {
   const { status, error, STATUS, transactionHash } = useContract();

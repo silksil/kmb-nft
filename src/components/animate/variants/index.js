@@ -1,7 +1,5 @@
 export * from './Wrap';
 export * from './Path';
-export * from './Actions';
-export * from './background';
 export * from './slide';
 export * from './fade';
 export * from './zoom';
