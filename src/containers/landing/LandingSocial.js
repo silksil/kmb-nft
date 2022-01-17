@@ -1,5 +1,7 @@
 import { styled } from '@mui/material/styles';
-import { Box, Grid, Container, Typography } from '@mui/material';
+import { Box, Grid, Container, Typography, Button } from '@mui/material';
+import { Icon } from 'src/components/Icon';
+
 import { BackgroundBlur } from '../BackgroundBlur';
 
 import { MotionInView, varFadeInUp, varFadeInDown } from '../../components/animate';
@@ -20,16 +22,22 @@ const ContentStyle = styled('div')(({ theme }) => ({
   zIndex: 10,
 }));
 
-const ContainerStyle = styled((props) => <Container {...props} />)(({ theme }) => ({
+const ContainerStyle = styled('div')(({ theme }) => ({
   position: 'relative',
+  padding: 0,
+  margin: 'auto',
+  width: '90%',
+  [theme.breakpoints.up('md')]: {
+    maxWidth: '900px',
+  },
 }));
 
 export function LandingSocial() {
   return (
     <RootStyle>
       <ContainerStyle maxWidth="md">
-        <BackgroundBlur color="primary" bottom="0" right="-40px" height="400px" width="100%" />
-        <BackgroundBlur color="secondary" top="0" left="-80px" width="100%" opacityStrength={0.3} />
+        <BackgroundBlur color="primary" bottom="0" height="400px" width="100%" />
+        <BackgroundBlur color="secondary" top="0" width="100%" opacityStrength={0.3} />
         <Box position="relative">
           <ContentStyle>
             <MotionInView variants={varFadeInUp}>
@@ -43,6 +51,9 @@ export function LandingSocial() {
                 Join the community
               </Typography>
             </MotionInView>
+            <Button variant="contained" size="large" color="secondary" endIcon={<Box component="img" src="static/social/discord_white.png" sx={{ width: 24, height: 24 }} />}>
+              Join Discord
+            </Button>
           </ContentStyle>
         </Box>
       </ContainerStyle>
