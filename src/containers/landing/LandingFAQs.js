@@ -1,6 +1,5 @@
-// material
-import { alpha, useTheme, styled } from '@mui/material/styles';
-import { Box, Grid, Button, Container, Typography, Accordion, AccordionSummary, AccordionDetails } from '@mui/material';
+import { styled } from '@mui/material/styles';
+import { Container, Typography, Accordion, AccordionSummary, AccordionDetails } from '@mui/material';
 import { Icon } from '../../components/Icon';
 import arrowIosDownwardFill from '@iconify/icons-eva/arrow-ios-downward-fill';
 
@@ -9,7 +8,6 @@ import faq from '../../data/faq';
 
 const RootStyle = styled('div')(({ theme }) => ({
   padding: theme.spacing(24, 0),
-  backgroundImage: theme.palette.mode === 'light' ? `linear-gradient(180deg, ${alpha(theme.palette.grey[300], 0)} 0%, ${theme.palette.grey[300]} 100%)` : 'none',
 }));
 
 const ContentStyle = styled('div')(({ theme }) => ({
@@ -35,7 +33,7 @@ export function LandingFAQs() {
         </ContentStyle>
         <MotionInView variants={varFadeInUp}>
           {faq.map((accordion, index) => (
-            <Accordion key={`${index}-${accordion.heading}`}>
+            <Accordion key={`${index}-${accordion.heading}`} sx={{ mb: 2 }}>
               <AccordionSummary expandIcon={<Icon icon={arrowIosDownwardFill} width={20} height={20} />}>
                 <Typography variant="subtitle1">{accordion.heading}</Typography>
               </AccordionSummary>

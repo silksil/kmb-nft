@@ -1,11 +1,9 @@
 import { forwardRef } from 'react';
 import PropTypes from 'prop-types';
-// material
 import { useTheme } from '@mui/material/styles';
 import { Box } from '@mui/material';
 
-// ----------------------------------------------------------------------
-
+// eslint-disable-next-line react/display-name
 const Logo = forwardRef(({ sx }, ref) => {
   const theme = useTheme();
   const PRIMARY_LIGHT = theme.palette.primary.light;

@@ -1,26 +1,22 @@
-// material
 import { alpha, useTheme, styled } from '@mui/material/styles';
 import { Box, Grid, Card, Container, Typography, useMediaQuery } from '@mui/material';
-//
 import { varFadeInUp, MotionInView, varFadeInDown } from '../../components/animate';
-
-// ----------------------------------------------------------------------
 
 const CARDS = [
   {
-    icon: '/static/icons/ic_design.svg',
-    title: 'UI & UX Design',
-    description: 'The set is built on the principles of the atomic design system. It helps you to create projects fastest and easily customized packages for your projects.',
+    icon: '/static/avatars/putin-1.png',
+    title: 'Sil',
+    description: 'Engineering',
   },
   {
-    icon: '/static/icons/ic_code.svg',
-    title: 'Development',
-    description: 'Easy to customize and extend each component, saving you time and money.',
+    icon: '/static/avatars/putin-1.png',
+    title: 'Sophie',
+    description: 'Design',
   },
   {
-    icon: '/static/brand/logo_single.svg',
-    title: 'Branding',
-    description: 'Consistent design in colors, fonts ... makes brand recognition easy.',
+    icon: '/static/avatars/putin-1.png',
+    title: 'Oscar',
+    description: 'Community',
   },
 ];
 
@@ -38,62 +34,29 @@ const CardStyle = styled(Card)(({ theme }) => {
 
   return {
     maxWidth: 380,
-    minHeight: 440,
     margin: 'auto',
     textAlign: 'center',
-    padding: theme.spacing(10, 5, 0),
+    padding: theme.spacing(5, 5, 5),
     boxShadow: `-40px 40px 80px 0 ${shadowCard(0.48)}`,
-    [theme.breakpoints.up('md')]: {
-      boxShadow: 'none',
-      backgroundColor: theme.palette.grey[theme.palette.mode === 'light' ? 200 : 800],
-    },
-    '&.cardLeft': {
-      [theme.breakpoints.up('md')]: { marginTop: -40 },
-    },
-    '&.cardCenter': {
-      [theme.breakpoints.up('md')]: {
-        marginTop: -80,
-        backgroundColor: theme.palette.background.paper,
-        boxShadow: `-40px 40px 80px 0 ${shadowCard(0.4)}`,
-        '&:before': {
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          zIndex: -1,
-          content: "''",
-          margin: 'auto',
-          position: 'absolute',
-          width: 'calc(100% - 40px)',
-          height: 'calc(100% - 40px)',
-          borderRadius: theme.shape.borderRadiusMd,
-          backgroundColor: theme.palette.background.paper,
-          boxShadow: `-20px 20px 40px 0 ${shadowCard(0.12)}`,
-        },
-      },
-    },
   };
 });
 
 const CardIconStyle = styled('img')(({ theme }) => ({
-  width: 40,
-  height: 40,
+  width: 120,
+  height: 120,
   margin: 'auto',
-  marginBottom: theme.spacing(10),
+  marginBottom: theme.spacing(2),
   filter: shadowIcon(theme.palette.primary.main),
 }));
 
-// ----------------------------------------------------------------------
-
 export function LandingTeam() {
   const theme = useTheme();
-  const isLight = theme.palette.mode === 'light';
   const isDesktop = useMediaQuery(theme.breakpoints.up('lg'));
 
   return (
     <RootStyle>
       <Container maxWidth="lg">
-        <Box sx={{ mb: { xs: 10, md: 25 } }}>
+        <Box sx={{ mb: { xs: 10, md: 15 } }}>
           <MotionInView variants={varFadeInDown}>
             <Typography variant="h2" sx={{ textAlign: 'center' }}>
               The Team
@@ -102,26 +65,15 @@ export function LandingTeam() {
         </Box>
 
         <Grid container spacing={isDesktop ? 10 : 5}>
-          {CARDS.map((card, index) => (
+          {CARDS.map((card) => (
             <Grid key={card.title} item xs={12} md={4}>
               <MotionInView variants={varFadeInUp}>
-                <CardStyle className={(index === 0 && 'cardLeft') || (index === 1 && 'cardCenter')}>
-                  <CardIconStyle
-                    src={card.icon}
-                    alt={card.title}
-                    sx={{
-                      ...(index === 0 && {
-                        filter: (theme) => shadowIcon(theme.palette.info.main),
-                      }),
-                      ...(index === 1 && {
-                        filter: (theme) => shadowIcon(theme.palette.error.main),
-                      }),
-                    }}
-                  />
+                <CardStyle>
+                  <CardIconStyle src={card.icon} alt={card.title} />
                   <Typography variant="h5" paragraph>
                     {card.title}
                   </Typography>
-                  <Typography sx={{ color: isLight ? 'text.secondary' : 'common.white' }}>{card.description}</Typography>
+                  <Typography>{card.description}</Typography>
                 </CardStyle>
               </MotionInView>
             </Grid>

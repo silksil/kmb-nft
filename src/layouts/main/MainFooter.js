@@ -26,6 +26,7 @@ export default function MainFooter() {
         <Stack spacing={1.5} direction="row" justifyContent={{ xs: 'center' }} sx={{ mt: 5, mb: { xs: 5 } }}>
           {SOCIALS.map((social) => (
             <IconButton key={social.name} color="secondary" sx={{ p: 1 }}>
+              
               <Icon icon={social.icon} size="xl" />
             </IconButton>
           ))}

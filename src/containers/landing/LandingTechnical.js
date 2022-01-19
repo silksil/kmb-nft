@@ -22,7 +22,8 @@ const ContentStyle = styled('div')(({ theme }) => ({
 export function LandingTechnical() {
   return (
     <RootStyle>
-      <BackgroundBlur color="secondary" bottom="50%" inHalf />
+      <BackgroundBlur color="secondary" top="0" inHalf />
+      <BackgroundBlur color="primary" right="0px" bottom="0" inHalf />
 
       <Container maxWidth="lg">
         <Grid container spacing={4} justifyContent="center">

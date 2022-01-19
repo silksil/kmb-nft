@@ -35,9 +35,9 @@ const ContainerStyle = styled('div')(({ theme }) => ({
 export function LandingSocial() {
   return (
     <RootStyle>
-      <ContainerStyle maxWidth="md">
-        <BackgroundBlur color="primary" bottom="0" height="400px" width="100%" />
-        <BackgroundBlur color="secondary" top="0" width="100%" opacityStrength={0.3} />
+      <ContainerStyle>
+        <BackgroundBlur color="primary" bottom="0" height="400px" width="100%" opacityStrength={0.7} />
+        <BackgroundBlur color="secondary" top="0" width="100%" opacityStrength={0.7} />
         <Box position="relative">
           <ContentStyle>
             <MotionInView variants={varFadeInUp}>

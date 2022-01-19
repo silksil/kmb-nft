@@ -3,6 +3,7 @@ import { Box, Container, Typography, Stack } from '@mui/material';
 
 import { MotionInView, varFadeInUp } from '../../components/animate';
 import { PuutMarquee } from '../PuutMarquee';
+import { PutzieMarquee } from '../PutzieMarquee';
 
 const RootStyle = styled('div')(({ theme }) => ({
   padding: theme.spacing(15, 0),
@@ -28,6 +29,7 @@ export function LandingIntroduction() {
       </Container>
       <Box sx={{ position: 'absolute', top: 300 }}>
         <PuutMarquee />
+        <PutzieMarquee />
       </Box>
     </RootStyle>
   );

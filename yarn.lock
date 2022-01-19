@@ -1794,9 +1794,11 @@
   resolved "https://registry.npmjs.org/@iconify/icons-ic/-/icons-ic-1.1.10.tgz"
   integrity sha512-decmjXkGbK7BocYw+T0dDZMOpHqs4JX//aN1+pNbcdjUYu/gK5pir717CoSpX771eCGKmoLWS0VGx0tIC8wqJQ==
 
-"@iconify/react@^3.0.1":
+"import { Icon } from 'src/components/Icon';
+@^3.0.1":
   version "3.0.1"
-  resolved "https://registry.npmjs.org/@iconify/react/-/react-3.0.1.tgz"
+  resolved "https://registry.npmjs.org/import { Icon } from 'src/components/Icon';
+/-/react-3.0.1.tgz"
   integrity sha512-yUskSSR80JzRSWcqNsBAG9AN802XzZgHsex8mTOkMLYcPQC3fk1XwK17ulnY5vf692OafhGCAMccR8TWKFaGdw==
 
 "@istanbuljs/load-nyc-config@^1.0.0":

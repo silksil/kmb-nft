@@ -3,6 +3,7 @@ import { forwardRef } from 'react';
 import { IconButton } from '@mui/material';
 import { ButtonAnimate } from '../animate';
 
+// eslint-disable-next-line react/display-name
 const MIconButton = forwardRef(({ children, ...other }, ref) => (
   <ButtonAnimate>
     <IconButton ref={ref} {...other}>

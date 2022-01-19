@@ -72,9 +72,7 @@ export function LandingHero() {
             <motion.div variants={varFadeInDown}>
               <Typography variant="h1">The Putzies</Typography>
 
-              <Typography>
-                Wide Putin and his squad of 'Putzies' <br /> have big plans for the Metaverse.
-              </Typography>
+              <Typography>Wide Putin and his squad of Putzies have big plans for the Metaverse.</Typography>
             </motion.div>
 
             {isDesktop && (

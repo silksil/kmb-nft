@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "next dev -p 3222",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "lint": "eslint --ignore-path .gitignore ."
   },
   "dependencies": {
     "@emotion/cache": "^11.4.0",
