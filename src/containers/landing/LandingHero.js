@@ -70,7 +70,9 @@ export function LandingHero() {
         <Container maxWidth="lg">
           <ContentStyle>
             <motion.div variants={varFadeInDown}>
-              <Typography variant="h1">The Putzies</Typography>
+              <Typography variant="h1" gutterBottom>
+                The Putzies
+              </Typography>
 
               <Typography>Wide Putin and his squad of Putzies have big plans for the Metaverse.</Typography>
             </motion.div>

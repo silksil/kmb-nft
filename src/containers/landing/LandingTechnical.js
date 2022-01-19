@@ -31,7 +31,7 @@ export function LandingTechnical() {
             <ContentStyle>
               <MotionInView variants={varFadeInUp}>
                 <Typography component="p" variant="overline" sx={{ mb: 2, color: 'text.secondary' }}>
-                  TECH SPECS
+                  TECH SPEC
                 </Typography>
               </MotionInView>
 

@@ -2,6 +2,9 @@ export default function Typography(theme) {
   return {
     MuiTypography: {
       styleOverrides: {
+        body1: {
+          color: theme.palette.text.secondary,
+        },
         paragraph: {
           marginBottom: theme.spacing(2),
         },

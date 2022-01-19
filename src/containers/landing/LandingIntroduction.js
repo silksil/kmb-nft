@@ -15,19 +15,15 @@ export function LandingIntroduction() {
       <Container maxWidth="lg" sx={{ position: 'relative', textAlign: 'center' }}>
         <MotionInView variants={varFadeInUp}>
           <Typography variant="h2" sx={{ mb: 1 }}>
-            Meet the Squatt
+            Meet the Squat
           </Typography>
         </MotionInView>
 
         <MotionInView variants={varFadeInUp}>
           <Typography>Express your own style with just one click.</Typography>
         </MotionInView>
-
-        <Box sx={{ position: 'relative' }}>
-          <Box component="img" src="/static/home/theme-color/grid.png" />
-        </Box>
       </Container>
-      <Box sx={{ position: 'absolute', top: 300 }}>
+      <Box sx={{ mt: 10 }}>
         <PuutMarquee />
         <PutzieMarquee />
       </Box>
