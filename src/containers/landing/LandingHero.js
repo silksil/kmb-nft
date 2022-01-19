@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import flashFill from '@iconify/icons-eva/flash-fill';
 import { styled } from '@mui/material/styles';
-import { Box, Button, Container, Typography, useMediaQuery, useTheme } from '@mui/material';
+import { Box, Button, Typography, useMediaQuery, useTheme } from '@mui/material';
 
 import { varFadeInUp, varWrapEnter, varFadeInRight, varFadeInDown } from '../../components/animate';
 import { useWallet } from 'src/hooks/useWallet';
@@ -28,24 +28,47 @@ const ContentStyle = styled((props) => <Box {...props} />)(({ theme }) => ({
   maxWidth: 520,
   margin: 'auto',
   textAlign: 'center',
-  paddingTop: theme.spacing(10),
-  paddingBottom: theme.spacing(15),
+  overflow: 'hidden',
+  marginTop: theme.spacing(25),
   [theme.breakpoints.up('lg')]: {
-    paddingTop: theme.spacing(24),
+    marginTop: theme.spacing(30),
   },
 }));
 
 const HeroImgStyle = styled(motion.img)(({ theme }) => ({
-  position: 'absolute',
-  marginTop: theme.spacing(20),
+  margin: 'auto',
+  marginTop: `-${theme.spacing(8)}`,
+  width: '600px',
 
   [theme.breakpoints.up('lg')]: {
-    width: '500px',
-    marginLeft: '-250px',
-    left: '50%',
-    marginTop: theme.spacing(50),
+    width: '900px',
+    marginTop: '-160px',
   },
 }));
+
+const AstronautStyle = styled(motion.img)(({ theme }) => ({
+  height: '120px',
+  position: 'absolute',
+  left: '0',
+  marginLeft: '0',
+  marginTop: theme.spacing(10),
+  [theme.breakpoints.up('lg')]: {
+    height: '200px',
+    position: 'absolute',
+    top: '10%',
+    left: '50%',
+    marginLeft: '-400px',
+  },
+}));
+
+const HeroOverlayStyle = styled(motion.img)({
+  zIndex: 9,
+  width: '100%',
+  height: '100%',
+  objectFit: 'cover',
+  position: 'absolute',
+});
+
 export function LandingHero() {
   const { mintNft, setupEventListener } = useContract();
   const { isConnected, connect } = useWallet(setupEventListener);
@@ -63,29 +86,30 @@ export function LandingHero() {
   return (
     <>
       <RootStyle initial="initial" animate="animate" variants={varWrapEnter} position="relative">
-        <HeroImgStyle alt="hero" src="/static/avatars/putin-1.png" variants={varFadeInUp} />
         <BackgroundBlur color="secondary" width="300px" height="90vh" blurRadius="100px" inHalf opacityStrength={0.2} zIndex={-1} />
         <BackgroundBlur color="primary" right="0" width="300px" height="90vh" inHalf opacityStrength={0.2} zIndex={-1} />
+        <motion.div animate={{ y: [-10, 10, -10] }} transition={{ duration: 4, repeat: Infinity }}>
+          <AstronautStyle alt="hero" src="/static/avatars/astronaut.png" />
+        </motion.div>
 
-        <Container maxWidth="lg">
-          <ContentStyle>
-            <motion.div variants={varFadeInDown}>
-              <Typography variant="h1" gutterBottom>
-                The Putzies
-              </Typography>
+        <ContentStyle>
+          <motion.div variants={varFadeInDown}>
+            <Typography variant="h1" gutterBottom>
+              The Putzies
+            </Typography>
 
-              <Typography>Wide Putin and his squad of Putzies have big plans for the Metaverse.</Typography>
+            <Typography>The Putzies have big plans for the Metaverse.</Typography>
+          </motion.div>
+
+          {isDesktop && (
+            <motion.div variants={varFadeInRight}>
+              <Button sx={{ marginTop: 3 }} size="large" variant="contained" startIcon={<Icon icon={flashFill} width={20} height={20} />} onClick={handleClick}>
+                {isConnected ? 'Mint NFT' : 'Connect wallet'}
+              </Button>
             </motion.div>
-
-            {isDesktop && (
-              <motion.div variants={varFadeInRight}>
-                <Button sx={{ marginTop: 3 }} size="large" variant="contained" startIcon={<Icon icon={flashFill} width={20} height={20} />} onClick={handleClick}>
-                  {isConnected ? 'Mint NFT' : 'Connect wallet'}
-                </Button>
-              </motion.div>
-            )}
-          </ContentStyle>
-        </Container>
+          )}
+        </ContentStyle>
+        <HeroImgStyle alt="hero" src="/static/avatars/hero-characters.png" />
       </RootStyle>
       <Box sx={{ height: { md: '90vh' } }} />
     </>

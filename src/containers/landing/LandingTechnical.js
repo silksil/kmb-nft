@@ -54,7 +54,7 @@ export function LandingTechnical() {
           </Grid>
 
           <Grid item xs={12} md={8}>
-            <Box as="img" src="/static/avatars/putin-1.png" />
+            <Box as="img" src="/static/avatars/puut-1.png" />
           </Grid>
         </Grid>
       </Container>

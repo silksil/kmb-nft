@@ -12,28 +12,28 @@ const Image = styled('img')(() => ({
 export function PutzieMarquee() {
   return (
     <Marquee gradient={false} speed={10}>
-      <Image src="/static/avatars/putin-1.png" />
-      <Image src="/static/avatars/putin-1.png" />
-      <Image src="/static/avatars/putin-1.png" />
-      <Image src="/static/avatars/putin-1.png" />
-      <Image src="/static/avatars/putin-1.png" />
-      <Image src="/static/avatars/putin-1.png" />
-      <Image src="/static/avatars/putin-1.png" />
-      <Image src="/static/avatars/putin-1.png" />
-      <Image src="/static/avatars/putin-1.png" />
-      <Image src="/static/avatars/putin-1.png" />
-      <Image src="/static/avatars/putin-1.png" />
-      <Image src="/static/avatars/putin-1.png" />
-      <Image src="/static/avatars/putin-1.png" />
-      <Image src="/static/avatars/putin-1.png" />
-      <Image src="/static/avatars/putin-1.png" />
-      <Image src="/static/avatars/putin-1.png" />
-      <Image src="/static/avatars/putin-1.png" />
-      <Image src="/static/avatars/putin-1.png" />
-      <Image src="/static/avatars/putin-1.png" />
-      <Image src="/static/avatars/putin-1.png" />
-      <Image src="/static/avatars/putin-1.png" />
-      <Image src="/static/avatars/putin-1.png" />
+      <Image src="/static/avatars/puut-1.png" />
+      <Image src="/static/avatars/puut-1.png" />
+      <Image src="/static/avatars/puut-1.png" />
+      <Image src="/static/avatars/puut-1.png" />
+      <Image src="/static/avatars/puut-1.png" />
+      <Image src="/static/avatars/puut-1.png" />
+      <Image src="/static/avatars/puut-1.png" />
+      <Image src="/static/avatars/puut-1.png" />
+      <Image src="/static/avatars/puut-1.png" />
+      <Image src="/static/avatars/puut-1.png" />
+      <Image src="/static/avatars/puut-1.png" />
+      <Image src="/static/avatars/puut-1.png" />
+      <Image src="/static/avatars/puut-1.png" />
+      <Image src="/static/avatars/puut-1.png" />
+      <Image src="/static/avatars/puut-1.png" />
+      <Image src="/static/avatars/puut-1.png" />
+      <Image src="/static/avatars/puut-1.png" />
+      <Image src="/static/avatars/puut-1.png" />
+      <Image src="/static/avatars/puut-1.png" />
+      <Image src="/static/avatars/puut-1.png" />
+      <Image src="/static/avatars/puut-1.png" />
+      <Image src="/static/avatars/puut-1.png" />
     </Marquee>
   );
 }
