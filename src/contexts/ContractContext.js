@@ -210,7 +210,7 @@ function ContractProvider({ children }) {
     }
   }, [contractAddress, mintingStatus.name]);
 
-  return <ContractContext.Provider value={{ mintNft, mintingStatus: mintingStatus.name, mintingError: mintingStatus.error, MINTING_STATUS, transactionHash, tokenId, totalSupply, totalMinted, account, isConnected: connectionStatus.isConnected, error: connectionStatus.error, connect }}>{children}</ContractContext.Provider>;
+  return <ContractContext.Provider value={{ mintNft, mintingStatus: mintingStatus.name, mintingError: mintingStatus.error, transactionHash, tokenId, totalSupply, totalMinted, account, isConnected: connectionStatus.isConnected, error: connectionStatus.error, connect }}>{children}</ContractContext.Provider>;
 }
 
 const ContractConsumer = ({ children }) => {

@@ -48,7 +48,7 @@ export function MintingModal() {
     <Modal open={mintingModalIsOpen}>
       <ContainerStyle>
         <IconButtonStyle
-          disabled={status === STATUS.MINTING}
+          disabled={status === STATUS?.MINTING}
           onClick={() => {
             setMintingModalIsOpen(false);
           }}
