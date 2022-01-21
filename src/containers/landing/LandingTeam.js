@@ -1,6 +1,6 @@
 import { alpha, useTheme, styled } from '@mui/material/styles';
 import { Box, Grid, Card, Container, Typography, useMediaQuery } from '@mui/material';
-import { varFadeInUp, MotionInView, varFadeInDown } from '../../components/animate';
+import { varFadeInUp, MotionInView } from '../../components/animate';
 
 const CARDS = [
   {
@@ -56,12 +56,10 @@ export function LandingTeam() {
   return (
     <RootStyle>
       <Container maxWidth="lg">
-        <Box sx={{ mb: { xs: 10, md: 15 } }}>
-          <MotionInView variants={varFadeInDown}>
-            <Typography variant="h2" sx={{ textAlign: 'center' }}>
-              The Team
-            </Typography>
-          </MotionInView>
+        <Box sx={{ mb: { xs: 5 } }}>
+          <Typography variant="h2" sx={{ textAlign: 'center' }}>
+            The Team
+          </Typography>
         </Box>
 
         <Grid container spacing={isDesktop ? 10 : 5}>

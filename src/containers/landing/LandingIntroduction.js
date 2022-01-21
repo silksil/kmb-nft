@@ -20,13 +20,13 @@ export function LandingIntroduction() {
         </MotionInView>
 
         <MotionInView variants={varFadeInUp}>
-          <Typography>Express your own style with just one click.</Typography>
+          <Typography>10,000 unique Putzies</Typography>
         </MotionInView>
       </Container>
-      <Box sx={{ mt: 10 }}>
+      <Container maxWidth="1400px" sx={{ mt: 10, maxWidth: 2200 }}>
         <PuutMarquee />
         <PutzieMarquee />
-      </Box>
+      </Container>
     </RootStyle>
   );
 }

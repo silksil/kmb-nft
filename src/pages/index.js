@@ -14,7 +14,7 @@ const ContentStyle = styled('div')(({ theme }) => ({
 export default function LandingPage() {
   return (
     <MainLayout>
-      <Page title="Homepage of the NFT collection The Putzies" id="move_top" sx={{ height: '100%' }}>
+      <Page title="The Puzies: 100,000 unique NFTs" id="move_top" sx={{ height: '100%' }}>
         <MintingModal />
         <LandingHero />
         <ContentStyle>

@@ -25,11 +25,9 @@ export function LandingFAQs() {
     <RootStyle>
       <Container maxWidth="sm">
         <ContentStyle>
-          <MotionInView variants={varFadeInDown}>
-            <Typography variant="h2" sx={{ mb: 3 }}>
-              FAQs
-            </Typography>
-          </MotionInView>
+          <Typography variant="h2" sx={{ mb: 3 }}>
+            FAQs
+          </Typography>
         </ContentStyle>
         <MotionInView variants={varFadeInUp}>
           {faq.map((accordion, index) => (

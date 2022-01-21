@@ -9,31 +9,36 @@ const Image = styled('img')(() => ({
   marginLeft: 14,
 }));
 
+const images = [
+  {
+    src: '/static/avatars/puut-1.png',
+  },
+  {
+    src: '/static/avatars/puut-1.png',
+  },
+  {
+    src: '/static/avatars/puut-1.png',
+  },
+  {
+    src: '/static/avatars/puut-1.png',
+  },
+  {
+    src: '/static/avatars/puut-1.png',
+  },
+  {
+    src: '/static/avatars/puut-1.png',
+  },
+  {
+    src: '/static/avatars/puut-1.png',
+  },
+];
+
 export function PutzieMarquee() {
   return (
     <Marquee gradient={false} speed={10}>
-      <Image src="/static/avatars/puut-1.png" />
-      <Image src="/static/avatars/puut-1.png" />
-      <Image src="/static/avatars/puut-1.png" />
-      <Image src="/static/avatars/puut-1.png" />
-      <Image src="/static/avatars/puut-1.png" />
-      <Image src="/static/avatars/puut-1.png" />
-      <Image src="/static/avatars/puut-1.png" />
-      <Image src="/static/avatars/puut-1.png" />
-      <Image src="/static/avatars/puut-1.png" />
-      <Image src="/static/avatars/puut-1.png" />
-      <Image src="/static/avatars/puut-1.png" />
-      <Image src="/static/avatars/puut-1.png" />
-      <Image src="/static/avatars/puut-1.png" />
-      <Image src="/static/avatars/puut-1.png" />
-      <Image src="/static/avatars/puut-1.png" />
-      <Image src="/static/avatars/puut-1.png" />
-      <Image src="/static/avatars/puut-1.png" />
-      <Image src="/static/avatars/puut-1.png" />
-      <Image src="/static/avatars/puut-1.png" />
-      <Image src="/static/avatars/puut-1.png" />
-      <Image src="/static/avatars/puut-1.png" />
-      <Image src="/static/avatars/puut-1.png" />
+      {images.map(({ src }) => (
+        <Image key={src} src={src} alt="Putzie nft" />
+      ))}
     </Marquee>
   );
 }

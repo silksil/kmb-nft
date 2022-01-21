@@ -1,25 +1,15 @@
 import { styled } from '@mui/material/styles';
-import { Box, Grid, Container, Typography, Button } from '@mui/material';
+import { Typography, Button, Grid } from '@mui/material';
 import { Icon } from 'src/components/Icon';
+import discordIcon from '@iconify/icons-ic/baseline-discord';
+import twitterIcon from '@iconify/icons-eva/twitter-fill';
 
 import { BackgroundBlur } from '../BackgroundBlur';
-
-import { MotionInView, varFadeInUp, varFadeInDown } from '../../components/animate';
 
 const RootStyle = styled('div')(({ theme }) => ({
   padding: theme.spacing(28, 0),
   backgroundColor: theme.palette.grey[900],
   position: 'relative',
-}));
-
-const ContentStyle = styled('div')(({ theme }) => ({
-  margin: 'auto',
-  textAlign: 'center',
-  backgroundColor: theme.palette.background.paper,
-  paddingTop: theme.spacing(10),
-  paddingBottom: theme.spacing(10),
-  borderRadius: theme.shape.borderRadiusMd,
-  zIndex: 10,
 }));
 
 const ContainerStyle = styled('div')(({ theme }) => ({
@@ -28,34 +18,44 @@ const ContainerStyle = styled('div')(({ theme }) => ({
   margin: 'auto',
   width: '90%',
   [theme.breakpoints.up('md')]: {
-    maxWidth: '900px',
+    maxWidth: '800px',
   },
+}));
+
+const ContentStyle = styled('div')(({ theme }) => ({
+  textAlign: 'center',
+  backgroundColor: theme.palette.background.paper,
+  padding: theme.spacing(10, 1),
+  borderRadius: theme.shape.borderRadiusMd,
+  zIndex: 10,
+  position: 'relative',
 }));
 
 export function LandingSocial() {
   return (
     <RootStyle>
       <ContainerStyle>
-        <BackgroundBlur color="primary" bottom="0" height="400px" width="100%" opacityStrength={0.7} />
-        <BackgroundBlur color="secondary" top="0" width="100%" opacityStrength={0.7} />
-        <Box position="relative">
-          <ContentStyle>
-            <MotionInView variants={varFadeInUp}>
-              <Typography variant="overline" sx={{ mb: 2, color: 'text.disabled' }}>
-                Community driven
-              </Typography>
-            </MotionInView>
+        <BackgroundBlur color="primary" top="-75px" height="150px" width="100%" opacityStrength={0.1} />
+        <BackgroundBlur color="primary" bottom="-75px" height="150px" width="100%" opacityStrength={0.1} />
 
-            <MotionInView variants={varFadeInUp}>
-              <Typography variant="h2" sx={{ mb: 3 }}>
-                Join the community
-              </Typography>
-            </MotionInView>
-            <Button variant="contained" size="large" color="secondary" endIcon={<Box component="img" src="static/social/discord_white.png" sx={{ width: 24, height: 24 }} />}>
-              Join Discord
-            </Button>
-          </ContentStyle>
-        </Box>
+        <ContentStyle>
+          <Typography variant="h2" sx={{ mb: 3 }}>
+            Join the community
+          </Typography>
+
+          <Grid container spacing={2} alignItems="center" justifyContent="center">
+            <Grid item>
+              <Button variant="outlined" size="large" color="secondary" endIcon={<Icon icon={discordIcon} />}>
+                Join Discord
+              </Button>
+            </Grid>
+            <Grid item>
+              <Button variant="outlined" size="large" color="primary" endIcon={<Icon icon={twitterIcon} />}>
+                Follow Twitter
+              </Button>
+            </Grid>
+          </Grid>
+        </ContentStyle>
       </ContainerStyle>
     </RootStyle>
   );

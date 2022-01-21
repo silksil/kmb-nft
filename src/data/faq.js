@@ -1,7 +1,7 @@
 const FAQ = [
   {
     heading: 'Mission?',
-    detail: 'There will be a total of 10,000 Putzies minted.',
+    detail: 'To create an epic story.',
   },
   {
     heading: 'How many?',
@@ -9,11 +9,11 @@ const FAQ = [
   },
   {
     heading: 'Which blockchain',
-    detail: '10,000 putzies will be minted on the Ethereum mainchain.',
+    detail: 'The NFTs will be minted on the Ethereum mainchain.',
   },
   {
     heading: 'How much?',
-    detail: 'Each city block will cost 0.1 ETH to mint',
+    detail: 'Each Putzie will cost 0.1 ETH to mint',
   },
   {
     heading: 'When?',

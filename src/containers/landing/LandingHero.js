@@ -4,7 +4,7 @@ import flashFill from '@iconify/icons-eva/flash-fill';
 import { styled } from '@mui/material/styles';
 import { Box, Button, Typography, useMediaQuery, useTheme } from '@mui/material';
 
-import { varFadeInUp, varWrapEnter, varFadeInRight, varFadeInDown } from '../../components/animate';
+import { varFadeInUp, varWrapEnter, varFadeInDown } from '../../components/animate';
 import { useWallet } from 'src/hooks/useWallet';
 import { useContract } from 'src/hooks/useContract';
 
@@ -18,7 +18,6 @@ const RootStyle = styled(motion.div)(({ theme }) => ({
   width: '100%',
   overflow: 'hidden',
   [theme.breakpoints.up('lg')]: {
-    height: '90vh',
     position: 'fixed',
   },
 }));
@@ -31,17 +30,17 @@ const ContentStyle = styled((props) => <Box {...props} />)(({ theme }) => ({
   overflow: 'hidden',
   marginTop: theme.spacing(25),
   [theme.breakpoints.up('lg')]: {
-    marginTop: theme.spacing(30),
+    marginTop: theme.spacing(15),
   },
 }));
 
 const HeroImgStyle = styled(motion.img)(({ theme }) => ({
   margin: 'auto',
   marginTop: `-${theme.spacing(8)}`,
-  width: '600px',
+  height: '60%',
 
   [theme.breakpoints.up('lg')]: {
-    width: '900px',
+    height: '80%',
     marginTop: '-160px',
   },
 }));
@@ -52,6 +51,11 @@ const AstronautStyle = styled(motion.img)(({ theme }) => ({
   left: '0',
   marginLeft: '0',
   marginTop: theme.spacing(10),
+
+  [theme.breakpoints.up('sm')]: {
+    marginLeft: theme.spacing(6),
+  },
+
   [theme.breakpoints.up('lg')]: {
     height: '200px',
     position: 'absolute',
@@ -60,14 +64,6 @@ const AstronautStyle = styled(motion.img)(({ theme }) => ({
     marginLeft: '-400px',
   },
 }));
-
-const HeroOverlayStyle = styled(motion.img)({
-  zIndex: 9,
-  width: '100%',
-  height: '100%',
-  objectFit: 'cover',
-  position: 'absolute',
-});
 
 export function LandingHero() {
   const { mintNft, setupEventListener } = useContract();
@@ -86,8 +82,8 @@ export function LandingHero() {
   return (
     <>
       <RootStyle initial="initial" animate="animate" variants={varWrapEnter} position="relative">
-        <BackgroundBlur color="secondary" width="300px" height="90vh" blurRadius="100px" inHalf opacityStrength={0.2} zIndex={-1} />
-        <BackgroundBlur color="primary" right="0" width="300px" height="90vh" inHalf opacityStrength={0.2} zIndex={-1} />
+        <BackgroundBlur color="secondary" width="300px" height="90vh" left="-150px" blurRadius="100px" inHalf zIndex={-1} />
+        <BackgroundBlur color="primary" width="300px" height="90vh" right="-150px" inHalf zIndex={-1} />
         <motion.div animate={{ y: [-10, 10, -10] }} transition={{ duration: 4, repeat: Infinity }}>
           <AstronautStyle alt="hero" src="/static/avatars/astronaut.png" />
         </motion.div>
@@ -97,12 +93,11 @@ export function LandingHero() {
             <Typography variant="h1" gutterBottom>
               The Putzies
             </Typography>
-
             <Typography>The Putzies have big plans for the Metaverse.</Typography>
           </motion.div>
 
           {isDesktop && (
-            <motion.div variants={varFadeInRight}>
+            <motion.div variants={varFadeInUp}>
               <Button sx={{ marginTop: 3 }} size="large" variant="contained" startIcon={<Icon icon={flashFill} width={20} height={20} />} onClick={handleClick}>
                 {isConnected ? 'Mint NFT' : 'Connect wallet'}
               </Button>
