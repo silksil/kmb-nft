@@ -93,14 +93,17 @@ export function LandingHero() {
             <Typography variant="h1" gutterBottom>
               The Putzies
             </Typography>
-            <div data-vl-widget="popupTrigger"></div>
+            <div data-vl-widget="popupTrigger"> click me</div>
+
             <button type="button" className="vrlps-trigger">
               Join our campaign!
             </button>
             <a href="#" className="vrlps-trigger">
               Join our campaign!
             </a>
-
+            <Button sx={{ marginTop: 3 }} className="vrlps-trigger" size="large" variant="contained" startIcon={<Icon icon={flashFill} width={20} height={20} />}>
+              Get Whitelisted
+            </Button>
             <Typography>The Putzies have big plans for the Metaverse.</Typography>
           </motion.div>
 
