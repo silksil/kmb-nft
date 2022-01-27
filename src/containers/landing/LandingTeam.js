@@ -5,14 +5,15 @@ import { varFadeInUp, MotionInView } from '../../components/animate';
 const CARDS = [
   {
     icon: '/static/avatars/puut-1.png',
-    title: 'Sil',
-    description: 'Engineering',
-  },
-  {
-    icon: '/static/avatars/puut-1.png',
     title: 'Sophie',
     description: 'Design',
   },
+  {
+    icon: '/static/avatars/puut-1.png',
+    title: 'Sil',
+    description: 'Engineering',
+  },
+
   {
     icon: '/static/avatars/puut-1.png',
     title: 'Oscar',

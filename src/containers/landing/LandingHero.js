@@ -93,6 +93,14 @@ export function LandingHero() {
             <Typography variant="h1" gutterBottom>
               The Putzies
             </Typography>
+            <div data-vl-widget="popupTrigger"></div>
+            <button type="button" className="vrlps-trigger">
+              Join our campaign!
+            </button>
+            <a href="#" className="vrlps-trigger">
+              Join our campaign!
+            </a>
+
             <Typography>The Putzies have big plans for the Metaverse.</Typography>
           </motion.div>
 

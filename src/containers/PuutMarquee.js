@@ -35,7 +35,7 @@ const images = [
 
 export function PuutMarquee() {
   return (
-    <Marquee gradient={false} speed={10} direction="right">
+    <Marquee gradient={false} speed={20} direction="right">
       {images.map(({ src }) => (
         <Image key={src} src={src} alt="Putzie nft" />
       ))}
