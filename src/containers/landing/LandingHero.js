@@ -100,11 +100,6 @@ export function LandingHero() {
 
           {isDesktop && (
             <motion.div variants={varFadeInUp}>
-              {!isLaunched && (
-                <Button sx={{ marginTop: 3 }} className="vrlps-trigger" size="large" variant="contained" startIcon={<Icon icon={flashFill} width={20} height={20} />}>
-                  Get Whitelisted
-                </Button>
-              )}
               {isLaunched && (
                 <Button sx={{ marginTop: 3 }} size="large" variant="contained" startIcon={<Icon icon={flashFill} width={20} height={20} />} onClick={handleClick}>
                   {isConnected ? 'Mint NFT' : 'Connect wallet'}

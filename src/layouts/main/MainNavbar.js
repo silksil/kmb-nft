@@ -14,6 +14,7 @@ import { showPartialAccountAddress } from 'src/utils/account';
 import { alpha } from '@mui/material/styles';
 import { useTheme } from '@mui/material';
 import { useWindowSize } from 'src/hooks/useWindowSize';
+import flashFill from '@iconify/icons-eva/flash-fill';
 
 const APP_BAR_MOBILE = 64;
 const APP_BAR_DESKTOP = 88;
@@ -32,6 +33,7 @@ const ToolbarStyle = styled(Toolbar)(({ theme }) => ({
 export default function MainNavbar() {
   const { isConnected, connect, account } = useWallet();
   const { mintNft } = useContract();
+  const isLaunched = false;
 
   /**
    * Styling variables.
@@ -79,10 +81,17 @@ export default function MainNavbar() {
               {showPartialAccountAddress(account)}
             </Label>
           )}
+          {!isLaunched && (
+            <Button sx={{ marginTop: 3 }} className="vrlps-trigger" size="large" variant="contained" startIcon={<Icon icon={flashFill} width={20} height={20} />}>
+              Get Whitelisted
+            </Button>
+          )}
 
-          <Button variant="contained" onClick={handleClick}>
-            {isConnected ? 'Mint NFT' : 'Connect wallet'}
-          </Button>
+          {isLaunched && (
+            <Button variant="contained" onClick={handleClick}>
+              {isConnected ? 'Mint NFT' : 'Connect wallet'}
+            </Button>
+          )}
         </Container>
       </ToolbarStyle>
     </AppBar>

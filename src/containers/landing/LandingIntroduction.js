@@ -26,7 +26,6 @@ export function LandingIntroduction() {
       <Container maxWidth="1400px" sx={{ mt: 10, maxWidth: 2200 }}>
         <PuutMarquee />
         <PutzieMarquee />
-        <div data-vl-widget="popupTrigger"></div>
       </Container>
     </RootStyle>
   );
