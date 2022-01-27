@@ -26,8 +26,8 @@ export default function GlobalStyles() {
           height: '100%',
         },
         //TODO: remove the line below for the boilerplate
-        '.vl-gdprfat': {
-          backgroundColor: '#0d0415',
+        '.vl-gdpr .vl-gdpr-fat': {
+          backgroundColor: 'black',
           marginBottom: '12px',
           bordeRadius: '12px',
         },
