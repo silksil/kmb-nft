@@ -27,9 +27,11 @@ export default function GlobalStyles() {
         },
         //TODO: remove the line below for the boilerplate
         '.vl-gdpr .vl-gdpr-fat': {
+          width: '100%',
+          height: '100%',
           backgroundColor: 'transparent!',
           marginBottom: '12px!',
-          bordeRadius: '12px!',
+          borderRadius: '12px!',
         },
 
         input: {
