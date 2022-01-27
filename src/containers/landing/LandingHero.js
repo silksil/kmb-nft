@@ -71,6 +71,7 @@ export function LandingHero() {
   const { setMintingModalIsOpen } = useUI();
   const theme = useTheme();
   const isDesktop = useMediaQuery(theme.breakpoints.up('lg'));
+  const isLaunched = false;
 
   const handleClick = async () => {
     if (!isConnected) return connect();
@@ -93,25 +94,22 @@ export function LandingHero() {
             <Typography variant="h1" gutterBottom>
               The Putzies
             </Typography>
-            <div data-vl-widget="popupTrigger"> click me</div>
 
-            <button type="button" className="vrlps-trigger">
-              Join our campaign!
-            </button>
-            <a href="#" className="vrlps-trigger">
-              Join our campaign!
-            </a>
-            <Button sx={{ marginTop: 3 }} className="vrlps-trigger" size="large" variant="contained" startIcon={<Icon icon={flashFill} width={20} height={20} />}>
-              Get Whitelisted
-            </Button>
             <Typography>The Putzies have big plans for the Metaverse.</Typography>
           </motion.div>
 
           {isDesktop && (
             <motion.div variants={varFadeInUp}>
-              <Button sx={{ marginTop: 3 }} size="large" variant="contained" startIcon={<Icon icon={flashFill} width={20} height={20} />} onClick={handleClick}>
-                {isConnected ? 'Mint NFT' : 'Connect wallet'}
-              </Button>
+              {!isLaunched && (
+                <Button sx={{ marginTop: 3 }} className="vrlps-trigger" size="large" variant="contained" startIcon={<Icon icon={flashFill} width={20} height={20} />}>
+                  Get Whitelisted
+                </Button>
+              )}
+              {isLaunched && (
+                <Button sx={{ marginTop: 3 }} size="large" variant="contained" startIcon={<Icon icon={flashFill} width={20} height={20} />} onClick={handleClick}>
+                  {isConnected ? 'Mint NFT' : 'Connect wallet'}
+                </Button>
+              )}
             </motion.div>
           )}
         </ContentStyle>
