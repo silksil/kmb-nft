@@ -27,10 +27,10 @@ export default function GlobalStyles() {
         },
         //TODO: remove the line below for the boilerplate
         '.vl-gdpr .vl-gdpr-fat': {
-          backgroundColor: 'transparent important!',
-          marginBottom: '12px important!',
-          borderRadius: '12px important!',
-          color: `${theme.palette.text.disabled} important!`,
+          backgroundColor: 'transparent !important',
+          marginBottom: '12px !important',
+          borderRadius: '12px !important',
+          color: `${theme.palette.text.disabled} !important`,
         },
 
         input: {
