@@ -5,6 +5,7 @@ import { LandingHero, LandingTeam, LandingSocial, LandingRoadmap, LandingTechnic
 import { MintingModal } from 'src/containers/minting-modal/MintingModal';
 import { MintingCount } from 'src/containers/MintingCount';
 import { useEffect } from 'react';
+import { LandingWhitelist } from 'src/containers/landing/LandingWhitelist';
 
 const ContentStyle = styled('div')(({ theme }) => ({
   overflow: 'hidden',
@@ -31,6 +32,7 @@ export default function LandingPage() {
           {/* <LandingRoadmap /> */}
           <LandingSocial />
           <LandingTeam />
+          <LandingWhitelist />
           <LandingFAQs />
         </ContentStyle>
         <MintingCount />
