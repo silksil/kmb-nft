@@ -30,17 +30,16 @@ export default function GlobalStyles() {
           backgroundColor: 'transparent !important',
           marginBottom: '12px !important',
           borderRadius: '12px !important',
-          color: `${theme.palette.text.disabled} !important`,
         },
 
-        '#vl_popup.vlns.vl-wider-popup .vl-modal-dialog': {
+        '.vl-modal-dialog': {
           maxWidth: '500px !important',
         },
 
-        '.vlns .form-control': {
+        'form-control vl-form-control': {
           backgroundColor: '#2E3348 !important',
           border: 'none !important',
-          color: 'white !important',
+          color: '#fff!important',
         },
 
         input: {
