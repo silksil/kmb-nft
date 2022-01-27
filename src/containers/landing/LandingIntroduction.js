@@ -12,7 +12,7 @@ const RootStyle = styled('div')(({ theme }) => ({
 export function LandingIntroduction() {
   return (
     <RootStyle>
-      <Container maxWidth="lg" sx={{ position: 'relative', textAlign: 'center' }}>
+      <Container maxWidth="sm" sx={{ position: 'relative', textAlign: 'center' }}>
         <MotionInView variants={varFadeInUp}>
           <Typography variant="h2" sx={{ mb: 1 }}>
             Meet the Squat
@@ -20,7 +20,7 @@ export function LandingIntroduction() {
         </MotionInView>
 
         <MotionInView variants={varFadeInUp}>
-          <Typography>10,000 unique Putzies</Typography>
+          <Typography>Wide P. — aka leader of the North — has failed to be the world leader of the real world. Therefore, he has his eyes on the Metaverse. Together with his team, The Putzies, he is determined to succeed.</Typography>
         </MotionInView>
       </Container>
       <Container maxWidth="1400px" sx={{ mt: 10, maxWidth: 2200 }}>

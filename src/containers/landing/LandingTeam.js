@@ -57,11 +57,10 @@ export function LandingTeam() {
   return (
     <RootStyle>
       <Container maxWidth="lg">
-        <Box sx={{ mb: { xs: 5 } }}>
-          <Typography variant="h2" sx={{ textAlign: 'center' }}>
-            The Team
-          </Typography>
-        </Box>
+        <Container maxWidth="sm" sx={{ mb: { xs: 5 }, textAlign: 'center' }}>
+          <Typography variant="h2">The Team</Typography>
+          <Typography>This project started with two people being in love. Guess who.</Typography>
+        </Container>
 
         <Grid container spacing={isDesktop ? 10 : 5}>
           {CARDS.map((card) => (

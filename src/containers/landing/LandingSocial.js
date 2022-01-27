@@ -7,7 +7,7 @@ import twitterIcon from '@iconify/icons-eva/twitter-fill';
 import { BackgroundBlur } from '../BackgroundBlur';
 
 const RootStyle = styled('div')(({ theme }) => ({
-  padding: theme.spacing(28, 0),
+  padding: theme.spacing(14, 0),
   backgroundColor: theme.palette.grey[900],
   position: 'relative',
 }));

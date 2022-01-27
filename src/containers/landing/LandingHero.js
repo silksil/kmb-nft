@@ -23,10 +23,11 @@ const RootStyle = styled(motion.div)(({ theme }) => ({
 }));
 
 const ContentStyle = styled((props) => <Box {...props} />)(({ theme }) => ({
-  zIndex: 10,
+  zIndex: 1,
   maxWidth: 520,
   margin: 'auto',
   textAlign: 'center',
+  position: 'relative',
   overflow: 'hidden',
   marginTop: theme.spacing(25),
   [theme.breakpoints.up('lg')]: {
@@ -36,12 +37,11 @@ const ContentStyle = styled((props) => <Box {...props} />)(({ theme }) => ({
 
 const HeroImgStyle = styled(motion.img)(({ theme }) => ({
   margin: 'auto',
-  marginTop: `-${theme.spacing(8)}`,
-  height: '60%',
+  marginTop: `-${theme.spacing(10)}`,
 
   [theme.breakpoints.up('lg')]: {
     height: '80%',
-    marginTop: '-160px',
+    marginTop: `-${theme.spacing(12)}`,
   },
 }));
 
@@ -83,9 +83,9 @@ export function LandingHero() {
   return (
     <>
       <RootStyle initial="initial" animate="animate" variants={varWrapEnter} position="relative">
-        <BackgroundBlur color="secondary" width="300px" height="90vh" left="-150px" blurRadius="100px" inHalf zIndex={-1} />
-        <BackgroundBlur color="primary" width="300px" height="90vh" right="-150px" inHalf zIndex={-1} />
-        <motion.div animate={{ y: [-10, 10, -10] }} transition={{ duration: 4, repeat: Infinity }}>
+        <BackgroundBlur color="secondary" sx={{ width: { xs: 200, md: 300, lg: 500 }, left: { xs: -100, md: -150, lg: -250 } }} height="90vh" blurRadius="100px" inHalf zIndex={-1} />
+        <BackgroundBlur color="primary" sx={{ width: { xs: 200, md: 300, lg: 500 }, right: { xs: -100, md: -150, lg: -250 } }} height="90vh" inHalf zIndex={-1} />
+        <motion.div animate={{ y: [-20, 20, -20] }} transition={{ duration: 4, repeat: Infinity }}>
           <AstronautStyle alt="hero" src="/static/avatars/astronaut.png" />
         </motion.div>
 
@@ -94,8 +94,10 @@ export function LandingHero() {
             <Typography variant="h1" gutterBottom>
               The Putzies
             </Typography>
-
-            <Typography>The Putzies have big plans for the Metaverse.</Typography>
+          </motion.div>
+          <motion.div variants={varFadeInUp}>
+            <Typography>8,888 characters with a mission </Typography>
+            <Typography>to take over the Metaverse as NFTs.</Typography>
           </motion.div>
 
           {isDesktop && (
