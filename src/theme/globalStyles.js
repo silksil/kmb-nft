@@ -36,7 +36,7 @@ export default function GlobalStyles() {
           maxWidth: '500px !important',
         },
 
-        '.form-control .vl-form-control': {
+        '.vlns .vl-form-control': {
           backgroundColor: '#2E3348 !important',
           border: 'none !important',
           color: '#fff!important',
@@ -44,10 +44,16 @@ export default function GlobalStyles() {
 
         '#form_firstName': {
           color: '#fff!important',
+          '::placeholder': {
+            color: '#fff!important',
+          },
         },
 
         '#form_email': {
           color: '#fff!important',
+          '::placeholder': {
+            color: '#fff!important',
+          },
         },
 
         input: {
