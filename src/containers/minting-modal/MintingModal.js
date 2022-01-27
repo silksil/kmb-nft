@@ -15,7 +15,7 @@ const ContainerStyle = styled(Container)(({ theme }) => ({
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  width: 400,
+  maxWidth: 400,
   backgroundColor: theme.palette.background.paper,
   padding: theme.spacing(4),
   backgroundColor: theme.palette.background.paper,

@@ -33,6 +33,16 @@ export default function GlobalStyles() {
           color: `${theme.palette.text.disabled} !important`,
         },
 
+        '#vl_popup.vlns.vl-wider-popup .vl-modal-dialog': {
+          maxWidth: '500px !important',
+        },
+
+        '.vlns .form-control': {
+          backgroundColor: '#2E3348 !important',
+          border: 'none !important',
+          color: 'white !important',
+        },
+
         input: {
           '&[type=number]': {
             MozAppearance: 'textfield',
