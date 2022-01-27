@@ -29,9 +29,11 @@ export default function GlobalStyles() {
         '.vl-gdpr .vl-gdpr-fat': {
           width: '100%',
           height: '100%',
+          filter: 'blur(5px)',
           backgroundColor: 'transparent!',
           marginBottom: '12px!',
           borderRadius: '12px!',
+          color: theme.palette.text.disabled,
         },
 
         input: {
