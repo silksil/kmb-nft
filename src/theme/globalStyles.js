@@ -25,6 +25,13 @@ export default function GlobalStyles() {
           width: '100%',
           height: '100%',
         },
+        //TODO: remove the line below for the boilerplate
+        '.vl-gdprfat': {
+          backgroundColor: '#0d0415',
+          marginBottom: '12px',
+          bordeRadius: '12px',
+        },
+
         input: {
           '&[type=number]': {
             MozAppearance: 'textfield',
