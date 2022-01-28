@@ -84,7 +84,7 @@ export function LandingWhitelist() {
             <ContentStyle>
               <MotionInView variants={varFadeInUp}>
                 <Typography variant="h2" sx={{ mb: 3 }}>
-                  Get whitelisted
+                  Get early access
                 </Typography>
               </MotionInView>
 
@@ -94,7 +94,7 @@ export function LandingWhitelist() {
                     mb: 2,
                   }}
                 >
-                  Be the first to be able to mint. Refer to your friends and the top 100 referrers will get whitelisted.
+                  Be the first to be able to mint. Refer to your friends and the top 100 referrers will get early access.
                 </Typography>
                 <Button variant="contained" size="large" className="vrlps-trigger" sx={{ mt: 2 }}>
                   Get Whitelisted

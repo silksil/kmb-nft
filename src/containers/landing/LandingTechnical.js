@@ -39,7 +39,7 @@ export function LandingTechnical() {
                     mb: 2,
                   }}
                 >
-                  It is a collection of 8888 NFTs on the blockchain. Each trait is crafted with love, then some algorithm computer wizardry is used to create unique characters.
+                  It is a collection of 8888 NFTs on the blockchain. Each trait is seperetly crafted with love. Then some algorithm computer wizardry is used to create unique characters.
                 </Typography>
               </MotionInView>
             </ContentStyle>

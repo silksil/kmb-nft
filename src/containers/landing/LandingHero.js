@@ -96,8 +96,8 @@ export function LandingHero() {
             </Typography>
           </motion.div>
           <motion.div variants={varFadeInUp}>
-            <Typography>8,888 characters with a mission </Typography>
-            <Typography>to take over the Metaverse as NFTs.</Typography>
+            <Typography>8,888 NFTs with a mission </Typography>
+            <Typography>to take over the Metaverse.</Typography>
           </motion.div>
 
           {isDesktop && (

@@ -20,7 +20,7 @@ export function LandingIntroduction() {
         </MotionInView>
 
         <MotionInView variants={varFadeInUp}>
-          <Typography>Wide P. — aka leader of the North — has failed to be the world leader of the real world. Therefore, he has his eyes on the Metaverse. Together with his team, The Putzies, he is determined to succeed.</Typography>
+          <Typography>Wide P. — aka leader of the North — has failed to be the world leader of the real world, and he now has his eyes on the Metaverse. Together with his team, The Putzies, he is determined to conquer this new land.</Typography>
         </MotionInView>
       </Container>
       <Container maxWidth="1400px" sx={{ mt: 10, maxWidth: 2200 }}>

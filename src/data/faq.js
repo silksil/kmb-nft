@@ -1,7 +1,22 @@
+import NextLink from 'next/link';
+
+const CopyRight = () => (
+  <>
+    The artwork is{' '}
+    <NextLink target="_blank" href="https://creativecommons.org/publicdomain/zero/1.0/">
+      public domain.
+    </NextLink>
+  </>
+);
+
 const FAQ = [
   {
     heading: 'Mission?',
-    detail: 'The core idea in the creation was to provide comedic fun, while triggering the community to sketch a scenario of how politics could get involved into the Metaverse. ',
+    detail: 'To plant an idea of how policitics could get involved into the Metaverse.',
+  },
+  {
+    heading: 'Copy rights?',
+    detail: <CopyRight />,
   },
   {
     heading: 'How many?',
@@ -20,8 +35,17 @@ const FAQ = [
     detail: 'To be announced.',
   },
   {
-    heading: 'Maximum mintable',
+    heading: 'Maximum mintable?',
     detail: 'To be announced.',
+  },
+
+  {
+    heading: 'Data storage?',
+    detail: 'The NFTs are stored on IPFS.',
+  },
+  {
+    heading: 'Roadmap?',
+    detail: 'No roadmap, just vibes.',
   },
 ];
 
