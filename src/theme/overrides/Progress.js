@@ -1,5 +1,3 @@
-// ----------------------------------------------------------------------
-
 export default function Progress(theme) {
   const isLight = theme.palette.mode === 'light';
 
@@ -8,18 +6,18 @@ export default function Progress(theme) {
       styleOverrides: {
         root: {
           borderRadius: 4,
-          overflow: 'hidden'
+          overflow: 'hidden',
         },
         bar: {
-          borderRadius: 4
+          borderRadius: 4,
         },
         colorPrimary: {
-          backgroundColor: theme.palette.primary[isLight ? 'lighter' : 'darker']
+          backgroundColor: theme.palette.primary[isLight ? 'lighter' : 'darker'],
         },
         buffer: {
-          backgroundColor: 'transparent'
-        }
-      }
-    }
+          backgroundColor: 'transparent',
+        },
+      },
+    },
   };
 }

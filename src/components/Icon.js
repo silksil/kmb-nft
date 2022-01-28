@@ -26,8 +26,8 @@ const getHeight = ({ size, height, theme }) => {
   return theme.icons.m.height;
 };
 
-export function Icon({ size = 'm', color, icon, width, height }) {
+export function Icon({ size = 'm', color, icon, width, height, ...props }) {
   const theme = useTheme();
 
-  return <BaseIcon color={getColor(color, theme)} icon={icon} height={getHeight({ size, height, theme })} width={getWidth({ size, width, theme })} />;
+  return <BaseIcon color={getColor(color, theme)} icon={icon} height={getHeight({ size, height, theme })} width={getWidth({ size, width, theme })} {...props} />;
 }

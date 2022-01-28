@@ -1,19 +1,13 @@
-import NextLink from 'next/link';
-
 const CopyRight = () => (
   <>
     The artwork is{' '}
-    <NextLink target="_blank" href="https://creativecommons.org/publicdomain/zero/1.0/">
+    <a target="_blank" href="https://creativecommons.org/publicdomain/zero/1.0/" rel="noreferrer">
       public domain.
-    </NextLink>
+    </a>
   </>
 );
 
 const FAQ = [
-  {
-    heading: 'Mission?',
-    detail: 'To plant an idea for an epic story.',
-  },
   {
     heading: 'Copy rights?',
     detail: <CopyRight />,

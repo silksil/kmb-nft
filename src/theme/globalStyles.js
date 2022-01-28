@@ -69,6 +69,12 @@ export default function GlobalStyles() {
             },
           },
         },
+
+        a: {
+          color: theme.palette.primary.main,
+          textDecoration: 'none',
+        },
+
         textarea: {
           '&::-webkit-input-placeholder': {
             color: theme.palette.text.disabled,

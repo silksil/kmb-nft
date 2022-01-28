@@ -1,21 +1,19 @@
-// ----------------------------------------------------------------------
-
 export default function Timeline(theme) {
   return {
     MuiTimelineDot: {
       styleOverrides: {
         root: {
-          boxShadow: 'none'
-        }
-      }
+          boxShadow: 'none',
+        },
+      },
     },
 
     MuiTimelineConnector: {
       styleOverrides: {
         root: {
-          backgroundColor: theme.palette.divider
-        }
-      }
-    }
+          backgroundColor: theme.palette.divider,
+        },
+      },
+    },
   };
 }
