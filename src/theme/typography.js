@@ -27,7 +27,7 @@ const typography = {
   h1: {
     fontFamily: FONT_SECONDARY,
     fontWeight: 800,
-    lineHeight: 80 / 64,
+    lineHeight: 0.8,
     letterSpacing: '-.06em',
     fontSize: pxToRem(48),
     ...responsiveFontSizes({ sm: 52, md: 58, lg: 72 }),

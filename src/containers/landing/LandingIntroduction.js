@@ -17,10 +17,11 @@ export function LandingIntroduction() {
           <Typography variant="h2" sx={{ mb: 1 }}>
             Meet the Squat
           </Typography>
+          ant
         </MotionInView>
 
         <MotionInView variants={varFadeInUp}>
-          <Typography>Wide P. — aka leader of the North — has failed to be the world leader of the real world, and now has his eyes on the Metaverse. Together with the secret agency service Klan Metaverse Gansters (KMG), he plans to conquer this new land.</Typography>
+          <Typography>Wide P. has failed to be the world leader of the real world, and now has his eyes on the Metaverse. Together with the secret agency service, Komitet Metaverse Gansters (KMG), he plans to conquer this new world.</Typography>
         </MotionInView>
       </Container>
       <Container maxWidth="1400px" sx={{ mt: 10, maxWidth: 2200 }}>

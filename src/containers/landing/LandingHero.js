@@ -104,7 +104,10 @@ export function LandingHero() {
         <ContentStyle>
           <motion.div variants={varFadeInDown}>
             <Typography variant="h1" gutterBottom>
-              The Putzies
+              Wide P.
+            </Typography>
+            <Typography variant="h1" gutterBottom>
+              and the KMG
             </Typography>
           </motion.div>
           <motion.div variants={varFadeInUp}>
