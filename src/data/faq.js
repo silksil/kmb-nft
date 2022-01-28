@@ -12,7 +12,7 @@ const CopyRight = () => (
 const FAQ = [
   {
     heading: 'Mission?',
-    detail: 'To plant an idea of how policitics could get involved into the Metaverse.',
+    detail: 'To plant an idea for an epic story.',
   },
   {
     heading: 'Copy rights?',

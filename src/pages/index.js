@@ -1,7 +1,7 @@
 import MainLayout from 'src/layouts/main';
 import { styled } from '@mui/material/styles';
 import { Page } from 'src/components/Page';
-import { LandingHero, LandingTeam, LandingSocial, LandingRoadmap, LandingTechnical, LandingIntroduction, LandingFAQs } from 'src/containers/landing';
+import { LandingHero, LandingTeam, LandingSocial, LandingTechnical, LandingIntroduction, LandingFAQs } from 'src/containers/landing';
 import { MintingModal } from 'src/containers/minting-modal/MintingModal';
 import { MintingCount } from 'src/containers/MintingCount';
 import { useEffect } from 'react';
@@ -29,10 +29,9 @@ export default function LandingPage() {
         <ContentStyle>
           <LandingIntroduction />
           <LandingTechnical />
-          {/* <LandingRoadmap /> */}
           <LandingSocial />
-          <LandingTeam />
           <LandingWhitelist />
+          <LandingTeam />
           <LandingFAQs />
         </ContentStyle>
         <MintingCount />

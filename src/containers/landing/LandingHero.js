@@ -10,7 +10,7 @@ import { useContract } from 'src/hooks/useContract';
 
 import { useUI } from 'src/hooks/useUI';
 import { Icon } from 'src/components/Icon';
-import { BackgroundBlur } from '../BackgroundBlur';
+import { BackgroundBlur as BaseBackgroundBlur } from '../BackgroundBlur';
 
 const RootStyle = styled(motion.div)(({ theme }) => ({
   position: 'relative',
@@ -32,6 +32,18 @@ const ContentStyle = styled((props) => <Box {...props} />)(({ theme }) => ({
   marginTop: theme.spacing(25),
   [theme.breakpoints.up('lg')]: {
     marginTop: theme.spacing(15),
+  },
+}));
+
+const BackgroundBlur = styled((props) => <BaseBackgroundBlur {...props} />)(({ theme }) => ({
+  zIndex: -1,
+  width: 200,
+  height: '90vh',
+  [theme.breakpoints.up('md')]: {
+    width: 300,
+  },
+  [theme.breakpoints.up('lg')]: {
+    width: 500,
   },
 }));
 
@@ -83,8 +95,8 @@ export function LandingHero() {
   return (
     <>
       <RootStyle initial="initial" animate="animate" variants={varWrapEnter} position="relative">
-        <BackgroundBlur color="secondary" sx={{ width: { xs: 200, md: 300, lg: 500 }, left: { xs: -100, md: -150, lg: -250 } }} height="90vh" blurRadius="100px" inHalf zIndex={-1} />
-        <BackgroundBlur color="primary" sx={{ width: { xs: 200, md: 300, lg: 500 }, right: { xs: -100, md: -150, lg: -250 } }} height="90vh" inHalf zIndex={-1} />
+        <BackgroundBlur color="secondary" sx={{ left: { xs: -100, md: -150, lg: -250 } }} inHalf />
+        <BackgroundBlur color="primary" sx={{ right: { xs: -100, md: -150, lg: -250 } }} inHalf />
         <motion.div animate={{ y: [-20, 20, -20] }} transition={{ duration: 4, repeat: Infinity }}>
           <AstronautStyle alt="hero" src="/static/avatars/astronaut.png" />
         </motion.div>
@@ -97,7 +109,7 @@ export function LandingHero() {
           </motion.div>
           <motion.div variants={varFadeInUp}>
             <Typography>8,888 NFTs with a mission </Typography>
-            <Typography>to take over the Metaverse.</Typography>
+            <Typography>to conquer the Metaverse.</Typography>
           </motion.div>
 
           {isDesktop && (

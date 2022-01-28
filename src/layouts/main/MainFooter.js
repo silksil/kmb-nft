@@ -33,10 +33,6 @@ export default function MainFooter() {
         <ScrollLink to="move_top" spy smooth>
           <Logo sx={{ mb: 1, mx: 'auto', cursor: 'pointer' }} />
         </ScrollLink>
-
-        <Typography variant="caption" component="p">
-          © All rights reserved
-        </Typography>
       </Container>
     </Box>
   );
