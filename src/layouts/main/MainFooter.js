@@ -41,10 +41,9 @@ export default function MainFooter() {
               <SocialIcon icon={social.icon} size="l" />
             </IconButton>
           ))}
-
-          <IconButton>
+          {/* <IconButton>
             <Opensea />
-          </IconButton>
+          </IconButton> */}
         </Stack>
         <ScrollLink to="move_top" spy smooth>
           <Logo sx={{ mb: 1, mx: 'auto', cursor: 'pointer' }} />

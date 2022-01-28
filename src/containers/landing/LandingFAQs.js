@@ -30,6 +30,7 @@ export function LandingFAQs() {
 
         <Box position="relative" zIndex>
           <BackgroundBlur color="secondary" height="140%" top="-20%" left="-20%" width="140%" opacityStrength={0.2} />
+
           <MotionInView variants={varFadeInUp}>
             {faq.map((accordion, index) => (
               <Accordion key={`${index}-${accordion.heading}`} sx={{ mb: 2 }}>

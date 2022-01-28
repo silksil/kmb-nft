@@ -108,9 +108,9 @@ export default function MainNavbar() {
                 <SocialIcon icon={social.icon} size="l" />
               </IconButton>
             ))}
-            <IconButton color="primary">
+            {/* <IconButton color="primary">
               <Opensea />
-            </IconButton>
+            </IconButton> */}
           </Stack>
           {isLaunched && (
             <Button startIcon={<Icon icon={flashFill} width={20} height={20} />} variant="contained" onClick={handleClick}>
