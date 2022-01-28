@@ -5,6 +5,13 @@ import twitter from '@iconify/icons-eva/twitter-fill';
 import discord from '@iconify/icons-ic/baseline-discord';
 import { Icon } from 'src/components/Icon';
 import { styled } from '@mui/system';
+import { Image } from 'src/components/Image.js';
+
+const Opensea = styled((props) => <Image src="static/marketplaces/open-sea.svg" {...props} />)(({ theme }) => ({
+  width: theme.icons.l.width,
+  height: theme.icons.l.height,
+  filter: shadowIcon(theme.palette.secondary.main),
+}));
 
 const SOCIALS = [
   { name: 'Linkedin', icon: discord },
@@ -34,6 +41,10 @@ export default function MainFooter() {
               <SocialIcon icon={social.icon} size="l" />
             </IconButton>
           ))}
+
+          <IconButton>
+            <Opensea />
+          </IconButton>
         </Stack>
         <ScrollLink to="move_top" spy smooth>
           <Logo sx={{ mb: 1, mx: 'auto', cursor: 'pointer' }} />

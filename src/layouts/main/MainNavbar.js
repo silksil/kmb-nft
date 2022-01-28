@@ -18,6 +18,7 @@ import flashFill from '@iconify/icons-eva/flash-fill';
 
 import twitter from '@iconify/icons-eva/twitter-fill';
 import discord from '@iconify/icons-ic/baseline-discord';
+import { Image } from 'src/components/Image.js';
 
 const SOCIALS = [
   { name: 'Linkedin', icon: discord },
@@ -41,6 +42,12 @@ const ToolbarStyle = styled(Toolbar)(({ theme }) => ({
 const shadowIcon = (color) => `drop-shadow(4px 4px 4px ${alpha(color, 0.6)})`;
 
 const SocialIcon = styled((props) => <Icon {...props} />)(({ theme }) => ({
+  filter: shadowIcon(theme.palette.secondary.main),
+}));
+
+const Opensea = styled((props) => <Image src="static/marketplaces/open-sea.svg" {...props} />)(({ theme }) => ({
+  width: theme.icons.l.width,
+  height: theme.icons.l.height,
   filter: shadowIcon(theme.palette.secondary.main),
 }));
 
@@ -101,6 +108,9 @@ export default function MainNavbar() {
                 <SocialIcon icon={social.icon} size="l" />
               </IconButton>
             ))}
+            <IconButton color="primary">
+              <Opensea />
+            </IconButton>
           </Stack>
           {isLaunched && (
             <Button startIcon={<Icon icon={flashFill} width={20} height={20} />} variant="contained" onClick={handleClick}>
