@@ -96,9 +96,9 @@ export default function MainNavbar() {
             </Label>
           )}
 
-          <Stack spacing={1.5} direction="row" justifyContent="center" alignItems="center" sx={{ mt: 5, mb: { xs: 5 } }}>
+          <Stack spacing={1} direction="row" justifyContent="center" alignItems="center" sx={{ mt: 5, mb: { xs: 5 } }}>
             {SOCIALS.map((social) => (
-              <IconButton key={social.name} color="primary" sx={{ p: 1 }}>
+              <IconButton key={social.name} color="primary">
                 <SocialIcon icon={social.icon} size="m" />
               </IconButton>
             ))}
