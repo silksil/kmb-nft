@@ -16,14 +16,8 @@ import { useTheme } from '@mui/material';
 import { useWindowSize } from 'src/hooks/useWindowSize';
 import flashFill from '@iconify/icons-eva/flash-fill';
 
-import twitter from '@iconify/icons-eva/twitter-fill';
-import discord from '@iconify/icons-ic/baseline-discord';
 import { Image } from 'src/components/Image.js';
-
-const SOCIALS = [
-  { name: 'Linkedin', icon: discord },
-  { name: 'Twitter', icon: twitter },
-];
+import { SOCIALS } from '../../utils/socialIcons';
 
 const APP_BAR_MOBILE = 64;
 const APP_BAR_DESKTOP = 88;
@@ -45,7 +39,7 @@ const SocialIcon = styled((props) => <Icon {...props} />)(({ theme }) => ({
   filter: shadowIcon(theme.palette.secondary.main),
 }));
 
-const Opensea = styled((props) => <Image src="static/marketplaces/open-sea.svg" {...props} />)(({ theme }) => ({
+const Opensea = styled((props) => <Image src="static/marketplaces/open-sea.svg" alt="open sea logo" {...props} />)(({ theme }) => ({
   width: theme.icons.l.width,
   height: theme.icons.l.height,
   filter: shadowIcon(theme.palette.secondary.main),
@@ -102,16 +96,20 @@ export default function MainNavbar() {
             </Label>
           )}
 
-          <Stack spacing={1.5} direction="row" justifyContent={{ xs: 'center' }} sx={{ mt: 5, mb: { xs: 5 } }}>
+          <Stack spacing={1.5} direction="row" justifyContent="center" alignItems="center" sx={{ mt: 5, mb: { xs: 5 } }}>
             {SOCIALS.map((social) => (
               <IconButton key={social.name} color="primary" sx={{ p: 1 }}>
-                <SocialIcon icon={social.icon} size="l" />
+                <SocialIcon icon={social.icon} size="m" />
               </IconButton>
             ))}
             {/* <IconButton color="primary">
               <Opensea />
             </IconButton> */}
+            <Button variant="outlined" color="secondary" size="small" className="vrlps-trigger">
+              Get early access
+            </Button>
           </Stack>
+
           {isLaunched && (
             <Button startIcon={<Icon icon={flashFill} width={20} height={20} />} variant="contained" onClick={handleClick}>
               {isConnected ? 'Mint NFT' : 'Connect wallet'}

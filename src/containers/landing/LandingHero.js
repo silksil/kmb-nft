@@ -106,13 +106,13 @@ export function LandingHero() {
             <Typography variant="h1" gutterBottom>
               Wide P.
             </Typography>
-            <Typography variant="h1" gutterBottom>
-              and the KMG
+            <Typography variant="h3" gutterBottom>
+              & the KMG
             </Typography>
           </motion.div>
           <motion.div variants={varFadeInUp}>
-            <Typography>8,888 NFTs with a mission </Typography>
-            <Typography>to conquer the Metaverse.</Typography>
+            <Typography>Ruthless characters on the Ethereum blockchain</Typography>
+            <Typography>with a mission to conquer the Metaverse.</Typography>
           </motion.div>
 
           {isDesktop && (

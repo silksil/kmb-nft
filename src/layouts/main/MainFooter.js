@@ -1,22 +1,16 @@
 import { Link as ScrollLink } from 'react-scroll';
 import { Container, IconButton, Box, Stack, alpha } from '@mui/material';
 import Logo from '../../components/Logo';
-import twitter from '@iconify/icons-eva/twitter-fill';
-import discord from '@iconify/icons-ic/baseline-discord';
 import { Icon } from 'src/components/Icon';
 import { styled } from '@mui/system';
 import { Image } from 'src/components/Image.js';
+import { SOCIALS } from 'src/utils/socialIcons';
 
-const Opensea = styled((props) => <Image src="static/marketplaces/open-sea.svg" {...props} />)(({ theme }) => ({
+const Opensea = styled((props) => <Image src="static/marketplaces/open-sea.svg" alt="open sea log" {...props} />)(({ theme }) => ({
   width: theme.icons.l.width,
   height: theme.icons.l.height,
   filter: shadowIcon(theme.palette.secondary.main),
 }));
-
-const SOCIALS = [
-  { name: 'Linkedin', icon: discord },
-  { name: 'Twitter', icon: twitter },
-];
 
 const shadowIcon = (color) => `drop-shadow(4px 4px 4px ${alpha(color, 0.6)})`;
 

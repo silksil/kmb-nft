@@ -78,7 +78,7 @@ export function LandingWhitelist() {
       <Container maxWidth="lg">
         <Grid container spacing={4} justifyContent="center">
           <Grid item xs={10} md={4}>
-            <Box as="img" src="/static/avatars/puut-1.png" />
+            <Box as="img" src="/static/avatars/kmg/kmg-6.png" />
           </Grid>
           <Grid item xs={12} md={4} sx={{ display: 'flex', alignItems: 'center' }}>
             <ContentStyle>
@@ -94,7 +94,7 @@ export function LandingWhitelist() {
                     mb: 2,
                   }}
                 >
-                  Be the first to be able to mint. Refer to your friends and the top 100 referrers will get early access.
+                  Be the first to be able to mint. Refer to your friends and the top 50 referrers will get early access.
                 </Typography>
                 <Button variant="contained" size="large" className="vrlps-trigger" sx={{ mt: 2 }}>
                   Join and win

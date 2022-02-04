@@ -39,14 +39,14 @@ export function LandingTechnical() {
                     mb: 2,
                   }}
                 >
-                  It is a collection of 8,888 NFTs on the blockchain. Each trait is seperetly crafted. Algorithm computer wizardry is used to blend these traits and create unique characters.
+                  Each character is a unique piece of artwork which has been generated from different traits. Algorithm computer wizardry is used to blend these traits and create the characters. They are all dope, but some are rarer than others.
                 </Typography>
               </MotionInView>
             </ContentStyle>
           </Grid>
 
           <Grid item xs={10} md={4} sx={{ zIndex: 1 }}>
-            <Box as="img" src="/static/avatars/puut-1.png" />
+            <Box as="img" src="/static/avatars/widep/widep-2.png" />
           </Grid>
         </Grid>
       </Container>

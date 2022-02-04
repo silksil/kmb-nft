@@ -4,18 +4,18 @@ import { varFadeInUp, MotionInView } from '../../components/animate';
 
 const CARDS = [
   {
-    icon: '/static/avatars/puut-1.png',
+    icon: '/static/avatars/kmg/kmg-4.png',
     title: 'Sophie',
     description: 'Design',
   },
   {
-    icon: '/static/avatars/puut-1.png',
+    icon: '/static/avatars/kmg/kmg-1.png',
     title: 'Sil',
     description: 'Engineering',
   },
 
   {
-    icon: '/static/avatars/puut-1.png',
+    icon: '/static/avatars/kmg/kmg-5.png',
     title: 'Oscar',
     description: 'Community',
   },
@@ -59,7 +59,6 @@ export function LandingTeam() {
       <Container maxWidth="lg">
         <Container maxWidth="sm" sx={{ mb: { xs: 5 }, textAlign: 'center' }}>
           <Typography variant="h2">The Team</Typography>
-          <Typography>This project started with two people being in love. Guess who.</Typography>
         </Container>
 
         <Grid container spacing={isDesktop ? 10 : 5}>

@@ -7,6 +7,10 @@ export default function Button(theme) {
             boxShadow: 'none',
           },
         },
+
+        sizeSmall: {
+          height: 40,
+        },
         sizeLarge: {
           height: 48,
         },

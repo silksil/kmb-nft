@@ -14,11 +14,11 @@ const FAQ = [
   },
   {
     heading: 'How many?',
-    detail: 'There will be a total of 8,888 characters minted.',
+    detail: 'To be announced.',
   },
   {
     heading: 'Which blockchain?',
-    detail: 'To be announced.',
+    detail: 'Ethereum',
   },
   {
     heading: 'How much?',
@@ -32,14 +32,13 @@ const FAQ = [
     heading: 'Maximum mintable?',
     detail: 'To be announced.',
   },
-
-  {
-    heading: 'Data storage?',
-    detail: 'The NFTs are stored on IPFS.',
-  },
   {
     heading: 'Roadmap?',
     detail: 'No roadmap, just vibes.',
+  },
+  {
+    heading: 'Data storage?',
+    detail: 'The NFTs are stored on IPFS.',
   },
 ];
 
