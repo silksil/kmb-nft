@@ -40,7 +40,7 @@ export function KmgMarquee() {
   return (
     <Marquee gradient={false} speed={15}>
       {paths.map(({ path }) => (
-        <Image key={path} src={`static/avatars/kmg/kmg-${path}.png`} alt="KMG NFT" />
+        <Image key={path} src={`static/avatars/kmg/kmg-${path}.png`} alt="An KMG" />
       ))}
     </Marquee>
   );

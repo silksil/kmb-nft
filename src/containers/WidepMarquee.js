@@ -37,7 +37,7 @@ export function WidepMarquee() {
   return (
     <Marquee gradient={false} speed={25}>
       {paths.map(({ path }) => (
-        <Image key={path} src={`static/avatars/widep/widep-${path}.png`} alt="KMG NFT" />
+        <Image key={path} src={`static/avatars/widep/widep-${path}.png`} alt="Wide P." />
       ))}
     </Marquee>
   );
