@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import flashFill from '@iconify/icons-eva/flash-fill';
 import { styled } from '@mui/material/styles';
-import { Box, Button, Typography, useMediaQuery, useTheme } from '@mui/material';
+import { Box, Button, Container, Typography, useMediaQuery, useTheme } from '@mui/material';
 
 import { varFadeInUp, varWrapEnter, varFadeInDown } from '../../components/animate';
 import { useWallet } from 'src/hooks/useWallet';
@@ -11,6 +11,7 @@ import { useContract } from 'src/hooks/useContract';
 import { useUI } from 'src/hooks/useUI';
 import { Icon } from 'src/components/Icon';
 import { BackgroundBlur as BaseBackgroundBlur } from '../BackgroundBlur';
+import { shadowHeading } from 'src/utils/shadowHeading';
 
 const RootStyle = styled(motion.div)(({ theme }) => ({
   position: 'relative',
@@ -33,6 +34,10 @@ const ContentStyle = styled((props) => <Box {...props} />)(({ theme }) => ({
   [theme.breakpoints.up('lg')]: {
     marginTop: theme.spacing(15),
   },
+}));
+
+const Heading = styled((props) => <Typography {...props} />)(({ theme }) => ({
+  filter: shadowHeading(theme.palette.secondary.main),
 }));
 
 const BackgroundBlur = styled((props) => <BaseBackgroundBlur {...props} />)(({ theme }) => ({
@@ -103,18 +108,19 @@ export function LandingHero() {
 
         <ContentStyle>
           <motion.div variants={varFadeInDown}>
-            <Typography variant="h1" gutterBottom>
+            <Heading variant="h1" gutterBottom>
               Wide P.
-            </Typography>
-            <Typography variant="h3" gutterBottom>
+            </Heading>
+            <Heading variant="h3" gutterBottom>
               & the KMG
-            </Typography>
+            </Heading>
           </motion.div>
-          <motion.div variants={varFadeInUp}>
-            <Typography>Ruthless characters on the Ethereum blockchain</Typography>
-            <Typography>with a mission to conquer the Metaverse.</Typography>
-          </motion.div>
-
+          <Container maxWidth="xs">
+            <motion.div variants={varFadeInUp}>
+              <Typography>Ruthless characters on the Ethereum blockchain with a mission to conquer the Metaverse.</Typography>
+            </motion.div>
+          </Container>
+          >
           {isDesktop && (
             <motion.div variants={varFadeInUp}>
               {isLaunched && (

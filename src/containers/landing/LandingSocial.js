@@ -5,6 +5,7 @@ import discordIcon from '@iconify/icons-ic/baseline-discord';
 import twitterIcon from '@iconify/icons-eva/twitter-fill';
 
 import { BackgroundBlur } from '../BackgroundBlur';
+import { shadowHeading } from 'src/utils/shadowHeading';
 
 const RootStyle = styled('div')(({ theme }) => ({
   padding: theme.spacing(14, 0),
@@ -31,6 +32,10 @@ const ContentStyle = styled('div')(({ theme }) => ({
   position: 'relative',
 }));
 
+const Heading = styled((props) => <Typography {...props} />)(({ theme }) => ({
+  filter: shadowHeading(theme.palette.secondary.main),
+}));
+
 export function LandingSocial() {
   return (
     <RootStyle>
@@ -39,18 +44,18 @@ export function LandingSocial() {
         <BackgroundBlur color="secondary" bottom="-60px" height="120px" width="100%" opacityStrength={0.2} />
 
         <ContentStyle>
-          <Typography variant="h2" sx={{ mb: 3 }}>
+          <Heading variant="h2" sx={{ mb: 2 }}>
             Join the community
-          </Typography>
+          </Heading>
 
           <Grid container spacing={2} alignItems="center" justifyContent="center">
             <Grid item>
-              <Button variant="outlined" size="large" color="secondary" endIcon={<Icon icon={discordIcon} />}>
+              <Button variant="outlined" sx={{ minWidth: '180px' }} size="large" color="secondary" endIcon={<Icon icon={discordIcon} />}>
                 Join Discord
               </Button>
             </Grid>
             <Grid item>
-              <Button variant="outlined" size="large" color="primary" endIcon={<Icon icon={twitterIcon} />}>
+              <Button variant="outlined" sx={{ minWidth: '180px' }} size="large" color="primary" endIcon={<Icon icon={twitterIcon} />}>
                 Follow Twitter
               </Button>
             </Grid>

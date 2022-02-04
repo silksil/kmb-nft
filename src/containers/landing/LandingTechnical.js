@@ -2,6 +2,7 @@ import { styled } from '@mui/material/styles';
 import { Box, Grid, Container, Typography } from '@mui/material';
 import { varFadeInUp, MotionInView } from '../../components/animate';
 import { BackgroundBlur } from '../BackgroundBlur';
+import { shadowHeading } from 'src/utils/shadowHeading';
 
 const RootStyle = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -18,6 +19,10 @@ const ContentStyle = styled('div')(({ theme }) => ({
   },
 }));
 
+const Heading = styled((props) => <Typography {...props} />)(({ theme }) => ({
+  filter: shadowHeading(theme.palette.secondary.main),
+}));
+
 export function LandingTechnical() {
   return (
     <RootStyle>
@@ -28,9 +33,9 @@ export function LandingTechnical() {
           <Grid item xs={12} md={4} sx={{ display: 'flex', alignItems: 'center' }}>
             <ContentStyle>
               <MotionInView variants={varFadeInUp}>
-                <Typography variant="h2" sx={{ mb: 3 }}>
+                <Heading variant="h2" sx={{ mb: 3 }}>
                   Every character is unique
-                </Typography>
+                </Heading>
               </MotionInView>
 
               <MotionInView variants={varFadeInUp}>

@@ -3,8 +3,8 @@
   "short_name": "Wide P",
   "display": "standalone",
   "start_url": "/",
-  "theme_color": "#000000",
-  "background_color": "#ffffff",
+  "theme_color": "#0993EC",
+  "background_color": "#0d0415",
   "icons": [
     {
       "src": "favicon/android-chrome-192x192.png",

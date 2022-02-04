@@ -5,6 +5,9 @@ export default function Typography(theme) {
         body1: {
           color: theme.palette.text.secondary,
         },
+        body2: {
+          color: theme.palette.text.secondary,
+        },
         paragraph: {
           marginBottom: theme.spacing(2),
         },

@@ -2,8 +2,9 @@ const CopyRight = () => (
   <>
     The artwork is{' '}
     <a target="_blank" href="https://creativecommons.org/publicdomain/zero/1.0/" rel="noreferrer">
-      public domain.
+      public domain
     </a>
+    .
   </>
 );
 
@@ -17,11 +18,7 @@ const FAQ = [
     detail: 'To be announced.',
   },
   {
-    heading: 'Which blockchain?',
-    detail: 'Ethereum',
-  },
-  {
-    heading: 'How much?',
+    heading: 'Cost?',
     detail: 'To be announced.',
   },
   {

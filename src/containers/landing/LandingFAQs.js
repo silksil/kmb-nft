@@ -7,6 +7,7 @@ import { varFadeInUp, MotionInView } from '../../components/animate';
 import faq from '../../data/faq';
 import { BackgroundBlur } from '../BackgroundBlur';
 import { Box } from '@mui/system';
+import { shadowHeading } from 'src/utils/shadowHeading';
 
 const RootStyle = styled('div')(({ theme }) => ({
   padding: theme.spacing(24, 0),
@@ -16,6 +17,8 @@ const Subtitle = styled((props) => <Typography variant="h2" {...props} />)(({ th
   position: 'relative',
   zIndex: 1,
   textAlign: 'center',
+  filter: shadowHeading(theme.palette.secondary.main),
+
   marginBottom: theme.spacing(2),
   [theme.breakpoints.up('md')]: {
     textAlign: 'left',

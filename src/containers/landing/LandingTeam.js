@@ -1,23 +1,27 @@
 import { alpha, useTheme, styled } from '@mui/material/styles';
-import { Box, Grid, Card, Container, Typography, useMediaQuery } from '@mui/material';
+import { Grid, Card, Container, Typography, useMediaQuery } from '@mui/material';
 import { varFadeInUp, MotionInView } from '../../components/animate';
+import { shadowHeading } from 'src/utils/shadowHeading';
 
 const CARDS = [
   {
     icon: '/static/avatars/kmg/kmg-4.png',
     title: 'Sophie',
-    description: 'Design',
+    subtitle: 'Design',
+    description: 'The girlfriend of Sil',
   },
   {
     icon: '/static/avatars/kmg/kmg-1.png',
     title: 'Sil',
-    description: 'Engineering',
+    subtitle: 'Engineering',
+    description: 'The boyfriend of Sophie',
   },
 
   {
     icon: '/static/avatars/kmg/kmg-5.png',
     title: 'Oscar',
-    description: 'Community',
+    subtitle: 'Community',
+    description: 'The brother of Sophie',
   },
 ];
 
@@ -50,6 +54,10 @@ const CardIconStyle = styled('img')(({ theme }) => ({
   filter: shadowIcon(theme.palette.primary.main),
 }));
 
+const Heading = styled((props) => <Typography {...props} />)(({ theme }) => ({
+  filter: shadowHeading(theme.palette.secondary.main),
+}));
+
 export function LandingTeam() {
   const theme = useTheme();
   const isDesktop = useMediaQuery(theme.breakpoints.up('lg'));
@@ -58,7 +66,8 @@ export function LandingTeam() {
     <RootStyle>
       <Container maxWidth="lg">
         <Container maxWidth="sm" sx={{ mb: { xs: 5 }, textAlign: 'center' }}>
-          <Typography variant="h2">The Team</Typography>
+          <Heading variant="h2">The Team</Heading>
+          <Typography>One big happy family</Typography>
         </Container>
 
         <Grid container spacing={isDesktop ? 10 : 5}>
@@ -67,10 +76,13 @@ export function LandingTeam() {
               <MotionInView variants={varFadeInUp}>
                 <CardStyle>
                   <CardIconStyle src={card.icon} alt={card.title} />
-                  <Typography variant="h5" paragraph>
+                  <Typography variant="h5" paragraph sx={{ m: 0 }}>
                     {card.title}
                   </Typography>
-                  <Typography>{card.description}</Typography>
+                  <Typography sx={{ color: 'text.disabled' }}>{card.subtitle}</Typography>
+                  <Typography variant="body2" sx={{ mt: 2 }}>
+                    {card.description}
+                  </Typography>
                 </CardStyle>
               </MotionInView>
             </Grid>
