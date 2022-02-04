@@ -6,7 +6,7 @@ import Marquee from 'react-fast-marquee';
 const Image = styled('img')(() => ({
   width: 320,
   height: 320,
-  marginLeft: 14,
+  marginLeft: 8,
 }));
 
 const paths = [
@@ -38,7 +38,7 @@ const paths = [
 
 export function KmgMarquee() {
   return (
-    <Marquee gradient={false} speed={15}>
+    <Marquee gradient={false} speed={25} direction="right">
       {paths.map(({ path }) => (
         <Image key={path} src={`static/avatars/kmg/kmg-${path}.png`} alt="An KMG" />
       ))}

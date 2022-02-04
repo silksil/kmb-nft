@@ -70,6 +70,7 @@ export default function MainNavbar() {
     <AppBar sx={{ boxShadow: 0, bgcolor: 'transparent' }}>
       <ToolbarStyle
         sx={{
+          p: 1,
           ...(isOffset && {
             bgcolor: bgColor,
             height: { md: APP_BAR_DESKTOP - 16 },
@@ -85,10 +86,10 @@ export default function MainNavbar() {
           }}
         >
           <NextLink href="/">
-            <Logo />
+            <Logo sx={{ mr: 2 }} />
           </NextLink>
 
-          {account && (
+          {isLaunched && account && (
             <Label color="info" sx={{ mr: 2 }}>
               <Icon />
               <Box component="img" src="/static/networks/polygon-logo.svg" sx={{ height: 12, marginRight: 1 }} />
@@ -96,7 +97,7 @@ export default function MainNavbar() {
             </Label>
           )}
 
-          <Stack spacing={1} direction="row" justifyContent="center" alignItems="center" sx={{ mt: 5, mb: { xs: 5 } }}>
+          <Stack spacing={0.5} direction="row" justifyContent="center" alignItems="center" sx={{ mt: 5, mb: { xs: 5 }, mr: 1 }}>
             {SOCIALS.map((social) => (
               <IconButton key={social.name} color="primary">
                 <SocialIcon icon={social.icon} size="m" />

@@ -25,8 +25,6 @@ const CARDS = [
   },
 ];
 
-const shadowIcon = (color) => `drop-shadow(2px 2px 2px ${alpha(color, 0.48)})`;
-
 const RootStyle = styled('div')(({ theme }) => ({
   paddingTop: theme.spacing(15),
   [theme.breakpoints.up('md')]: {
@@ -51,7 +49,6 @@ const CardIconStyle = styled('img')(({ theme }) => ({
   height: 120,
   margin: 'auto',
   marginBottom: theme.spacing(2),
-  filter: shadowIcon(theme.palette.primary.main),
 }));
 
 const Heading = styled((props) => <Typography {...props} />)(({ theme }) => ({

@@ -18,9 +18,8 @@ const RootStyle = styled(motion.div)(({ theme }) => ({
   height: '90vh',
   width: '100%',
   overflow: 'hidden',
-  [theme.breakpoints.up('lg')]: {
-    position: 'fixed',
-  },
+
+  position: 'fixed',
 }));
 
 const ContentStyle = styled((props) => <Box {...props} />)(({ theme }) => ({
@@ -133,7 +132,7 @@ export function LandingHero() {
         </ContentStyle>
         <HeroImgStyle alt="hero" src="/static/avatars/hero-characters.png" />
       </RootStyle>
-      <Box sx={{ height: { md: '90vh' } }} />
+      <Box sx={{ height: { xs: '100vh', md: '90vh' } }} />
     </>
   );
 }
