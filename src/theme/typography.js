@@ -17,6 +17,7 @@ function responsiveFontSizes({ sm, md, lg }) {
 }
 
 const FONT_PRIMARY = 'IBM Plex Sans, sans-serif';
+
 const FONT_SECONDARY = 'Inter, sans-serif';
 
 const typography = {
