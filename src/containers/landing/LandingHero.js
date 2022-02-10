@@ -29,7 +29,7 @@ const ContentStyle = styled((props) => <Box {...props} />)(({ theme }) => ({
   textAlign: 'center',
   position: 'relative',
   overflow: 'hidden',
-  marginTop: theme.spacing(25),
+  marginTop: theme.spacing(16),
   [theme.breakpoints.up('lg')]: {
     marginTop: theme.spacing(15),
   },
@@ -69,7 +69,7 @@ const AstronautStyle = styled(motion.img)(({ theme }) => ({
   position: 'absolute',
   left: '0',
   marginLeft: '0',
-  marginTop: theme.spacing(10),
+  marginTop: theme.spacing(25),
 
   [theme.breakpoints.up('sm')]: {
     marginLeft: theme.spacing(6),
