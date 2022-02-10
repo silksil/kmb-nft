@@ -40,8 +40,8 @@ export function LandingSocial() {
   return (
     <RootStyle>
       <ContainerStyle>
-        <BackgroundBlur color="primary" top="-60px" height="120px" width="100%" opacityStrength={0.2} />
-        <BackgroundBlur color="secondary" bottom="-60px" height="120px" width="100%" opacityStrength={0.2} />
+        <BackgroundBlur color="primary" top="-100px" height="200px" width="100%" />
+        <BackgroundBlur color="secondary" bottom="-100px" height="200px" width="100%" />
 
         <ContentStyle>
           <Heading variant="h2" sx={{ mb: 2 }}>

@@ -26,7 +26,7 @@ const Heading = styled((props) => <Typography {...props} />)(({ theme }) => ({
 export function LandingTechnical() {
   return (
     <RootStyle>
-      <BackgroundBlur top="0" left="-200px" bottom="0" width="400px" height="400px" color="secondary" />
+      <BackgroundBlur top="0" left="-350px" bottom="0" width="700px" height="700px" color="primary" />
 
       <Container maxWidth="lg">
         <Grid container spacing={4} justifyContent="center">

@@ -77,7 +77,7 @@ const AstronautStyle = styled(motion.img)(({ theme }) => ({
     height: '200px',
     position: 'absolute',
     top: '10%',
-    left: '50%',
+    left: '45%',
     marginLeft: '-400px',
   },
 }));
@@ -101,6 +101,7 @@ export function LandingHero() {
     <>
       <RootStyle initial="initial" animate="animate" variants={varWrapEnter} position="relative">
         <BackgroundBlur color="secondary" sx={{ left: { xs: -100, md: -150, lg: -250 } }} inHalf />
+
         <BackgroundBlur color="primary" sx={{ right: { xs: -100, md: -150, lg: -250 } }} inHalf />
         <motion.div animate={{ y: [-20, 20, -20] }} transition={{ duration: 4, repeat: Infinity }}>
           <AstronautStyle alt="hero" src="/static/avatars/astronaut.png" />
@@ -109,10 +110,7 @@ export function LandingHero() {
         <ContentStyle>
           <motion.div variants={varFadeInDown}>
             <Heading variant="h1" gutterBottom>
-              Wide P.
-            </Heading>
-            <Heading variant="h3" gutterBottom>
-              & the KMG
+              Vladimir и KMG
             </Heading>
           </motion.div>
           <Container maxWidth="xs">
