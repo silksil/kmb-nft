@@ -43,6 +43,7 @@ const BackgroundBlur = styled((props) => <BaseBackgroundBlur {...props} />)(({ t
   zIndex: -1,
   width: 200,
   height: '90vh',
+
   [theme.breakpoints.up('md')]: {
     width: 300,
   },
