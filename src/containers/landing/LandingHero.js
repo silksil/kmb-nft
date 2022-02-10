@@ -55,6 +55,8 @@ const BackgroundBlur = styled((props) => <BaseBackgroundBlur {...props} />)(({ t
 const HeroImgStyle = styled(motion.img)(({ theme }) => ({
   margin: 'auto',
   marginTop: `-${theme.spacing(10)}`,
+  height: '55vh',
+  width: 'auto',
 
   [theme.breakpoints.up('lg')]: {
     height: '80%',

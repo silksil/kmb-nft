@@ -33,11 +33,11 @@ const paths = [
   },
 ];
 
-export function WidepMarquee() {
+export function VladimirMarquee() {
   return (
     <Marquee gradient={false} speed={25}>
       {paths.map(({ path }) => (
-        <Image key={path} src={`static/avatars/widep/widep-${path}.png`} alt="Wide P." />
+        <Image key={path} src={`static/avatars/vladimir/vladimir-${path}.png`} alt="Vladimir" />
       ))}
     </Marquee>
   );

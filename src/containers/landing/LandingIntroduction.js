@@ -2,7 +2,7 @@ import { styled } from '@mui/material/styles';
 import { Box, Container, Typography, Stack } from '@mui/material';
 
 import { MotionInView, varFadeInUp } from '../../components/animate';
-import { WidepMarquee } from '../WidepMarquee';
+import { VladimirMarquee } from '../VladimirMarquee';
 import { KmgMarquee } from '../KmgMarquee';
 import { shadowHeading } from 'src/utils/shadowHeading';
 
@@ -31,7 +31,7 @@ export function LandingIntroduction() {
       </Container>
       <Container maxWidth="1400px" sx={{ mt: 10, maxWidth: 2200 }}>
         <Box mb={3}>
-          <WidepMarquee />
+          <VladimirMarquee />
         </Box>
 
         <KmgMarquee />
