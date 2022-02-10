@@ -17,17 +17,17 @@ const ContainerStyle = styled('div')(({ theme }) => ({
   position: 'relative',
   padding: 0,
   margin: 'auto',
-  width: '90%',
-  [theme.breakpoints.up('md')]: {
-    maxWidth: '800px',
-  },
+  width: '100%',
+  // [theme.breakpoints.up('md')]: {
+  //   maxWidth: '800px',
+  // },
 }));
 
 const ContentStyle = styled('div')(({ theme }) => ({
   textAlign: 'center',
   backgroundColor: theme.palette.background.paper,
-  padding: theme.spacing(10, 1),
-  borderRadius: theme.shape.borderRadiusMd,
+  padding: theme.spacing(16, 1),
+
   zIndex: 10,
   position: 'relative',
 }));
