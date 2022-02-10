@@ -78,12 +78,12 @@ const Heading = styled((props) => <Typography {...props} />)(({ theme }) => ({
 export function LandingWhitelist() {
   return (
     <RootStyle>
-      <BackgroundBlur right="-200px" bottom="0" width="400px" height="400px" />
+      <BackgroundBlur right="-350px" bottom="0" width="700px" height="700px" zIndex={0} color="secondary" />
 
       <Container maxWidth="lg">
         <Grid container spacing={4} justifyContent="center">
           <Grid item xs={10} md={4}>
-            <Box as="img" src="/static/avatars/kmg/kmg-6.png" />
+            <Box as="img" src="/static/avatars/kmg/kmg-6.png" zIndex={1} position="relative" />
           </Grid>
           <Grid item xs={12} md={4} sx={{ display: 'flex', alignItems: 'center' }}>
             <ContentStyle>

@@ -7,15 +7,15 @@ function createGradient(to, color1, color2) {
 
 const GREY = {
   0: '#FFFFFF',
-  100: '#F9FAFB',
-  200: '#D4DDE4',
-  300: '#A9B1C9',
-  400: '#807FAD',
-  500: '#223D5E',
-  600: '#2E3348',
-  700: '#202231',
-  800: '#161522',
-  900: '#0d0415',
+  100: '#e3e4ea',
+  200: '#babccc',
+  300: '#8f90aa',
+  400: '#4a4a73',
+  500: '#2f2e5e',
+  600: '#2a2857',
+  700: '#23214d',
+  800: '#1b1841',
+  900: '#12062b',
   500_8: alpha('#223D5E', 0.08),
   500_12: alpha('#223D5E', 0.12),
   500_16: alpha('#223D5E', 0.16),
@@ -99,14 +99,6 @@ const GRADIENTS = {
   error: createGradient('vertical', ERROR.light, ERROR.main),
 };
 
-const CHART_COLORS = {
-  violet: ['#826AF9', '#9E86FF', '#D0AEFF', '#F7D2FF'],
-  blue: ['#2D99FF', '#83CFFF', '#A5F3FF', '#CCFAFF'],
-  green: ['#2CD9C5', '#60F1C8', '#A4F7CC', '#C0F2DC'],
-  yellow: ['#FFE700', '#FFEF5A', '#FFF7AE', '#FFF3D6'],
-  red: ['#FF6C40', '#FF8F6D', '#FFBD98', '#FFF2D4'],
-};
-
 const COMMON = {
   primary: { ...PRIMARY },
   secondary: { ...SECONDARY },
@@ -117,7 +109,6 @@ const COMMON = {
   grey: GREY,
   gradients: GRADIENTS,
   divider: GREY[500_24],
-  chart: CHART_COLORS,
   action: {
     hover: GREY[500_8],
     selected: GREY[500_16],
@@ -138,7 +129,7 @@ const palette = {
   },
   dark: {
     ...COMMON,
-    text: { primary: '#fff', secondary: GREY[300], disabled: GREY[400] },
+    text: { primary: '#fff', secondary: GREY[200], disabled: GREY[300] },
     background: { paper: GREY[800], default: GREY[900], neutral: GREY[500_16] },
     action: { active: GREY[500], ...COMMON.action },
   },

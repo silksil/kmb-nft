@@ -15,6 +15,7 @@ import { alpha } from '@mui/material/styles';
 import { useTheme } from '@mui/material';
 import { useWindowSize } from 'src/hooks/useWindowSize';
 import flashFill from '@iconify/icons-eva/flash-fill';
+import { MHidden } from '../../components/@material-extend';
 
 import { Image } from 'src/components/Image.js';
 import { SOCIALS } from '../../utils/socialIcons';
@@ -85,9 +86,11 @@ export default function MainNavbar() {
             justifyContent: 'space-between',
           }}
         >
-          <NextLink href="/">
-            <Logo sx={{ mr: 2 }} />
-          </NextLink>
+          <MHidden width="mdDown">
+            <NextLink href="/">
+              <Logo sx={{ mr: 2 }} />
+            </NextLink>
+          </MHidden>
 
           {isLaunched && account && (
             <Label color="info" sx={{ mr: 2 }}>
@@ -106,10 +109,10 @@ export default function MainNavbar() {
             {/* <IconButton color="primary">
               <Opensea />
             </IconButton> */}
-            <Button variant="outlined" color="secondary" size="small" className="vrlps-trigger">
-              Get early access
-            </Button>
           </Stack>
+          <Button variant="outlined" color="secondary" size="small" className="vrlps-trigger">
+            Get early access
+          </Button>
 
           {isLaunched && (
             <Button startIcon={<Icon icon={flashFill} width={20} height={20} />} variant="contained" onClick={handleClick}>
