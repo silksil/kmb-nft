@@ -23,7 +23,7 @@ export default function LandingPage() {
 
   return (
     <MainLayout>
-      <Page title="The  Wide P. & the KMG" id="move_top" sx={{ height: '100%' }}>
+      <Page title="The  Vladimir & & the KMG" id="move_top" sx={{ height: '100%' }}>
         <MintingModal />
         <LandingHero />
         <ContentStyle>

@@ -73,7 +73,6 @@ export default function MainNavbar() {
         sx={{
           p: 1,
           ...(isOffset && {
-            bgcolor: bgColor,
             height: { md: APP_BAR_DESKTOP - 16 },
           }),
         }}

@@ -26,7 +26,7 @@ export function LandingIntroduction() {
         </MotionInView>
 
         <MotionInView variants={varFadeInUp}>
-          <Typography>Wide P. does not feel respected as a world leader. To take revenge, he aims to conquer the Metaverse. Together with the secret agency service, Komitet Metaverse Gansters (KMG), he plans to make his vision reality.</Typography>
+          <Typography>Vladimir & does not feel respected as a world leader. To take revenge, he aims to conquer the Metaverse. Together with the secret agency service, Komitet Metaverse Gansters (KMG), he plans to make his vision reality.</Typography>
         </MotionInView>
       </Container>
       <Container maxWidth="1400px" sx={{ mt: 10, maxWidth: 2200 }}>

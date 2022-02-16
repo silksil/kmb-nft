@@ -18,15 +18,12 @@ const ContainerStyle = styled('div')(({ theme }) => ({
   padding: 0,
   margin: 'auto',
   width: '100%',
-  // [theme.breakpoints.up('md')]: {
-  //   maxWidth: '800px',
-  // },
 }));
 
 const ContentStyle = styled('div')(({ theme }) => ({
   textAlign: 'center',
   backgroundColor: theme.palette.background.paper,
-  padding: theme.spacing(16, 1),
+  padding: theme.spacing(20, 1),
 
   zIndex: 10,
   position: 'relative',
