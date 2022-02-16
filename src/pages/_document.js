@@ -9,7 +9,7 @@ import createEmotionCache from 'src/utils/createEmotionCache';
 import palette from 'src/theme/palette';
 
 const metaInfo = {
-  author: ' Vladimir & the KMG',
+  author: ' Vladimir',
   keywords: 'NFT, Opensea, Rarible',
   description: 'NFT project',
 };
