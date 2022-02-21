@@ -1,35 +1,34 @@
-import NextLink from 'next/link';
-import { styled } from '@mui/material/styles';
-import { Box, Button, AppBar, Toolbar, Container, IconButton, Stack } from '@mui/material';
-import useOffSetTop from '../../hooks/useOffSetTop';
-import Logo from '../../components/Logo';
-import Label from '../../components/Label';
+import NextLink from "next/link";
+import { styled } from "@mui/material/styles";
+import { Button, AppBar, Toolbar, Container, IconButton, Stack } from "@mui/material";
+import useOffSetTop from "../../hooks/useOffSetTop";
+import Logo from "../../components/Logo";
+import Label from "../../components/Label";
 
-import { useWallet } from 'src/hooks/useWallet';
-import { useContract } from 'src/hooks/useContract';
-import { useUI } from 'src/hooks/useUI';
+import { useWallet } from "src/hooks/useWallet";
+import { useUI } from "src/hooks/useUI";
 
-import { Icon } from 'src/components/Icon';
-import { showPartialAccountAddress } from 'src/utils/account';
-import { alpha } from '@mui/material/styles';
-import { useTheme } from '@mui/material';
-import { useWindowSize } from 'src/hooks/useWindowSize';
-import flashFill from '@iconify/icons-eva/flash-fill';
-import { MHidden } from '../../components/@material-extend';
+import { Icon } from "src/components/Icon";
+import { showPartialAccountAddress } from "src/utils/account";
+import { alpha } from "@mui/material/styles";
+import { useTheme } from "@mui/material";
+import { useWindowSize } from "src/hooks/useWindowSize";
+import { MHidden } from "../../components/@material-extend";
 
-import { Image } from 'src/components/Image.js';
-import { SOCIALS } from '../../utils/socialIcons';
+import { Image } from "src/components/Image.js";
+import { SOCIALS } from "../../utils/socialIcons";
+import ethereumIcon from "@iconify/icons-mdi/ethereum";
 
 const APP_BAR_MOBILE = 64;
 const APP_BAR_DESKTOP = 88;
 
 const ToolbarStyle = styled(Toolbar)(({ theme }) => ({
   height: APP_BAR_MOBILE,
-  transition: theme.transitions.create(['height', 'background-color'], {
+  transition: theme.transitions.create(["height", "background-color"], {
     easing: theme.transitions.easing.easeInOut,
     duration: theme.transitions.duration.shorter,
   }),
-  [theme.breakpoints.up('md')]: {
+  [theme.breakpoints.up("md")]: {
     height: APP_BAR_DESKTOP,
   },
 }));
@@ -48,8 +47,7 @@ const Opensea = styled((props) => <Image src="static/marketplaces/open-sea.svg" 
 
 export default function MainNavbar() {
   const { isConnected, connect, account } = useWallet();
-  const { mintNft } = useContract();
-  const isLaunched = false;
+  const isLaunched = true;
 
   /**
    * Styling variables.
@@ -58,17 +56,15 @@ export default function MainNavbar() {
   const { height } = useWindowSize();
   const theme = useTheme();
   const isOffset = useOffSetTop(height);
-  const bgColor = alpha(theme.palette.background.default, 0.9);
 
   const handleClick = async () => {
     if (!isConnected) return connect();
 
     setMintingModalIsOpen(true);
-    mintNft();
   };
 
   return (
-    <AppBar sx={{ boxShadow: 0, bgcolor: 'transparent' }}>
+    <AppBar sx={{ boxShadow: 0, bgcolor: "transparent" }}>
       <ToolbarStyle
         sx={{
           p: 1,
@@ -80,9 +76,9 @@ export default function MainNavbar() {
         <Container
           maxWidth="lg"
           sx={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
           }}
         >
           <MHidden width="mdDown">
@@ -90,14 +86,6 @@ export default function MainNavbar() {
               <Logo sx={{ mr: 2 }} />
             </NextLink>
           </MHidden>
-
-          {isLaunched && account && (
-            <Label color="info" sx={{ mr: 2 }}>
-              <Icon />
-              <Box component="img" src="/static/networks/polygon-logo.svg" sx={{ height: 12, marginRight: 1 }} />
-              {showPartialAccountAddress(account)}
-            </Label>
-          )}
 
           <Stack spacing={0.5} direction="row" justifyContent="center" alignItems="center" sx={{ mt: 5, mb: { xs: 5 }, mr: 1 }}>
             {SOCIALS.map((social) => (
@@ -109,14 +97,20 @@ export default function MainNavbar() {
               <Opensea />
             </IconButton> */}
           </Stack>
-          <Button variant="outlined" color="secondary" size="small" className="vrlps-trigger">
-            Get early access
-          </Button>
 
           {isLaunched && (
-            <Button startIcon={<Icon icon={flashFill} width={20} height={20} />} variant="contained" onClick={handleClick}>
-              {isConnected ? 'Mint NFT' : 'Connect wallet'}
-            </Button>
+            <Stack direction="row" alignItems="center">
+              {isLaunched && account && (
+                <Label color="info" sx={{ mr: 2 }}>
+                  <Icon icon={ethereumIcon} size="s" />
+                  {showPartialAccountAddress(account)}
+                </Label>
+              )}
+
+              <Button variant="contained" onClick={handleClick}>
+                {isConnected ? "Mint NFT" : "Connect wallet"}
+              </Button>
+            </Stack>
           )}
         </Container>
       </ToolbarStyle>

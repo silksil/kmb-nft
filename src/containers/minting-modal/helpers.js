@@ -1,26 +1,46 @@
-import { CircularProgress } from '@mui/material';
-import { Icon } from '../../components/Icon';
+import { CircularProgress } from "@mui/material";
+import { Icon } from "../../components/Icon";
 
-import checkmarkFill from '@iconify/icons-eva/checkmark-fill';
-import alertTriangleFill from '@iconify/icons-eva/alert-triangle-outline';
-import flashFill from '@iconify/icons-eva/flash-fill';
+import checkmarkFill from "@iconify/icons-eva/checkmark-fill";
+import alertTriangleFill from "@iconify/icons-eva/alert-triangle-outline";
 
-export const getStatusText = (status, STATUS, error) => {
-  if (status === 'popWallet') return 'Poppin your wallet.';
-  if (status === 'minting') return 'Minting';
-  if (status === 'soldOut') return 'Sold out';
-  if (status === 'minted') return 'Succesfully minted';
-  if (status === 'error') return error;
+export const getStatusText = (status, error) => {
+  if (status === "mined") return "Succesfully mined. ";
+  if (status === "error") return error;
 
   return null;
 };
 
-export const getStatusIcon = (status, STATUS) => {
-  if (status === 'popWallet') return <Icon icon={flashFill} size="s" />;
-  if (status === 'minting') return <CircularProgress size="20px" />;
-  if (status === 'minted') return <Icon icon={checkmarkFill} color="success" size="s" />;
-  if (status === 'soldOut') return <Icon icon={checkmarkFill} color="success" size="s" />;
-  if (status === 'error') return <Icon icon={alertTriangleFill} color="error" size="s" />;
+export const getFeedbackStatusIcon = (status) => {
+  if (status === "mined") return <Icon icon={checkmarkFill} color="success" size="s" />;
+  if (status === "error") return <Icon icon={alertTriangleFill} color="error" size="s" />;
 
   return null;
+};
+
+export const getButtonStatusIcon = (status) => {
+  if (status === "popWallet") return <CircularProgress size="20px" />;
+  if (status === "minting") return <CircularProgress size="20px" />;
+
+  return null;
+};
+
+export const getButtonText = (status) => {
+  if (status === "popWallet") return "Confirm transaction";
+  if (status === "minting") return "Minting";
+  if (status === "mined") return "Mint more";
+
+  return "Mint";
+};
+
+export const buttonIsDisabled = (status) => {
+  if (status === "idle") return false;
+  if (status === "mined") return false;
+  if (status === "error") return false;
+  return true;
+};
+
+export const getMarketplacesFeedbackText = (transactionHash) => {
+  if (!transactionHash) return null;
+  return "Any time soon your transaction should be visible on Etherscan, OpenSea or Rarible.";
 };

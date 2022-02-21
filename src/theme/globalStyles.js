@@ -1,5 +1,5 @@
-import { useTheme } from '@mui/material/styles';
-import { GlobalStyles as GlobalThemeStyles } from '@mui/material';
+import { useTheme } from "@mui/material/styles";
+import { GlobalStyles as GlobalThemeStyles } from "@mui/material";
 
 export default function GlobalStyles() {
   const theme = useTheme();
@@ -7,101 +7,87 @@ export default function GlobalStyles() {
   return (
     <GlobalThemeStyles
       styles={{
-        '*': {
+        "*": {
           margin: 0,
           padding: 0,
-          boxSizing: 'border-box',
+          boxSizing: "border-box",
         },
         html: {
-          width: '100%',
-          height: '100%',
-          WebkitOverflowScrolling: 'touch',
+          width: "100%",
+          height: "100%",
+          WebkitOverflowScrolling: "touch",
         },
         body: {
-          width: '100%',
-          height: '100%',
+          width: "100%",
+          height: "100%",
         },
-        '#__next': {
-          width: '100%',
-          height: '100%',
+        "#__next": {
+          width: "100%",
+          height: "100%",
         },
         //TODO: remove the line below for the boilerplate
-        '.vl-gdpr .vl-gdpr-fat': {
-          backgroundColor: 'transparent !important',
-          marginBottom: '12px !important',
-          borderRadius: '12px !important',
+        ".vl-gdpr .vl-gdpr-fat": {
+          backgroundColor: "transparent !important",
+          marginBottom: "12px !important",
+          borderRadius: "12px !important",
         },
 
-        '.vl-modal-dialog': {
-          maxWidth: '500px !important',
+        ".vl-modal-dialog": {
+          maxWidth: "500px !important",
         },
 
-        '.vlns .vl-form-control': {
-          backgroundColor: '#2E3348 !important',
-          border: 'none !important',
-          color: '#fff!important',
+        ".vlns .vl-form-control": {
+          backgroundColor: "#2E3348 !important",
+          border: "none !important",
+          color: "#fff!important",
         },
 
-        '#form_firstName': {
-          color: '#fff!important',
-          '::placeholder': {
-            color: '#fff!important',
+        "#form_firstName": {
+          color: "#fff!important",
+          "::placeholder": {
+            color: "#fff!important",
           },
         },
 
-        '#form_email': {
-          color: '#fff!important',
-          '::placeholder': {
-            color: '#fff!important',
-          },
-        },
-
-        input: {
-          '&[type=number]': {
-            MozAppearance: 'textfield',
-            '&::-webkit-outer-spin-button': {
-              margin: 0,
-              WebkitAppearance: 'none',
-            },
-            '&::-webkit-inner-spin-button': {
-              margin: 0,
-              WebkitAppearance: 'none',
-            },
+        "#form_email": {
+          color: "#fff!important",
+          "::placeholder": {
+            color: "#fff!important",
           },
         },
 
         a: {
           color: theme.palette.primary.main,
-          textDecoration: 'none',
+          textDecoration: "none",
         },
 
         textarea: {
-          '&::-webkit-input-placeholder': {
+          "&::-webkit-input-placeholder": {
             color: theme.palette.text.disabled,
           },
-          '&::-moz-placeholder': {
+          "&::-moz-placeholder": {
             opacity: 1,
             color: theme.palette.text.disabled,
           },
-          '&:-ms-input-placeholder': {
+          "&:-ms-input-placeholder": {
             color: theme.palette.text.disabled,
           },
-          '&::placeholder': {
+          "&::placeholder": {
             color: theme.palette.text.disabled,
           },
         },
 
-        img: { display: 'block', maxWidth: '100%' },
+        img: { display: "block", maxWidth: "100%" },
 
         // Lazy Load Img
-        '.blur-up': {
-          WebkitFilter: 'blur(5px)',
-          filter: 'blur(5px)',
-          transition: 'filter 400ms, -webkit-filter 400ms',
+        ".blur-up": {
+          WebkitFilter: "blur(5px)",
+          filter: "blur(5px)",
+          transition: "filter 400ms, -webkit-filter 400ms",
         },
-        '.blur-up.lazyloaded ': {
-          WebkitFilter: 'blur(0)',
-          filter: 'blur(0)',
+        ".blur-up.lazyloaded ": {
+          WebkitFilter: "blur(0)",
+          filter: "blur(0)",
         },
       }}
     />

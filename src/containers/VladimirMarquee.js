@@ -1,9 +1,9 @@
-import { styled } from '@mui/system';
-import React from 'react';
+import { styled } from "@mui/system";
+import React from "react";
 
-import Marquee from 'react-fast-marquee';
+import Marquee from "react-fast-marquee";
 
-const Image = styled('img')(() => ({
+const Image = styled("img")(() => ({
   width: 320,
   height: 320,
   marginLeft: 14,
@@ -11,25 +11,19 @@ const Image = styled('img')(() => ({
 
 const paths = [
   {
-    path: '1',
+    path: "1",
   },
   {
-    path: '2',
+    path: "2",
   },
   {
-    path: '3',
+    path: "3",
   },
   {
-    path: '4',
+    path: "4",
   },
   {
-    path: '5',
-  },
-  {
-    path: '2',
-  },
-  {
-    path: '4',
+    path: "5",
   },
 ];
 
