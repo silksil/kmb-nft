@@ -1,17 +1,17 @@
-import * as React from 'react';
+import * as React from "react";
 
-import Document, { Html, Head, Main, NextScript } from 'next/document';
+import Document, { Html, Head, Main, NextScript } from "next/document";
 
-import createEmotionServer from '@emotion/server/create-instance';
+import createEmotionServer from "@emotion/server/create-instance";
 
-import createEmotionCache from 'src/utils/createEmotionCache';
+import createEmotionCache from "src/utils/createEmotionCache";
 
-import palette from 'src/theme/palette';
+import palette from "src/theme/palette";
 
 const metaInfo = {
-  author: ' Vladimir',
-  keywords: 'NFT, Opensea, Rarible',
-  description: 'NFT project',
+  author: "Vladimir",
+  keywords: "NFT, Opensea, Rarible, JPEGS,",
+  description: "NFT project",
 };
 
 export default class MyDocument extends Document {
@@ -63,7 +63,7 @@ MyDocument.getInitialProps = async (ctx) => {
   const emotionStyles = extractCriticalToChunks(initialProps.html);
   const emotionStyleTags = emotionStyles.styles.map((style) => (
     <style
-      data-emotion={`${style.key} ${style.ids.join(' ')}`}
+      data-emotion={`${style.key} ${style.ids.join(" ")}`}
       key={style.key}
       // eslint-disable-next-line react/no-danger
       dangerouslySetInnerHTML={{ __html: style.css }}

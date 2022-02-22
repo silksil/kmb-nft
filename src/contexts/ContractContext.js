@@ -59,6 +59,24 @@ function ContractProvider({ children }) {
   }, [totalMinted, totalSupply, setMintingStatus]);
 
   /**
+   * Responsible for setting the account after a user connects his/her wallet.
+   * Returns true if account succesfully has been set.
+   */
+  const handleSetAccount = (accounts) => {
+    const accountIsAvailable = accounts && accounts.length !== 0;
+
+    if (!accountIsAvailable) {
+      setConnectionStatus({ isConnected: false, error: null });
+      setAccount(null);
+      return false;
+    }
+
+    setAccount(accounts[0]);
+    setConnectionStatus({ isConnected: true, error: null });
+    return true;
+  };
+
+  /**
    * "Capture" events when our contract throws it.
    */
   const setupEventListener = useCallback(async () => {
@@ -74,12 +92,16 @@ function ContractProvider({ children }) {
       const minted = await connectedContract.totalSupply();
       const supply = await connectedContract.maxSupply();
 
+      ethereum.on("accountsChanged", function (accounts) {
+        handleSetAccount(accounts);
+      });
+
       setTotalSupply(supply.toNumber());
       setTotalMinted(minted.toNumber());
     } catch (error) {
       console.warn(error);
     }
-  }, [account, contractAddress]);
+  }, [contractAddress]);
 
   /**
    * Checks whether an account is connected.
@@ -89,20 +111,15 @@ function ContractProvider({ children }) {
     try {
       const { ethereum } = window;
       if (!ethereum) {
-        return setConnectionStatus({ isConnected: false, error: null });
-      }
-
-      const accounts = await ethereum.request({ method: "eth_accounts" });
-      const accountIsAvailable = accounts.length !== 0;
-
-      if (!accountIsAvailable) {
         setConnectionStatus({ isConnected: false, error: null });
+        setAccount(null);
         return;
       }
 
-      setAccount(accounts[0]);
-      setConnectionStatus({ isConnected: true, error: null });
-      setupEventListener();
+      const accounts = await ethereum.request({ method: "eth_accounts" });
+      const accountIsSet = handleSetAccount(accounts);
+
+      if (accountIsSet) return setupEventListener();
     } catch (e) {
       console.warn(e);
     }
@@ -127,15 +144,8 @@ function ContractProvider({ children }) {
       }
 
       const accounts = await ethereum.request({ method: "eth_requestAccounts" });
-      const accountsAvailable = accounts.length === 0;
-
-      if (!accountsAvailable) {
-        setConnectionStatus({ isConnected: false, error: "No authorized account found" });
-      }
-
-      setAccount(accounts[0]);
-      setConnectionStatus({ isConnected: true, error: null });
-      setupEventListener();
+      const accountIsSet = handleSetAccount(accounts);
+      if (accountIsSet) return setupEventListener();
     } catch (error) {
       setConnectionStatus({ isConnected: false, error: "No authorized account found" });
     }
@@ -199,8 +209,6 @@ function ContractProvider({ children }) {
 
         setTransactionHash(nftTxn.hash);
       } catch (error) {
-        console.log("JO", error);
-
         setMintingStatus({ name: MINTING_STATUS.ERROR, error: `${error.message} Try Again.` });
       }
     },
