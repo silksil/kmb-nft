@@ -75,7 +75,7 @@ export function MintingModal() {
         <MintingCount />
         <Typography>· 0.025 ETH each</Typography>
         <Typography>· Use Metamask</Typography>
-        <Typography>· Max. 10 NFTs per transaction</Typography>
+        <Typography>· Max. 5 NFTs per transaction</Typography>
         <Typography>· Once you purchase, you cannot undo the transaction</Typography>
 
         <TextField
@@ -92,7 +92,7 @@ export function MintingModal() {
           InputProps={{
             inputMode: "numeric",
             inputProps: {
-              max: 10,
+              max: 5,
               min: 1,
             },
           }}

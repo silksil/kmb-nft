@@ -23,11 +23,11 @@ const TechnicalDetails = () => (
 const FAQ = [
   {
     heading: "Which charity?",
-    detail: "That still has to be decided community. It can be every charity, and even multiple charities, as long it supports the people in Ukraine. How the community make the decision also still needs to be decided. Feel free to come up with suggestions in the Discord server on how to conduct this. ",
+    detail: "That still has to be decided community. It can be every charity, and even multiple charities, as long it supports the people in Ukraine.",
   },
   {
     heading: "When?",
-    detail: "It is gonna be an unnounced stealth drop given the urgency. We are currenlty working on the finishing touches for the smart contract and design.",
+    detail: "It is gonna be an unnounced stealth drop ASAP given the urgency. We are currenlty working on the finishing touches for the smart contract and design.",
   },
   {
     heading: "Copy rights?",
@@ -39,7 +39,7 @@ const FAQ = [
   },
   {
     heading: "Maximum mintable?",
-    detail: "10 per transaction.",
+    detail: "5 per transaction.",
   },
   {
     heading: "Technical details?",
