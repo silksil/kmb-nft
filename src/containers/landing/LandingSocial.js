@@ -7,8 +7,6 @@ import twitterIcon from "@iconify/icons-eva/twitter-fill";
 import { shadowHeading } from "src/utils/shadowHeading";
 
 const RootStyle = styled("div")(({ theme }) => ({
-  padding: theme.spacing(14, 0),
-  backgroundColor: theme.palette.grey[900],
   position: "relative",
 }));
 
@@ -21,7 +19,7 @@ const ContainerStyle = styled("div")(({ theme }) => ({
 
 const ContentStyle = styled("div")(({ theme }) => ({
   textAlign: "center",
-  backgroundColor: theme.palette.background.paper,
+  backgroundColor: theme.palette.secondary.main,
   padding: theme.spacing(20, 1),
 
   zIndex: 10,

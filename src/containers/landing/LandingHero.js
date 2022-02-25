@@ -15,11 +15,8 @@ import { shadowHeading } from "src/utils/shadowHeading";
 
 const RootStyle = styled(motion.div)(({ theme }) => ({
   position: "relative",
-  height: "90vh",
+  height: "100vh",
   width: "100%",
-  overflow: "hidden",
-
-  position: "fixed",
 }));
 
 const ContentStyle = styled((props) => <Box {...props} />)(({ theme }) => ({
@@ -28,10 +25,9 @@ const ContentStyle = styled((props) => <Box {...props} />)(({ theme }) => ({
   margin: "auto",
   textAlign: "center",
   position: "relative",
-  overflow: "hidden",
-  marginTop: theme.spacing(16),
+  marginTop: theme.spacing(18),
   [theme.breakpoints.up("lg")]: {
-    marginTop: theme.spacing(15),
+    marginTop: theme.spacing(25),
   },
 }));
 
@@ -110,30 +106,15 @@ export function LandingHero() {
         </motion.div>
 
         <ContentStyle>
-          <motion.div variants={varFadeInDown}>
-            <Heading variant="h1" gutterBottom>
-              Vladimir и KMG
-            </Heading>
-          </motion.div>
+          <Heading variant="h1" gutterBottom>
+            Vladimir и KMG
+          </Heading>
           <Container maxWidth="xs">
-            <motion.div variants={varFadeInUp}>
-              <Typography>Ruthless characters on the Ethereum blockchain with a mission to conquer the Metaverse.</Typography>
-            </motion.div>
+            <Typography>Ruthless characters on the Ethereum blockchain with a mission to conquer the Metaverse.</Typography>
           </Container>
-
-          {isDesktop && (
-            <motion.div variants={varFadeInUp}>
-              {isLaunched && (
-                <Button sx={{ marginTop: 3 }} size="large" variant="contained" startIcon={<Icon icon={flashFill} width={20} height={20} />} onClick={handleClick}>
-                  {isConnected ? "Mint NFT" : "Connect wallet"}
-                </Button>
-              )}
-            </motion.div>
-          )}
         </ContentStyle>
         <HeroImgStyle alt="hero" src="/static/avatars/hero-characters.png" />
       </RootStyle>
-      <Box sx={{ height: { xs: "100vh", md: "90vh" } }} />
     </>
   );
 }

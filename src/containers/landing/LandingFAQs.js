@@ -32,7 +32,7 @@ export function LandingFAQs() {
         <Subtitle>FAQs</Subtitle>
 
         <Box position="relative" zIndex>
-          <BackgroundBlur height="200%" top="-50%" left="-50%" width="200%" opacityStrength={0.4} />
+          <BackgroundBlur height="150%" top="-25%" left="-25%" width="150%" opacityStrength={0.4} />
 
           <MotionInView variants={varFadeInUp}>
             {faq.map((accordion, index) => (

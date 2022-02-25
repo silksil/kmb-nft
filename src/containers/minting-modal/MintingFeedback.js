@@ -8,7 +8,7 @@ function MintingFeedback() {
   return (
     <Box mt={2}>
       <Stack spacing={1} direction="row">
-        <IconButton href={`${process.env.NEXT_PUBLIC_EITHERSCAN_PREFIX}/tx/${transactionHash}`}>
+        <IconButton href={`${process.env.NEXT_PUBLIC_EITHERSCAN_PREFIX}/tx/${transactionHash}`} target="_blank">
           <Box component="img" width="24px" src="/static/marketplaces/eitherscan-logo.png" />
         </IconButton>
         <IconButton href={`${process.env.NEXT_PUBLIC_OPENSEA_COLLECTION_URL}`} target="_blank">

@@ -33,8 +33,8 @@ const IconButtonStyle = styled(IconButton)(({ theme }) => ({
 
 const StatusCircleStyle = styled(Box)(({ theme }) => ({
   backgroundColor: theme.palette.background.neutral,
-  width: "40px",
-  height: "40px",
+  minWidth: "40px",
+  minHeight: "40px",
   borderRadius: "50%",
   display: "flex",
   alignItems: "center",
@@ -62,7 +62,8 @@ export function MintingModal() {
         </IconButtonStyle>
 
         <Typography variant="h3">Mint your NFT</Typography>
-        <Typography>0.025 ETH each</Typography>
+        <Typography>0.025 ETH each.</Typography>
+        <Typography>Use Metamask.</Typography>
 
         <TextField
           error={!isValidMintAmount}

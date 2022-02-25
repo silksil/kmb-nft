@@ -1,6 +1,6 @@
-import PropTypes from 'prop-types';
-import MainNavbar from './MainNavbar';
-import MainFooter from './MainFooter';
+import PropTypes from "prop-types";
+import MainNavbar from "./MainNavbar";
+import MainFooter from "./MainFooter";
 
 MainLayout.propTypes = {
   children: PropTypes.node,
@@ -11,7 +11,6 @@ export default function MainLayout({ children }) {
     <>
       <MainNavbar />
       <div>{children}</div>
-      <MainFooter />
     </>
   );
 }

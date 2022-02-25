@@ -147,6 +147,7 @@ function ContractProvider({ children }) {
       const accountIsSet = handleSetAccount(accounts);
       if (accountIsSet) return setupEventListener();
     } catch (error) {
+      console.log(error);
       setConnectionStatus({ isConnected: false, error: "No authorized account found" });
     }
   }, [setupEventListener]);

@@ -1,40 +1,101 @@
 import MainLayout from "src/layouts/main";
 import { styled } from "@mui/material/styles";
 import { Page } from "src/components/Page";
-import { LandingHero, LandingTeam, LandingSocial, LandingTechnical, LandingIntroduction, LandingFAQs } from "src/containers/landing";
+import { LandingHero, LandingTeam, LandingSocial, LandingTechnical, LandingIntroduction, LandingFAQs, LandingMission } from "src/containers/landing";
 import { MintingModal } from "src/containers/minting-modal/MintingModal";
 import { MintingCount } from "src/containers/MintingCount";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { LandingWhitelist } from "src/containers/landing/LandingWhitelist";
+import { Parallax, ParallaxLayer, IParallax } from "@react-spring/parallax";
+import MainFooter from "src/layouts/main/MainFooter";
 
-const ContentStyle = styled("div")(({ theme }) => ({
-  overflow: "hidden",
-  position: "relative",
-  backgroundColor: theme.palette.background.default,
-}));
+const LandingCloudParallaxLayer = () => {
+  const url = (name, wrap = false) => `${wrap ? "url(" : ""}https://awv3node-homepage.surge.sh/build/assets/${name}.svg${wrap ? ")" : ""}`;
 
+  return (
+    <>
+      <ParallaxLayer offset={1.3} speed={0} style={{ pointerEvents: "none" }}>
+        <img src={url("satellite4")} style={{ width: "15%", marginLeft: "70%" }} />
+      </ParallaxLayer>
+      <ParallaxLayer offset={1} speed={0.8} style={{ opacity: 0.1 }}>
+        <img src={url("cloud")} style={{ display: "block", width: "20%", marginLeft: "55%" }} />
+        <img src={url("cloud")} style={{ display: "block", width: "10%", marginLeft: "15%" }} />
+      </ParallaxLayer>
+      <ParallaxLayer offset={1.75} speed={0.5} style={{ opacity: 0.1 }}>
+        <img src={url("cloud")} style={{ display: "block", width: "20%", marginLeft: "70%" }} />
+        <img src={url("cloud")} style={{ display: "block", width: "20%", marginLeft: "40%" }} />
+      </ParallaxLayer>
+      <ParallaxLayer offset={1} speed={0.2} style={{ opacity: 0.2 }}>
+        <img src={url("cloud")} style={{ display: "block", width: "10%", marginLeft: "10%" }} />
+        <img src={url("cloud")} style={{ display: "block", width: "20%", marginLeft: "75%" }} />
+      </ParallaxLayer>
+      <ParallaxLayer offset={1.6} speed={-0.1} style={{ opacity: 0.4 }}>
+        <img src={url("cloud")} style={{ display: "block", width: "20%", marginLeft: "60%" }} />
+        <img src={url("cloud")} style={{ display: "block", width: "25%", marginLeft: "30%" }} />
+        <img src={url("cloud")} style={{ display: "block", width: "10%", marginLeft: "80%" }} />
+      </ParallaxLayer>
+      <ParallaxLayer offset={2.6} speed={0.4} style={{ opacity: 0.6 }}>
+        <img src={url("cloud")} style={{ display: "block", width: "20%", marginLeft: "5%" }} />
+        <img src={url("cloud")} style={{ display: "block", width: "15%", marginLeft: "75%" }} />
+      </ParallaxLayer>
+      <ParallaxLayer
+        offset={2.0}
+        speed={2}
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          pointerEvents: "none",
+        }}
+      >
+        <img src={url("earth")} style={{ width: "60%" }} />
+      </ParallaxLayer>
+    </>
+  );
+};
 export default function LandingPage() {
-  useEffect(() => {
-    var script = document.createElement("script"); // is a node
-    script.innerHTML = `
-  !function(a,b,c,d,t){var e,f=a.getElementsByTagName("head")[0];if(!a.getElementById(c)){if(e=a.createElement(b),e.id=c,e.setAttribute("data-vrlps-ucid",d),e.setAttribute("data-vrlps-version","2"), e.setAttribute("data-vrlps-template", t),e.src="https://app.viral-loops.com/popup_assets/js/vl_load_v2.min.js",window.ub){jQuery=null,$=null;var g=a.createElement(b);g.src="https://code.jquery.com/jquery-2.2.4.min.js",f.appendChild(g)}f.appendChild(e);var h=a.createElement("link");h.rel="stylesheet",h.type="text/css",h.href="https://app.viral-loops.com/static/vl-loader.css",f.appendChild(h);var i=a.createElement("div");i.id="vl-overlay",i.style.display="none";var j=a.createElement("div");j.id="vl-loader",i.appendChild(j),a.addEventListener("DOMContentLoaded",function(b){a.body.appendChild(i);for(var c=a.getElementsByClassName("vrlps-trigger"),d=0;d<c.length;d++)c[d].removeAttribute("href"),c[d].onclick=function(){a.getElementById("vl-overlay").style.display="block"};var e=a.querySelectorAll("[data-vl-widget='popupTrigger']");[].forEach.call(e,function(b){var c=a.createElement("div");c.className="vl-embedded-cta-loader",b.appendChild(c)})})}}(document,"script","vrlps-js","3mrHExd4uRMrM2IxOU0rRtkYZgM","ranking")`;
-    document.body.appendChild(script);
-  });
+  const parallax = useRef();
+  const url = (name, wrap = false) => `${wrap ? "url(" : ""}https://awv3node-homepage.surge.sh/build/assets/${name}.svg${wrap ? ")" : ""}`;
 
   return (
     <Page title="Vladimir & the KMG" id="move_top" sx={{ height: "100%" }}>
       <MainLayout>
         <MintingModal />
-        <LandingHero />
-        <ContentStyle>
-          <LandingIntroduction />
-          <LandingTechnical />
-          <LandingSocial />
-          <LandingWhitelist />
-          <LandingTeam />
-          <LandingFAQs />
-        </ContentStyle>
-        <MintingCount />
+
+        <Parallax ref={parallax} pages={6}>
+          <ParallaxLayer
+            offset={0}
+            speed={0}
+            factor={3}
+            style={{
+              backgroundImage: url("stars", true),
+              backgroundSize: "cover",
+              width: "100%",
+            }}
+          />
+
+          <ParallaxLayer offset={0} speed={1}>
+            <LandingHero />
+          </ParallaxLayer>
+          <ParallaxLayer sticky={{ start: 1, end: 2 }} style={{ display: "flex", alignItems: "center", justifyContent: "flex-start" }}>
+            <LandingIntroduction />
+          </ParallaxLayer>
+
+          <LandingCloudParallaxLayer />
+          <ParallaxLayer offset={3} speed={0}>
+            <LandingMission />
+          </ParallaxLayer>
+          <ParallaxLayer offset={4} speed={0}>
+            <LandingSocial />
+          </ParallaxLayer>
+
+          <ParallaxLayer offset={5} speed={0}>
+            <LandingFAQs />
+            <MainFooter />
+          </ParallaxLayer>
+
+          <MintingCount />
+        </Parallax>
       </MainLayout>
     </Page>
   );
