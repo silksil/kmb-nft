@@ -1,19 +1,13 @@
 import React from "react";
 import { motion } from "framer-motion";
-import flashFill from "@iconify/icons-eva/flash-fill";
 import { styled } from "@mui/material/styles";
-import { Box, Button, Container, Typography, useMediaQuery, useTheme } from "@mui/material";
+import { Box, Container, Typography } from "@mui/material";
 
-import { varFadeInUp, varWrapEnter, varFadeInDown } from "../../components/animate";
-import { useWallet } from "src/hooks/useWallet";
-import { useContract } from "src/hooks/useContract";
+import { varWrapEnter } from "../../components/animate";
 
-import { useUI } from "src/hooks/useUI";
-import { Icon } from "src/components/Icon";
-import { BackgroundBlur as BaseBackgroundBlur } from "../BackgroundBlur";
 import { shadowHeading } from "src/utils/shadowHeading";
 
-const RootStyle = styled(motion.div)(({ theme }) => ({
+const RootStyle = styled(motion.div)(() => ({
   position: "relative",
   height: "100vh",
   width: "100%",
@@ -26,7 +20,7 @@ const ContentStyle = styled((props) => <Box {...props} />)(({ theme }) => ({
   margin: "auto",
   textAlign: "center",
   position: "relative",
-  marginTop: theme.spacing(16),
+  marginTop: theme.spacing(10),
   [theme.breakpoints.up("lg")]: {
     marginTop: theme.spacing(16),
   },
@@ -39,7 +33,7 @@ const Heading = styled((props) => <Typography {...props} />)(({ theme }) => ({
 const BackgroundBlur = styled((props) => <Box {...props} />)(({ theme, color }) => ({
   position: "absolute",
   zIndex: 0,
-  top: "20vh",
+  top: "25vh",
   filter: "blur(100px)",
   backgroundColor: theme.palette[color].main,
 
@@ -48,12 +42,16 @@ const BackgroundBlur = styled((props) => <Box {...props} />)(({ theme, color }) 
   left: "calc(50% - 70px)",
 
   [theme.breakpoints.up("md")]: {
+    top: "22vh",
+
     height: 200,
     width: 300,
     left: "calc(50% - 150px)",
   },
   [theme.breakpoints.up("lg")]: {
     width: 300,
+    height: 300,
+
     left: "calc(50% - 200px)",
   },
 }));
@@ -71,7 +69,7 @@ const HeroImgStyle = styled(motion.img)(({ theme }) => ({
   },
 
   [theme.breakpoints.up("lg")]: {
-    width: 520,
+    width: 600,
     marginTop: `-${theme.spacing(12)}`,
   },
 }));
@@ -99,20 +97,13 @@ const AstronautStyle = styled(motion.img)(({ theme }) => ({
 export function LandingHero() {
   return (
     <RootStyle initial="initial" animate="animate" variants={varWrapEnter} position="relative">
-      <motion.div animate={{ y: [-50, 50, -50], x: [-50, 50, -50] }} transition={{ duration: 8, repeat: Infinity }}>
+      <motion.div animate={{ y: [-50, 50, -50], x: [-50, 50, -50] }} transition={{ duration: 6, repeat: Infinity }}>
         <BackgroundBlur color="secondary" />
       </motion.div>
 
-      <motion.div animate={{ y: [50, -50, 50], x: [50, -50, 50] }} transition={{ duration: 8, repeat: Infinity }}>
+      <motion.div animate={{ y: [50, -50, 50], x: [50, -50, 50] }} transition={{ duration: 6, repeat: Infinity }}>
         <BackgroundBlur color="primary" />
       </motion.div>
-
-      {/* <motion.div animate={{ y: [-50, 50, -50] }} transition={{ duration: 4, repeat: Infinity }}>
-        <BackgroundBlur color="secondary" sx={{ right: "25%" }} inHalf />
-      </motion.div> */}
-      {/* <motion.div animate={{ y: [-20, 20, -20] }} transition={{ duration: 4, repeat: Infinity }}>
-        <AstronautStyle alt="hero" src="/static/avatars/astronaut.png" />
-      </motion.div> */}
 
       <ContentStyle>
         <Heading variant="h2" gutterBottom>
@@ -121,7 +112,7 @@ export function LandingHero() {
         <Heading variant="h3" gutterBottom></Heading>
         <Heading variant="h2" gutterBottom></Heading>
         <Container maxWidth="xs">
-          <Typography>KMG'rs are characters on the Ethereum blockchain with a mission to protect the Metaverse from Vladimir.</Typography>
+          <Typography>KMG&lsquo;s are characters on the Ethereum blockchain with a mission to protect the Metaverse from Vladimir.</Typography>
         </Container>
       </ContentStyle>
       <HeroImgStyle alt="hero" src="/static/avatars/hero-characters.png" />

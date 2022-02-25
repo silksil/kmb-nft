@@ -29,7 +29,7 @@ export function LandingFAQs() {
   return (
     <RootStyle>
       <Container maxWidth="sm">
-        <Subtitle>FAQs</Subtitle>
+        <Subtitle>Q&A</Subtitle>
 
         <Box position="relative" zIndex>
           <BackgroundBlur height="150%" top="-25%" left="-25%" width="150%" opacityStrength={0.4} />

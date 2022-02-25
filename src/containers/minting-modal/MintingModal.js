@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Modal, Typography, Box, IconButton, Button } from "@mui/material";
+import { Modal, Typography, Box, IconButton, Button, Alert } from "@mui/material";
 import TextField from "@mui/material/TextField";
 
 import { useContract } from "src/hooks/useContract";
@@ -18,7 +18,7 @@ const ContainerStyle = styled(Box)(({ theme }) => ({
   left: "50%",
   transform: "translate(-50%, -50%)",
   width: "100%",
-  maxWidth: "500px",
+  maxWidth: "540px",
   padding: theme.spacing(6),
   backgroundColor: theme.palette.background.default,
   borderRadius: "5px",
@@ -42,12 +42,22 @@ const StatusCircleStyle = styled(Box)(({ theme }) => ({
   marginRight: theme.spacing(2),
 }));
 
+const MintingCount = () => {
+  const { totalMinted, totalSupply } = useContract();
+
+  /**
+   * Don't show the modal if the count has not been retrieved yet
+   */
+  if (!totalSupply) return null;
+
+  return <Alert severity="info" sx={{ mb: 2, mt: 1 }}>{`${totalMinted} of ${totalSupply} minted`}</Alert>;
+};
+
 export function MintingModal() {
   const { status, error, STATUS, transactionHash, mintNft } = useContract();
   const { mintingModalIsOpen, setMintingModalIsOpen } = useUI();
   const [mintAmount, setMintAmount] = useState(1);
   const isValidMintAmount = mintAmount >= 1 && mintAmount <= 10;
-  const showDisclaimer = status === "idle";
 
   return (
     <Modal open={mintingModalIsOpen}>
@@ -62,8 +72,11 @@ export function MintingModal() {
         </IconButtonStyle>
 
         <Typography variant="h3">Mint your NFT</Typography>
-        <Typography>0.025 ETH each.</Typography>
-        <Typography>Use Metamask.</Typography>
+        <MintingCount />
+        <Typography>· 0.025 ETH each</Typography>
+        <Typography>· Use Metamask</Typography>
+        <Typography>· Max. 10 NFTs per transaction</Typography>
+        <Typography>· Once you purchase, you cannot undo the transaction</Typography>
 
         <TextField
           error={!isValidMintAmount}
@@ -88,11 +101,6 @@ export function MintingModal() {
         <Button variant="contained" disabled={buttonIsDisabled(status)} sx={{ width: "100%" }} onClick={() => mintNft(mintAmount)} endIcon={getButtonStatusIcon(status, STATUS)}>
           {getButtonText(status)}
         </Button>
-        {showDisclaimer && (
-          <Typography color="text.secondary" variant="caption" sx={{ mb: 4 }}>
-            Please note: Once you make the purchase, you cannot undo this.
-          </Typography>
-        )}
         <Box display="flex" flexDirection="row" alignItems="center" mt={1}>
           {getFeedbackStatusIcon(status, STATUS) && <StatusCircleStyle>{getFeedbackStatusIcon(status, STATUS)}</StatusCircleStyle>}
           <Typography color="text.secondary">

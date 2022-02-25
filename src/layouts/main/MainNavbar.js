@@ -81,11 +81,11 @@ export default function MainNavbar() {
             justifyContent: "space-between",
           }}
         >
-          <MHidden width="mdDown">
+          {/* <MHidden width="mdDown">
             <NextLink href="/">
               <Logo sx={{ mr: 2 }} />
             </NextLink>
-          </MHidden>
+          </MHidden> */}
 
           <Stack spacing={0.5} direction="row" justifyContent="center" alignItems="center" sx={{ mt: 5, mb: { xs: 5 }, mr: 1 }}>
             {SOCIALS.map((social) => (

@@ -5,3 +5,4 @@ export { LandingTechnical } from "./LandingTechnical";
 export { LandingIntroduction } from "./LandingIntroduction";
 export { LandingFAQs } from "./LandingFAQs";
 export { LandingMission } from "./LandingMission";
+export { LandingSquat } from "./LandingSquat";

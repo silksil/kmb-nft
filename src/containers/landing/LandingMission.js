@@ -1,11 +1,11 @@
 import { styled } from "@mui/material/styles";
-import { Box, Grid, Container, Typography } from "@mui/material";
+import { Grid, Container, Typography } from "@mui/material";
 import { varFadeInUp, MotionInView } from "../../components/animate";
-import { BackgroundBlur } from "../BackgroundBlur";
 import { shadowHeading } from "src/utils/shadowHeading";
 
 const RootStyle = styled("div")(({ theme }) => ({
   position: "relative",
+  paddingTop: theme.spacing(10),
 }));
 
 const ContentStyle = styled("div")(({ theme }) => ({
@@ -25,11 +25,9 @@ const Heading = styled((props) => <Typography {...props} />)(({ theme }) => ({
 export function LandingMission() {
   return (
     <RootStyle>
-      <BackgroundBlur top="0" left="-350px" bottom="0" width="700px" height="700px" color="primary" />
-
-      <Container maxWidth="lg">
-        <Grid container spacing={4} justifyContent="center">
-          <Grid item xs={12} md={4} sx={{ display: "flex", alignItems: "center" }}>
+      <Container maxWidth="lg" sx={{ zIndex: 1, position: "relative" }}>
+        <Grid container spacing={{ xs: 0, md: 10 }} justifyContent="center" alignItems="center">
+          <Grid item xs={12} md={6} sx={{ display: "flex", alignItems: "center" }}>
             <ContentStyle>
               <MotionInView variants={varFadeInUp}>
                 <Heading variant="h2" sx={{ mb: 3 }}>
@@ -38,19 +36,13 @@ export function LandingMission() {
               </MotionInView>
 
               <MotionInView variants={varFadeInUp}>
-                <Typography
-                  sx={{
-                    mb: 2,
-                  }}
-                >
-                  VKMG aims to support the people in Ukraine that suffer the consequences of war. 90% of all sales will be donated to organizations that support the people in Ukraine. The community will decide to which organization(s) the donations will go. The remaining 10% will be used by the creators to drive this project, and thereby increasing the amount donated to Ukraine.
-                </Typography>
+                <Typography>VKMG aims to support the people in Ukraine that suffer the consequences of war. 90% of all sales will be donated to organizations that support the people in Ukraine. The community will decide to which organization(s) the donations will go. The remaining 10% will be used by the creators to drive this project, and thereby increasing the amount donated to Ukraine.</Typography>
               </MotionInView>
             </ContentStyle>
           </Grid>
 
-          <Grid item xs={10} md={4} sx={{ zIndex: 1 }}>
-            <Typography sx={{ fontSize: 240 }}>🇺🇦</Typography>
+          <Grid item>
+            <Typography sx={{ fontSize: 180 }}>🇺🇦</Typography>
           </Grid>
         </Grid>
       </Container>

@@ -1,13 +1,9 @@
 import MainLayout from "src/layouts/main";
-import { styled } from "@mui/material/styles";
 import { Page } from "src/components/Page";
-import { LandingHero, LandingTeam, LandingSocial, LandingTechnical, LandingIntroduction, LandingFAQs, LandingMission } from "src/containers/landing";
+import { LandingHero, LandingIntroduction, LandingFAQs, LandingMission, LandingSquat } from "src/containers/landing";
 import { MintingModal } from "src/containers/minting-modal/MintingModal";
-import { MintingCount } from "src/containers/MintingCount";
-import { useEffect, useRef } from "react";
-import { LandingWhitelist } from "src/containers/landing/LandingWhitelist";
-import { Parallax, ParallaxLayer, IParallax } from "@react-spring/parallax";
-import MainFooter from "src/layouts/main/MainFooter";
+import { useRef } from "react";
+import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 
 const LandingCloudParallaxLayer = () => {
   const url = (name, wrap = false) => `${wrap ? "url(" : ""}https://awv3node-homepage.surge.sh/build/assets/${name}.svg${wrap ? ")" : ""}`;
@@ -62,9 +58,29 @@ export default function LandingPage() {
       <MainLayout>
         <MintingModal />
 
-        <Parallax ref={parallax} pages={6}>
+        <Parallax ref={parallax} pages={7}>
           <ParallaxLayer
             offset={0}
+            speed={0}
+            factor={3}
+            style={{
+              backgroundImage: url("stars", true),
+              backgroundSize: "cover",
+              width: "100%",
+            }}
+          />
+          <ParallaxLayer
+            offset={3}
+            speed={0}
+            factor={3}
+            style={{
+              backgroundImage: url("stars", true),
+              backgroundSize: "cover",
+              width: "100%",
+            }}
+          />
+          <ParallaxLayer
+            offset={6}
             speed={0}
             factor={3}
             style={{
@@ -82,19 +98,17 @@ export default function LandingPage() {
           </ParallaxLayer>
 
           <LandingCloudParallaxLayer />
-          <ParallaxLayer offset={3} speed={0}>
+          <ParallaxLayer offset={3} speed={0.2}>
             <LandingMission />
           </ParallaxLayer>
-          <ParallaxLayer offset={4} speed={0}>
-            <LandingSocial />
+
+          <ParallaxLayer offset={4} speed={0.2}>
+            <LandingSquat />
           </ParallaxLayer>
 
-          <ParallaxLayer offset={5} speed={0}>
+          <ParallaxLayer offset={5} speed={0.2}>
             <LandingFAQs />
-            <MainFooter />
           </ParallaxLayer>
-
-          <MintingCount />
         </Parallax>
       </MainLayout>
     </Page>

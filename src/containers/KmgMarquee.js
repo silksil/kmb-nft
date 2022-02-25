@@ -4,8 +4,8 @@ import React from "react";
 import Marquee from "react-fast-marquee";
 
 const Image = styled("img")(() => ({
-  width: 320,
-  height: 320,
+  width: 160,
+  height: 160,
   marginLeft: 8,
 }));
 

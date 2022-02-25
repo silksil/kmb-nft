@@ -1,12 +1,10 @@
 import { styled } from "@mui/material/styles";
-import { useRef } from "react";
-import { Box, Container, Typography, Stack } from "@mui/material";
+import { Box, Container, Typography } from "@mui/material";
 
 import { MotionInView, varFadeInUp } from "../../components/animate";
 import { VladimirMarquee } from "../VladimirMarquee";
 import { KmgMarquee } from "../KmgMarquee";
 import { shadowHeading } from "src/utils/shadowHeading";
-import { Parallax, ParallaxLayer, IParallax } from "@react-spring/parallax";
 
 const RootStyle = styled("div")(({ theme }) => ({
   textAlign: "center",
@@ -16,28 +14,24 @@ const Heading = styled((props) => <Typography {...props} />)(({ theme }) => ({
   filter: shadowHeading(theme.palette.secondary.main),
 }));
 
-const url = (name, wrap = false) => `${wrap ? "url(" : ""}https://awv3node-homepage.surge.sh/build/assets/${name}.svg${wrap ? ")" : ""}`;
-
-export function LandingIntroduction() {
+export function LandingSquat() {
   return (
     <RootStyle>
       <Container maxWidth="sm" sx={{ position: "relative" }}>
         <MotionInView variants={varFadeInUp}>
           <Heading variant="h2" sx={{ mb: 1 }}>
-            Squat
+            How it works
           </Heading>
         </MotionInView>
-
         <MotionInView variants={varFadeInUp}>
-          <Typography>Vladimir does not feel respected as a world leader. To take revenge, he aims to conquer the Metaverse. Together with the secret agency service, Komitet Metaverse Gansters (KMG), he plans to make his vision reality.</Typography>
+          <Typography>10% of the collection consist of Vladimirs, 90% consist out of KMG's. If you buy an KMG you are financing him/her to fight against Vladimir. If you buy a Vladimir you are accomplising one thing he hates; being owned by others. </Typography>
         </MotionInView>
       </Container>
       <Container maxWidth="1400px" sx={{ mt: 10, maxWidth: 2200 }}>
         <Box mb={3}>
-          <VladimirMarquee />
+          <KmgMarquee />
         </Box>
-
-        <KmgMarquee />
+        <VladimirMarquee />
       </Container>
     </RootStyle>
   );
