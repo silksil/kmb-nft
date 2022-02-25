@@ -23,7 +23,7 @@ export default function MainFooter() {
     <Box
       sx={{
         width: "100%",
-        position: "fixed",
+
         bottom: 0,
         py: 5,
         textAlign: "center",

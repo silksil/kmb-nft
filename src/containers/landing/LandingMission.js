@@ -43,7 +43,7 @@ export function LandingMission() {
                     mb: 2,
                   }}
                 >
-                  VKMG aims to support the people in Ukraine that suffer the consequences of power hungry people. This is done by donating 90% of all sales to organizations that support the people in Ukraine. The community will decide to which organization(s) the donations will go. The remaining 10% will be used by the creators behind the VKMG to work full-time on this mission.
+                  VKMG aims to support the people in Ukraine that suffer the consequences of war. 90% of all sales will be donated to organizations that support the people in Ukraine. The community will decide to which organization(s) the donations will go. The remaining 10% will be used by the creators to drive this project, and thereby increasing the amount donated to Ukraine.
                 </Typography>
               </MotionInView>
             </ContentStyle>

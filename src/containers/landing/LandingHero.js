@@ -20,14 +20,15 @@ const RootStyle = styled(motion.div)(({ theme }) => ({
 }));
 
 const ContentStyle = styled((props) => <Box {...props} />)(({ theme }) => ({
-  zIndex: 1,
+  position: "relative",
+  zIndex: 2,
   maxWidth: 520,
   margin: "auto",
   textAlign: "center",
   position: "relative",
-  marginTop: theme.spacing(18),
+  marginTop: theme.spacing(16),
   [theme.breakpoints.up("lg")]: {
-    marginTop: theme.spacing(25),
+    marginTop: theme.spacing(16),
   },
 }));
 
@@ -35,27 +36,42 @@ const Heading = styled((props) => <Typography {...props} />)(({ theme }) => ({
   filter: shadowHeading(theme.palette.secondary.main),
 }));
 
-const BackgroundBlur = styled((props) => <BaseBackgroundBlur {...props} />)(({ theme }) => ({
-  zIndex: -1,
-  width: 200,
-  height: "90vh",
+const BackgroundBlur = styled((props) => <Box {...props} />)(({ theme, color }) => ({
+  position: "absolute",
+  zIndex: 0,
+  top: "20vh",
+  filter: "blur(100px)",
+  backgroundColor: theme.palette[color].main,
+
+  height: 140,
+  width: 140,
+  left: "calc(50% - 70px)",
 
   [theme.breakpoints.up("md")]: {
+    height: 200,
     width: 300,
+    left: "calc(50% - 150px)",
   },
   [theme.breakpoints.up("lg")]: {
-    width: 500,
+    width: 300,
+    left: "calc(50% - 200px)",
   },
 }));
 
 const HeroImgStyle = styled(motion.img)(({ theme }) => ({
+  zIndex: 1,
+  position: "relative",
   margin: "auto",
-  marginTop: `-${theme.spacing(10)}`,
-  height: "55vh",
-  width: "auto",
+  height: "auto",
+  width: "80%",
+
+  [theme.breakpoints.up("md")]: {
+    width: 420,
+    marginTop: `-${theme.spacing(10)}`,
+  },
 
   [theme.breakpoints.up("lg")]: {
-    height: "80%",
+    width: 520,
     marginTop: `-${theme.spacing(12)}`,
   },
 }));
@@ -81,40 +97,34 @@ const AstronautStyle = styled(motion.img)(({ theme }) => ({
 }));
 
 export function LandingHero() {
-  const { mintNft, setupEventListener } = useContract();
-  const { isConnected, connect } = useWallet(setupEventListener);
-  const { setMintingModalIsOpen } = useUI();
-  const theme = useTheme();
-  const isDesktop = useMediaQuery(theme.breakpoints.up("lg"));
-  const isLaunched = false;
-
-  const handleClick = async () => {
-    if (!isConnected) return connect();
-
-    setMintingModalIsOpen(true);
-    mintNft();
-  };
-
   return (
-    <>
-      <RootStyle initial="initial" animate="animate" variants={varWrapEnter} position="relative">
-        <BackgroundBlur color="secondary" sx={{ left: { xs: -100, md: -150, lg: -250 } }} inHalf />
+    <RootStyle initial="initial" animate="animate" variants={varWrapEnter} position="relative">
+      <motion.div animate={{ y: [-50, 50, -50], x: [-50, 50, -50] }} transition={{ duration: 8, repeat: Infinity }}>
+        <BackgroundBlur color="secondary" />
+      </motion.div>
 
-        <BackgroundBlur color="primary" sx={{ right: { xs: -100, md: -150, lg: -250 } }} inHalf />
-        <motion.div animate={{ y: [-20, 20, -20] }} transition={{ duration: 4, repeat: Infinity }}>
-          <AstronautStyle alt="hero" src="/static/avatars/astronaut.png" />
-        </motion.div>
+      <motion.div animate={{ y: [50, -50, 50], x: [50, -50, 50] }} transition={{ duration: 8, repeat: Infinity }}>
+        <BackgroundBlur color="primary" />
+      </motion.div>
 
-        <ContentStyle>
-          <Heading variant="h1" gutterBottom>
-            Vladimir и KMG
-          </Heading>
-          <Container maxWidth="xs">
-            <Typography>Ruthless characters on the Ethereum blockchain with a mission to conquer the Metaverse.</Typography>
-          </Container>
-        </ContentStyle>
-        <HeroImgStyle alt="hero" src="/static/avatars/hero-characters.png" />
-      </RootStyle>
-    </>
+      {/* <motion.div animate={{ y: [-50, 50, -50] }} transition={{ duration: 4, repeat: Infinity }}>
+        <BackgroundBlur color="secondary" sx={{ right: "25%" }} inHalf />
+      </motion.div> */}
+      {/* <motion.div animate={{ y: [-20, 20, -20] }} transition={{ duration: 4, repeat: Infinity }}>
+        <AstronautStyle alt="hero" src="/static/avatars/astronaut.png" />
+      </motion.div> */}
+
+      <ContentStyle>
+        <Heading variant="h2" gutterBottom>
+          KMG vs Vladimir
+        </Heading>
+        <Heading variant="h3" gutterBottom></Heading>
+        <Heading variant="h2" gutterBottom></Heading>
+        <Container maxWidth="xs">
+          <Typography>KMG'rs are characters on the Ethereum blockchain with a mission to protect the Metaverse from Vladimir.</Typography>
+        </Container>
+      </ContentStyle>
+      <HeroImgStyle alt="hero" src="/static/avatars/hero-characters.png" />
+    </RootStyle>
   );
 }

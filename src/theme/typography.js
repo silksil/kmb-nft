@@ -4,21 +4,21 @@ function pxToRem(value) {
 
 function responsiveFontSizes({ sm, md, lg }) {
   return {
-    '@media (min-width:600px)': {
+    "@media (min-width:600px)": {
       fontSize: pxToRem(sm),
     },
-    '@media (min-width:900px)': {
+    "@media (min-width:900px)": {
       fontSize: pxToRem(md),
     },
-    '@media (min-width:1200px)': {
+    "@media (min-width:1200px)": {
       fontSize: pxToRem(lg),
     },
   };
 }
 
-const FONT_PRIMARY = 'IBM Plex Sans, sans-serif';
+const FONT_PRIMARY = "IBM Plex Sans, sans-serif";
 
-const FONT_SECONDARY = 'Inter, sans-serif';
+const FONT_SECONDARY = "Inter, sans-serif";
 
 const typography = {
   fontFamily: FONT_PRIMARY,
@@ -29,7 +29,7 @@ const typography = {
     fontFamily: FONT_SECONDARY,
     fontWeight: 800,
     lineHeight: 0.8,
-    letterSpacing: '-.06em',
+    letterSpacing: "-.06em",
     fontSize: pxToRem(48),
     ...responsiveFontSizes({ sm: 52, md: 58, lg: 72 }),
   },
@@ -38,7 +38,7 @@ const typography = {
     fontWeight: 700,
     lineHeight: 64 / 48,
     fontSize: pxToRem(32),
-    letterSpacing: '-.06em',
+    letterSpacing: "-.06em",
     ...responsiveFontSizes({ sm: 40, md: 44, lg: 48 }),
   },
   h3: {
@@ -46,7 +46,7 @@ const typography = {
     fontWeight: 700,
     lineHeight: 1.5,
     fontSize: pxToRem(24),
-    letterSpacing: '-.06em',
+    letterSpacing: "-.06em",
     ...responsiveFontSizes({ sm: 26, md: 30, lg: 32 }),
   },
   h4: {
@@ -98,13 +98,13 @@ const typography = {
     lineHeight: 1.5,
     fontSize: pxToRem(12),
     letterSpacing: 1.1,
-    textTransform: 'uppercase',
+    textTransform: "uppercase",
   },
   button: {
     fontWeight: 700,
     lineHeight: 24 / 14,
     fontSize: pxToRem(14),
-    textTransform: 'capitalize',
+    textTransform: "capitalize",
   },
 };
 
