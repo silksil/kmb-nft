@@ -45,6 +45,10 @@ const FAQ = [
     heading: "Technical details?",
     detail: <TechnicalDetails />,
   },
+  {
+    heading: "Royalty fee?",
+    detail: "The royalty on secondary sales is 7.5%. Just as the primary sales, 90% of this income will be used to help the people in Ukraine. The remaining 10% will be used by the creators to drive this project in the hope to increase the amount donated to Ukraine.",
+  },
 ];
 
 export default FAQ;
