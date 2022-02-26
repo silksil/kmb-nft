@@ -3,11 +3,9 @@ import { motion } from "framer-motion";
 import { styled } from "@mui/material/styles";
 import { Box, Container, Typography } from "@mui/material";
 
-import { varWrapEnter } from "../../components/animate";
-
 import { shadowHeading } from "src/utils/shadowHeading";
 
-const RootStyle = styled(motion.div)(() => ({
+const RootStyle = styled("div")(() => ({
   position: "relative",
   height: "100vh",
   width: "100%",
@@ -20,9 +18,10 @@ const ContentStyle = styled((props) => <Box {...props} />)(({ theme }) => ({
   margin: "auto",
   textAlign: "center",
   position: "relative",
-  marginTop: theme.spacing(10),
+  marginTop: theme.spacing(8),
+
   [theme.breakpoints.up("lg")]: {
-    marginTop: theme.spacing(16),
+    marginTop: theme.spacing(8),
   },
 }));
 
@@ -33,16 +32,16 @@ const Heading = styled((props) => <Typography {...props} />)(({ theme }) => ({
 const BackgroundBlur = styled((props) => <Box {...props} />)(({ theme, color }) => ({
   position: "absolute",
   zIndex: 0,
-  top: "25vh",
-  filter: "blur(100px)",
+  marginTop: theme.spacing(28),
+  filter: "blur(90px)",
   backgroundColor: theme.palette[color].main,
 
-  height: 140,
-  width: 140,
+  height: 160,
+  width: 160,
   left: "calc(50% - 70px)",
 
   [theme.breakpoints.up("md")]: {
-    top: "22vh",
+    marginTop: theme.spacing(28),
 
     height: 200,
     width: 300,
@@ -63,9 +62,14 @@ const HeroImgStyle = styled(motion.img)(({ theme }) => ({
   height: "auto",
   width: "80%",
 
+  [theme.breakpoints.up("sm")]: {
+    width: 320,
+    marginTop: `-${theme.spacing(4)}`,
+  },
+
   [theme.breakpoints.up("md")]: {
-    width: 420,
-    marginTop: `-${theme.spacing(10)}`,
+    width: 400,
+    marginTop: `-${theme.spacing(6)}`,
   },
 
   [theme.breakpoints.up("lg")]: {
@@ -96,7 +100,7 @@ const AstronautStyle = styled(motion.img)(({ theme }) => ({
 
 export function LandingHero() {
   return (
-    <RootStyle initial="initial" animate="animate" variants={varWrapEnter} position="relative">
+    <RootStyle>
       <motion.div animate={{ y: [-50, 50, -50], x: [-50, 50, -50] }} transition={{ duration: 6, repeat: Infinity }}>
         <BackgroundBlur color="secondary" />
       </motion.div>
@@ -107,12 +111,10 @@ export function LandingHero() {
 
       <ContentStyle>
         <Heading variant="h2" gutterBottom>
-          KMG vs Vladimir
+          The KMG vs Vladimir
         </Heading>
-        <Heading variant="h3" gutterBottom></Heading>
-        <Heading variant="h2" gutterBottom></Heading>
-        <Container maxWidth="xs">
-          <Typography>KMG&lsquo;s are characters on the Ethereum blockchain with a mission to protect the Metaverse from Vladimir.</Typography>
+        <Container>
+          <Typography>KMG&lsquo;s are characters on the Ethereum blockchain that protect the Metaverse from Vladimir and other baddies.</Typography>
         </Container>
       </ContentStyle>
       <HeroImgStyle alt="hero" src="/static/avatars/hero-characters.png" />

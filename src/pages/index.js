@@ -1,6 +1,6 @@
 import MainLayout from "src/layouts/main";
 import { Page } from "src/components/Page";
-import { LandingHero, LandingIntroduction, LandingFAQs, LandingMission, LandingSquat } from "src/containers/landing";
+import { LandingHero, LandingIntroduction, LandingFAQs, LandingMission, LandingSquat, LandingTechnical, LandingTeam } from "src/containers/landing";
 import { MintingModal } from "src/containers/minting-modal/MintingModal";
 import { useRef } from "react";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
@@ -58,7 +58,7 @@ export default function LandingPage() {
       <MainLayout>
         <MintingModal />
 
-        <Parallax ref={parallax} pages={7}>
+        <Parallax ref={parallax} pages={9}>
           <ParallaxLayer
             offset={0}
             speed={0}
@@ -93,6 +93,7 @@ export default function LandingPage() {
           <ParallaxLayer offset={0} speed={1}>
             <LandingHero />
           </ParallaxLayer>
+
           <ParallaxLayer sticky={{ start: 1, end: 2 }} style={{ display: "flex", alignItems: "center", justifyContent: "flex-start" }}>
             <LandingIntroduction />
           </ParallaxLayer>
@@ -107,6 +108,14 @@ export default function LandingPage() {
           </ParallaxLayer>
 
           <ParallaxLayer offset={5} speed={0.2}>
+            <LandingTechnical />
+          </ParallaxLayer>
+
+          <ParallaxLayer offset={6} speed={0.2}>
+            <LandingTeam />
+          </ParallaxLayer>
+
+          <ParallaxLayer offset={7} speed={0.2}>
             <LandingFAQs />
           </ParallaxLayer>
         </Parallax>

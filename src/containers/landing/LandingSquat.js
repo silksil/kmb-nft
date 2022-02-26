@@ -20,19 +20,19 @@ export function LandingSquat() {
       <Container maxWidth="sm" sx={{ position: "relative" }}>
         <MotionInView variants={varFadeInUp}>
           <Heading variant="h2" sx={{ mb: 1 }}>
-            How it works
+            The Collection
           </Heading>
         </MotionInView>
         <MotionInView variants={varFadeInUp}>
-          <Typography>10% of the collection consist of Vladimirs, 90% consist out of KMG's. If you buy an KMG you are financing him/her to fight against Vladimir. If you buy a Vladimir you are doing one thing he hates; being owned by others. </Typography>
+          <Typography>10% of the collection are a Vladimir, 90% are KMG&lsquo;s. If you buy an KMG you are financing him/her to fight against Vladimir. If you buy a Vladimir you are doing the one thing he hates; being owned by others.</Typography>
         </MotionInView>
       </Container>
-      <Container maxWidth="1400px" sx={{ mt: 10, maxWidth: 2200 }}>
+      <Box sx={{ mt: 10, maxWidth: 2200 }}>
         <Box mb={3}>
           <KmgMarquee />
         </Box>
         <VladimirMarquee />
-      </Container>
+      </Box>
     </RootStyle>
   );
 }

@@ -36,11 +36,11 @@ const PRIMARY = {
 };
 
 const SECONDARY = {
-  lighter: "#FFF7CD",
-  light: "#FFE16A",
-  main: "#FFC107",
-  dark: "#B78103",
-  darker: "#7A4F01",
+  lighter: "#FED7E5",
+  light: "#FB87C7",
+  main: "#F338C3",
+  dark: "#AE1CA5",
+  darker: "#660A74",
   contrastText: "#fff",
 };
 

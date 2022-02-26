@@ -24,7 +24,7 @@ export function LandingIntroduction() {
         </MotionInView>
 
         <MotionInView variants={varFadeInUp}>
-          <Typography>Vladimir does not feel respected as a world leader. To take revenge, he aims to conquer the Metaverse. The Komitet Metaverse Gansters (KMG&lsquo;) are here to stop him.</Typography>
+          <Typography>The Komitet Metaverse Gansters (KMG&lsquo;s) protect the Metaverse from the baddies. Currently they are on a mission to stop Vladimir from conquering the Metaverse. The autocratic leader does not feel respected by other world leaders and want to take revenge by taking over the Metaverse.</Typography>
         </MotionInView>
       </Container>
     </RootStyle>

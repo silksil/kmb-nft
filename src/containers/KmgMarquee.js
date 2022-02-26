@@ -29,7 +29,7 @@ const paths = [
 
 export function KmgMarquee() {
   return (
-    <Marquee gradient={false} speed={25} direction="right">
+    <Marquee gradient={false} speed={25} direction="right" style={{ padding: 0, margin: 0 }}>
       {paths.map(({ path }) => (
         <Image key={path} src={`static/avatars/kmg/kmg-${path}.png`} alt="An KMG" />
       ))}

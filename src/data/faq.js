@@ -4,7 +4,7 @@ const CopyRight = () => (
     <a target="_blank" href="https://creativecommons.org/publicdomain/zero/1.0/" rel="noreferrer">
       public domain
     </a>
-    , so feel free to copy anything and make your own twist out of this project. Maybe can send the KMG&lsquo;s on a different mission to make this world a bit better.
+    .
   </>
 );
 
@@ -16,18 +16,22 @@ const TechnicalDetails = () => (
     <a target="_blank" href={etherScanLink} rel="noreferrer">
       here
     </a>
-    . The contract supports the ERC721Votes standard, and thus has the capibility to create DAO with voting capabilities that can directly use an individual NFT as a vote. The latter still requires some work. Given the urgency we decided to postpone this for now, but we are open for other developers joining us in setting this up.
+    . The contract supports the{" "}
+    <a target="_blank" href="https://docs.openzeppelin.com/contracts/4.x/api/token/erc721#ERC721Votes" rel="noreferrer">
+      ERC721Votes standard
+    </a>
+    . In the future, if the community decides so, we can create a DAO with voting capabilities that uses an individual NFT as a vote.
   </>
 );
 
 const FAQ = [
   {
-    heading: "Which charity?",
-    detail: "That still has to be decided community. It can be every charity, and even multiple charities, as long it supports the people in Ukraine.",
+    heading: "Vision",
+    detail: "To write.",
   },
   {
     heading: "When?",
-    detail: "It is gonna be an unnounced stealth drop ASAP given the urgency. We are currenlty working on the finishing touches for the smart contract and design.",
+    detail: "It is gonna be an unnounced stealth drop.",
   },
   {
     heading: "Copy rights?",
@@ -46,8 +50,8 @@ const FAQ = [
     detail: <TechnicalDetails />,
   },
   {
-    heading: "Royalty fee?",
-    detail: "The royalty on secondary sales is 7.5%. Just as the primary sales, 90% of this income will be used to help the people in Ukraine. The remaining 10% will be used by the creators to drive this project in the hope to increase the amount donated to Ukraine.",
+    heading: "Income distribution?",
+    detail: "90% of the primary sales will be donated. 90% of the secondary sales will be put in the treasure. 10% of the primary and secondary sales will go to the creators to drive this project.",
   },
 ];
 
