@@ -39,7 +39,7 @@ export function LandingMission() {
               </MotionInView>
 
               <MotionInView variants={varFadeInUp}>
-                <Typography>90% of all primary sales will be donated to organizations that support the people in Ukraine. The community will decide to which organization(s) the donations will go.</Typography>
+                <Typography>100% of all primary sales will be donated to organizations that support the people in Ukraine.</Typography>
               </MotionInView>
             </ContentStyle>
           </Grid>

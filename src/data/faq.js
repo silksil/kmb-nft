@@ -12,15 +12,11 @@ const etherScanLink = `${process.env.NEXT_PUBLIC_EITHERSCAN_PREFIX}/address/${pr
 
 const TechnicalDetails = () => (
   <>
-    The images are stored on IPFS. The contract is verified on Etherscan and can be found{" "}
+    The images are stored on IPFS. The ERC721 contract is verified on Etherscan and can be found{" "}
     <a target="_blank" href={etherScanLink} rel="noreferrer">
       here
     </a>
-    . The contract supports the{" "}
-    <a target="_blank" href="https://docs.openzeppelin.com/contracts/4.x/api/token/erc721#ERC721Votes" rel="noreferrer">
-      ERC721Votes standard
-    </a>
-    . In the future, if the community decides so, we can create a DAO with voting capabilities that uses an individual NFT as a vote.
+    .
   </>
 );
 

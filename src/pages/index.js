@@ -54,7 +54,7 @@ export default function LandingPage() {
   const url = (name, wrap = false) => `${wrap ? "url(" : ""}https://awv3node-homepage.surge.sh/build/assets/${name}.svg${wrap ? ")" : ""}`;
 
   return (
-    <Page title="Vladimir & the KMG" id="move_top" sx={{ height: "100%" }}>
+    <Page title="The KMG vs Vladimir" id="move_top" sx={{ height: "100%" }}>
       <MainLayout>
         <MintingModal />
 
