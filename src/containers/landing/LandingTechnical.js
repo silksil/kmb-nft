@@ -13,7 +13,6 @@ const ContentStyle = styled("div")(({ theme }) => ({
   zIndex: 1,
   width: "100%",
   textAlign: "center",
-
   [theme.breakpoints.up("md")]: {
     textAlign: "left",
   },
