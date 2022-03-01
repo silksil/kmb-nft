@@ -20,11 +20,13 @@ const TechnicalDetails = () => (
   </>
 );
 
+const IncomeDistribution = () => (
+  <>
+    100% of the primary sales will be donated to Ukraine. <br />
+    <br /> 50% of the income from royalty fees will go into the treasury. The other 50% will go to the creators to build the ecosystem and/or start new initiatives.
+  </>
+);
 const FAQ = [
-  {
-    heading: "Vision",
-    detail: "To write.",
-  },
   {
     heading: "When?",
     detail: "It is gonna be an unnounced stealth drop.",
@@ -47,7 +49,7 @@ const FAQ = [
   },
   {
     heading: "Income distribution?",
-    detail: "90% of the primary sales will be donated. 90% of the secondary sales will be put in the treasure. 10% of the primary and secondary sales will go to the creators to drive this project.",
+    detail: <IncomeDistribution />,
   },
 ];
 

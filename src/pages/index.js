@@ -4,6 +4,7 @@ import { LandingHero, LandingIntroduction, LandingFAQs, LandingMission, LandingS
 import { MintingModal } from "src/containers/minting-modal/MintingModal";
 import { useRef } from "react";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
+import { LandingWhitelist } from "src/containers/landing/LandingWhitelist";
 
 const LandingCloudParallaxLayer = () => {
   const url = (name, wrap = false) => `${wrap ? "url(" : ""}https://awv3node-homepage.surge.sh/build/assets/${name}.svg${wrap ? ")" : ""}`;
@@ -58,7 +59,7 @@ export default function LandingPage() {
       <MainLayout>
         <MintingModal />
 
-        <Parallax ref={parallax} pages={9}>
+        <Parallax ref={parallax} pages={10}>
           <ParallaxLayer
             offset={0}
             speed={0}
@@ -112,10 +113,14 @@ export default function LandingPage() {
           </ParallaxLayer>
 
           <ParallaxLayer offset={6} speed={0.2}>
-            <LandingTeam />
+            <LandingWhitelist />
           </ParallaxLayer>
 
           <ParallaxLayer offset={7} speed={0.2}>
+            <LandingTeam />
+          </ParallaxLayer>
+
+          <ParallaxLayer offset={8} speed={0.2}>
             <LandingFAQs />
           </ParallaxLayer>
         </Parallax>

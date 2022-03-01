@@ -24,7 +24,7 @@ export function LandingIntroduction() {
         </MotionInView>
 
         <MotionInView variants={varFadeInUp}>
-          <Typography>The Komitet Metaverse Gansters (KMG&lsquo;s) protect the Metaverse from the baddies. Currently they are on a mission to stop Vladimir from conquering the Metaverse. The autocratic leader does not feel respected by other world leaders and want to take revenge by taking over the Metaverse.</Typography>
+          <Typography>The Komitet Metaverse Gangsters (KMG) protect the Metaverse from the baddies. They’re currently on a mission to stop the baddest of ‘em all: Vladimir. The autocratic leader does not feel respected by other world leaders so he decided to take revenge with a twisted plot to take over the Metaverse. The KMG&lsquo;s are here to stop him.</Typography>
         </MotionInView>
       </Container>
     </RootStyle>

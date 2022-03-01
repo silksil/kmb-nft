@@ -50,24 +50,24 @@
 //   );
 // }
 
-import { styled } from '@mui/material/styles';
-import { Box, Grid, Container, Typography, Button } from '@mui/material';
-import { varFadeInUp, MotionInView } from '../../components/animate';
-import { BackgroundBlur } from '../BackgroundBlur';
-import { shadowHeading } from 'src/utils/shadowHeading';
+import { styled } from "@mui/material/styles";
+import { Box, Grid, Container, Typography } from "@mui/material";
+import { varFadeInUp, MotionInView } from "../../components/animate";
+import { BackgroundBlur } from "../BackgroundBlur";
+import { shadowHeading } from "src/utils/shadowHeading";
 
-const RootStyle = styled('div')(({ theme }) => ({
-  position: 'relative',
+const RootStyle = styled("div")(({ theme }) => ({
+  position: "relative",
   padding: theme.spacing(22, 0),
 }));
 
-const ContentStyle = styled('div')(({ theme }) => ({
+const ContentStyle = styled("div")(({ theme }) => ({
   zIndex: 1,
-  width: '100%',
-  textAlign: 'center',
+  width: "100%",
+  textAlign: "center",
 
-  [theme.breakpoints.up('md')]: {
-    textAlign: 'left',
+  [theme.breakpoints.up("md")]: {
+    textAlign: "left",
   },
 }));
 
@@ -85,11 +85,11 @@ export function LandingWhitelist() {
           <Grid item xs={10} md={4}>
             <Box as="img" src="/static/avatars/kmg/kmg-6.png" zIndex={1} position="relative" />
           </Grid>
-          <Grid item xs={12} md={4} sx={{ display: 'flex', alignItems: 'center' }}>
+          <Grid item xs={12} md={4} sx={{ display: "flex", alignItems: "center" }}>
             <ContentStyle>
               <MotionInView variants={varFadeInUp}>
                 <Heading variant="h2" sx={{ mb: 3 }}>
-                  Get early access
+                  Roadmap
                 </Heading>
               </MotionInView>
 
@@ -99,11 +99,10 @@ export function LandingWhitelist() {
                     mb: 2,
                   }}
                 >
-                  Be the first to be able to mint. Refer to your friends and the top 50 referrers will get early access.
+                  No roadmap, but an intention to foster a community that wants to build more. <br />
+                  <br />
+                  50% of the royalties of secondary sales will be put into the treasury to start new iniatives. It is up to the community to decide what these initiatives will be. For example, if the community decided so, the treasury could fund a second collection where the KMG's fight the Tinder Swindler to help his victims.
                 </Typography>
-                <Button variant="contained" size="large" className="vrlps-trigger" sx={{ mt: 2 }}>
-                  Join and win
-                </Button>
               </MotionInView>
             </ContentStyle>
           </Grid>

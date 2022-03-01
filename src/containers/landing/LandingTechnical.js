@@ -33,7 +33,7 @@ export function LandingTechnical() {
             <ContentStyle>
               <MotionInView variants={varFadeInUp}>
                 <Heading variant="h2" sx={{ mb: 3 }}>
-                  Every character is unique
+                  Algorithmly created
                 </Heading>
               </MotionInView>
 
@@ -43,7 +43,7 @@ export function LandingTechnical() {
                     mb: 2,
                   }}
                 >
-                  Each character is a unique and has been generated from over 150 different traits. Algorithmly these traits are combined to create the characters. They are all dope, but some are rarer than others.
+                  Each character is a unique and has been generated from over 150 different traits. Through an algorithm, all traits are combined to create a character. And while they’re all dope in their own ways, some are rarer than others. So pick your fighter and join the Metaverse force.
                 </Typography>
               </MotionInView>
             </ContentStyle>

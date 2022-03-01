@@ -37,6 +37,7 @@ const CardStyle = styled(Card)(({ theme }) => {
     zIndex: 1,
     borderRadius: 200,
     maxWidth: 380,
+    minWidth: 300,
     margin: "auto",
     textAlign: "center",
     padding: theme.spacing(5, 5, 5),
@@ -44,8 +45,8 @@ const CardStyle = styled(Card)(({ theme }) => {
 });
 
 const CardIconStyle = styled("img")(({ theme }) => ({
-  width: 120,
-  height: 120,
+  width: 80,
+  height: 80,
   margin: "auto",
   marginBottom: theme.spacing(2),
 }));
@@ -78,10 +79,9 @@ export function LandingTeam() {
         <Container maxWidth="sm" sx={{ mb: { xs: 5 }, textAlign: "center" }}>
           <Heading variant="h2">The Team</Heading>
         </Container>
-
-        <Grid container spacing={isDesktop ? 10 : 5}>
+        <Grid container spacing={isDesktop ? 10 : 5} justifyContent="center">
           {CARDS.map((card) => (
-            <Grid key={card.title} item xs={12} md={4}>
+            <Grid key={card.title} item justifyContent="center" alignItems="center">
               <Box sx={{ width: "auto", height: "auto", position: "relative" }}>
                 <MotionInView variants={varFadeInUp}>
                   <CardStyle>
