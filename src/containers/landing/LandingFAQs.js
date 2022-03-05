@@ -5,7 +5,6 @@ import arrowIosDownwardFill from "@iconify/icons-eva/arrow-ios-downward-fill";
 
 import { varFadeInUp, MotionInView } from "../../components/animate";
 import faq from "../../data/faq";
-import { BackgroundBlur } from "../BackgroundBlur";
 import { Box } from "@mui/system";
 import { shadowHeading } from "src/utils/shadowHeading";
 
@@ -32,8 +31,6 @@ export function LandingFAQs() {
         <Subtitle>Q&A</Subtitle>
 
         <Box position="relative" zIndex>
-          <BackgroundBlur height="150%" top="-25%" left="-25%" width="150%" opacityStrength={0.4} />
-
           <MotionInView variants={varFadeInUp}>
             {faq.map((accordion, index) => (
               <Accordion key={`${index}-${accordion.heading}`} sx={{ mb: 2 }}>

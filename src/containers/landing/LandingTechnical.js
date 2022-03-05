@@ -43,7 +43,7 @@ export function LandingTechnical() {
                     mb: 2,
                   }}
                 >
-                  Each character is a unique and has been generated from over 150 different traits. Through an algorithm, all traits are combined to create a character. And while they’re all dope in their own ways, some are rarer than others. So pick your fighter and join the Metaverse force.
+                  Each character is a unique and has been generated from over 150 different traits. Through an algorithm, all traits are combined to create a character. And while they’re all dope in their own ways, some are rarer than others.
                 </Typography>
               </MotionInView>
             </ContentStyle>

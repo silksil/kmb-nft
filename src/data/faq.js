@@ -20,36 +20,82 @@ const TechnicalDetails = () => (
   </>
 );
 
-const IncomeDistribution = () => (
+const WhatsNext = () => (
   <>
-    100% of the primary sales will be donated to Ukraine. <br />
-    <br /> 50% of the income from royalty fees will go into the treasury. The other 50% will go to the creators to build the ecosystem and/or start new initiatives.
+    <h4>Primary sales</h4> All ETH from primary sales will be donated to Ukraine trough{" "}
+    <a href="https://unchain.fund/" target="_blank" rel="noreferrer">
+      unchain.fund
+    </a>{" "}
+    once the whole collection has been sold.
+    <br />
+    <br />
+    <h4>Secondary sales</h4> What will be done with the ETH made from secondary sales will be decided by the token holders. This can be either: <br />
+    <br />
+    1. Donated to Ukraine <br />
+    2. Start a KMG DAO: putting ETH into a treasury governed by KMG holders.
+    <br /> 3. A combination of the above. <br />
+    <br />
+    <h4>KMG DAO</h4>
+    If the community decides to put the money made from secondary sales into the treasury, this funds can be used to start new initiatives. Inspired by Nouns DAO, the vision is to have an ecosystem where the holders can propose, vote, and collaborate on new initiatives. In contrast to{" "}
+    <a target="_blank" href="https://nouns.wtf/vote" rel="noreferrer">
+      Nouns DAO
+    </a>
+    , the emphasis of these initiatives should not be on just "fun", but also on “fighting the bad" and doing good. <br />
+    <br />
+    If the community decides to start a DAO, 20% of the secondary sales will go to the founders to work on setting up an ecosystem (voting system, discourse forum etc.) and 80% will go to the treasury to fund new initiatives. If the community decides to donate the money of secondary sales to Ukraine, 100% of the secondary sales will be donated to Ukraine periodically. <br />
+    <br />
+    <h4>When and how will this be decided?</h4> What will be done with the ETH from secondary sales will be decided once the whole collection has been minted. How the community will decided this will be announced in the Discord channel.
   </>
 );
+
+const Team = () => (
+  <>
+    <h4>Primary sales</h4> All ETH from primary sales will be donated to Ukraine trough{" "}
+    <a href="https://unchain.fund/" target="_blank" rel="noreferrer">
+      unchain.fund
+    </a>{" "}
+    once the whole collection has been sold.
+    <br />
+    <br />
+    <h4>Secondary sales</h4> What will be done with the ETH made from secondary sales will be decided by the token holders. This can be either: <br />
+    <br />
+    1. Donated to Ukraine. <br />
+    2. Start a KMG DAO: putting ETH into a treasury governed by KMG holders.
+    <br /> 3. A combination of the above. <br />
+    <br />
+    <h4>KMG DAO</h4>
+    If the community decides to put the money made from secondary sales into the treasury, this funds can be used to start new initiatives. Inspired by Nouns DAO, the vision is to have an ecosystem where the holders can propose, vote, and collaborate on new initiatives. In contrast to{" "}
+    <a target="_blank" href="https://nouns.wtf/vote" rel="noreferrer">
+      Nouns DAO
+    </a>{" "}
+    , the emphasis of these initiatives should not be on just "fun", but also on “fighting the bad" and doing good. <br />
+    <br />
+    If the community decides to start a DAO, 20% of the secondary sales will go to the founders to work on setting up an ecosystem (voting system, discourse forum, treasury contract etc.) and 80% will go to the treasury to fund new initiatives. If the community decides to donate the money of secondary sales to Ukraine, 100% of the secondary sales will be donated to Ukraine periodically. <br />
+    <br />
+    <h4>When and how will this be decided?</h4> What will be done with the ETH from secondary sales will be decided once the whole collection has been minted. How the community will decided this will be announced in the Discord channel.
+  </>
+);
+
 const FAQ = [
   {
-    heading: "When?",
-    detail: "It is gonna be an unnounced stealth drop.",
+    heading: "What's next?",
+    detail: <WhatsNext />,
   },
   {
-    heading: "Copy rights?",
-    detail: <CopyRight />,
+    heading: "Team",
+    detail: "The team consist out of Sophie, Sil (boyfriend of Sophie) and Oscar (the brother of Sophie).",
   },
   {
-    heading: "Cost?",
+    heading: "When",
     detail: "To be announced.",
   },
   {
-    heading: "Maximum mintable?",
-    detail: "5 per transaction.",
+    heading: "Copy rights",
+    detail: <CopyRight />,
   },
   {
-    heading: "Technical details?",
+    heading: "Technical details",
     detail: <TechnicalDetails />,
-  },
-  {
-    heading: "Income distribution?",
-    detail: <IncomeDistribution />,
   },
 ];
 

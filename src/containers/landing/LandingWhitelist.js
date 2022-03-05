@@ -89,7 +89,7 @@ export function LandingWhitelist() {
             <ContentStyle>
               <MotionInView variants={varFadeInUp}>
                 <Heading variant="h2" sx={{ mb: 3 }}>
-                  Roadmap
+                  Vision
                 </Heading>
               </MotionInView>
 
@@ -99,7 +99,7 @@ export function LandingWhitelist() {
                     mb: 2,
                   }}
                 >
-                  No roadmap, but an intention to foster a community that wants to build more. <br />
+                  The visions is to create a community of builders that 
                   <br />
                   50% of the royalties of secondary sales will be put into the treasury to start new iniatives. It is up to the community to decide what these initiatives will be. For example, if the community decided so, the treasury could fund a second collection where the KMG's fight the Tinder Swindler to help his victims.
                 </Typography>

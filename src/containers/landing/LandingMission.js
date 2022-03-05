@@ -39,7 +39,7 @@ export function LandingMission() {
               </MotionInView>
               <MotionInView variants={varFadeInUp}>
                 <Typography>
-                  We’ll be donating 100% of all primary sales to organizations that support the people of Ukraine. ETH will be send and distributed through{" "}
+                  We’ll be donating 100% of all primary sales to organizations that support the people of Ukraine. ETH will be send to and distributed through{" "}
                   <a href="https://unchain.fund/" target="_blank" rel="noreferrer">
                     unchain.fund
                   </a>

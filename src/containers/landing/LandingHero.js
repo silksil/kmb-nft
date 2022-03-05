@@ -36,9 +36,9 @@ const BackgroundBlur = styled((props) => <Box {...props} />)(({ theme, color }) 
   filter: "blur(90px)",
   backgroundColor: theme.palette[color].main,
 
-  height: 160,
-  width: 160,
-  left: "calc(50% - 70px)",
+  height: 180,
+  width: 180,
+  left: "calc(50% - 90px)",
 
   [theme.breakpoints.up("md")]: {
     marginTop: theme.spacing(28),
@@ -48,10 +48,10 @@ const BackgroundBlur = styled((props) => <Box {...props} />)(({ theme, color }) 
     left: "calc(50% - 150px)",
   },
   [theme.breakpoints.up("lg")]: {
-    width: 300,
-    height: 300,
+    width: 500,
+    height: 350,
 
-    left: "calc(50% - 200px)",
+    left: "calc(50% - 250px)",
   },
 }));
 
@@ -74,7 +74,7 @@ const HeroImgStyle = styled(motion.img)(({ theme }) => ({
 
   [theme.breakpoints.up("lg")]: {
     width: 600,
-    marginTop: `-${theme.spacing(12)}`,
+    marginTop: `-${theme.spacing(10)}`,
   },
 }));
 
@@ -101,11 +101,11 @@ const AstronautStyle = styled(motion.img)(({ theme }) => ({
 export function LandingHero() {
   return (
     <RootStyle>
-      <motion.div animate={{ y: [-50, 50, -50], x: [-50, 50, -50] }} transition={{ duration: 6, repeat: Infinity }}>
+      <motion.div animate={{ y: [-50, 50, -50], x: [-50, 50, -50] }} transition={{ duration: 5, repeat: Infinity }}>
         <BackgroundBlur color="secondary" />
       </motion.div>
 
-      <motion.div animate={{ y: [50, -50, 50], x: [50, -50, 50] }} transition={{ duration: 6, repeat: Infinity }}>
+      <motion.div animate={{ y: [50, -50, 50], x: [50, -50, 50] }} transition={{ duration: 5, repeat: Infinity }}>
         <BackgroundBlur color="primary" />
       </motion.div>
 
@@ -117,7 +117,9 @@ export function LandingHero() {
           <Typography>KMG&lsquo;s are characters on the Ethereum blockchain that protect the Metaverse from Vladimir and other baddies.</Typography>
         </Container>
       </ContentStyle>
-      <HeroImgStyle alt="hero" src="/static/avatars/hero-characters.png" />
+      <Box>
+        <HeroImgStyle alt="hero" src="/static/avatars/hero-characters.png" />
+      </Box>
     </RootStyle>
   );
 }
