@@ -1,5 +1,5 @@
 import { styled } from "@mui/material/styles";
-import { Container, Typography, Accordion, AccordionSummary, AccordionDetails } from "@mui/material";
+import { Container, Typography, Accordion, AccordionSummary, AccordionDetails, alpha } from "@mui/material";
 import { Icon } from "../../components/Icon";
 import arrowIosDownwardFill from "@iconify/icons-eva/arrow-ios-downward-fill";
 
@@ -24,6 +24,11 @@ const Subtitle = styled((props) => <Typography variant="h2" {...props} />)(({ th
   },
 }));
 
+const StyledAccordion = styled((props) => <Accordion {...props} />)(({ theme }) => ({
+  backgroundColor: alpha(theme.palette.background.paper, 0.6),
+  marginBottom: theme.spacing(2),
+}));
+
 export function LandingFAQs() {
   return (
     <RootStyle>
@@ -33,14 +38,14 @@ export function LandingFAQs() {
         <Box position="relative" zIndex>
           <MotionInView variants={varFadeInUp}>
             {faq.map((accordion, index) => (
-              <Accordion key={`${index}-${accordion.heading}`} sx={{ mb: 2 }}>
+              <StyledAccordion key={`${index}-${accordion.heading}`}>
                 <AccordionSummary expandIcon={<Icon icon={arrowIosDownwardFill} width={20} height={20} />}>
                   <Typography variant="subtitle1">{accordion.heading}</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
                   <Typography variant="body2">{accordion.detail}</Typography>
                 </AccordionDetails>
-              </Accordion>
+              </StyledAccordion>
             ))}
           </MotionInView>
         </Box>

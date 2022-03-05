@@ -5,7 +5,7 @@ export const ParallaxBackgroundStars = () => (
     <ParallaxLayer
       offset={0}
       speed={0}
-      factor={2}
+      factor={3}
       style={{
         backgroundImage: "url(/static/illustrations/stars.svg)",
         backgroundSize: "cover",
@@ -13,9 +13,9 @@ export const ParallaxBackgroundStars = () => (
       }}
     />
     <ParallaxLayer
-      offset={2}
+      offset={3}
       speed={0}
-      factor={2}
+      factor={3}
       style={{
         backgroundImage: "url(/static/illustrations/stars.svg)",
         backgroundSize: "cover",
@@ -23,9 +23,9 @@ export const ParallaxBackgroundStars = () => (
       }}
     />
     <ParallaxLayer
-      offset={4}
+      offset={6}
       speed={0}
-      factor={2}
+      factor={3}
       style={{
         backgroundImage: "url(/static/illustrations/stars.svg)",
         backgroundSize: "cover",

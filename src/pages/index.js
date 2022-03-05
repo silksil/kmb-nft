@@ -22,7 +22,7 @@ export default function LandingPage() {
         <MintingModal />
 
         <ContentStyle>
-          <Parallax ref={parallax} pages={5}>
+          <Parallax ref={parallax} pages={7}>
             <ParallaxBackgroundStars />
             <ParallaxLayer offset={0} speed={1}>
               <LandingHero />
@@ -40,9 +40,11 @@ export default function LandingPage() {
             <ParallaxLayer offset={4} speed={0.2}>
               <LandingSquat />
             </ParallaxLayer>
+            <ParallaxLayer offset={5} speed={0.2}>
+              <LandingFAQs />
+            </ParallaxLayer>
           </Parallax>
         </ContentStyle>
-        <LandingFAQs />
       </MainLayout>
     </Page>
   );
