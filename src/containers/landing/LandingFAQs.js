@@ -27,7 +27,7 @@ const Subtitle = styled((props) => <Typography variant="h2" {...props} />)(({ th
 export function LandingFAQs() {
   return (
     <RootStyle>
-      <Container maxWidth="sm">
+      <Container maxWidth="md">
         <Subtitle>Q&A</Subtitle>
 
         <Box position="relative" zIndex>
