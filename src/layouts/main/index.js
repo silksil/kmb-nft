@@ -8,7 +8,7 @@ MainLayout.propTypes = {
 
 export default function MainLayout({ children }) {
   return (
-    <div style={{ backgroundImage: "url(/static/illustrations/stars.svg) no-repeat", backgroundSize: "cover", width: "100%" }}>
+    <div style={{ backgroundImage: "url(/static/illustrations/stars.svg)", backgroundSize: "auto", width: "100%" }}>
       <MainNavbar />
       <div>{children}</div>
       <MainFooter />

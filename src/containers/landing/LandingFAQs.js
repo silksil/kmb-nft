@@ -38,7 +38,7 @@ export function LandingFAQs() {
                   <Typography variant="subtitle1">{accordion.heading}</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                  <Typography>{accordion.detail}</Typography>
+                  <Typography variant="body2">{accordion.detail}</Typography>
                 </AccordionDetails>
               </Accordion>
             ))}
