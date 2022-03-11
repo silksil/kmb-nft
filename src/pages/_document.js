@@ -9,9 +9,9 @@ import createEmotionCache from "src/utils/createEmotionCache";
 import palette from "src/theme/palette";
 
 const metaInfo = {
-  author: "Vladimir",
+  author: "Sil Kreulen",
   keywords: "NFT, Opensea, Rarible, JPEGS,",
-  description: "NFT project",
+  description: "NFT project"
 };
 
 export default class MyDocument extends Document {
@@ -55,7 +55,7 @@ MyDocument.getInitialProps = async (ctx) => {
   ctx.renderPage = () =>
     originalRenderPage({
       // eslint-disable-next-line react/display-name
-      enhanceApp: (App) => (props) => <App emotionCache={cache} {...props} />,
+      enhanceApp: (App) => (props) => <App emotionCache={cache} {...props} />
     });
 
   const initialProps = await Document.getInitialProps(ctx);
@@ -72,6 +72,6 @@ MyDocument.getInitialProps = async (ctx) => {
 
   return {
     ...initialProps,
-    styles: [...React.Children.toArray(initialProps.styles), ...emotionStyleTags],
+    styles: [...React.Children.toArray(initialProps.styles), ...emotionStyleTags]
   };
 };

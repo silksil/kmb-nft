@@ -1,16 +1,16 @@
-import { motion } from 'framer-motion';
-import NextLink from 'next/link';
-import { styled } from '@mui/material/styles';
-import { Button, Typography, Container } from '@mui/material';
-import { LogoOnlyTopCornerLayout } from 'src/layouts/LogoOnlyTopCornerLayout';
-import { MotionContainer, varBounceIn } from 'src/components/animate';
-import { Page } from 'src/components/Page';
+import { motion } from "framer-motion";
+import NextLink from "next/link";
+import { styled } from "@mui/material/styles";
+import { Button, Typography, Container } from "@mui/material";
+import { LogoOnlyTopCornerLayout } from "src/layouts/LogoOnlyTopCornerLayout";
+import { MotionContainer, varBounceIn } from "src/components/animate";
+import { Page } from "src/components/Page";
 
 const RootStyle = styled(Page)(({ theme }) => ({
-  display: 'flex',
-  alignItems: 'center',
+  display: "flex",
+  alignItems: "center",
   paddingTop: theme.spacing(15),
-  paddingBottom: theme.spacing(10),
+  paddingBottom: theme.spacing(10)
 }));
 
 export default function PageNotFound() {
@@ -18,10 +18,10 @@ export default function PageNotFound() {
     <LogoOnlyTopCornerLayout>
       <RootStyle title="404 Page Not Found">
         <Container>
-          <MotionContainer initial="initial" open sx={{ maxWidth: 480, margin: 'auto', textAlign: 'center' }}>
+          <MotionContainer initial="initial" open sx={{ maxWidth: 480, margin: "auto", textAlign: "center" }}>
             <motion.div variants={varBounceIn}>
               <Typography variant="h3" paragraph>
-                Go back to the homepage to checkout the Vladimir & the KMG.
+                Go back to the homepage for more innfo about The KMG vs Vladimir.
               </Typography>
             </motion.div>
 
