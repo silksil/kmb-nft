@@ -5,15 +5,13 @@ import { MintingModal } from "src/containers/minting-modal/MintingModal";
 import { useRef } from "react";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import { styled } from "@mui/system";
-import { LandingCloudAndCo } from "src/containers/landing/ParallaxCloudAndCo";
-import { ParallaxBackgroundStars } from "src/containers/landing/ParallaxBackgroundStars";
 
 export default function LandingPage() {
   const parallax = useRef();
 
   const ContentStyle = styled("div")(({ theme }) => ({
     minHeight: "100vh",
-    backgroundColor: theme.palette.background.default,
+    backgroundColor: theme.palette.background.default
   }));
 
   return (
@@ -23,7 +21,7 @@ export default function LandingPage() {
 
         <ContentStyle>
           <Parallax ref={parallax} pages={7}>
-            <ParallaxBackgroundStars />
+            {/* <ParallaxBackgroundStars /> */}
             <ParallaxLayer offset={0} speed={1}>
               <LandingHero />
             </ParallaxLayer>
@@ -31,7 +29,7 @@ export default function LandingPage() {
             <ParallaxLayer sticky={{ start: 1, end: 2 }} style={{ display: "flex", alignItems: "center", justifyContent: "flex-start" }}>
               <LandingIntroduction />
             </ParallaxLayer>
-            <LandingCloudAndCo />
+            {/* <LandingCloudAndCo /> */}
 
             <ParallaxLayer offset={3} speed={0.2}>
               <LandingMission />
