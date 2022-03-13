@@ -34,7 +34,6 @@ export function LandingFAQs() {
     <RootStyle>
       <Container maxWidth="md">
         <Subtitle>Q&A</Subtitle>
-
         <Box position="relative" zIndex>
           <MotionInView variants={varFadeInUp}>
             {faq.map((accordion, index) => (
