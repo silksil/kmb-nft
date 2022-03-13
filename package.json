@@ -28,9 +28,6 @@
     "react-intersection-observer": "^8.32.1",
     "react-scripts": "^4.0.1",
     "react-scroll": "^1.8.4",
-    "react-scroll-parallax": "^3.0.4",
-    "simplebar": "^5.3.5",
-    "simplebar-react": "^2.3.5",
     "stylis": "^4.0.10"
   },
   "devDependencies": {

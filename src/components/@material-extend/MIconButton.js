@@ -1,19 +1,16 @@
-import PropTypes from 'prop-types';
-import { forwardRef } from 'react';
-import { IconButton } from '@mui/material';
-import { ButtonAnimate } from '../animate';
+import PropTypes from "prop-types";
+import { forwardRef } from "react";
+import { IconButton } from "@mui/material";
 
 // eslint-disable-next-line react/display-name
 const MIconButton = forwardRef(({ children, ...other }, ref) => (
-  <ButtonAnimate>
-    <IconButton ref={ref} {...other}>
-      {children}
-    </IconButton>
-  </ButtonAnimate>
+  <IconButton ref={ref} {...other}>
+    {children}
+  </IconButton>
 ));
 
 MIconButton.propTypes = {
-  children: PropTypes.node,
+  children: PropTypes.node
 };
 
 export default MIconButton;

@@ -1,6 +1,5 @@
 import Head from "next/head";
 import { CacheProvider } from "@emotion/react";
-import { ParallaxProvider } from "react-scroll-parallax";
 
 import { ThemeSettingsProvider } from "src/contexts/ThemeSettingsContext";
 
@@ -20,19 +19,17 @@ export default function MyApp(props) {
   return (
     <ContractProvider>
       <CacheProvider value={emotionCache}>
-        <ParallaxProvider>
-          <ThemeSettingsProvider>
-            <ThemeConfig>
-              <UIProvider>
-                <Head>
-                  <meta name="viewport" content="initial-scale=1, width=device-width" />
-                </Head>
-                <GlobalStyles />
-                <Component {...pageProps} />
-              </UIProvider>
-            </ThemeConfig>
-          </ThemeSettingsProvider>
-        </ParallaxProvider>
+        <ThemeSettingsProvider>
+          <ThemeConfig>
+            <UIProvider>
+              <Head>
+                <meta name="viewport" content="initial-scale=1, width=device-width" />
+              </Head>
+              <GlobalStyles />
+              <Component {...pageProps} />
+            </UIProvider>
+          </ThemeConfig>
+        </ThemeSettingsProvider>
       </CacheProvider>
     </ContractProvider>
   );
