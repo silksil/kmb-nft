@@ -80,21 +80,21 @@ const HeroImgStyle = styled(motion.img)(({ theme }) => ({
 
 const AstronautStyle = styled(motion.img)(({ theme }) => ({
   height: "120px",
+  width: "120px",
   position: "absolute",
   left: "0",
   marginLeft: "0",
-  marginTop: theme.spacing(25),
+  marginTop: theme.spacing(14),
 
   [theme.breakpoints.up("sm")]: {
-    marginLeft: theme.spacing(6)
+    marginLeft: "20%"
   },
 
   [theme.breakpoints.up("lg")]: {
     height: "200px",
     position: "absolute",
-    top: "10%",
-    left: "45%",
-    marginLeft: "-400px"
+    top: "0%",
+    marginLeft: "30%"
   }
 }));
 
@@ -108,6 +108,8 @@ export function LandingHero() {
       <motion.div animate={{ y: [50, -50, 50], x: [50, -50, 50] }} transition={{ duration: 5, repeat: Infinity }}>
         <BackgroundBlur color="primary" />
       </motion.div>
+
+      <AstronautStyle animate={{ y: [10, -10, 10] }} transition={{ duration: 5, repeat: Infinity }} src="/static/avatars/astronaut.png" />
 
       <ContentStyle>
         <Heading variant="h2" gutterBottom>

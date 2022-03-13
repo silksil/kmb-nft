@@ -19,6 +19,18 @@ const paths = [
   },
   {
     path: "5"
+  },
+  {
+    path: "5"
+  },
+  {
+    path: "5"
+  },
+  {
+    path: "5"
+  },
+  {
+    path: "5"
   }
 ];
 
@@ -26,7 +38,7 @@ export function KmbMarquee() {
   return (
     <Marquee gradient={false} speed={25} direction="right" style={{ padding: 0, margin: 0 }}>
       {paths.map(({ path }) => (
-        <Box ml="8px" key={path}>
+        <Box ml="16px" key={path}>
           <NextImage width={160} height={160} src={`/static/avatars/kmb/${path}.png`} alt="A KMB" />
         </Box>
       ))}
