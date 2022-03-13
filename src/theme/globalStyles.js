@@ -10,71 +10,41 @@ export default function GlobalStyles() {
         "*": {
           margin: 0,
           padding: 0,
-          boxSizing: "border-box",
+          boxSizing: "border-box"
         },
         html: {
           width: "100%",
           height: "100%",
-          WebkitOverflowScrolling: "touch",
+          WebkitOverflowScrolling: "touch"
         },
         body: {
           width: "100%",
-          height: "100%",
+          height: "100%"
         },
         "#__next": {
           width: "100%",
-          height: "100%",
-        },
-        //TODO: remove the line below for the boilerplate
-        ".vl-gdpr .vl-gdpr-fat": {
-          backgroundColor: "transparent !important",
-          marginBottom: "12px !important",
-          borderRadius: "12px !important",
-        },
-
-        ".vl-modal-dialog": {
-          maxWidth: "500px !important",
-        },
-
-        ".vlns .vl-form-control": {
-          backgroundColor: "#2E3348 !important",
-          border: "none !important",
-          color: "#fff!important",
-        },
-
-        "#form_firstName": {
-          color: "#fff!important",
-          "::placeholder": {
-            color: "#fff!important",
-          },
-        },
-
-        "#form_email": {
-          color: "#fff!important",
-          "::placeholder": {
-            color: "#fff!important",
-          },
+          height: "100%"
         },
 
         a: {
           color: theme.palette.primary.main,
-          textDecoration: "none",
+          textDecoration: "none"
         },
 
         textarea: {
           "&::-webkit-input-placeholder": {
-            color: theme.palette.text.disabled,
+            color: theme.palette.text.disabled
           },
           "&::-moz-placeholder": {
             opacity: 1,
-            color: theme.palette.text.disabled,
+            color: theme.palette.text.disabled
           },
           "&:-ms-input-placeholder": {
-            color: theme.palette.text.disabled,
+            color: theme.palette.text.disabled
           },
           "&::placeholder": {
-            color: theme.palette.text.disabled,
-          },
+            color: theme.palette.text.disabled
+          }
         },
 
         img: { display: "block", maxWidth: "100%" },
@@ -83,12 +53,12 @@ export default function GlobalStyles() {
         ".blur-up": {
           WebkitFilter: "blur(5px)",
           filter: "blur(5px)",
-          transition: "filter 400ms, -webkit-filter 400ms",
+          transition: "filter 400ms, -webkit-filter 400ms"
         },
         ".blur-up.lazyloaded ": {
           WebkitFilter: "blur(0)",
-          filter: "blur(0)",
-        },
+          filter: "blur(0)"
+        }
       }}
     />
   );

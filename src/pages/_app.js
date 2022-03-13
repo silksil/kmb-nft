@@ -1,5 +1,6 @@
 import Head from "next/head";
 import { CacheProvider } from "@emotion/react";
+import "../../public/font/index.css";
 
 import { ThemeSettingsProvider } from "src/contexts/ThemeSettingsContext";
 

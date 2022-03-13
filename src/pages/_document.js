@@ -24,14 +24,8 @@ export default class MyDocument extends Document {
           <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
           <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
           <link rel="shortcut icon" href="/favicon/favicon.ico" />
-
           <meta name="theme-color" content={palette.light.primary.main} />
           <link rel="manifest" href="/manifest.json" />
-
-          <link rel="preconnect" href="https://fonts.gstatic.com" />
-          <link href={`https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&display=swap`} rel="stylesheet" />
-          <link href={`https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;&display=swap`} rel="stylesheet" />
-
           <meta name="description" content={metaInfo.description} />
           <meta name="keywords" content={metaInfo.keywords} />
           <meta name="author" content={metaInfo.author} />
