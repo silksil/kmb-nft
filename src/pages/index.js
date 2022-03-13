@@ -15,7 +15,7 @@ export default function LandingPage() {
       <MainLayout>
         <MintingModal />
 
-        <Parallax ref={parallax} pages={9}>
+        <Parallax ref={parallax} pages={7}>
           <ParallaxBackgroundStars />
           <ParallaxLayer offset={0} speed={1}>
             <LandingHero />

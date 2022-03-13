@@ -9,9 +9,8 @@ import createEmotionCache from "src/utils/createEmotionCache";
 import palette from "src/theme/palette";
 
 const metaInfo = {
-  author: "Sil Kreulen",
-  keywords: "NFT, Opensea, Rarible, JPEGS,",
-  description: "NFT project"
+  keywords: "KMB, builders, community, NFT, Opensea, Rarible, JPEGS, Vladimir, Putin",
+  description: "KMBs are characters on the Ethereum blockchain that protect the Metaverse from Vladimir and other baddies."
 };
 
 export default class MyDocument extends Document {
@@ -28,7 +27,6 @@ export default class MyDocument extends Document {
           <link rel="manifest" href="/manifest.json" />
           <meta name="description" content={metaInfo.description} />
           <meta name="keywords" content={metaInfo.keywords} />
-          <meta name="author" content={metaInfo.author} />
         </Head>
         <body>
           <Main />
