@@ -4,11 +4,15 @@ import { Typography } from "@mui/material";
 
 // eslint-disable-next-line react/display-name
 const Logo = forwardRef(({ sx }, ref) => {
-  return <Typography sx={{ width: 48, height: "auto", cursor: "pointer", ...sx }}>VKMG</Typography>;
+  return (
+    <Typography ref={ref} sx={{ width: 48, height: "auto", cursor: "pointer", ...sx }}>
+      VKMG
+    </Typography>
+  );
 });
 
 Logo.propTypes = {
-  sx: PropTypes.object,
+  sx: PropTypes.object
 };
 
 export default Logo;

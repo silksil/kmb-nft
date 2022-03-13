@@ -32,7 +32,7 @@ const WhatsNext = () => (
     <a target="_blank" href="https://nouns.wtf/vote" rel="noreferrer">
       Nouns DAO
     </a>
-    , the vision is to have an ecosystem where the holders can propose, vote, and collaborate on new initiatives. In contrast to Nouns DAO , the emphasis of these initiatives should not be on just "fun", but also on "doing good". <br />
+    , the vision is to have an ecosystem where the holders can propose, vote, and collaborate on new initiatives. In contrast to Nouns DAO , the emphasis of these initiatives should not be on just &quot;fun&quot;, but also on &quot;doing good&quot;. <br />
     <br />
     If the community decides to start a DAO, a % of the secondary sales will go to the founders to work on setting up an ecosystem (voting system, discourse forum etc.). If the community decides to donate the money of secondary sales to Ukraine, 100% of the secondary sales will be donated to Ukraine periodically. <br />
     <br />
@@ -68,7 +68,7 @@ const Team = () => (
 
 const PrimarySales = () => (
   <>
-    All income from primary sales will be donated to organizations that support the people of Ukraine. ETH will be distributed through{" "}
+    All income from primary sales will be donated to organizations that support the people of Ukraine through{" "}
     <a href="https://unchain.fund/" target="_blank" rel="noreferrer">
       unchain.fund
     </a>

@@ -9,7 +9,7 @@ import { Box } from "@mui/system";
 import { shadowHeading } from "src/utils/shadowHeading";
 
 const RootStyle = styled("div")(({ theme }) => ({
-  padding: theme.spacing(24, 0),
+  padding: theme.spacing(14, 0)
 }));
 
 const Subtitle = styled((props) => <Typography variant="h2" {...props} />)(({ theme }) => ({
@@ -18,15 +18,15 @@ const Subtitle = styled((props) => <Typography variant="h2" {...props} />)(({ th
   textAlign: "center",
   filter: shadowHeading(theme.palette.secondary.main),
 
-  marginBottom: theme.spacing(2),
+  marginBottom: theme.spacing(1),
   [theme.breakpoints.up("md")]: {
-    textAlign: "left",
-  },
+    textAlign: "left"
+  }
 }));
 
 const StyledAccordion = styled((props) => <Accordion {...props} />)(({ theme }) => ({
   backgroundColor: alpha(theme.palette.background.paper, 0.6),
-  marginBottom: theme.spacing(2),
+  marginBottom: theme.spacing(1)
 }));
 
 export function LandingFAQs() {
@@ -39,10 +39,10 @@ export function LandingFAQs() {
           <MotionInView variants={varFadeInUp}>
             {faq.map((accordion, index) => (
               <StyledAccordion key={`${index}-${accordion.heading}`}>
-                <AccordionSummary expandIcon={<Icon icon={arrowIosDownwardFill} width={20} height={20} />}>
+                <AccordionSummary expandIcon={<Icon icon={arrowIosDownwardFill} width={20} height={20} />} sx={{ m: 0, minHeight: "50px" }}>
                   <Typography variant="subtitle1">{accordion.heading}</Typography>
                 </AccordionSummary>
-                <AccordionDetails>
+                <AccordionDetails sx={{ pt: 0 }}>
                   <Typography variant="body2">{accordion.detail}</Typography>
                 </AccordionDetails>
               </StyledAccordion>

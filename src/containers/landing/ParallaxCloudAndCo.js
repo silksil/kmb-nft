@@ -53,7 +53,7 @@ export const LandingCloudAndCo = () => {
           pointerEvents: "none"
         }}
       >
-        <Image src="static/illustrations/earth.svg" style={{ width: "60%" }} />
+        <Image src="static/illustrations/earth.svg" alt="earth" style={{ width: "60%" }} />
       </ParallaxLayer>
     </>
   );

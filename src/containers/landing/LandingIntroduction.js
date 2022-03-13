@@ -4,7 +4,7 @@ import { Container, Typography } from "@mui/material";
 import { MotionInView, varFadeInUp } from "../../components/animate";
 import { shadowHeading } from "src/utils/shadowHeading";
 
-const RootStyle = styled("div")(({ theme }) => ({
+const RootStyle = styled("div")(() => ({
   textAlign: "center",
   width: "100%"
 }));

@@ -6,15 +6,15 @@ import twitterIcon from "@iconify/icons-eva/twitter-fill";
 
 import { shadowHeading } from "src/utils/shadowHeading";
 
-const RootStyle = styled("div")(({ theme }) => ({
-  position: "relative",
+const RootStyle = styled("div")(() => ({
+  position: "relative"
 }));
 
-const ContainerStyle = styled("div")(({ theme }) => ({
+const ContainerStyle = styled("div")(() => ({
   position: "relative",
   padding: 0,
   margin: "auto",
-  width: "100%",
+  width: "100%"
 }));
 
 const ContentStyle = styled("div")(({ theme }) => ({
@@ -23,11 +23,11 @@ const ContentStyle = styled("div")(({ theme }) => ({
   padding: theme.spacing(20, 1),
 
   zIndex: 10,
-  position: "relative",
+  position: "relative"
 }));
 
 const Heading = styled((props) => <Typography {...props} />)(({ theme }) => ({
-  filter: shadowHeading(theme.palette.secondary.main),
+  filter: shadowHeading(theme.palette.secondary.main)
 }));
 
 export function LandingSocial() {
