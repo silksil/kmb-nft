@@ -1,8 +1,8 @@
+import { Box } from "@mui/system";
 import React from "react";
 import NextImage from "next/image";
 
 import Marquee from "react-fast-marquee";
-import { Box } from "@mui/material";
 
 const paths = [
   {
@@ -22,12 +22,12 @@ const paths = [
   }
 ];
 
-export function VladimirMarquee() {
+export function KmbMarquee() {
   return (
-    <Marquee gradient={false} speed={25}>
+    <Marquee gradient={false} speed={25} direction="right" style={{ padding: 0, margin: 0 }}>
       {paths.map(({ path }) => (
-        <Box sx={{ marginLeft: 100 }} key={path}>
-          <NextImage width={160} height={160} key={path} src={`/static/avatars/vladimir/vladimir-${path}.png`} alt="Vladimir" />
+        <Box ml="8px" key={path}>
+          <NextImage width={160} height={160} src={`/static/avatars/kmb/${path}.png`} alt="A KMB" />
         </Box>
       ))}
     </Marquee>

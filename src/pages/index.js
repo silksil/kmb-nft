@@ -4,45 +4,39 @@ import { LandingFAQs, LandingHero, LandingIntroduction, LandingMission, LandingS
 import { MintingModal } from "src/containers/minting-modal/MintingModal";
 import { useRef } from "react";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
-import { styled } from "@mui/system";
+import { ParallaxBackgroundStars } from "src/containers/landing/ParallaxBackgroundStars";
+import { LandingCloudAndCo } from "src/containers/landing/ParallaxCloudAndCo";
 
 export default function LandingPage() {
   const parallax = useRef();
 
-  const ContentStyle = styled("div")(({ theme }) => ({
-    minHeight: "100vh",
-    backgroundColor: theme.palette.background.default
-  }));
-
   return (
-    <Page title="The KMG vs Vladimir" id="move_top" sx={{ height: "100%" }}>
+    <Page title="The KMB vs Vladimir" id="move_top" sx={{ height: "100%" }}>
       <MainLayout>
         <MintingModal />
 
-        <ContentStyle>
-          <Parallax ref={parallax} pages={7}>
-            {/* <ParallaxBackgroundStars /> */}
-            <ParallaxLayer offset={0} speed={1}>
-              <LandingHero />
-            </ParallaxLayer>
+        <Parallax ref={parallax} pages={9}>
+          <ParallaxBackgroundStars />
+          <ParallaxLayer offset={0} speed={1}>
+            <LandingHero />
+          </ParallaxLayer>
 
-            <ParallaxLayer sticky={{ start: 1, end: 2 }} style={{ display: "flex", alignItems: "center", justifyContent: "flex-start" }}>
-              <LandingIntroduction />
-            </ParallaxLayer>
-            {/* <LandingCloudAndCo /> */}
+          <ParallaxLayer sticky={{ start: 1, end: 2 }} style={{ display: "flex", alignItems: "center", justifyContent: "flex-start" }}>
+            <LandingIntroduction />
+          </ParallaxLayer>
+          <LandingCloudAndCo />
 
-            <ParallaxLayer offset={3} speed={0.2}>
-              <LandingMission />
-            </ParallaxLayer>
+          <ParallaxLayer offset={3} speed={0.2}>
+            <LandingMission />
+          </ParallaxLayer>
 
-            <ParallaxLayer offset={4} speed={0.2}>
-              <LandingSquat />
-            </ParallaxLayer>
-            <ParallaxLayer offset={5} speed={0.2}>
-              <LandingFAQs />
-            </ParallaxLayer>
-          </Parallax>
-        </ContentStyle>
+          <ParallaxLayer offset={4} speed={0.2}>
+            <LandingSquat />
+          </ParallaxLayer>
+          <ParallaxLayer offset={5} speed={0.2}>
+            <LandingFAQs />
+          </ParallaxLayer>
+        </Parallax>
       </MainLayout>
     </Page>
   );

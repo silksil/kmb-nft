@@ -58,7 +58,7 @@ import { shadowHeading } from "src/utils/shadowHeading";
 
 const RootStyle = styled("div")(({ theme }) => ({
   position: "relative",
-  padding: theme.spacing(22, 0),
+  padding: theme.spacing(22, 0)
 }));
 
 const ContentStyle = styled("div")(({ theme }) => ({
@@ -67,12 +67,12 @@ const ContentStyle = styled("div")(({ theme }) => ({
   textAlign: "center",
 
   [theme.breakpoints.up("md")]: {
-    textAlign: "left",
-  },
+    textAlign: "left"
+  }
 }));
 
 const Heading = styled((props) => <Typography {...props} />)(({ theme }) => ({
-  filter: shadowHeading(theme.palette.secondary.main),
+  filter: shadowHeading(theme.palette.secondary.main)
 }));
 
 export function LandingWhitelist() {
@@ -83,7 +83,7 @@ export function LandingWhitelist() {
       <Container maxWidth="lg">
         <Grid container spacing={4} justifyContent="center">
           <Grid item xs={10} md={4}>
-            <Box as="img" src="/static/avatars/kmg/kmg-6.png" zIndex={1} position="relative" />
+            <Box as="img" src="/static/avatars/kmb/kmb-6.png" zIndex={1} position="relative" />
           </Grid>
           <Grid item xs={12} md={4} sx={{ display: "flex", alignItems: "center" }}>
             <ContentStyle>
@@ -96,12 +96,12 @@ export function LandingWhitelist() {
               <MotionInView variants={varFadeInUp}>
                 <Typography
                   sx={{
-                    mb: 2,
+                    mb: 2
                   }}
                 >
-                  The visions is to create a community of builders that 
+                  The visions is to create a community of builders that
                   <br />
-                  50% of the royalties of secondary sales will be put into the treasury to start new iniatives. It is up to the community to decide what these initiatives will be. For example, if the community decided so, the treasury could fund a second collection where the KMG's fight the Tinder Swindler to help his victims.
+                  50% of the royalties of secondary sales will be put into the treasury to start new iniatives. It is up to the community to decide what these initiatives will be. For example, if the community decided so, the treasury could fund a second collection where The KMBs fight the Tinder Swindler to help his victims.
                 </Typography>
               </MotionInView>
             </ContentStyle>

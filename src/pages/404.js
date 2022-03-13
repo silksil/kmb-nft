@@ -21,7 +21,7 @@ export default function PageNotFound() {
           <MotionContainer initial="initial" open sx={{ maxWidth: 480, margin: "auto", textAlign: "center" }}>
             <motion.div variants={varBounceIn}>
               <Typography variant="h3" paragraph>
-                Go back to the homepage for more innfo about The KMG vs Vladimir.
+                Go back to the homepage for more innfo about The KMB vs Vladimir.
               </Typography>
             </motion.div>
 

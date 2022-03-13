@@ -5,31 +5,31 @@ import { shadowHeading } from "src/utils/shadowHeading";
 
 const CARDS = [
   {
-    icon: "/static/avatars/kmg/kmg-4.png",
+    icon: "/static/avatars/kmb/kmb-4.png",
     title: "Sophie",
     subtitle: "Design",
-    description: "The girlfriend of Sil",
+    description: "The girlfriend of Sil"
   },
   {
-    icon: "/static/avatars/kmg/kmg-1.png",
+    icon: "/static/avatars/kmb/kmb-1.png",
     title: "Sil",
     subtitle: "Engineering",
-    description: "The boyfriend of Sophie",
+    description: "The boyfriend of Sophie"
   },
 
   {
-    icon: "/static/avatars/kmg/kmg-5.png",
+    icon: "/static/avatars/kmb/kmb-5.png",
     title: "Oscar",
     subtitle: "Community",
-    description: "The brother of Sophie",
-  },
+    description: "The brother of Sophie"
+  }
 ];
 
 const RootStyle = styled("div")(({ theme }) => ({
   paddingTop: theme.spacing(15),
   [theme.breakpoints.up("md")]: {
-    paddingBottom: theme.spacing(15),
-  },
+    paddingBottom: theme.spacing(15)
+  }
 }));
 
 const CardStyle = styled(Card)(({ theme }) => {
@@ -40,7 +40,7 @@ const CardStyle = styled(Card)(({ theme }) => {
     minWidth: 300,
     margin: "auto",
     textAlign: "center",
-    padding: theme.spacing(5, 5, 5),
+    padding: theme.spacing(5, 5, 5)
   };
 });
 
@@ -48,7 +48,7 @@ const CardIconStyle = styled("img")(({ theme }) => ({
   width: 80,
   height: 80,
   margin: "auto",
-  marginBottom: theme.spacing(2),
+  marginBottom: theme.spacing(2)
 }));
 
 const BlurEffect = styled(Box)(({ theme }) => ({
@@ -62,11 +62,11 @@ const BlurEffect = styled(Box)(({ theme }) => ({
   zIndex: 0,
   top: "50%",
   left: "50%",
-  transform: "translate(-50%, -50%)",
+  transform: "translate(-50%, -50%)"
 }));
 
 const Heading = styled((props) => <Typography {...props} />)(({ theme }) => ({
-  filter: shadowHeading(theme.palette.secondary.main),
+  filter: shadowHeading(theme.palette.secondary.main)
 }));
 
 export function LandingTeam() {

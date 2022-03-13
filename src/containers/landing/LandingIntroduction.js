@@ -6,11 +6,11 @@ import { shadowHeading } from "src/utils/shadowHeading";
 
 const RootStyle = styled("div")(({ theme }) => ({
   textAlign: "center",
-  width: "100%",
+  width: "100%"
 }));
 
 const Heading = styled((props) => <Typography {...props} />)(({ theme }) => ({
-  filter: shadowHeading(theme.palette.secondary.main),
+  filter: shadowHeading(theme.palette.secondary.main)
 }));
 
 export function LandingIntroduction() {
@@ -25,7 +25,7 @@ export function LandingIntroduction() {
 
         <MotionInView variants={varFadeInUp}>
           <Typography>
-            The Komitet Metaverse Gangsters (KMG) protect the Metaverse from the baddies. They’re currently on a mission to stop the baddest of ‘em all: Vladimir. The autocratic leader is isolated by the rest of the world and has his eyes on the Metaverse. <br /> The KMG is here to stop him.
+            The Komitet Metaverse Builders (KMB) protect the Metaverse from the baddies. They are currently on a mission to stop the baddest of them all: Vladimir. The autocratic leader is isolated by the rest of the world and has his eyes on the Metaverse. <br /> The KMB is here to stop him.
           </Typography>
         </MotionInView>
       </Container>

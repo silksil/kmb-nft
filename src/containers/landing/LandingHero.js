@@ -8,7 +8,7 @@ import { shadowHeading } from "src/utils/shadowHeading";
 const RootStyle = styled("div")(() => ({
   position: "relative",
   height: "100vh",
-  width: "100%",
+  width: "100%"
 }));
 
 const ContentStyle = styled((props) => <Box {...props} />)(({ theme }) => ({
@@ -21,12 +21,12 @@ const ContentStyle = styled((props) => <Box {...props} />)(({ theme }) => ({
   marginTop: theme.spacing(8),
 
   [theme.breakpoints.up("lg")]: {
-    marginTop: theme.spacing(8),
-  },
+    marginTop: theme.spacing(8)
+  }
 }));
 
 const Heading = styled((props) => <Typography {...props} />)(({ theme }) => ({
-  filter: shadowHeading(theme.palette.secondary.main),
+  filter: shadowHeading(theme.palette.secondary.main)
 }));
 
 const BackgroundBlur = styled((props) => <Box {...props} />)(({ theme, color }) => ({
@@ -45,14 +45,14 @@ const BackgroundBlur = styled((props) => <Box {...props} />)(({ theme, color }) 
 
     height: 200,
     width: 300,
-    left: "calc(50% - 150px)",
+    left: "calc(50% - 150px)"
   },
   [theme.breakpoints.up("lg")]: {
-    width: 500,
+    width: 400,
     height: 350,
 
-    left: "calc(50% - 250px)",
-  },
+    left: "calc(50% - 200px)"
+  }
 }));
 
 const HeroImgStyle = styled(motion.img)(({ theme }) => ({
@@ -64,18 +64,18 @@ const HeroImgStyle = styled(motion.img)(({ theme }) => ({
 
   [theme.breakpoints.up("sm")]: {
     width: 320,
-    marginTop: `-${theme.spacing(4)}`,
+    marginTop: `-${theme.spacing(4)}`
   },
 
   [theme.breakpoints.up("md")]: {
     width: 400,
-    marginTop: `-${theme.spacing(6)}`,
+    marginTop: `-${theme.spacing(6)}`
   },
 
   [theme.breakpoints.up("lg")]: {
     width: 600,
-    marginTop: `-${theme.spacing(10)}`,
-  },
+    marginTop: `-${theme.spacing(10)}`
+  }
 }));
 
 const AstronautStyle = styled(motion.img)(({ theme }) => ({
@@ -86,7 +86,7 @@ const AstronautStyle = styled(motion.img)(({ theme }) => ({
   marginTop: theme.spacing(25),
 
   [theme.breakpoints.up("sm")]: {
-    marginLeft: theme.spacing(6),
+    marginLeft: theme.spacing(6)
   },
 
   [theme.breakpoints.up("lg")]: {
@@ -94,8 +94,8 @@ const AstronautStyle = styled(motion.img)(({ theme }) => ({
     position: "absolute",
     top: "10%",
     left: "45%",
-    marginLeft: "-400px",
-  },
+    marginLeft: "-400px"
+  }
 }));
 
 export function LandingHero() {
@@ -111,10 +111,10 @@ export function LandingHero() {
 
       <ContentStyle>
         <Heading variant="h2" gutterBottom>
-          The KMG vs Vladimir
+          The KMB vs Vladimir
         </Heading>
         <Container>
-          <Typography>KMG&lsquo;s are characters on the Ethereum blockchain that protect the Metaverse from Vladimir and other baddies.</Typography>
+          <Typography>KMBs are characters on the Ethereum blockchain that protect the Metaverse from Vladimir and other baddies.</Typography>
         </Container>
       </ContentStyle>
       <Box>

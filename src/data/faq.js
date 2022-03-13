@@ -24,10 +24,10 @@ const WhatsNext = () => (
   <>
     <h4>Secondary sales</h4> What will with income from secondary sales, will be decided by the token holders. This can be either: <br />
     1. Donated to Ukraine <br />
-    2. Start a KMG DAO: putting ETH into a treasury governed by KMG holders.
+    2. Start a KMB DAO: putting ETH into a treasury governed by KMB holders.
     <br /> 3. A combination of the above. <br />
     <br />
-    <h4>KMG DAO</h4>
+    <h4>KMB DAO</h4>
     If the community decides to put the money made from secondary sales into the treasury, this funds can be used to start new initiatives. Inspired by{" "}
     <a target="_blank" href="https://nouns.wtf/vote" rel="noreferrer">
       Nouns DAO
@@ -78,11 +78,11 @@ const PrimarySales = () => (
 
 const FAQ = [
   {
-    heading: "Primary Sales",
+    heading: "Primary sales",
     detail: <PrimarySales />
   },
   {
-    heading: "Secondary Sales",
+    heading: "Secondary sales",
     detail: <WhatsNext />
   },
   {
