@@ -6,7 +6,7 @@ import { BackgroundBlur } from "../BackgroundBlur";
 
 const RootStyle = styled("div")(({ theme }) => ({
   position: "relative",
-  paddingTop: theme.spacing(10),
+  paddingTop: theme.spacing(10)
 }));
 
 const ContentStyle = styled("div")(({ theme }) => ({
@@ -15,12 +15,12 @@ const ContentStyle = styled("div")(({ theme }) => ({
   textAlign: "center",
 
   [theme.breakpoints.up("md")]: {
-    textAlign: "left",
-  },
+    textAlign: "left"
+  }
 }));
 
 const Heading = styled((props) => <Typography {...props} />)(({ theme }) => ({
-  filter: shadowHeading(theme.palette.secondary.main),
+  filter: shadowHeading(theme.palette.secondary.main)
 }));
 
 export function LandingMission() {
@@ -39,7 +39,7 @@ export function LandingMission() {
               </MotionInView>
               <MotionInView variants={varFadeInUp}>
                 <Typography>
-                  We’ll be donating 100% of all primary sales to organizations that support the people of Ukraine. ETH will be send to and distributed through{" "}
+                  We’ll be donating 100% of all primary sales to organizations that support the people of Ukraine. ETH will be distributed through{" "}
                   <a href="https://unchain.fund/" target="_blank" rel="noreferrer">
                     unchain.fund
                   </a>

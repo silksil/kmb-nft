@@ -11,7 +11,7 @@ export default function LandingPage() {
   const parallax = useRef();
 
   return (
-    <Page title="The KMB vs Vladimir" id="move_top" sx={{ height: "100%" }}>
+    <Page title="KMB vs Vladimir" id="move_top" sx={{ height: "100%" }}>
       <MainLayout>
         <MintingModal />
 

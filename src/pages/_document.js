@@ -9,8 +9,8 @@ import createEmotionCache from "src/utils/createEmotionCache";
 import palette from "src/theme/palette";
 
 const metaInfo = {
-  keywords: "KMB, builders, community, NFT, Opensea, Rarible, JPEGS, Vladimir, Putin",
-  description: "KMBs are characters on the Ethereum blockchain that protect the Metaverse from Vladimir and other baddies."
+  keywords: "KMB, builders, community, NFT, Opensea, Rarible, JPEGS, Vladimir, Putin, Ethereum, Metaverse",
+  description: "KMBs are characters that protect the Metaverse from Vladimir and other baddies."
 };
 
 export default class MyDocument extends Document {

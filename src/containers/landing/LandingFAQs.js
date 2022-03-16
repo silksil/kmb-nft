@@ -33,16 +33,18 @@ export function LandingFAQs() {
   return (
     <RootStyle>
       <Container maxWidth="md">
-        <Subtitle>Q&A</Subtitle>
+        <Subtitle>Info</Subtitle>
         <Box position="relative" zIndex>
           <MotionInView variants={varFadeInUp}>
             {faq.map((accordion, index) => (
               <StyledAccordion key={`${index}-${accordion.heading}`}>
                 <AccordionSummary expandIcon={<Icon icon={arrowIosDownwardFill} width={20} height={20} />} sx={{ m: 0, minHeight: "50px" }}>
-                  <Typography variant="subtitle1">{accordion.heading}</Typography>
+                  <Typography fontWeight="bold">{accordion.heading}</Typography>
                 </AccordionSummary>
                 <AccordionDetails sx={{ pt: 0 }}>
-                  <Typography variant="body2">{accordion.detail}</Typography>
+                  <Typography variant="body2" as="div">
+                    {accordion.detail}
+                  </Typography>
                 </AccordionDetails>
               </StyledAccordion>
             ))}

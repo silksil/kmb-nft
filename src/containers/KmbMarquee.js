@@ -1,4 +1,4 @@
-import { Box } from "@mui/system";
+import { Box, styled } from "@mui/system";
 import React from "react";
 import NextImage from "next/image";
 
@@ -21,26 +21,39 @@ const paths = [
     path: "5"
   },
   {
-    path: "5"
+    path: "6"
   },
   {
-    path: "5"
+    path: "7"
   },
   {
-    path: "5"
+    path: "8"
   },
   {
-    path: "5"
+    path: "9"
   }
 ];
+
+const ImageContainer = styled(Box)(({ theme }) => ({
+  marginLeft: 16,
+  width: 120,
+  height: 120,
+  borderRadius: theme.shape.borderRadiusMd,
+  overflow: "hidden",
+
+  [theme.breakpoints.up("md")]: {
+    width: 160,
+    height: 160
+  }
+}));
 
 export function KmbMarquee() {
   return (
     <Marquee gradient={false} speed={25} direction="right" style={{ padding: 0, margin: 0 }}>
       {paths.map(({ path }) => (
-        <Box ml="16px" key={path}>
-          <NextImage width={160} height={160} src={`/static/avatars/kmb/${path}.png`} alt="A KMB" />
-        </Box>
+        <ImageContainer key={path}>
+          <NextImage width={1000} height={1000} src={`/static/avatars/kmb/${path}.png`} alt="A KMB" />
+        </ImageContainer>
       ))}
     </Marquee>
   );

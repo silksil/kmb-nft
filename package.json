@@ -1,6 +1,6 @@
 {
-  "name": "thekmb",
-  "author": " The KMBs",
+  "name": "kmb",
+  "author": "KMBs",
   "version": "2.6.0",
   "private": true,
   "scripts": {

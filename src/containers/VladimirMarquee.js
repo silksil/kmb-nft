@@ -3,6 +3,7 @@ import NextImage from "next/image";
 
 import Marquee from "react-fast-marquee";
 import { Box } from "@mui/material";
+import { styled } from "@mui/system";
 
 const paths = [
   {
@@ -19,16 +20,41 @@ const paths = [
   },
   {
     path: "5"
+  },
+  {
+    path: "6"
+  },
+  {
+    path: "7"
+  },
+  {
+    path: "8"
+  },
+  {
+    path: "9"
   }
 ];
+
+const ImageContainer = styled(Box)(({ theme }) => ({
+  marginLeft: 16,
+  width: 120,
+  height: 120,
+  borderRadius: theme.shape.borderRadiusMd,
+  overflow: "hidden",
+
+  [theme.breakpoints.up("md")]: {
+    width: 160,
+    height: 160
+  }
+}));
 
 export function VladimirMarquee() {
   return (
     <Marquee gradient={false} speed={25}>
       {paths.map(({ path }) => (
-        <Box sx={{ marginLeft: 100 }} key={path}>
-          <NextImage width={160} height={160} key={path} src={`/static/avatars/vladimir/vladimir-${path}.png`} alt="Vladimir" />
-        </Box>
+        <ImageContainer key={path}>
+          <NextImage width={160} height={160} key={path} src={`/static/avatars/vladimir/${path}.png`} alt="Vladimir" />
+        </ImageContainer>
       ))}
     </Marquee>
   );

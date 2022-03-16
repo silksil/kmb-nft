@@ -14,7 +14,7 @@ import { alpha } from "@mui/material/styles";
 import { useWindowSize } from "src/hooks/useWindowSize";
 import { MHidden } from "../../components/@material-extend";
 
-import { SOCIALS } from "../../utils/socialIcons";
+import { SOCIALS } from "../../utils/socials";
 import ethereumIcon from "@iconify/icons-mdi/ethereum";
 
 const APP_BAR_MOBILE = 64;
@@ -86,7 +86,7 @@ export default function MainNavbar() {
 
           <Stack spacing={0.5} direction="row" justifyContent="center" alignItems="center" sx={{ mt: 5, mb: { xs: 5 }, mr: 1 }}>
             {SOCIALS.map((social) => (
-              <IconButton key={social.name} color="primary">
+              <IconButton key={social.name} target="_blank" rel="noreferrer" color="primary" href={social.url}>
                 <SocialIcon icon={social.icon} size="m" />
               </IconButton>
             ))}

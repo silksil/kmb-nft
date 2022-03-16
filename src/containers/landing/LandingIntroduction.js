@@ -25,7 +25,7 @@ export function LandingIntroduction() {
 
         <MotionInView variants={varFadeInUp}>
           <Typography>
-            The Komitet Metaverse Builders (KMB) protect the Metaverse from the baddies. They are currently on a mission to stop the baddest of them all: Vladimir. The autocratic leader is isolated by the rest of the world and has his eyes on the Metaverse. <br /> The KMB is here to stop him.
+            Komitet Metaverse Builders (KMB) protect the Metaverse from the bad guys. They are currently on a mission to stop the baddest of them all: Vladimir. The autocratic leader is isolated by the rest of the world and has his eyes on the Metaverse. <br /> KMB is here to stop him.
           </Typography>
         </MotionInView>
       </Container>

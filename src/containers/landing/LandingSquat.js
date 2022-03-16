@@ -13,6 +13,18 @@ const RootStyle = styled("div")(() => ({
   alignItems: "center"
 }));
 
+const MarqueeContainer = styled("div")(({ theme }) => ({
+  marginTop: theme.spacing(4),
+  maxWidth: 900,
+  [theme.breakpoints.up("md")]: {
+    maxWidth: 1200
+  },
+
+  [theme.breakpoints.up("lg")]: {
+    maxWidth: 1600
+  }
+}));
+
 const Heading = styled((props) => <Typography {...props} />)(({ theme }) => ({
   filter: shadowHeading(theme.palette.secondary.main)
 }));
@@ -47,9 +59,8 @@ export function LandingSquat() {
     <RootStyle>
       <Container maxWidth="md" sx={{ position: "relative" }}>
         <MotionInView variants={varFadeInUp}>
-          <Heading variant="h2" sx={{ mb: 1 }}>
-            The Collection
-          </Heading>
+          <Heading variant="h2">The Collection</Heading>
+          <Typography sx={{ mb: 1 }}>10.000 characters. All unique.</Typography>
         </MotionInView>
       </Container>
       <Container maxWidth="sm" sx={{ mt: 2 }}>
@@ -58,14 +69,14 @@ export function LandingSquat() {
             <Grid item xs={12} md={6}>
               <CollectionType>
                 <Typography fontWeight="bold">KMBs</Typography>
-                <Percentage variant="caption">90%</Percentage>
-                <Typography variant="body2">With a KMB purchase you are financing him/her in the fight against Vlad.</Typography>
+                <Percentage variant="caption">95%</Percentage>
+                <Typography variant="body2">By owning a KMB you are financing him/her in the fight against Vlad.</Typography>
               </CollectionType>
             </Grid>
             <Grid item xs={12} md={6}>
               <CollectionType>
                 <Typography fontWeight="bold">Vladimirs</Typography>
-                <Percentage variant="caption">10%</Percentage>
+                <Percentage variant="caption">5%</Percentage>
 
                 <Typography variant="body2">By owning a Vladimir, you are doing the one thing he hates: being owned by others.</Typography>
               </CollectionType>
@@ -73,12 +84,12 @@ export function LandingSquat() {
           </Grid>
         </MotionInView>
       </Container>
-      <Box sx={{ mt: 10, maxWidth: 1600 }}>
+      <MarqueeContainer>
         <Box mb={3}>
           <KmbMarquee />
         </Box>
         <VladimirMarquee />
-      </Box>
+      </MarqueeContainer>
     </RootStyle>
   );
 }

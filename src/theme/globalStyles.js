@@ -20,7 +20,7 @@ export default function GlobalStyles() {
         body: {
           width: "100%",
           height: "100%"
-        },
+        },  
         "#__next": {
           width: "100%",
           height: "100%"
@@ -30,6 +30,12 @@ export default function GlobalStyles() {
           color: theme.palette.primary.main,
           textDecoration: "none"
         },
+
+        "ul li": {
+          marginLeft: "16px"
+        },
+
+        "ul li::before": {},
 
         textarea: {
           "&::-webkit-input-placeholder": {

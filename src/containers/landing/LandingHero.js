@@ -29,29 +29,34 @@ const Heading = styled((props) => <Typography {...props} />)(({ theme }) => ({
   filter: shadowHeading(theme.palette.secondary.main)
 }));
 
+const SubTitle = styled((props) => <Typography {...props} />)(({ theme }) => ({
+  filter: shadowHeading(theme.palette.secondary.main, 0.0001)
+}));
+
 const BackgroundBlur = styled((props) => <Box {...props} />)(({ theme, color }) => ({
   position: "absolute",
   zIndex: 0,
-  marginTop: theme.spacing(28),
-  filter: "blur(90px)",
+  marginTop: theme.spacing(30),
+  filter: "blur(70px)",
   backgroundColor: theme.palette[color].main,
 
-  height: 180,
-  width: 180,
-  left: "calc(50% - 90px)",
+  height: 100,
+  width: 120,
+  left: "calc(50% - 70px)",
 
   [theme.breakpoints.up("md")]: {
-    marginTop: theme.spacing(28),
+    filter: "blur(90px)",
+    marginTop: theme.spacing(30),
 
-    height: 200,
-    width: 300,
-    left: "calc(50% - 150px)"
+    height: 140,
+    width: 200,
+    left: "calc(50% - 100px)"
   },
   [theme.breakpoints.up("lg")]: {
-    width: 400,
-    height: 350,
+    width: 320,
+    height: 320,
 
-    left: "calc(50% - 200px)"
+    left: "calc(50% - 160px)"
   }
 }));
 
@@ -91,7 +96,6 @@ const AstronautStyle = styled(motion.img)(({ theme }) => ({
   },
 
   [theme.breakpoints.up("lg")]: {
-    height: "200px",
     position: "absolute",
     top: "0%",
     marginLeft: "30%"
@@ -101,11 +105,11 @@ const AstronautStyle = styled(motion.img)(({ theme }) => ({
 export function LandingHero() {
   return (
     <RootStyle>
-      <motion.div animate={{ y: [-50, 50, -50], x: [-50, 50, -50] }} transition={{ duration: 5, repeat: Infinity }}>
+      <motion.div animate={{ y: [-50, 50, -50], x: [-50, 50, -50] }} transition={{ duration: 7, repeat: Infinity }}>
         <BackgroundBlur color="secondary" />
       </motion.div>
 
-      <motion.div animate={{ y: [50, -50, 50], x: [50, -50, 50] }} transition={{ duration: 5, repeat: Infinity }}>
+      <motion.div animate={{ y: [50, -50, 50], x: [50, -50, 50] }} transition={{ duration: 7, repeat: Infinity }}>
         <BackgroundBlur color="primary" />
       </motion.div>
 
@@ -113,10 +117,10 @@ export function LandingHero() {
 
       <ContentStyle>
         <Heading variant="h2" gutterBottom>
-          The KMB vs Vladimir
+          KMB vs Vladimir
         </Heading>
         <Container>
-          <Typography>KMBs are characters on the Ethereum blockchain that protect the Metaverse from Vladimir and other baddies.</Typography>
+          <SubTitle>KMBs are characters on the Ethereum blockchain that protect the Metaverse from Vladimir and other bad guys.</SubTitle>
         </Container>
       </ContentStyle>
       <Box>
