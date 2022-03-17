@@ -36,7 +36,7 @@ const Team = () => (
     The team consist out of:
     <ul>
       <li>
-        <a href="" target="_blank" rel="noreferrer">
+        <a href="https://twitter.com/SophieVosse" target="_blank" rel="noreferrer">
           Sophie
         </a>
         : design, girlfriend of Sil and sister of Oscar.
@@ -48,7 +48,7 @@ const Team = () => (
         : engineering, boyfriend of Sophie.
       </li>
       <li>
-        <a href="" target="_blank" rel="noreferrer">
+        <a href="https://twitter.com/baseboz" target="_blank" rel="noreferrer">
           Oscar
         </a>
         : community, brother of Sophie.
