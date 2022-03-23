@@ -35,7 +35,7 @@ const PRIMARY = {
   contrastText: "#fff",
 };
 
-const SECONDARY = {
+export const SECONDARY = {
   lighter: "#FED7E5",
   light: "#FB87C7",
   main: "#F338C3",
