@@ -78,7 +78,7 @@ export function LandingMission() {
           <GridItem>
             <SectionContainer>
               <SectionTitle>Why not just donate?</SectionTitle>
-              <SectionText>We aim to provide an alternative for helping the people of Ukraine and want to demonstrate that NFTs are a way to accomplish meaningful effects in the real world. If just one person would buy an NFT, that would otherwise have not donated, this project has fulfilled its purpose</SectionText>
+              <SectionText>We aim to provide an alternative for helping the people of Ukraine and want to demonstrate that NFTs are a way to accomplish meaningful effects in the real world. If just one person would buy an NFT, that would otherwise have not donated, this project has fulfilled its purpose.</SectionText>
             </SectionContainer>
           </GridItem>
         </Grid>

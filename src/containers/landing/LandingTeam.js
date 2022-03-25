@@ -24,7 +24,7 @@ const DescriptionSophie = () => (
 
 const Persons = [
   {
-    icon: "/static/avatars/team/sophie.png",
+    icon: "/static/avatars/team/Sophie.png",
     title: "Sophie",
     subtitle: "Design",
     description: <DescriptionSophie />,
@@ -32,7 +32,7 @@ const Persons = [
     twitter: "https://twitter.com/SophieVosse"
   },
   {
-    icon: "/static/avatars/team/sil.png",
+    icon: "/static/avatars/team/Sil.png",
     title: "Sil",
     subtitle: "Engineering",
     description: <DescriptionSil />,
