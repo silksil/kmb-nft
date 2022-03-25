@@ -16,9 +16,8 @@ function responsiveFontSizes({ sm, md, lg }) {
   };
 }
 
-const FONT_PRIMARY = "IBM Plex Sans, sans-serif";
-
-const FONT_SECONDARY = "Inter, sans-serif";
+const FONT_PRIMARY = "IBMPlexMono, sans-serif";
+const FONT_SECONDARY = "IBMPlexSans, sans-serif";
 
 const typography = {
   fontFamily: FONT_PRIMARY,
@@ -86,12 +85,15 @@ const typography = {
     fontSize: pxToRem(18)
   },
   body2: {
+    fontFamily: FONT_PRIMARY,
     lineHeight: 22 / 14,
-    fontSize: pxToRem(16)
+    fontSize: pxToRem(14),
+    letterSpacing: -0.3
   },
   caption: {
     lineHeight: 1.5,
-    fontSize: pxToRem(12)
+    fontSize: pxToRem(12),
+    fontFamily: FONT_PRIMARY
   },
   overline: {
     fontWeight: 700,

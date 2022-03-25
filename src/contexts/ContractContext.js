@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import { createContext, useState, useCallback, useEffect } from "react";
 import { ethers } from "ethers";
 import abi from "../config/abi.json";
+import { collectionInfo } from "src/config/collectionInfo";
 
 const MINTING_STATUS = {
   IDLE: "idle",
@@ -9,7 +10,7 @@ const MINTING_STATUS = {
   SOLD_OUT: "soldOut",
   POP_WALLET: "popWallet",
   MINED: "mined",
-  ERROR: "error",
+  ERROR: "error"
 };
 
 const initialState = {
@@ -21,13 +22,13 @@ const initialState = {
   isConnected: false,
   error: null,
   connect: () => {},
-  connectionStatus: { isConnected: false, error: null },
+  connectionStatus: { isConnected: false, error: null }
 };
 
 const ContractContext = createContext(initialState);
 
 ContractProvider.propTypes = {
-  children: PropTypes.node,
+  children: PropTypes.node
 };
 
 function ContractProvider({ children }) {
@@ -199,7 +200,8 @@ function ContractProvider({ children }) {
         /**
          * Start minting.
          */
-        let nftTxn = await connectedContract.mint(amount.toString());
+        const cost = ethers.utils.parseEther(collectionInfo.price);
+        let nftTxn = await connectedContract.mint(amount.toString(), { value: (cost * amount).toString() });
         setMintingStatus({ name: MINTING_STATUS.MINTING, error: null });
 
         /**

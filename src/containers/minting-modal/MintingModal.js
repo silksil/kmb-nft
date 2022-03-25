@@ -11,6 +11,7 @@ import { MintingFeedback } from "./MintingFeedback";
 
 import closeFill from "@iconify/icons-eva/close-fill";
 import { getFeedbackStatusIcon, getButtonStatusIcon, getStatusText, getButtonText, buttonIsDisabled, getMarketplacesFeedbackText } from "./helpers";
+import { collectionInfo } from "src/config/collectionInfo";
 
 const ContainerStyle = styled(Box)(({ theme }) => ({
   position: "absolute",
@@ -21,14 +22,14 @@ const ContainerStyle = styled(Box)(({ theme }) => ({
   maxWidth: "540px",
   padding: theme.spacing(6),
   backgroundColor: theme.palette.background.default,
-  borderRadius: "5px",
+  borderRadius: "5px"
 }));
 
 const IconButtonStyle = styled(IconButton)(({ theme }) => ({
   position: "absolute",
   top: "0px",
   right: "0px",
-  padding: theme.spacing(2),
+  padding: theme.spacing(2)
 }));
 
 const StatusCircleStyle = styled(Box)(({ theme }) => ({
@@ -39,7 +40,7 @@ const StatusCircleStyle = styled(Box)(({ theme }) => ({
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  marginRight: theme.spacing(2),
+  marginRight: theme.spacing(2)
 }));
 
 const MintingCount = () => {
@@ -73,10 +74,13 @@ export function MintingModal() {
 
         <Typography variant="h3">Mint your NFT</Typography>
         <MintingCount />
-        <Typography>· 0.025 ETH each</Typography>
-        <Typography>· Use Metamask</Typography>
-        <Typography>· Max. 5 NFTs per transaction</Typography>
-        <Typography>· Once you purchase, you cannot undo the transaction</Typography>
+        <Typography variant="body2">· {collectionInfo.price} ETH each</Typography>
+        <Typography variant="body2">· Use Metamask</Typography>
+        <Typography variant="body2">· Max. {collectionInfo.maxTransactions} NFTs per transaction</Typography>
+        <Typography variant="body2">· Once you purchase, you cannot undo the transaction</Typography>
+        <a href={`${process.env.NEXT_PUBLIC_EITHERSCAN_PREFIX}/address/${process.env.NEXT_PUBLIC_CONTRACT_ADDRESS}`} target="_blank" rel="noreferrer">
+          <Typography variant="body2">· Contract link</Typography>
+        </a>
 
         <TextField
           error={!isValidMintAmount}
@@ -93,8 +97,8 @@ export function MintingModal() {
             inputMode: "numeric",
             inputProps: {
               max: 5,
-              min: 1,
-            },
+              min: 1
+            }
           }}
         />
 

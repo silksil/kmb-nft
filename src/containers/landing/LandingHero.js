@@ -4,8 +4,9 @@ import { styled } from "@mui/material/styles";
 import { Box, Container, Typography } from "@mui/material";
 
 import { shadowHeading } from "src/utils/shadowHeading";
+import { varFadeIn, varSlideInDown, varSlideInUp } from "src/components/animate";
 
-const RootStyle = styled("div")(() => ({
+const RootStyle = styled(motion.div)(() => ({
   position: "relative",
   height: "100vh",
   width: "100%"
@@ -14,14 +15,14 @@ const RootStyle = styled("div")(() => ({
 const ContentStyle = styled((props) => <Box {...props} />)(({ theme }) => ({
   position: "relative",
   zIndex: 2,
-  maxWidth: 520,
+  maxWidth: 600,
   margin: "auto",
   textAlign: "center",
   position: "relative",
-  marginTop: theme.spacing(8),
+  marginTop: theme.spacing(10),
 
   [theme.breakpoints.up("lg")]: {
-    marginTop: theme.spacing(8)
+    marginTop: theme.spacing(18)
   }
 }));
 
@@ -104,28 +105,32 @@ const AstronautStyle = styled(motion.img)(({ theme }) => ({
 
 export function LandingHero() {
   return (
-    <RootStyle>
-      <motion.div animate={{ y: [-50, 50, -50], x: [-50, 50, -50] }} transition={{ duration: 7, repeat: Infinity }}>
+    <RootStyle initial="initial" animate="animate">
+      <motion.div animate={{ y: [-50, 50, -50], x: [-50, 50, -50] }} transition={{ duration: 4, repeat: Infinity }}>
         <BackgroundBlur color="secondary" />
       </motion.div>
 
-      <motion.div animate={{ y: [50, -50, 50], x: [50, -50, 50] }} transition={{ duration: 7, repeat: Infinity }}>
+      <motion.div animate={{ y: [50, -50, 50], x: [50, -50, 50] }} transition={{ duration: 4, repeat: Infinity }}>
         <BackgroundBlur color="primary" />
       </motion.div>
 
       <AstronautStyle animate={{ y: [10, -10, 10] }} transition={{ duration: 5, repeat: Infinity }} src="/static/avatars/astronaut.png" />
 
       <ContentStyle>
-        <Heading variant="h2" gutterBottom>
-          KMB vs Vladimir
-        </Heading>
-        <Container>
-          <SubTitle>KMBs are characters on the Ethereum blockchain that protect the Metaverse from Vladimir and other bad guys.</SubTitle>
-        </Container>
+        <motion.div variants={varSlideInUp}>
+          <Heading variant="h2">KMB vs Vladimir</Heading>
+        </motion.div>
+        <motion.div variants={varSlideInDown}>
+          <Container maxWidth="sm">
+            <SubTitle>KMBs are characters on the Ethereum blockchain that fight against Vladimir P. and other baddies.</SubTitle>
+          </Container>
+        </motion.div>
       </ContentStyle>
-      <Box>
-        <HeroImgStyle alt="hero" src="/static/avatars/hero-characters.png" />
-      </Box>
+      <motion.div variants={varFadeIn}>
+        <Box>
+          <HeroImgStyle alt="hero" src="/static/avatars/hero-characters.png" />
+        </Box>
+      </motion.div>
     </RootStyle>
   );
 }

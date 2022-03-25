@@ -1,57 +1,86 @@
 import { styled } from "@mui/material/styles";
-import { Grid, Container, Typography } from "@mui/material";
+import { Box, Container, Grid, Typography, alpha } from "@mui/material";
 import { varFadeInUp, MotionInView } from "../../components/animate";
-import { shadowHeading } from "src/utils/shadowHeading";
-import { BackgroundBlur } from "../BackgroundBlur";
 
 const RootStyle = styled("div")(({ theme }) => ({
   position: "relative",
-  paddingTop: theme.spacing(10)
-}));
-
-const ContentStyle = styled("div")(({ theme }) => ({
-  zIndex: 1,
-  width: "100%",
-  textAlign: "center",
 
   [theme.breakpoints.up("md")]: {
-    textAlign: "left"
+    marginTop: theme.spacing(10)
   }
 }));
 
-const Heading = styled((props) => <Typography {...props} />)(({ theme }) => ({
-  filter: shadowHeading(theme.palette.secondary.main)
+const Heading = styled(Typography)(({ theme }) => ({}));
+
+const SectionTitle = styled((props) => <Typography variant="body2" {...props} />)(({ theme }) => ({
+  fontWeight: "bold",
+  marginBottom: theme.spacing(0.5)
 }));
+
+const SectionText = styled((props) => <Typography variant="body2" {...props} />)(({ theme }) => ({}));
+
+const SectionContainer = styled((props) => <Box {...props} />)(({ theme }) => ({
+  minHeight: "200px",
+  background: alpha(theme.palette.primary.main, 0.1),
+  borderRadius: theme.shape.borderRadiusMd,
+  padding: theme.spacing(1, 2),
+
+  [theme.breakpoints.up("md")]: {
+    minHeight: "250px",
+    padding: theme.spacing(3, 2)
+  }
+}));
+
+const GridItem = ({ children }) => (
+  <Grid item xs={12} md={4}>
+    {children}
+  </Grid>
+);
 
 export function LandingMission() {
   return (
-    <RootStyle>
-      <BackgroundBlur top="0" right="-350px" bottom="0" width="700px" height="700px" color="secondary" />
+    <RootStyle id="mission_section">
+      <Container maxWidth="xl" sx={{ zIndex: 1, position: "relative" }}>
+        <MotionInView variants={varFadeInUp}>
+          <Heading variant="h2" textAlign="center">
+            Support Ukraine 🇺🇦
+          </Heading>
+          <Typography v sx={{ mb: { xs: 2, md: 4 } }} textAlign="center">
+            100% of primary and secondary income goes to Ukraine
+          </Typography>
+        </MotionInView>
 
-      <Container maxWidth="lg" sx={{ zIndex: 1, position: "relative" }}>
-        <Grid container spacing={{ xs: 0, md: 10 }} justifyContent="center" alignItems="center">
-          <Grid item xs={12} md={4} sx={{ display: "flex", alignItems: "center" }}>
-            <ContentStyle>
-              <MotionInView variants={varFadeInUp}>
-                <Heading variant="h2" sx={{ mb: 3 }}>
-                  Support Ukraine
-                </Heading>
-              </MotionInView>
-              <MotionInView variants={varFadeInUp}>
-                <Typography>
-                  We’ll be donating 100% of all primary sales to organizations that support the people of Ukraine. ETH will be distributed through{" "}
-                  <a href="https://unchain.fund/" target="_blank" rel="noreferrer">
-                    unchain.fund
-                  </a>
-                  .
-                </Typography>
-              </MotionInView>
-            </ContentStyle>
-          </Grid>
-
-          <Grid item>
-            <Typography sx={{ fontSize: 180 }}>🇺🇦</Typography>
-          </Grid>
+        <Grid container spacing={{ xs: 2, md: 4 }} justifyContent="center">
+          <GridItem>
+            <SectionContainer>
+              <SectionTitle>How does it work?</SectionTitle>
+              <SectionText>
+                Whereas the collection has a funny tone, the cause is not. The intention of this initiative is not to downplay the seriousness of the war in Ukraine. Instead, we want to offer an alternative way to help Ukraine. All income will be distributed through{" "}
+                <a href="https://www.ukrainedao.love/" target="_blank" rel="noreferrer">
+                  UkraineDao
+                </a>{" "}
+                to the people in Ukraine.
+              </SectionText>
+            </SectionContainer>
+          </GridItem>
+          <GridItem>
+            <SectionContainer>
+              <SectionTitle>Is this not a scam?</SectionTitle>
+              <SectionText>
+                Given the many scammers and false promises in the NFT space, we want to assure you that our intentions are genuine by having hardcoded that money withdrawn directly goes to the wallet of UkraineDao. This is immutable: see{" "}
+                <a href="https://unchain.fund/" target="_blank" rel="noreferrer">
+                  line 133 of the smart contract
+                </a>
+                . Below you can also find our social profiles so we can be held accountable.
+              </SectionText>
+            </SectionContainer>
+          </GridItem>
+          <GridItem>
+            <SectionContainer>
+              <SectionTitle>Why not just donate?</SectionTitle>
+              <SectionText>We aim to provide an alternative for helping the people of Ukraine and want to demonstrate that NFTs are a way to accomplish meaningful effects in the real world. If just one person would buy an NFT, that would otherwise have not donated, this project has fulfilled its purpose</SectionText>
+            </SectionContainer>
+          </GridItem>
         </Grid>
       </Container>
     </RootStyle>

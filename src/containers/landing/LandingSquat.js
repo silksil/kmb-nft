@@ -5,12 +5,18 @@ import { MotionInView, varFadeInUp } from "../../components/animate";
 import { VladimirMarquee } from "../VladimirMarquee";
 import { KmbMarquee } from "../KmbMarquee";
 import { shadowHeading } from "src/utils/shadowHeading";
+import { collectionInfo } from "src/config/collectionInfo";
 
-const RootStyle = styled("div")(() => ({
+const RootStyle = styled("div")(({ theme }) => ({
   textAlign: "center",
   display: "flex",
   flexDirection: "column",
-  alignItems: "center"
+  alignItems: "center",
+  marginTop: theme.spacing(20),
+
+  [theme.breakpoints.up("md")]: {
+    marginTop: 0
+  }
 }));
 
 const MarqueeContainer = styled("div")(({ theme }) => ({
@@ -54,13 +60,16 @@ const Percentage = styled((props) => <Typography {...props} />)(({ theme }) => (
   color: theme.palette.primary.main
 }));
 
+const subtitle = `${collectionInfo.size} characters. All unique.`;
+
 export function LandingSquat() {
   return (
     <RootStyle>
       <Container maxWidth="md" sx={{ position: "relative" }}>
         <MotionInView variants={varFadeInUp}>
           <Heading variant="h2">The Collection</Heading>
-          <Typography sx={{ mb: 1 }}>10.000 characters. All unique.</Typography>
+
+          <Typography sx={{ mb: 1 }}>{subtitle}</Typography>
         </MotionInView>
       </Container>
       <Container maxWidth="sm" sx={{ mt: 2 }}>
@@ -69,14 +78,14 @@ export function LandingSquat() {
             <Grid item xs={12} md={6}>
               <CollectionType>
                 <Typography fontWeight="bold">KMBs</Typography>
-                <Percentage variant="caption">95%</Percentage>
+                <Percentage variant="caption">90%</Percentage>
                 <Typography variant="body2">By owning a KMB you are financing him/her in the fight against Vlad.</Typography>
               </CollectionType>
             </Grid>
             <Grid item xs={12} md={6}>
               <CollectionType>
                 <Typography fontWeight="bold">Vladimirs</Typography>
-                <Percentage variant="caption">5%</Percentage>
+                <Percentage variant="caption">10%</Percentage>
 
                 <Typography variant="body2">By owning a Vladimir, you are doing the one thing he hates: being owned by others.</Typography>
               </CollectionType>

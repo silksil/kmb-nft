@@ -19,14 +19,12 @@ export function LandingIntroduction() {
       <Container maxWidth="sm" sx={{ position: "relative" }}>
         <MotionInView variants={varFadeInUp}>
           <Heading variant="h2" sx={{ mb: 1 }}>
-            The Story
+            KMB Manifesto
           </Heading>
         </MotionInView>
 
         <MotionInView variants={varFadeInUp}>
-          <Typography>
-            Komitet Metaverse Builders (KMB) protect the Metaverse from the bad guys. They are currently on a mission to stop the baddest of them all: Vladimir. The autocratic leader is isolated by the rest of the world and has his eyes on the Metaverse. <br /> The KMB is here to stop him.
-          </Typography>
+          <Typography>Crypto is a world with two faces. On one hand it is the world of investment, road to riches and greed. On the other hand it is a world with visionaries, community and the believe it will bring more power to the people. The Komitet Metaverse Builders (KMBs) are a representation of the latter. They don't despise those who make (a lot of) money. Instead, they represent the people within crypto that (also) want to do good and fight the bad. They are currently on a mission to stop the baddest of them all: Vladimir.</Typography>
         </MotionInView>
       </Container>
     </RootStyle>

@@ -1,6 +1,6 @@
 import NextLink from "next/link";
 import { styled } from "@mui/material/styles";
-import { Button, AppBar, Toolbar, Container, IconButton, Stack } from "@mui/material";
+import { Button, AppBar, Toolbar, Container, Stack, useTheme } from "@mui/material";
 import useOffSetTop from "../../hooks/useOffSetTop";
 import Logo from "../../components/Logo";
 import Label from "../../components/Label";
@@ -10,11 +10,8 @@ import { useUI } from "src/hooks/useUI";
 
 import { Icon } from "src/components/Icon";
 import { showPartialAccountAddress } from "src/utils/account";
-import { alpha } from "@mui/material/styles";
 import { useWindowSize } from "src/hooks/useWindowSize";
-import { MHidden } from "../../components/@material-extend";
 
-import { SOCIALS } from "../../utils/socials";
 import ethereumIcon from "@iconify/icons-mdi/ethereum";
 
 const APP_BAR_MOBILE = 64;
@@ -31,12 +28,6 @@ const ToolbarStyle = styled(Toolbar)(({ theme }) => ({
   }
 }));
 
-const shadowIcon = (color) => `drop-shadow(4px 4px 4px ${alpha(color, 0.6)})`;
-
-const SocialIcon = styled((props) => <Icon {...props} />)(({ theme }) => ({
-  filter: shadowIcon(theme.palette.secondary.main)
-}));
-
 // const Opensea = styled((props) => <Image src="static/marketplaces/open-sea.svg" alt="open sea logo" {...props} />)(({ theme }) => ({
 //   width: theme.icons.l.width,
 //   height: theme.icons.l.height,
@@ -45,7 +36,8 @@ const SocialIcon = styled((props) => <Icon {...props} />)(({ theme }) => ({
 
 export default function MainNavbar() {
   const { isConnected, connect, account } = useWallet();
-  const isLaunched = false;
+  const isLaunched = true;
+  const theme = useTheme();
 
   /**
    * Styling variables.
@@ -64,36 +56,27 @@ export default function MainNavbar() {
     <AppBar sx={{ boxShadow: 0, bgcolor: "transparent" }}>
       <ToolbarStyle
         sx={{
-          p: 1,
           ...(isOffset && {
-            height: { md: APP_BAR_DESKTOP - 16 }
+            height: { md: APP_BAR_DESKTOP }
           })
         }}
       >
         <Container
           maxWidth="lg"
           sx={{
+            padding: theme.spacing(1),
+            marginTop: "24px",
+            border: `1px solid ${theme.palette.background.neutral}`,
             display: "flex",
             alignItems: "center",
-            justifyContent: "space-between"
+            justifyContent: "space-between",
+            borderRadius: theme.shape.borderRadiusXs,
+            backgroundColor: theme.palette.background.default
           }}
         >
-          <MHidden width="mdDown">
-            <NextLink href="/">
-              <Logo sx={{ mr: 2 }} />
-            </NextLink>
-          </MHidden>
-
-          <Stack spacing={0.5} direction="row" justifyContent="center" alignItems="center" sx={{ mt: 5, mb: { xs: 5 }, mr: 1 }}>
-            {SOCIALS.map((social) => (
-              <IconButton key={social.name} target="_blank" rel="noreferrer" color="primary" href={social.url}>
-                <SocialIcon icon={social.icon} size="m" />
-              </IconButton>
-            ))}
-            {/* <IconButton color="primary">
-              <Opensea />
-            </IconButton> */}
-          </Stack>
+          <NextLink href="/">
+            <Logo sx={{ mr: 2 }} />
+          </NextLink>
 
           {isLaunched && (
             <Stack direction="row" alignItems="center">
@@ -104,7 +87,7 @@ export default function MainNavbar() {
                 </Label>
               )}
 
-              <Button variant="contained" onClick={handleClick}>
+              <Button variant="outlined" onClick={handleClick} sx={{ fontFamily: "IBMPlexMono" }}>
                 {isConnected ? "Mint NFT" : "Connect wallet"}
               </Button>
             </Stack>

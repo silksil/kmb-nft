@@ -23,7 +23,7 @@ const GREY = {
   500_32: alpha("#223D5E", 0.32),
   500_48: alpha("#223D5E", 0.48),
   500_56: alpha("#223D5E", 0.56),
-  500_80: alpha("#223D5E", 0.8),
+  500_80: alpha("#223D5E", 0.8)
 };
 
 const PRIMARY = {
@@ -32,7 +32,7 @@ const PRIMARY = {
   main: "#0993EC",
   dark: "#0455A9",
   darker: "#012B71",
-  contrastText: "#fff",
+  contrastText: "#fff"
 };
 
 export const SECONDARY = {
@@ -41,7 +41,7 @@ export const SECONDARY = {
   main: "#F338C3",
   dark: "#AE1CA5",
   darker: "#660A74",
-  contrastText: "#fff",
+  contrastText: "#fff"
 };
 
 const INFO = {
@@ -50,7 +50,7 @@ const INFO = {
   main: "#1890FF",
   dark: "#0C53B7",
   darker: "#04297A",
-  contrastText: "#fff",
+  contrastText: "#fff"
 };
 const SUCCESS = {
   lighter: "#E9FCD4",
@@ -58,7 +58,7 @@ const SUCCESS = {
   main: "#54D62C",
   dark: "#229A16",
   darker: "#08660D",
-  contrastText: GREY[800],
+  contrastText: GREY[800]
 };
 const WARNING = {
   lighter: "#FFF7CD",
@@ -66,7 +66,7 @@ const WARNING = {
   main: "#FFC107",
   dark: "#B78103",
   darker: "#7A4F01",
-  contrastText: GREY[800],
+  contrastText: GREY[800]
 };
 const ERROR = {
   lighter: "#FFE7D9",
@@ -74,20 +74,20 @@ const ERROR = {
   main: "#FF4842",
   dark: "#B72136",
   darker: "#7A0C2E",
-  contrastText: "#fff",
+  contrastText: "#fff"
 };
 
 const primaryAndSecondaryGradient = {
   horizontal: {
     light: createGradient("horizontal", PRIMARY.light, SECONDARY.light),
     main: createGradient("horizontal", PRIMARY.main, SECONDARY.main),
-    dark: createGradient("horizontal", PRIMARY.dark, SECONDARY.dark),
+    dark: createGradient("horizontal", PRIMARY.dark, SECONDARY.dark)
   },
   vertical: {
     light: createGradient("vertical", PRIMARY.light, SECONDARY.light),
     main: createGradient("vertical", PRIMARY.main, SECONDARY.main),
-    dark: createGradient("vertical", PRIMARY.dark, SECONDARY.dark),
-  },
+    dark: createGradient("vertical", PRIMARY.dark, SECONDARY.dark)
+  }
 };
 
 const GRADIENTS = {
@@ -96,7 +96,7 @@ const GRADIENTS = {
   info: createGradient("vertical", INFO.light, INFO.main),
   success: createGradient("vertical", SUCCESS.light, SUCCESS.main),
   warning: createGradient("vertical", WARNING.light, WARNING.main),
-  error: createGradient("vertical", ERROR.light, ERROR.main),
+  error: createGradient("vertical", ERROR.light, ERROR.main)
 };
 
 const COMMON = {
@@ -116,8 +116,8 @@ const COMMON = {
     disabledBackground: GREY[500_24],
     focus: GREY[500_24],
     hoverOpacity: 0.08,
-    disabledOpacity: 0.48,
-  },
+    disabledOpacity: 0.48
+  }
 };
 
 const palette = {
@@ -125,14 +125,14 @@ const palette = {
     ...COMMON,
     text: { primary: GREY[800], secondary: GREY[600], disabled: GREY[500] },
     background: { paper: "#fff", default: "#fff", neutral: GREY[200] },
-    action: { active: GREY[600], ...COMMON.action },
+    action: { active: GREY[600], ...COMMON.action }
   },
   dark: {
     ...COMMON,
     text: { primary: "#fff", secondary: GREY[200], disabled: GREY[300] },
-    background: { paper: GREY[800], default: GREY[900], neutral: GREY[500_16] },
-    action: { active: GREY[500], ...COMMON.action },
-  },
+    background: { paper: GREY[800], default: GREY[900], neutral: GREY[500] },
+    action: { active: GREY[500], ...COMMON.action }
+  }
 };
 
 export default palette;

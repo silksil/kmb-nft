@@ -4,18 +4,18 @@ import Logo from "../../components/Logo";
 import { Icon } from "src/components/Icon";
 import { styled } from "@mui/system";
 import { Image } from "src/components/Image.js";
-import { SOCIALS } from "src/utils/socialIcons";
+import { SOCIALS } from "src/utils/socials";
 
 const Opensea = styled((props) => <Image src="static/marketplaces/open-sea.svg" alt="open sea log" {...props} />)(({ theme }) => ({
   width: theme.icons.m.width,
   height: theme.icons.m.height,
-  filter: shadowIcon(theme.palette.secondary.main),
+  filter: shadowIcon(theme.palette.secondary.main)
 }));
 
 const shadowIcon = (color) => `drop-shadow(4px 4px 4px ${alpha(color, 0.6)})`;
 
 const SocialIcon = styled((props) => <Icon {...props} />)(({ theme }) => ({
-  filter: shadowIcon(theme.palette.secondary.main),
+  filter: shadowIcon(theme.palette.secondary.main)
 }));
 
 export default function MainFooter() {
@@ -25,7 +25,7 @@ export default function MainFooter() {
         width: "100%",
         bottom: 0,
         py: 5,
-        textAlign: "center",
+        textAlign: "center"
       }}
     >
       <Container maxWidth="lg">
