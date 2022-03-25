@@ -36,7 +36,7 @@ export function LandingFAQs() {
         <Subtitle>Details</Subtitle>
 
         <SummaryItems maxWidth="md">
-          <Typography variant="body1">
+          <Typography variant="body2">
             <ul>
               <li>
                 All income from primary and secondary sales will be donated to Ukraine through{" "}

@@ -1,6 +1,6 @@
 import NextLink from "next/link";
 import { styled } from "@mui/material/styles";
-import { Button, AppBar, Toolbar, Container, Stack, useTheme } from "@mui/material";
+import { Button, AppBar, Toolbar, Container, Stack, useTheme, Typography } from "@mui/material";
 import useOffSetTop from "../../hooks/useOffSetTop";
 import Logo from "../../components/Logo";
 import Label from "../../components/Label";
@@ -36,7 +36,7 @@ const ToolbarStyle = styled(Toolbar)(({ theme }) => ({
 
 export default function MainNavbar() {
   const { isConnected, connect, account } = useWallet();
-  const isLaunched = true;
+  const isLaunched = false;
   const theme = useTheme();
 
   /**
@@ -92,6 +92,8 @@ export default function MainNavbar() {
               </Button>
             </Stack>
           )}
+
+          {!isLaunched && <Typography variant="body2"> Minting soon ...</Typography>}
         </Container>
       </ToolbarStyle>
     </AppBar>

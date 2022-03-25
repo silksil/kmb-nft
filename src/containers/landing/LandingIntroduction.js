@@ -24,7 +24,7 @@ export function LandingIntroduction() {
         </MotionInView>
 
         <MotionInView variants={varFadeInUp}>
-          <Typography>Crypto is a world with two faces. On one hand it is the world of investment, road to riches and greed. On the other hand it is a world with visionaries, community and the believe it will bring more power to the people. The Komitet Metaverse Builders (KMBs) are a representation of the latter. They don't despise those who make (a lot of) money. Instead, they represent the people within crypto that (also) want to do good and fight the bad. They are currently on a mission to stop the baddest of them all: Vladimir.</Typography>
+          <Typography>Crypto is a world with two faces. On one hand it is the world of investment, road to riches and greed. On the other hand it is a world with visionaries, community and the believe that the technology will bring more power to the people. The Komitet Metaverse Builders (KMBs) are a representation of the latter. They don't despise those who make (a lot of) money. Instead, they represent the people within crypto that (also) want to do good and fight the bad. They are currently on a mission to stop the baddest of them all: Vladimir.</Typography>
         </MotionInView>
       </Container>
     </RootStyle>
