@@ -1,6 +1,6 @@
 import { forwardRef } from "react";
 import PropTypes from "prop-types";
-import Image from "next/image";
+import { Image } from "./Image.js";
 
 // eslint-disable-next-line react/display-name
 const Logo = forwardRef(({ sx }, ref) => {
