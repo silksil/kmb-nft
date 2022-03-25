@@ -36,14 +36,14 @@ const paths = [
 
 const ImageContainer = styled(Box)(({ theme }) => ({
   marginLeft: 16,
-  width: 120,
-  height: 120,
+  width: 140,
+  height: 140,
   borderRadius: theme.shape.borderRadiusMd,
   overflow: "hidden",
 
   [theme.breakpoints.up("md")]: {
-    width: 160,
-    height: 160
+    width: 210,
+    height: 210
   }
 }));
 
@@ -52,7 +52,7 @@ export function KmbMarquee() {
     <Marquee gradient={false} speed={25} direction="right" style={{ padding: 0, margin: 0 }}>
       {paths.map(({ path }) => (
         <ImageContainer key={path}>
-          <NextImage width={1000} height={1000} src={`/static/avatars/kmb/${path}.png`} alt="A KMB" />
+          <NextImage width={210} height={210} src={`/static/avatars/kmb/${path}.png`} alt="A KMB" />
         </ImageContainer>
       ))}
     </Marquee>

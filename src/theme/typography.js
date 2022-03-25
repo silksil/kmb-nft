@@ -87,7 +87,7 @@ const typography = {
   body2: {
     fontFamily: FONT_PRIMARY,
     lineHeight: 22 / 14,
-    fontSize: pxToRem(14),
+    fontSize: pxToRem(15),
     letterSpacing: -0.3
   },
   caption: {

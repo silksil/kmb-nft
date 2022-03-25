@@ -13,7 +13,7 @@ export const LandingCloudAndCo = () => {
         <Image src="static/illustrations/cloud.svg" alt="cloud" style={{ display: "block", width: "20%", marginLeft: "40%" }} />
       </ParallaxLayer>
       <ParallaxLayer offset={1.1} speed={-0.1} style={{ opacity: 0.6 }}>
-        <Image src="static/illustrations/doge.png" alt="doge" style={{ display: "block", width: "7%", marginLeft: "10%" }} />
+        <Image src="static/illustrations/doge.png" alt="doge" sx={{ display: "block", width: { xs: "40px", md: "100px" }, marginLeft: "10%" }} />
       </ParallaxLayer>
       <ParallaxLayer offset={1} speed={0.2}>
         <Image src="static/illustrations/wojak.png" alt="wojak" sx={{ display: "block", width: { xs: "40px", md: "100px" }, marginLeft: "85%" }} />
@@ -27,10 +27,10 @@ export const LandingCloudAndCo = () => {
       </ParallaxLayer>
 
       <ParallaxLayer offset={2.4} speed={-0.1} style={{ opacity: 0.8 }}>
-        <Image src="static/illustrations/pepe.png" alt="pepe" style={{ display: "block", width: "8%", marginLeft: "80%" }} />
+        <Image src="static/illustrations/pepe.png" alt="pepe" sx={{ display: "block", width: { xs: "40px", md: "100px" }, marginLeft: "90%" }} />
       </ParallaxLayer>
       <ParallaxLayer offset={2.4} speed={-0.5} style={{ opacity: 0.6 }}>
-        <Image src="static/illustrations/ethereum.png" alt="ethereum" style={{ display: "block", width: "5%", marginLeft: "20%" }} />
+        <Image src="static/illustrations/ethereum.png" alt="ethereum" sx={{ display: "block", width: { xs: "40px", md: "100px" }, marginLeft: "20%" }} />
       </ParallaxLayer>
       <ParallaxLayer offset={2.6} speed={0.4} style={{ opacity: 0.6 }}>
         <Image src="static/illustrations/cloud.svg" alt="cloud" style={{ display: "block", width: "20%", marginLeft: "5%" }} />

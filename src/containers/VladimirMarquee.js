@@ -37,14 +37,14 @@ const paths = [
 
 const ImageContainer = styled(Box)(({ theme }) => ({
   marginLeft: 16,
-  width: 120,
-  height: 120,
+  width: 140,
+  height: 140,
   borderRadius: theme.shape.borderRadiusMd,
   overflow: "hidden",
 
   [theme.breakpoints.up("md")]: {
-    width: 160,
-    height: 160
+    width: 210,
+    height: 210
   }
 }));
 
@@ -53,7 +53,7 @@ export function VladimirMarquee() {
     <Marquee gradient={false} speed={25}>
       {paths.map(({ path }) => (
         <ImageContainer key={path}>
-          <NextImage width={160} height={160} key={path} src={`/static/avatars/vladimir/${path}.png`} alt="Vladimir" />
+          <NextImage width={210} height={210} key={path} src={`/static/avatars/vladimir/${path}.png`} alt="Vladimir" />
         </ImageContainer>
       ))}
     </Marquee>

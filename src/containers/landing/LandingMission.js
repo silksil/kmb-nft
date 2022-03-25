@@ -26,7 +26,7 @@ const SectionContainer = styled((props) => <Box {...props} />)(({ theme }) => ({
   padding: theme.spacing(1, 2),
 
   [theme.breakpoints.up("md")]: {
-    minHeight: "250px",
+    minHeight: "265px",
     padding: theme.spacing(3, 2)
   }
 }));
@@ -59,7 +59,7 @@ export function LandingMission() {
                 <a href="https://www.ukrainedao.love/" target="_blank" rel="noreferrer">
                   UkraineDao
                 </a>{" "}
-                to the people in Ukraine.
+                to the people in Ukraine. UkraineDao is a blockchain intiative aimed at distributing donations to Ukraine.
               </SectionText>
             </SectionContainer>
           </GridItem>
@@ -68,8 +68,8 @@ export function LandingMission() {
               <SectionTitle>Is this not a scam?</SectionTitle>
               <SectionText>
                 Given the many scammers and false promises in the NFT space, we want to assure you that our intentions are genuine by having hardcoded that money withdrawn directly goes to the wallet of UkraineDao. This is immutable: see{" "}
-                <a href="https://unchain.fund/" target="_blank" rel="noreferrer">
-                  line 133 of the smart contract
+                <a href={`${process.env.NEXT_PUBLIC_EITHERSCAN_PREFIX}/address/${process.env.NEXT_PUBLIC_CONTRACT_ADDRESS}#code`} target="_blank" rel="noreferrer">
+                  line 129 of the smart contract
                 </a>
                 . Below you can also find our social profiles so we can be held accountable.
               </SectionText>
