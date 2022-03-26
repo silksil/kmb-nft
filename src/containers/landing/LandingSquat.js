@@ -87,7 +87,7 @@ export function LandingSquat() {
                 <Typography fontWeight="bold">Vladimirs</Typography>
                 <Percentage variant="caption">10%</Percentage>
 
-                <Typography variant="body2">By owning a Vladimir, you are doing the one thing he hates: being owned by others.</Typography>
+                <Typography variant="body2">By owning a Vladimir P., you are doing the one thing he hates: being owned by others.</Typography>
               </CollectionType>
             </Grid>
           </Grid>

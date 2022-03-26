@@ -39,7 +39,7 @@ export function LandingFAQs() {
           <Typography variant="body2">
             <ul>
               <li>
-                All income from primary and secondary sales will be donated to Ukraine through{" "}
+                All income from primary sales and royalties will be donated to Ukraine through{" "}
                 <a href="https://www.ukrainedao.love/" target="_blank" rel="noreferrer">
                   UkraineDao
                 </a>
