@@ -38,7 +38,7 @@ const Heading = styled((props) => <Typography {...props} />)(({ theme }) => ({
 const CollectionType = styled("div")(({ theme }) => ({
   position: "relative",
   borderRadius: theme.shape.borderRadiusMd,
-  padding: theme.spacing(3),
+  padding: theme.spacing(1, 2),
   width: "100%",
   height: "100%",
   opacity: "10",
@@ -49,15 +49,20 @@ const CollectionType = styled("div")(({ theme }) => ({
   },
 
   [theme.breakpoints.up("sm")]: {
-    textAlign: "left"
+    textAlign: "left",
+    padding: theme.spacing(3)
   }
 }));
 
 const Percentage = styled((props) => <Typography {...props} />)(({ theme }) => ({
   position: "absolute",
-  top: theme.spacing(3),
-  right: theme.spacing(3),
-  color: theme.palette.primary.main
+  top: theme.spacing(1),
+  right: theme.spacing(2),
+  color: theme.palette.primary.main,
+
+  [theme.breakpoints.up("sm")]: {
+    padding: theme.spacing(3)
+  }
 }));
 
 const subtitle = `${collectionInfo.size} characters. All unique.`;
