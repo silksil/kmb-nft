@@ -26,7 +26,11 @@ const Subtitle = styled((props) => <Typography variant="h2" {...props} />)(({ th
 const SummaryItems = styled(Box)(({ theme }) => ({
   background: alpha(theme.palette.primary.main, 0.1),
   borderRadius: theme.shape.borderRadiusMd,
-  padding: theme.spacing(3),
+  padding: theme.spacing(1),
+
+  [theme.breakpoints.up("sm")]: {
+    padding: theme.spacing(3)
+  },
 
   [theme.breakpoints.up("md")]: {
     padding: theme.spacing(3)
@@ -39,7 +43,7 @@ export function LandingFAQs() {
       <Container maxWidth="md">
         <Subtitle>Details</Subtitle>
 
-        <SummaryItems maxWidth="md">
+        <SummaryItems>
           <Typography variant="body2">
             <ul>
               <li>
