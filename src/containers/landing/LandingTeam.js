@@ -81,9 +81,9 @@ const CardContainer = styled("div")(({ theme }) => ({
 }));
 
 const CardIconStyle = styled("img")(({ theme }) => ({
-  width: 160,
-  height: 160,
+  width: 120,
   margin: "auto",
+  padding: theme.spacing(2),
 
   [theme.breakpoints.up("md")]: {
     width: 240,
@@ -127,7 +127,7 @@ export function LandingTeam() {
           <Typography>Made by two people in love.</Typography>
         </Container>
         <Grid container spacing={isDesktop ? 10 : 2} justifyContent="center" sx={{ position: "relative" }}>
-          {Persons.map((person, index) => (
+          {Persons.map((person) => (
             <Grid item xs={12} md={4} key={person.title} justifyContent="center" alignItems="center">
               <CardContainer>
                 <IconsContainer className="icon-container">

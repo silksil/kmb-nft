@@ -4,7 +4,7 @@ import { varFadeInUp, MotionInView } from "../../components/animate";
 
 const RootStyle = styled("div")(({ theme }) => ({
   position: "relative",
-
+  marginTop: theme.spacing(-3),
   [theme.breakpoints.up("md")]: {
     marginTop: theme.spacing(10)
   }
