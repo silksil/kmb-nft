@@ -122,7 +122,7 @@ export function LandingTeam() {
   return (
     <RootStyle>
       <Container maxWidth="lg">
-        <Container maxWidth="sm" sx={{ mb: { xs: 5 }, textAlign: "center" }}>
+        <Container maxWidth="sm" sx={{ mb: { xs: 3 }, textAlign: "center" }}>
           <Heading variant="h2">The Team</Heading>
           <Typography>Made by two people in love.</Typography>
         </Container>
