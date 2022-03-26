@@ -4,7 +4,11 @@ import { shadowHeading } from "src/utils/shadowHeading";
 import { collectionInfo } from "src/config/collectionInfo";
 
 const RootStyle = styled("div")(({ theme }) => ({
-  padding: theme.spacing(14, 0)
+  marginTop: theme.spacing(5),
+
+  [theme.breakpoints.up("sm")]: {
+    marginTop: theme.spacing(8)
+  }
 }));
 
 const Subtitle = styled((props) => <Typography variant="h2" {...props} />)(({ theme }) => ({
