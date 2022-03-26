@@ -36,7 +36,7 @@ const ToolbarStyle = styled(Toolbar)(({ theme }) => ({
 
 export default function MainNavbar() {
   const { isConnected, connect, account } = useWallet();
-  const isLaunched = false;
+  const isLaunched = process.env.NEXT_PUBLIC_IS_LAUNCHED;
   const theme = useTheme();
 
   /**

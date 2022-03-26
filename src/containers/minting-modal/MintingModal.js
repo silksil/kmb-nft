@@ -19,7 +19,7 @@ const ContainerStyle = styled(Box)(({ theme }) => ({
   left: "50%",
   transform: "translate(-50%, -50%)",
   width: "100%",
-  maxWidth: "540px",
+  maxWidth: "570px",
   padding: theme.spacing(6),
   backgroundColor: theme.palette.background.default,
   borderRadius: "5px"
@@ -75,12 +75,16 @@ export function MintingModal() {
         <Typography variant="h3">Mint your NFT</Typography>
         <MintingCount />
         <Typography variant="body2">· {collectionInfo.price} ETH each</Typography>
-        <Typography variant="body2">· Use Metamask</Typography>
+        <Typography variant="body2">· Use Metamask only</Typography>
         <Typography variant="body2">· Max. {collectionInfo.maxTransactions} NFTs per transaction</Typography>
-        <Typography variant="body2">· Once you purchase, you cannot undo the transaction</Typography>
-        <a href={`${process.env.NEXT_PUBLIC_EITHERSCAN_PREFIX}/address/${process.env.NEXT_PUBLIC_CONTRACT_ADDRESS}`} target="_blank" rel="noreferrer">
-          <Typography variant="body2">· Contract link</Typography>
-        </a>
+        <Typography variant="body2">· Once you mint, you cannot undo the transaction</Typography>
+        <Typography variant="body2">
+          ·{" "}
+          <a href={`${process.env.NEXT_PUBLIC_EITHERSCAN_PREFIX}/address/${process.env.NEXT_PUBLIC_CONTRACT_ADDRESS}#code`} target="_blank" rel="noreferrer">
+            Link{" "}
+          </a>
+          to etherscan contract
+        </Typography>
 
         <TextField
           error={!isValidMintAmount}
@@ -107,7 +111,7 @@ export function MintingModal() {
         </Button>
         <Box display="flex" flexDirection="row" alignItems="center" mt={1}>
           {getFeedbackStatusIcon(status, STATUS) && <StatusCircleStyle>{getFeedbackStatusIcon(status, STATUS)}</StatusCircleStyle>}
-          <Typography color="text.secondary">
+          <Typography color="text.secondary" variant="caption">
             {getStatusText(status, error)}
             {getMarketplacesFeedbackText(transactionHash)}
           </Typography>

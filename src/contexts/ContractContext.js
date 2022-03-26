@@ -209,6 +209,8 @@ function ContractProvider({ children }) {
          */
         await nftTxn.wait();
         setMintingStatus({ name: MINTING_STATUS.MINED, error: null });
+        const minted = await connectedContract.totalSupply();
+        setTotalMinted(minted.toNumber());
 
         setTransactionHash(nftTxn.hash);
       } catch (error) {
