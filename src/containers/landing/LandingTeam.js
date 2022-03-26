@@ -42,9 +42,9 @@ const Persons = [
 ];
 
 const RootStyle = styled("div")(({ theme }) => ({
-  paddingTop: theme.spacing(15),
+  marginTop: theme.spacing(5),
   [theme.breakpoints.up("md")]: {
-    paddingBottom: theme.spacing(15)
+    marginBottom: theme.spacing(15)
   }
 }));
 
@@ -110,16 +110,6 @@ const PersonDescription = styled(Typography)(({ theme }) => ({
   zIndex: 1,
   display: "block"
 }));
-
-// const BackgroundImage = styled(Image)(({ theme }) => ({
-//   position: "absolute",
-//   maxHeight: "240px",
-//   maxWidth: "240px",
-//   top: "50%",
-//   left: "50%",
-//   transform: "translate(-50%, -50%)",
-//   zIndex: -2
-// }));
 
 const Heading = styled((props) => <Typography {...props} />)(({ theme }) => ({
   filter: shadowHeading(theme.palette.secondary.main)

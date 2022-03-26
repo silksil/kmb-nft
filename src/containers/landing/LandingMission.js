@@ -42,11 +42,12 @@ export function LandingMission() {
     <RootStyle id="mission_section">
       <Container maxWidth="xl" sx={{ zIndex: 1, position: "relative" }}>
         <MotionInView variants={varFadeInUp}>
-          <Heading variant="h2" textAlign="center">
+          <Heading variant="h2" textAlign="center" sx={{ mb: 1 }}>
             Support Ukraine 🇺🇦
           </Heading>
-          <Typography v sx={{ mb: { xs: 2, md: 4 } }} textAlign="center">
-            100% of primary and secondary income goes to Ukraine
+          <Typography sx={{ mb: { xs: 2, md: 4 } }} textAlign="center">
+            100% of primary sales and <br />
+            royalties go to Ukraine
           </Typography>
         </MotionInView>
 
