@@ -81,9 +81,14 @@ const CardContainer = styled("div")(({ theme }) => ({
 }));
 
 const CardIconStyle = styled("img")(({ theme }) => ({
-  width: 120,
+  width: 100,
   margin: "auto",
-  padding: theme.spacing(2),
+  padding: theme.spacing(1),
+
+  [theme.breakpoints.up("sm")]: {
+    width: 120,
+    padding: theme.spacing(2)
+  },
 
   [theme.breakpoints.up("md")]: {
     width: 240,
@@ -100,7 +105,6 @@ const IconsContainer = styled("div")(({ theme }) => ({
     right: "20%"
   },
   [theme.breakpoints.up("md")]: {
-    visibility: "hidden",
     right: 0
   }
 }));

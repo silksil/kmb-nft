@@ -37,10 +37,15 @@ const paths = [
 
 const ImageContainer = styled(Box)(({ theme }) => ({
   marginLeft: 16,
-  width: 140,
-  height: 140,
+  width: 120,
+  height: 120,
   borderRadius: theme.shape.borderRadiusMd,
   overflow: "hidden",
+
+  [theme.breakpoints.up("sm")]: {
+    width: 140,
+    height: 140
+  },
 
   [theme.breakpoints.up("md")]: {
     width: 210,
