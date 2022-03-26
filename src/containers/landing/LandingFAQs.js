@@ -45,9 +45,9 @@ export function LandingFAQs() {
                 </a>
                 .
               </li>
-              <li>Minting price is {collectionInfo.price} ETH.</li>
+              <li>The minting price is {collectionInfo.price} ETH.</li>
               <li>Max. mint per transaction is {collectionInfo.maxTransactions}.</li>
-              <li>Royalty fees will be put at the 10%. All royalties will go to Ukraine.</li>
+              <li>Royalty fees will be put at 10%. All royalties will go to Ukraine.</li>
               <li>There are {collectionInfo.size} items in the collection: 90% KMBs, 10% Vladimirs.</li>
               <li>
                 The artwork is{" "}
@@ -56,9 +56,9 @@ export function LandingFAQs() {
                 </a>
                 .
               </li>
-              <li>The characters have been programmatically generated using over 100 traits. Some characters are more rare than others.</li>
+              <li>The characters have been programmatically generated using over 100 traits. Some characters are rarer than others.</li>
               <li>The images are stored on IPFS.</li>
-              <li>30 characters have been reserved for giveaways, people who helped us along the way and the team.</li>
+              <li>30 characters have been reserved for giveaways, people who helped us along the way, and the team.</li>
               <li>ERC-721 tokens are used on the Ethereum blockchain.</li>
               {/* <li>
         ERC721 contract is verified on Etherscan and can be found{" "}

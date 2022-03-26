@@ -60,7 +60,7 @@ export function LandingMission() {
                 <a href="https://www.ukrainedao.love/" target="_blank" rel="noreferrer">
                   UkraineDao
                 </a>{" "}
-                to the people in Ukraine. UkraineDao is a blockchain intiative aimed at distributing donations to Ukraine.
+                to the people in Ukraine. UkraineDao is a blockchain initiative aimed at distributing donations to Ukraine.
               </SectionText>
             </SectionContainer>
           </GridItem>
