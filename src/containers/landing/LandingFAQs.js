@@ -4,7 +4,7 @@ import { shadowHeading } from "src/utils/shadowHeading";
 import { collectionInfo } from "src/config/collectionInfo";
 
 const RootStyle = styled("div")(({ theme }) => ({
-  marginTop: theme.spacing(5),
+  marginTop: theme.spacing(4),
 
   [theme.breakpoints.up("sm")]: {
     marginTop: theme.spacing(8)

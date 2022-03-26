@@ -42,7 +42,7 @@ const Persons = [
 ];
 
 const RootStyle = styled("div")(({ theme }) => ({
-  marginTop: theme.spacing(5),
+  marginTop: theme.spacing(6),
   [theme.breakpoints.up("md")]: {
     marginBottom: theme.spacing(15)
   }
