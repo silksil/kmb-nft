@@ -41,10 +41,6 @@ export default function MainNavbar() {
   const theme = useTheme();
 
   const isPaused = process.env.NEXT_PUBLIC_IS_PAUSED === "true";
-  const showCTA = () => {
-    if (!isSoldOut) return true;
-    if (!isPaused) return true;
-  };
 
   /**
    * Styling variables.
@@ -85,9 +81,9 @@ export default function MainNavbar() {
             <Logo sx={{ mr: 2 }} />
           </NextLink>
 
-          {showCTA() && (
+          {!isPaused && !isSoldOut && (
             <Stack direction="row" alignItems="center">
-              {!isPaused && account && (
+              {account && (
                 <Label color="info" sx={{ mr: 2 }}>
                   <Icon icon={ethereumIcon} size="s" />
                   {showPartialAccountAddress(account)}
