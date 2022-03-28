@@ -69,6 +69,7 @@ export function MintingModal() {
     <Modal open={mintingModalIsOpen}>
       <ContainerStyle>
         <IconButtonStyle
+          color="primary"
           disabled={status === STATUS?.MINTING}
           onClick={() => {
             setMintingModalIsOpen(false);
@@ -97,7 +98,7 @@ export function MintingModal() {
               label="Amount"
               type="number"
               variant="filled"
-              helperText={!isValidMintAmount && "Value should be between 1 and 10"}
+              helperText={!isValidMintAmount && "Value should be between 1 and 5"}
               value={mintAmount}
               onChange={(event) => {
                 setMintAmount(event.target.value);

@@ -38,8 +38,13 @@ const ToolbarStyle = styled(Toolbar)(({ theme }) => ({
 export default function MainNavbar() {
   const { isConnected, connect, account } = useWallet();
   const { isSoldOut } = useContract();
-  const isLaunched = process.env.NEXT_PUBLIC_IS_LAUNCHED;
   const theme = useTheme();
+
+  const isPaused = process.env.NEXT_PUBLIC_IS_PAUSED === "true";
+  const showCTA = () => {
+    if (!isSoldOut) return true;
+    if (!isPaused) return true;
+  };
 
   /**
    * Styling variables.
@@ -80,9 +85,9 @@ export default function MainNavbar() {
             <Logo sx={{ mr: 2 }} />
           </NextLink>
 
-          {!isSoldOut && isLaunched && (
+          {showCTA() && (
             <Stack direction="row" alignItems="center">
-              {isLaunched && account && (
+              {!isPaused && account && (
                 <Label color="info" sx={{ mr: 2 }}>
                   <Icon icon={ethereumIcon} size="s" />
                   {showPartialAccountAddress(account)}
@@ -95,7 +100,7 @@ export default function MainNavbar() {
             </Stack>
           )}
 
-          {!isSoldOut && !isLaunched && <Typography variant="body2"> Minting soon ...</Typography>}
+          {isPaused && <Typography variant="body2"> Minting soon ...</Typography>}
 
           {isSoldOut && <Typography variant="body2">Sold out</Typography>}
         </Container>

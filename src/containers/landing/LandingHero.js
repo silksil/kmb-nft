@@ -123,7 +123,9 @@ export function LandingHero() {
         <motion.div variants={varSlideInDown}>
           <Container maxWidth="sm">
             <SubTitle>
-              KMBs are characters on Ethereum that <br /> make fun of Vladimir and fight against injustice.
+              KMBs are characters on Ethereum that make
+              <br />
+              fun of Vladimir P. and fight against injustice.
             </SubTitle>
           </Container>
         </motion.div>

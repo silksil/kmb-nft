@@ -219,7 +219,7 @@ function ContractProvider({ children }) {
 
         setTransactionHash(nftTxn.hash);
       } catch (e) {
-        setMintingStatus({ name: MINTING_STATUS.ERROR, error: `Something went wrong. Try Again.` });
+        setMintingStatus({ name: MINTING_STATUS.ERROR, error: `Something went wrong.` });
       }
     },
     [contractAddress, isSoldOut]
