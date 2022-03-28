@@ -42,6 +42,9 @@ export default function MainNavbar() {
 
   const isPaused = process.env.NEXT_PUBLIC_IS_PAUSED === "true";
 
+  console.log(process.env.NEXT_PUBLIC_IS_PAUSED);
+  console.log(isPaused);
+
   /**
    * Styling variables.
    */
