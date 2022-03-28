@@ -10,7 +10,8 @@ import palette from "src/theme/palette";
 
 const metaInfo = {
   keywords: "KMB, builders, community, NFT, Opensea, Rarible, JPEGS, Vladimir, Putin, Ethereum, Metaverse",
-  description: "KMBs are characters that protect the Metaverse from Vladimir and other baddies."
+  description: "KMBs are characters on Ethereum that make fun of Vladimir and fight against injustice.",
+  author: "Sil Kreulen"
 };
 
 export default class MyDocument extends Document {
@@ -27,6 +28,7 @@ export default class MyDocument extends Document {
           <link rel="manifest" href="/manifest.json" />
           <meta name="description" content={metaInfo.description} />
           <meta name="keywords" content={metaInfo.keywords} />
+          <meta name="author" content={metaInfo.author} />
         </Head>
         <body>
           <Main />

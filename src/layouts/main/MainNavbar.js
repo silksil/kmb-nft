@@ -13,6 +13,7 @@ import { showPartialAccountAddress } from "src/utils/account";
 import { useWindowSize } from "src/hooks/useWindowSize";
 
 import ethereumIcon from "@iconify/icons-mdi/ethereum";
+import { useContract } from "src/hooks/useContract";
 
 const APP_BAR_MOBILE = 64;
 const APP_BAR_DESKTOP = 88;
@@ -36,6 +37,7 @@ const ToolbarStyle = styled(Toolbar)(({ theme }) => ({
 
 export default function MainNavbar() {
   const { isConnected, connect, account } = useWallet();
+  const { isSoldOut } = useContract();
   const isLaunched = process.env.NEXT_PUBLIC_IS_LAUNCHED;
   const theme = useTheme();
 
@@ -78,7 +80,7 @@ export default function MainNavbar() {
             <Logo sx={{ mr: 2 }} />
           </NextLink>
 
-          {isLaunched && (
+          {!isSoldOut && isLaunched && (
             <Stack direction="row" alignItems="center">
               {isLaunched && account && (
                 <Label color="info" sx={{ mr: 2 }}>
@@ -93,7 +95,9 @@ export default function MainNavbar() {
             </Stack>
           )}
 
-          {!isLaunched && <Typography variant="body2"> Minting soon ...</Typography>}
+          {!isSoldOut && !isLaunched && <Typography variant="body2"> Minting soon ...</Typography>}
+
+          {isSoldOut && <Typography variant="body2">Sold out</Typography>}
         </Container>
       </ToolbarStyle>
     </AppBar>

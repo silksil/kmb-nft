@@ -7,7 +7,6 @@ import { collectionInfo } from "src/config/collectionInfo";
 const MINTING_STATUS = {
   IDLE: "idle",
   MINTING: "minting",
-  SOLD_OUT: "soldOut",
   POP_WALLET: "popWallet",
   MINED: "mined",
   ERROR: "error"
@@ -47,6 +46,7 @@ function ContractProvider({ children }) {
   const [tokenId, setTokenId] = useState();
   const [totalSupply, setTotalSupply] = useState();
   const [totalMinted, setTotalMinted] = useState();
+  const [isSoldOut, setIsSoldOut] = useState();
 
   /**
    * Determine whether the collection is already sold-out or not.
@@ -55,7 +55,7 @@ function ContractProvider({ children }) {
     if (totalSupply === undefined || totalMinted === undefined) return;
 
     if (totalSupply === totalMinted) {
-      setMintingStatus({ name: MINTING_STATUS.SOLD_OUT, error: null });
+      setIsSoldOut(true);
     }
   }, [totalMinted, totalSupply, setMintingStatus]);
 
@@ -168,8 +168,6 @@ function ContractProvider({ children }) {
           setMintingStatus({ name: MINTING_STATUS.ERROR, error: "Seems you don't have the correct wallet extension. Please install MetaMask" });
         }
 
-        if (mintingStatus.name === MINTING_STATUS.SOLD_OUT) return;
-
         const connectedChainId = await ethereum.request({ method: "eth_chainId" });
         const shouldBeConnectedToChainId = process.env.NEXT_PUBLIC_CHAIN_ID;
 
@@ -193,6 +191,13 @@ function ContractProvider({ children }) {
         const connectedContract = new ethers.Contract(contractAddress, abi.abi, signer);
 
         /**
+         * Check whether we are not sold out.
+         */
+        const minted = await connectedContract.totalSupply();
+        setTotalMinted(minted.toNumber());
+        if (isSoldOut) return;
+
+        /**
          * Pop the wallet.
          */
         setMintingStatus({ name: MINTING_STATUS.POP_WALLET, error: null });
@@ -209,18 +214,18 @@ function ContractProvider({ children }) {
          */
         await nftTxn.wait();
         setMintingStatus({ name: MINTING_STATUS.MINED, error: null });
-        const minted = await connectedContract.totalSupply();
-        setTotalMinted(minted.toNumber());
+        const updatedMinted = await connectedContract.totalSupply();
+        setTotalMinted(updatedMinted.toNumber());
 
         setTransactionHash(nftTxn.hash);
-      } catch (error) {
-        setMintingStatus({ name: MINTING_STATUS.ERROR, error: `${error.message} Try Again.` });
+      } catch (e) {
+        setMintingStatus({ name: MINTING_STATUS.ERROR, error: `Something went wrong. Try Again.` });
       }
     },
-    [contractAddress, mintingStatus.name]
+    [contractAddress, isSoldOut]
   );
 
-  return <ContractContext.Provider value={{ mintNft, mintingStatus: mintingStatus.name, mintingError: mintingStatus.error, transactionHash, tokenId, totalSupply, totalMinted, account, isConnected: connectionStatus.isConnected, error: connectionStatus.error, connect }}>{children}</ContractContext.Provider>;
+  return <ContractContext.Provider value={{ mintNft, mintingStatus: mintingStatus.name, mintingError: mintingStatus.error, transactionHash, tokenId, totalSupply, totalMinted, account, isConnected: connectionStatus.isConnected, error: connectionStatus.error, connect, isSoldOut }}>{children}</ContractContext.Provider>;
 }
 
 const ContractConsumer = ({ children }) => {

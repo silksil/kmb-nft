@@ -44,18 +44,23 @@ const StatusCircleStyle = styled(Box)(({ theme }) => ({
 }));
 
 const MintingCount = () => {
-  const { totalMinted, totalSupply } = useContract();
+  const { totalMinted, totalSupply, isSoldOut } = useContract();
+  const text = isSoldOut ? "Sold out" : `${totalMinted} of ${totalSupply} minted`;
 
   /**
    * Don't show the modal if the count has not been retrieved yet
    */
   if (!totalSupply) return null;
 
-  return <Alert severity="info" sx={{ mb: 2, mt: 1 }}>{`${totalMinted} of ${totalSupply} minted`}</Alert>;
+  return (
+    <Alert severity="info" sx={{ mb: 2, mt: 1 }}>
+      {text}
+    </Alert>
+  );
 };
 
 export function MintingModal() {
-  const { status, error, STATUS, transactionHash, mintNft } = useContract();
+  const { status, error, STATUS, transactionHash, mintNft, isSoldOut } = useContract();
   const { mintingModalIsOpen, setMintingModalIsOpen } = useUI();
   const [mintAmount, setMintAmount] = useState(1);
   const isValidMintAmount = mintAmount >= 1 && mintAmount <= 10;
@@ -85,30 +90,34 @@ export function MintingModal() {
           </a>
           to etherscan contract
         </Typography>
+        {!isSoldOut && (
+          <>
+            <TextField
+              error={!isValidMintAmount}
+              label="Amount"
+              type="number"
+              variant="filled"
+              helperText={!isValidMintAmount && "Value should be between 1 and 10"}
+              value={mintAmount}
+              onChange={(event) => {
+                setMintAmount(event.target.value);
+              }}
+              sx={{ width: "100%", my: 2 }}
+              InputProps={{
+                inputMode: "numeric",
+                inputProps: {
+                  max: 5,
+                  min: 1
+                }
+              }}
+            />
 
-        <TextField
-          error={!isValidMintAmount}
-          label="Amount"
-          type="number"
-          variant="filled"
-          helperText={!isValidMintAmount && "Value should be between 1 and 10"}
-          value={mintAmount}
-          onChange={(event) => {
-            setMintAmount(event.target.value);
-          }}
-          sx={{ width: "100%", my: 2 }}
-          InputProps={{
-            inputMode: "numeric",
-            inputProps: {
-              max: 5,
-              min: 1
-            }
-          }}
-        />
+            <Button variant="contained" disabled={buttonIsDisabled(status)} sx={{ width: "100%" }} onClick={() => mintNft(mintAmount)} endIcon={getButtonStatusIcon(status, STATUS)}>
+              {getButtonText(status)}
+            </Button>
+          </>
+        )}
 
-        <Button variant="contained" disabled={buttonIsDisabled(status)} sx={{ width: "100%" }} onClick={() => mintNft(mintAmount)} endIcon={getButtonStatusIcon(status, STATUS)}>
-          {getButtonText(status)}
-        </Button>
         <Box display="flex" flexDirection="row" alignItems="center" mt={1}>
           {getFeedbackStatusIcon(status, STATUS) && <StatusCircleStyle>{getFeedbackStatusIcon(status, STATUS)}</StatusCircleStyle>}
           <Typography color="text.secondary" variant="caption">
