@@ -71,13 +71,7 @@ export function LandingMission() {
           <GridItem>
             <SectionContainer>
               <SectionTitle>Is this not a scam?</SectionTitle>
-              <SectionText>
-                Given the many scammers and false promises in the NFT space, we want to assure you that our intentions are genuine. Therefore, we have hardcoded that ether in the contract cannot be withdrawn by the owners, but only be send directly to the wallet of UkraineDao. This is immutable: see{" "}
-                <a href={`${process.env.NEXT_PUBLIC_EITHERSCAN_PREFIX}/address/${process.env.NEXT_PUBLIC_CONTRACT_ADDRESS}#code`} target="_blank" rel="noreferrer">
-                  line 129 of the smart contract
-                </a>
-                . Below you can also find our social profiles so we can be held accountable.
-              </SectionText>
+              <SectionText>Given the many scammers and false promises in the NFT space, we want to assure you that our intentions are genuine. Therefore, we have hardcoded that ether in the contract cannot be withdrawn by the owners, but only be send directly to the wallet of UkraineDao. This is immutable: link will be shared to etherscan once the contract is deployed. Below you can also find our social profiles so we can be held accountable.</SectionText>
             </SectionContainer>
           </GridItem>
           <GridItem>

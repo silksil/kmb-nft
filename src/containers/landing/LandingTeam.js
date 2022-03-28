@@ -135,14 +135,14 @@ export function LandingTeam() {
             <Grid item xs={12} md={4} key={person.title} justifyContent="center" alignItems="center">
               <CardContainer>
                 <IconsContainer className="icon-container">
-                  {person.twitter && (
-                    <IconButton target="_blank" rel="noreferrer" color="primary" href={person.twitter}>
-                      <Icon icon={twitterIcon} size="m" />
-                    </IconButton>
-                  )}
                   {person.linkedin && (
                     <IconButton target="_blank" rel="noreferrer" color="primary" href={person.linkedin}>
                       <Icon icon={linkedinIcon} size="m" />
+                    </IconButton>
+                  )}
+                  {person.twitter && (
+                    <IconButton target="_blank" rel="noreferrer" color="primary" href={person.twitter}>
+                      <Icon icon={twitterIcon} size="m" />
                     </IconButton>
                   )}
                 </IconsContainer>
