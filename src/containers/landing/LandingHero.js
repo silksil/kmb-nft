@@ -27,6 +27,10 @@ const ContentStyle = styled((props) => <Box {...props} />)(({ theme }) => ({
 
   [theme.breakpoints.up("lg")]: {
     marginTop: theme.spacing(12)
+  },
+
+  [theme.breakpoints.up("xl")]: {
+    marginTop: theme.spacing(16)
   }
 }));
 
