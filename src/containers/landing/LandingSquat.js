@@ -12,7 +12,11 @@ const RootStyle = styled("div")(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
-  marginTop: theme.spacing(-5),
+  marginTop: theme.spacing(-8),
+
+  [theme.breakpoints.up("sm")]: {
+    marginTop: theme.spacing(-4)
+  },
 
   [theme.breakpoints.up("md")]: {
     marginTop: 0
