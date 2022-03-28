@@ -40,10 +40,7 @@ export default function MainNavbar() {
   const { isSoldOut } = useContract();
   const theme = useTheme();
 
-  const isPaused = process.env.NEXT_PUBLIC_IS_PAUSED === "true";
-
-  console.log(process.env.NEXT_PUBLIC_IS_PAUSED);
-  console.log(isPaused);
+  const isPaused = process.env.NEXT_PUBLIC_IS_PAUSED.toLowerCase() === "true";
 
   /**
    * Styling variables.
