@@ -4,7 +4,7 @@ import { varFadeInUp, MotionInView } from "../../components/animate";
 
 const RootStyle = styled("div")(({ theme }) => ({
   position: "relative",
-  marginTop: theme.spacing(-10),
+  marginTop: theme.spacing(-11),
 
   [theme.breakpoints.up("sm")]: {
     marginTop: theme.spacing(-5)
@@ -55,7 +55,7 @@ export function LandingMission() {
           </Typography>
         </MotionInView>
 
-        <Grid container spacing={{ xs: 2, md: 4 }} justifyContent="center">
+        <Grid container spacing={{ xs: 1, md: 4 }} justifyContent="center">
           <GridItem>
             <SectionContainer>
               <SectionTitle>How does it work?</SectionTitle>
