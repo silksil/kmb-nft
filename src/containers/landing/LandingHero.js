@@ -22,11 +22,11 @@ const ContentStyle = styled((props) => <Box {...props} />)(({ theme }) => ({
   marginTop: theme.spacing(10),
 
   [theme.breakpoints.up("md")]: {
-    marginTop: theme.spacing(12)
+    marginTop: theme.spacing(10)
   },
 
   [theme.breakpoints.up("lg")]: {
-    marginTop: theme.spacing(18)
+    marginTop: theme.spacing(12)
   }
 }));
 
