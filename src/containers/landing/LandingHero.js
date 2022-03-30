@@ -117,7 +117,6 @@ export function LandingHero() {
       <motion.div animate={{ y: [-50, 50, -50], x: [-50, 50, -50] }} transition={{ duration: 4, repeat: Infinity }}>
         <BackgroundBlur color="secondary" />
       </motion.div>
-
       <motion.div animate={{ y: [50, -50, 50], x: [50, -50, 50] }} transition={{ duration: 4, repeat: Infinity }}>
         <BackgroundBlur color="primary" />
       </motion.div>
