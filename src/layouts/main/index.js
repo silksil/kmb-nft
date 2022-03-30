@@ -4,6 +4,7 @@ import MainNavbar from "./MainNavbar";
 import { IconButton, Stack, Typography } from "@mui/material";
 import { SOCIALS } from "src/utils/socials";
 import { Icon } from "src/components/Icon";
+import { Image } from "src/components/Image.js";
 
 MainLayout.propTypes = {
   children: PropTypes.node
@@ -56,8 +57,15 @@ const SocialStack = styled(Stack)(({ theme }) => ({
   }
 }));
 
+const Opensea = styled((props) => <Image src="static/marketplaces/open-sea.svg" alt="open sea logo" {...props} />)(({ theme }) => ({
+  width: theme.icons.m.width,
+  height: theme.icons.m.height,
+  filter: shadowIcon(theme.palette.secondary.main)
+}));
+
 export default function MainLayout({ children }) {
   const theme = useTheme();
+  const openseaUrl = process.env.NEXT_PUBLIC_OPENSEA_COLLECTION_URL;
 
   return (
     <div style={{ backgroundImage: "url(/static/illustrations/stars.svg)", backgroundSize: "auto", width: "100%" }}>
@@ -68,9 +76,11 @@ export default function MainLayout({ children }) {
               <SocialIcon icon={social.icon} size="m" />
             </IconButton>
           ))}
-          {/* <IconButton color="primary">
+          {openseaUrl && (
+            <IconButton color="primary" target="_blank" rel="noreferrer" href={openseaUrl}>
               <Opensea />
-            </IconButton> */}
+            </IconButton>
+          )}
         </SocialStack>
 
         <MissionCTA variant="body2" color="primary">

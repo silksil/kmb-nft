@@ -29,12 +29,6 @@ const ToolbarStyle = styled(Toolbar)(({ theme }) => ({
   }
 }));
 
-// const Opensea = styled((props) => <Image src="static/marketplaces/open-sea.svg" alt="open sea logo" {...props} />)(({ theme }) => ({
-//   width: theme.icons.l.width,
-//   height: theme.icons.l.height,
-//   filter: shadowIcon(theme.palette.secondary.main)
-// }));
-
 export default function MainNavbar() {
   const { isConnected, connect, account } = useWallet();
   const { isSoldOut } = useContract();
