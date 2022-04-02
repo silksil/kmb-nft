@@ -85,16 +85,16 @@ const typography = {
   },
   body1: {
     lineHeight: 1.5,
-    ...responsiveFontSizes({ xs: 15, sm: 15, md: 16, lg: 18 })
+    ...responsiveFontSizes({ xs: 15, sm: 15, md: 16, lg: 20 })
   },
   body2: {
     fontFamily: FONT_PRIMARY,
     lineHeight: 22 / 14,
-    ...responsiveFontSizes({ xs: 12, sm: 13, md: 14, lg: 15 })
+    ...responsiveFontSizes({ xs: 12, sm: 13, md: 16, lg: 18 })
   },
   caption: {
     lineHeight: 1.5,
-    fontSize: pxToRem(12),
+    ...responsiveFontSizes({ xs: 12, sm: 12, md: 14, lg: 14 }),
     fontFamily: FONT_PRIMARY
   },
   overline: {
