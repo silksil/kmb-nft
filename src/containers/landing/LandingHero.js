@@ -21,12 +21,16 @@ const ContentStyle = styled((props) => <Box {...props} />)(({ theme }) => ({
   position: "relative",
   marginTop: theme.spacing(10),
 
+  [theme.breakpoints.up("sm")]: {
+    marginTop: theme.spacing(12)
+  },
+
   [theme.breakpoints.up("md")]: {
-    marginTop: theme.spacing(10)
+    marginTop: theme.spacing(14)
   },
 
   [theme.breakpoints.up("lg")]: {
-    marginTop: theme.spacing(12)
+    marginTop: theme.spacing(14)
   },
 
   [theme.breakpoints.up("xl")]: {
@@ -83,10 +87,15 @@ const HeroImgStyle = styled(motion.img)(({ theme }) => ({
 
   [theme.breakpoints.up("md")]: {
     width: 400,
-    marginTop: `-${theme.spacing(6)}`
+    marginTop: `-${theme.spacing(-10)}`
   },
 
   [theme.breakpoints.up("lg")]: {
+    width: 540,
+    marginTop: `-${theme.spacing(14)}`
+  },
+
+  [theme.breakpoints.up("xl")]: {
     width: 600,
     marginTop: `-${theme.spacing(10)}`
   }

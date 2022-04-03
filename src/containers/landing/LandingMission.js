@@ -30,7 +30,7 @@ const SectionContainer = styled((props) => <Box {...props} />)(({ theme }) => ({
   padding: theme.spacing(1, 2),
 
   [theme.breakpoints.up("md")]: {
-    minHeight: "310px",
+    minHeight: "380px",
     padding: theme.spacing(3, 2)
   }
 }));
@@ -71,7 +71,7 @@ export function LandingMission() {
           <GridItem>
             <SectionContainer>
               <SectionTitle>Why not just donate?</SectionTitle>
-              <SectionText>We aim to provide an alternative for helping the people of Ukraine and want to demonstrate that NFTs are a way to accomplish meaningful effects in the real world. If just one person would buy an NFT, who would otherwise not have donated, this project has fulfilled its purpose. The collection is part of the public domain so everybody is free to use the NFTs for their own fundraiser</SectionText>
+              <SectionText>We aim to provide an alternative for helping the people of Ukraine and want to demonstrate that NFTs are a way to accomplish meaningful effects in the real world. If just one person would buy an NFT, who would otherwise not have donated, this project has fulfilled its purpose.</SectionText>
             </SectionContainer>
           </GridItem>
         </Grid>

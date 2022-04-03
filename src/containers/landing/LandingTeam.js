@@ -9,7 +9,7 @@ import { Icon } from "src/components/Icon";
 
 const DescriptionSil = () => (
   <>
-    IBM and PayPal alumni. Member Developers Dao.
+    Member Developers Dao. IBM and PayPal alumni.
     <br />
     Boyfriend of Sophie.
   </>
@@ -60,6 +60,7 @@ const CardStyle = styled("div")(({ theme }) => {
     padding: theme.spacing(1),
 
     [theme.breakpoints.up("sm")]: {
+      maxWidth: 420,
       padding: theme.spacing(2)
     }
   };
@@ -151,7 +152,6 @@ export function LandingTeam() {
                     </IconButton>
                   )}
                 </IconsContainer>
-                {/* <BackgroundImage src={`static/overlay/blob/${index + 1}.png/`} className="blob-image" /> */}
 
                 <MotionInView variants={varFadeInUp}>
                   <CardStyle>

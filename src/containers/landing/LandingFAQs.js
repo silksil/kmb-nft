@@ -55,7 +55,7 @@ export function LandingFAQs() {
               </li>
               <li>The minting price is {collectionInfo.price} ETH.</li>
               <li>Max. mint per transaction is {collectionInfo.maxTransactions}.</li>
-              <li>Royalty fees will be put at 10%. All royalties will go to Ukraine.</li>
+              <li>Royalty fee percentage is {collectionInfo.royaltyFee}. All royalties will go to Ukraine.</li>
               <li>There are {collectionInfo.size} items in the collection: 90% KMBs, 10% Vladimirs.</li>
               <li>
                 The artwork is{" "}

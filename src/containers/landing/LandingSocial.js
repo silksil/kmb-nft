@@ -1,10 +1,11 @@
 import { styled } from "@mui/material/styles";
-import { Typography, Button, Grid } from "@mui/material";
+import { Typography, Button, Grid, alpha, Container } from "@mui/material";
 import { Icon } from "src/components/Icon";
 import discordIcon from "@iconify/icons-ic/baseline-discord";
 import twitterIcon from "@iconify/icons-eva/twitter-fill";
 
 import { shadowHeading } from "src/utils/shadowHeading";
+import { DISCORD, TWITTER } from "src/utils/socials";
 
 const RootStyle = styled("div")(() => ({
   position: "relative"
@@ -19,8 +20,9 @@ const ContainerStyle = styled("div")(() => ({
 
 const ContentStyle = styled("div")(({ theme }) => ({
   textAlign: "center",
-  backgroundColor: theme.palette.secondary.main,
-  padding: theme.spacing(20, 1),
+  background: alpha(theme.palette.background.paper, 0.5),
+
+  padding: theme.spacing(26, 1),
 
   zIndex: 10,
   position: "relative"
@@ -35,18 +37,22 @@ export function LandingSocial() {
     <RootStyle>
       <ContainerStyle>
         <ContentStyle>
-          <Heading variant="h2" sx={{ mb: 2 }}>
-            Join the Fam
-          </Heading>
+          <Heading variant="h2">Join the community</Heading>
+          <Container maxWidth="sm">
+            <Typography variant="body2" sx={{ mb: 3 }}>
+              Wanna join a group that make fun of <br />
+              Putin and fights against injustice?
+            </Typography>
+          </Container>
 
           <Grid container spacing={2} alignItems="center" justifyContent="center">
             <Grid item>
-              <Button variant="outlined" sx={{ minWidth: "180px" }} size="large" color="secondary" endIcon={<Icon icon={discordIcon} />}>
+              <Button variant="outlined" sx={{ minWidth: "180px" }} size="large" color="secondary" target="_blank" rel="noreferrer" href={DISCORD.url} endIcon={<Icon icon={discordIcon} />}>
                 Join Discord
               </Button>
             </Grid>
             <Grid item>
-              <Button variant="outlined" sx={{ minWidth: "180px" }} size="large" color="primary" endIcon={<Icon icon={twitterIcon} />}>
+              <Button variant="outlined" sx={{ minWidth: "180px" }} size="large" color="primary" href={TWITTER.url} target="_blank" rel="noreferrer" endIcon={<Icon icon={twitterIcon} />}>
                 Follow Twitter
               </Button>
             </Grid>

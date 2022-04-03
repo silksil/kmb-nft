@@ -90,7 +90,7 @@ const typography = {
   body2: {
     fontFamily: FONT_PRIMARY,
     lineHeight: 22 / 14,
-    ...responsiveFontSizes({ xs: 12, sm: 13, md: 16, lg: 18 })
+    ...responsiveFontSizes({ xs: 12, sm: 13, md: 16, lg: 17, xl: 18 })
   },
   caption: {
     lineHeight: 1.5,
