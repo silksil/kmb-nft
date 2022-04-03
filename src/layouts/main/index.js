@@ -1,4 +1,4 @@
-import { Box, styled, alpha, useTheme } from "@mui/system";
+import { Box, styled, alpha } from "@mui/system";
 import PropTypes from "prop-types";
 import MainNavbar from "./MainNavbar";
 import { IconButton, Stack, Typography } from "@mui/material";
@@ -64,7 +64,6 @@ const Opensea = styled((props) => <Image src="static/marketplaces/open-sea.svg" 
 }));
 
 export default function MainLayout({ children }) {
-  const theme = useTheme();
   const openseaUrl = process.env.NEXT_PUBLIC_OPENSEA_COLLECTION_URL;
 
   return (
