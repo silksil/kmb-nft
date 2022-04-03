@@ -51,7 +51,7 @@ export function LandingMission() {
           </Heading>
           <Typography sx={{ mb: { xs: 2, md: 4 } }} textAlign="center">
             100% of primary sales and <br />
-            royalties go to Ukraine
+            royalties go to Ukraine.
           </Typography>
         </MotionInView>
 
@@ -61,23 +61,17 @@ export function LandingMission() {
               <SectionTitle>How does it work?</SectionTitle>
               <SectionText>
                 Though the collection has a funny tone, the cause is not. The intention of this initiative is not to downplay the seriousness of the war in Ukraine. Instead, we want to offer an alternative way to help the people of the country. All income will be distributed through{" "}
-                <a href="https://www.ukrainedao.love/" target="_blank" rel="noreferrer">
-                  UkraineDao
+                <a href="https://unchain.fund/" target="_blank" rel="noreferrer">
+                  Unchain.fund
                 </a>{" "}
-                to the people in Ukraine. UkraineDao is a blockchain initiative aimed at raising funds for Ukrainian organisations that are helping those suffering from the war.
+                to the people in Ukraine. Unchain.fund is a blockchain initiative aimed at raising and distributing funds for humanitarian needs in Ukraine.
               </SectionText>
             </SectionContainer>
           </GridItem>
           <GridItem>
             <SectionContainer>
-              <SectionTitle>Is this not a scam?</SectionTitle>
-              <SectionText>Given the many scammers and false promises in the NFT space, we want to assure you that our intentions are genuine. Therefore, we have hardcoded that ether in the contract cannot be withdrawn by the owners, but only be send directly to the wallet of UkraineDao. This is immutable: link will be shared to etherscan once the contract is deployed. Below you can also find our social profiles so we can be held accountable.</SectionText>
-            </SectionContainer>
-          </GridItem>
-          <GridItem>
-            <SectionContainer>
               <SectionTitle>Why not just donate?</SectionTitle>
-              <SectionText>We aim to provide an alternative for helping the people of Ukraine and want to demonstrate that NFTs are a way to accomplish meaningful effects in the real world. If just one person would buy an NFT, who would otherwise not have donated, this project has fulfilled its purpose.</SectionText>
+              <SectionText>We aim to provide an alternative for helping the people of Ukraine and want to demonstrate that NFTs are a way to accomplish meaningful effects in the real world. If just one person would buy an NFT, who would otherwise not have donated, this project has fulfilled its purpose. The collection is part of the public domain so everybody is free to use the NFTs for their own fundraiser</SectionText>
             </SectionContainer>
           </GridItem>
         </Grid>

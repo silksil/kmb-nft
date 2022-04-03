@@ -58,12 +58,12 @@ const BackgroundBlur = styled((props) => <Box {...props} />)(({ theme, color }) 
     marginTop: theme.spacing(30),
 
     height: 140,
-    width: 200,
+    width: 180,
     left: "calc(50% - 100px)"
   },
   [theme.breakpoints.up("lg")]: {
-    width: 320,
-    height: 320,
+    width: 300,
+    height: 300,
 
     left: "calc(50% - 160px)"
   }
@@ -114,11 +114,10 @@ const AstronautStyle = styled(motion.img)(({ theme }) => ({
 export function LandingHero() {
   return (
     <RootStyle initial="initial" animate="animate">
-      <motion.div animate={{ y: [-50, 50, -50], x: [-50, 50, -50] }} transition={{ duration: 4, repeat: Infinity }}>
+      <motion.div animate={{ y: [-50, 50, -50], x: [-50, 50, -50] }} transition={{ duration: 6, repeat: Infinity }}>
         <BackgroundBlur color="secondary" />
       </motion.div>
-
-      <motion.div animate={{ y: [50, -50, 50], x: [50, -50, 50] }} transition={{ duration: 4, repeat: Infinity }}>
+      <motion.div animate={{ y: [50, -50, 50], x: [50, -50, 50] }} transition={{ duration: 6, repeat: Infinity }}>
         <BackgroundBlur color="primary" />
       </motion.div>
 
@@ -130,7 +129,7 @@ export function LandingHero() {
         </motion.div>
         <motion.div variants={varSlideInDown}>
           <Container maxWidth="sm">
-            <SubTitle>KMBs are characters on Ethereum that make fun of Vladimir P. and fight against injustice.</SubTitle>
+            <SubTitle>KMBs are heroes on Ethereum that make fun of Putin and fight against injustice.</SubTitle>
           </Container>
         </motion.div>
       </ContentStyle>

@@ -188,7 +188,7 @@ function ContractProvider({ children }) {
         /**
          * Connect to our contract.
          */
-        const connectedContract = new ethers.Contract(contractAddress, abi.abi, signer);
+        const connectedContract = new ethers.Contract(contractAddress, abi, signer);
 
         /**
          * Check whether we are not sold out.

@@ -81,14 +81,14 @@ export function LandingSquat() {
           <Typography sx={{ mb: 1 }}>{subtitle}</Typography>
         </MotionInView>
       </Container>
-      <Container maxWidth="sm" sx={{ mt: 2 }}>
+      <Container maxWidth="md" sx={{ mt: 2 }}>
         <MotionInView variants={varFadeInUp}>
           <Grid container spacing={1}>
             <Grid item xs={12} md={6}>
               <CollectionType>
                 <Typography fontWeight="bold">KMBs</Typography>
                 <Percentage variant="caption">90%</Percentage>
-                <Typography variant="body2">By owning a KMB you are financing him/her in the fight against Vlad.</Typography>
+                <Typography variant="body2">By owning a KMB you are financing him/her in the fight against Vladimir.</Typography>
               </CollectionType>
             </Grid>
             <Grid item xs={12} md={6}>

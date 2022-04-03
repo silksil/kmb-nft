@@ -9,7 +9,8 @@ import { Icon } from "src/components/Icon";
 
 const DescriptionSil = () => (
   <>
-    Former IBM and PayPal engineer. <br />
+    IBM and PayPal alumni. Member Developers Dao.
+    <br />
     Boyfriend of Sophie.
   </>
 );
@@ -52,7 +53,7 @@ const CardStyle = styled("div")(({ theme }) => {
   return {
     zIndex: 1,
     borderRadius: 200,
-    maxWidth: 380,
+    maxWidth: 400,
     minWidth: 300,
     margin: "auto",
     textAlign: "center",
@@ -132,7 +133,7 @@ export function LandingTeam() {
         </Container>
         <Grid container spacing={isDesktop ? 10 : 2} justifyContent="center" sx={{ position: "relative" }}>
           {Persons.map((person) => (
-            <Grid item xs={12} md={4} key={person.title} justifyContent="center" alignItems="center">
+            <Grid item xs={12} md={5} key={person.title} justifyContent="center" alignItems="center">
               <CardContainer>
                 <IconsContainer className="icon-container">
                   {person.linkedin && (
