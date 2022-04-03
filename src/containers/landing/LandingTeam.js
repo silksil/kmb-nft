@@ -57,7 +57,11 @@ const CardStyle = styled("div")(({ theme }) => {
     minWidth: 300,
     margin: "auto",
     textAlign: "center",
-    padding: theme.spacing(2)
+    padding: theme.spacing(1),
+
+    [theme.breakpoints.up("sm")]: {
+      padding: theme.spacing(2)
+    }
   };
 });
 
