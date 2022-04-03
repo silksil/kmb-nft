@@ -48,10 +48,10 @@ export function LandingFAQs() {
             <ul>
               <li>
                 All income from primary sales and royalties will be donated to Ukraine through{" "}
-                <a href="https://www.ukrainedao.love/" target="_blank" rel="noreferrer">
-                  UkraineDao
+                <a href="https://unchain.fund/" target="_blank" rel="noreferrer">
+                  Unchain.fund
                 </a>
-                .
+                . Unchain.fund is a blockchain initiative aimed at raising and distributing funds for humanitarian needs in Ukraine.
               </li>
               <li>The minting price is {collectionInfo.price} ETH.</li>
               <li>Max. mint per transaction is {collectionInfo.maxTransactions}.</li>
