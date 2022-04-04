@@ -152,7 +152,6 @@ export function LandingTeam() {
                     </IconButton>
                   )}
                 </IconsContainer>
-
                 <MotionInView variants={varFadeInUp}>
                   <CardStyle>
                     <CardIconStyle src={person.icon} alt={person.title} />
