@@ -27,11 +27,11 @@ export default function LandingPage() {
           <LandingCloudAndCo />
 
           <ParallaxLayer offset={3} speed={0.2}>
-            <LandingSquat />
+            <LandingMission />
           </ParallaxLayer>
 
           <ParallaxLayer offset={4} speed={0.2}>
-            <LandingMission />
+            <LandingSquat />
           </ParallaxLayer>
 
           <ParallaxLayer offset={5} speed={0.2}>
