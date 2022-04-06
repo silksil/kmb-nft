@@ -87,14 +87,14 @@ export function LandingSquat() {
             <Grid item xs={12} md={6}>
               <CollectionType>
                 <Typography fontWeight="bold">KMBs</Typography>
-                <Percentage variant="caption">90%</Percentage>
+                <Percentage variant="caption">80%</Percentage>
                 <Typography variant="body2">By owning a KMB you are financing him/her in the fight against Vladimir.</Typography>
               </CollectionType>
             </Grid>
             <Grid item xs={12} md={6}>
               <CollectionType>
                 <Typography fontWeight="bold">Vladimirs</Typography>
-                <Percentage variant="caption">10%</Percentage>
+                <Percentage variant="caption">20%</Percentage>
 
                 <Typography variant="body2">Make fun of Vladimir by owning one with a funny outfit: from a poo suit to a puke suite.</Typography>
               </CollectionType>
