@@ -2,6 +2,7 @@ import { styled } from "@mui/material/styles";
 import { Container, alpha, Typography, Box } from "@mui/material";
 import { shadowHeading } from "src/utils/shadowHeading";
 import { collectionInfo } from "src/config/collectionInfo";
+import { MainFooter } from "src/layouts/main/MainFooter";
 
 const RootStyle = styled("div")(({ theme }) => ({
   marginTop: theme.spacing(4),
@@ -38,6 +39,7 @@ const SummaryItems = styled(Box)(({ theme }) => ({
 }));
 
 export function LandingFAQs() {
+  const etherScanLink = `${process.env.NEXT_PUBLIC_EITHERSCAN_PREFIX}/address/${process.env.NEXT_PUBLIC_CONTRACT_ADDRESS}`;
   return (
     <RootStyle>
       <Container maxWidth="md">
@@ -68,15 +70,16 @@ export function LandingFAQs() {
               <li>The images are stored on IPFS.</li>
               <li>No more than 20 characters will be reserved for giveaways, people who helped us along the way, and the team.</li>
               <li>ERC-721 tokens are used on the Ethereum blockchain.</li>
-              {/* <li>
-        ERC721 contract is verified on Etherscan and can be found{" "}
-        <a target="_blank" href={etherScanLink} rel="noreferrer">
-          here
-        </a>
-      </li> */}
+              <li>
+                ERC721 contract is verified on Etherscan and can be found{" "}
+                <a target="_blank" href={etherScanLink} rel="noreferrer">
+                  here
+                </a>
+              </li>
             </ul>
           </Typography>
         </SummaryItems>
+        <MainFooter />
       </Container>
     </RootStyle>
   );
