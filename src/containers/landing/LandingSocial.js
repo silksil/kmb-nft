@@ -1,11 +1,10 @@
 import { styled } from "@mui/material/styles";
 import { Typography, Button, Grid, alpha } from "@mui/material";
 import { Icon } from "src/components/Icon";
-import discordIcon from "@iconify/icons-ic/baseline-discord";
 import twitterIcon from "@iconify/icons-eva/twitter-fill";
 
 import { shadowHeading } from "src/utils/shadowHeading";
-import { DISCORD, TWITTER } from "src/utils/socials";
+import { TWITTER } from "src/utils/socials";
 
 const RootStyle = styled("div")(() => ({
   position: "relative"
@@ -48,11 +47,6 @@ export function LandingSocial() {
           </Heading>
 
           <Grid container spacing={2} alignItems="center" justifyContent="center">
-            <Grid item>
-              <Button variant="outlined" sx={{ minWidth: "220px" }} size="large" color="secondary" target="_blank" rel="noreferrer" href={DISCORD.url} endIcon={<Icon icon={discordIcon} />}>
-                Join Discord
-              </Button>
-            </Grid>
             <Grid item>
               <Button variant="outlined" sx={{ minWidth: "220px" }} size="large" color="primary" href={TWITTER.url} target="_blank" rel="noreferrer" endIcon={<Icon icon={twitterIcon} />}>
                 Follow Twitter
