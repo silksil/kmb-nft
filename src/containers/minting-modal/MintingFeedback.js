@@ -14,9 +14,7 @@ function MintingFeedback() {
         <IconButton href={`${process.env.NEXT_PUBLIC_OPENSEA_COLLECTION_URL}`} target="_blank">
           <Box component="img" width="24px" src="/static/marketplaces/opensea-logo.png" />
         </IconButton>
-        <IconButton href={`${process.env.NEXT_PUBLIC_RARIBLE_COLLECTION_URL}`} target="_blank">
-          <Box component="img" width="24px" src="/static/marketplaces/rarible-logo.png" />
-        </IconButton>
+
         <Box />
       </Stack>
     </Box>

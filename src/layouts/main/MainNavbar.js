@@ -14,6 +14,7 @@ import { useWindowSize } from "src/hooks/useWindowSize";
 
 import ethereumIcon from "@iconify/icons-mdi/ethereum";
 import { useContract } from "src/hooks/useContract";
+import { Image } from "src/components/Image.js";
 
 const APP_BAR_MOBILE = 64;
 const APP_BAR_DESKTOP = 88;
@@ -27,6 +28,11 @@ const ToolbarStyle = styled(Toolbar)(({ theme }) => ({
   [theme.breakpoints.up("md")]: {
     height: APP_BAR_DESKTOP
   }
+}));
+
+const Metamask = styled((props) => <Image src="static/metamask-fox.svg" alt="metamask logo" {...props} />)(({ theme }) => ({
+  width: theme.icons.m.width,
+  height: theme.icons.m.height
 }));
 
 export default function MainNavbar() {
@@ -84,7 +90,7 @@ export default function MainNavbar() {
                 </Label>
               )}
 
-              <Button variant="outlined" onClick={handleClick} sx={{ fontFamily: "IBMPlexMono" }}>
+              <Button variant="outlined" onClick={handleClick} sx={{ fontFamily: "IBMPlexMono" }} endIcon={<Metamask />}>
                 {isConnected ? "Mint NFT" : "Connect wallet"}
               </Button>
             </Stack>

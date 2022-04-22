@@ -88,7 +88,7 @@ function ContractProvider({ children }) {
 
       const provider = new ethers.providers.Web3Provider(ethereum);
       const signer = provider.getSigner();
-      const connectedContract = new ethers.Contract(contractAddress, abi.abi, signer);
+      const connectedContract = new ethers.Contract(contractAddress, abi, signer);
 
       const minted = await connectedContract.totalSupply();
       const supply = await connectedContract.maxSupply();
@@ -219,6 +219,7 @@ function ContractProvider({ children }) {
 
         setTransactionHash(nftTxn.hash);
       } catch (e) {
+        console.log(e);
         setMintingStatus({ name: MINTING_STATUS.ERROR, error: `Something went wrong. Check whether you have sufficient funds and are on the right network` });
       }
     },
