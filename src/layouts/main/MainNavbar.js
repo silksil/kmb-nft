@@ -36,9 +36,6 @@ export default function MainNavbar() {
 
   const isPaused = process.env.NEXT_PUBLIC_IS_PAUSED.toLowerCase() === "true";
 
-  /**
-   * Styling variables.
-   */
   const { setMintingModalIsOpen } = useUI();
   const { height } = useWindowSize();
   const isOffset = useOffSetTop(height);
