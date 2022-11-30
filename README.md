@@ -1,3 +1,1 @@
-# Add NFT contract
-1. In your `.env.local` add the contract address.
-2. Update the abi.json in `src/config`.
+This is the front-end of [KMB vs Vladimir](www.kmb.world); a NFT collection that aimed to raise funds for Ukraine by making fun of Putin.
